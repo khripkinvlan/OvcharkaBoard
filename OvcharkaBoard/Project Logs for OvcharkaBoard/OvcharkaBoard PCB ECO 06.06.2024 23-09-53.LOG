@@ -1,0 +1,250 @@
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found TECAP_A
+Add Component: Footprint Not Found TECAP_A
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found TECAP_A
+Add Component: Footprint Not Found CAP_1206
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_1206
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_1206
+Add Component: Footprint Not Found CAP_1206
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_1206
+Add Component: Footprint Not Found CAP_1206
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found CAP_0603
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOT23-6
+Add Component: Footprint Not Found LQFP-48
+Add Component: Footprint Not Found SOT363 (SC70-6)
+Add Component: Footprint Not Found SO14
+Add Component: Footprint Not Found SOIC-8 WIthoutTP
+Add Component: Footprint Not Found VQFN32
+Add Component: Footprint Not Found VQFN32
+Add Component: Footprint Not Found VQFN32
+Add Component: Footprint Not Found VQFN32
+Add Component: Footprint Not Found Fuse 5x20
+Add Component: Footprint Not Found FC-135R
+Add Component: Footprint Not Found HC-49SM
+Add Component: Footprint Not Found LED_0805
+Add Component: Footprint Not Found LED_0805
+Add Component: Footprint Not Found LED_0805
+Add Component: Footprint Not Found LED_0805
+Add Component: Footprint Not Found LED_0805
+Add Component: Footprint Not Found LED_0805
+Add Component: Footprint Not Found CD54
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_2512
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_2512
+Add Component: Footprint Not Found RES_2512
+Add Component: Footprint Not Found RES_2512
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found RES_2512
+Add Component: Footprint Not Found RES_2512
+Add Component: Footprint Not Found RES_2512
+Add Component: Footprint Not Found RES_0603
+Add Component: Footprint Not Found SPDT 1P2T
+Add Component: Footprint Not Found SMD-BUTTON_6x3.5
+Add Component: Footprint Not Found SMD-BUTTON_6x3.5
+Add Component: Footprint Not Found SOD-123
+Add Component: Footprint Not Found SOD-123
+Add Component: Footprint Not Found SOT23
+Add Component: Footprint Not Found SOD-123
+Add Component: Footprint Not Found SOD-323
+Add Component: Footprint Not Found DPAK_TO252
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found SOP-8 WithoutTP
+Add Component: Footprint Not Found S5B-PH-K-S
+Add Component: Footprint Not Found S5B-PH-K-S
+Add Component: Footprint Not Found S4B-ZR
+Add Component: Footprint Not Found S4B-ZR
+Add Component: Footprint Not Found XT30PW-M
+Add Component: Footprint Not Found XT30PW-M
+Add Component: Footprint Not Found XT30PW-M
+Added Net: Name=A1
+Added Net: Name=A2
+Added Net: Name=B1
+Added Net: Name=B2
+Added Net: Name=CAN_RX
+Added Net: Name=CAN_TX
+Added Net: Name=CS1
+Added Net: Name=CS2
+Added Net: Name=DIR1
+Added Net: Name=DIR2
+Added Net: Name=DRAIN
+Added Net: Name=DRVOFF1
+Added Net: Name=DRVOFF2
+Added Net: Name=DRVOFF_L1
+Added Net: Name=DRVOFF_L2
+Added Net: Name=DRVOFF_R1
+Added Net: Name=DRVOFF_R2
+Added Net: Name=ENC1_CH1_F
+Added Net: Name=ENC1_CH1
+Added Net: Name=ENC1_CH2
+Added Net: Name=ENC1_Z
+Added Net: Name=ENC2_CH1_F
+Added Net: Name=ENC2_CH1
+Added Net: Name=ENC2_CH2
+Added Net: Name=ENC2_Z
+Added Net: Name=GH1
+Add Net: Net with name "GH1" already exists
+Added Net: Name=GL1
+Add Net: Net with name "GL1" already exists
+Added Net: Name=IN1_L1
+Add Net: Net with name "IN1_L1" already exists
+Added Net: Name=IN1_L2
+Add Net: Net with name "IN1_L2" already exists
+Added Net: Name=IN1_R1
+Add Net: Net with name "IN1_R1" already exists
+Added Net: Name=IN1_R2
+Add Net: Net with name "IN1_R2" already exists
+Added Net: Name=NetC8_2
+Added Net: Name=NetC9_2
+Added Net: Name=NetC10_2
+Added Net: Name=NetC11_2
+Added Net: Name=NetC12_2
+Added Net: Name=NetC13_2
+Added Net: Name=NetC14_2
+Added Net: Name=NetC15_2
+Added Net: Name=NetC18_2
+Added Net: Name=NetC21_2
+Added Net: Name=NetC22_2
+Added Net: Name=NetC23_1
+Added Net: Name=NetC29_1
+Added Net: Name=NetC29_2
+Added Net: Name=NetC30_1
+Added Net: Name=NetC35_1
+Added Net: Name=NetC36_1
+Added Net: Name=NetC36_2
+Added Net: Name=NetC39_1
+Added Net: Name=NetC39_2
+Added Net: Name=NetC40_1
+Added Net: Name=NetC43_1
+Added Net: Name=NetC44_1
+Added Net: Name=NetC44_2
+Added Net: Name=NetDA1_1
+Added Net: Name=NetDA1_2
+Added Net: Name=NetDA1_5
+Added Net: Name=NetDD2_2
+Added Net: Name=NetDD2_6
+Added Net: Name=NetDD3_4
+Added Net: Name=NetDD3_6
+Added Net: Name=NetDD5_8
+Added Net: Name=NetDD6_20
+Added Net: Name=NetDD6_21
+Added Net: Name=NetDD6_22
+Added Net: Name=NetDD8_20
+Added Net: Name=NetDD8_21
+Added Net: Name=NetDD8_22
+Added Net: Name=NetF1_1
+Added Net: Name=NetF1_2
+Added Net: Name=NetHL1_C
+Added Net: Name=NetHL2_A
+Added Net: Name=NetHL3_A
+Added Net: Name=NetHL4_A
+Added Net: Name=NetHL5_A
+Added Net: Name=NetHL6_A
+Added Net: Name=NetR14_2
+Added Net: Name=NetVD4_2
+Added Net: Name=nFAULT1L
+Added Net: Name=nFAULT1R
+Added Net: Name=nFAULT2L
+Added Net: Name=nFAULT2R
+Added Net: Name=nFAULT_L1
+Added Net: Name=nFAULT_L2
+Added Net: Name=nFAULT_R1
+Added Net: Name=nFAULT_R2
+Added Net: Name=nSCS_L1
+Add Net: Net with name "nSCS_L1" already exists
+Added Net: Name=nSCS_L2
+Add Net: Net with name "nSCS_L2" already exists
+Added Net: Name=nSCS_R1
+Add Net: Net with name "nSCS_R1" already exists
+Added Net: Name=nSCS_R2
+Add Net: Net with name "nSCS_R2" already exists
+Added Net: Name=nSLEEP_L1
+Added Net: Name=nSLEEP_L2
+Added Net: Name=nSLEEP_R1
+Added Net: Name=nSLEEP_R2
+Added Net: Name=PWM1
+Added Net: Name=PWM2
+Added Net: Name=SCLK_L1
+Add Net: Net with name "SCLK_L1" already exists
+Added Net: Name=SCLK_L2
+Added Net: Name=SCLK_R1
+Added Net: Name=SCLK_R2
+Added Net: Name=SDI_L1
+Add Net: Net with name "SDI_L1" already exists
+Added Net: Name=SDI_L2
+Added Net: Name=SDI_R1
+Added Net: Name=SDI_R2
+Added Net: Name=SDO_L1
+Add Net: Net with name "SDO_L1" already exists
+Added Net: Name=SDO_L2
+Added Net: Name=SDO_R1
+Added Net: Name=SDO_R2
+Added Net: Name=SL1
+Added Net: Name=SLEEP
+Added Net: Name=SN
+Add Net: Net with name "SN" already exists
+Added Net: Name=SO_L1
+Added Net: Name=SO_L2
+Added Net: Name=SO_R1
+Added Net: Name=SO_R2
+Added Net: Name=SP
+Add Net: Net with name "SP" already exists
+Added Net: Name=SWCLK
+Added Net: Name=SWDIO
+Added Net: Name=VBAT
+Added Class: Name=Sheet1
+Added Class: Name=Sheet2
+Added Class: Name=Sheet3
+Added Class: Name=Sheet4
