@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=XP3 Old Footprint=S4B-ZR New Footprint=S4B-ZR-SM4A-TF
+Added Pin To Net: NetName=A1_3 Pin=R15-1
+Added Pin To Net: NetName=NetDD7_21 Pin=R15-2
+Added Pin To Net: NetName=A2_4 Pin=R20-1
+Added Pin To Net: NetName=NetDD9_21 Pin=R20-2

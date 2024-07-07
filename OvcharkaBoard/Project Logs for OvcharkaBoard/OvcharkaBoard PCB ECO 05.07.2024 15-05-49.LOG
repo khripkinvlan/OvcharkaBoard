@@ -1,0 +1,7 @@
+Change Component DesignItemId : Designator=XP4 Old DesignItemId=S4B-ZR New DesignItemId=S4B-PH
+Change Component Comment : Designator=XP4 Old Comment=S4B-ZR New Comment=S4B-PH
+Change Component Description : Designator=XP4 Old Description=JST ZH 4pin 1.5 mm pitch; horizontal; through hole OR full smd; S4B-ZR New Description=JST PH 4pin 2 mm pitch; horizontal; through hole OR full smd; S4B-PH-SM4-TB
+Added Pin To Net: NetName=SN_3 Pin=R15-1
+Added Pin To Net: NetName=SP_3 Pin=R15-2
+Added Pin To Net: NetName=SN_4 Pin=R20-1
+Added Pin To Net: NetName=SP_4 Pin=R20-2

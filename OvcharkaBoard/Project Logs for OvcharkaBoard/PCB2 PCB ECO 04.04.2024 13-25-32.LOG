@@ -1,0 +1,986 @@
+Added Component: Designator=C1(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C2(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C3(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C4(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C5(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C6(TECAP_A)
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C7(TECAP_A)
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C8(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20"; VariantName = "[No Variations]"
+Added Component: Designator=C9(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C10(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C11(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C12(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20"; VariantName = "[No Variations]"
+Added Component: Designator=C13(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C14(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20"; VariantName = "[No Variations]"
+Added Component: Designator=C15(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "20"; VariantName = "[No Variations]"
+Added Component: Designator=C16(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C17(TECAP_A)
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C18(CAP_1206)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C19(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C20(CAP_1206)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C21(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "íÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "3.9"; VariantName = "[No Variations]"
+Added Component: Designator=C22(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C23(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ïÔ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=C24(CAP_1206)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C25(CAP_1206)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C26(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C27(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C28(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0,1"; VariantName = "[No Variations]"
+Added Component: Designator=C29(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0,1"; VariantName = "[No Variations]"
+Added Component: Designator=C30(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 16 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C31(CAP_1206)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C32(CAP_1206)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=C33(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C34(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C35(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 16 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C36(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0,1"; VariantName = "[No Variations]"
+Added Component: Designator=C37(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C38(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C39(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0,1"; VariantName = "[No Variations]"
+Added Component: Designator=C40(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 16 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C41(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C42(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 6.3Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C43(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 16 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=C44(CAP_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÔ 50 Â"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0,1"; VariantName = "[No Variations]"
+Added Component: Designator=DA1(SOP-8 WithoutTP)
+Added Component: Designator=DD1(SOT23-6)
+Added Component: Designator=DD2(LQFP-48)
+Add Component: Footprint Not Found SOT363 (SC70-6)
+Add Component: Footprint Not Found SO14
+Added Component: Designator=DD5(SOIC-8 WIthoutTP)
+Added Component: Designator=DD6(VQFN32)
+Added Component: Designator=DD7(VQFN32)
+Added Component: Designator=DD8(VQFN32)
+Added Component: Designator=DD9(VQFN32)
+Add Component: Footprint Not Found Fuse 5x20
+Added Component: Designator=G1(FC-135R)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "C:\GitHub\OvcharkaBoard\Datasheets\Components"; VariantName = "[No Variations]"
+Added Component: Designator=G2(HC-49SM)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "C:\GitHub\OvcharkaBoard\Datasheets\Components"; VariantName = "[No Variations]"
+Added Component: Designator=HL1(LED_0805)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=HL2(LED_0805)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=HL3(LED_0805)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=HL4(LED_0805)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=HL5(LED_0805)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=HL6(LED_0805)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=L1(CD54)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìêÃí"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "47"; VariantName = "[No Variations]"
+Added Component: Designator=R1(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330"; VariantName = "[No Variations]"
+Added Component: Designator=R2(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=R3(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=R4(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=R5(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=R6(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ÌÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1"; VariantName = "[No Variations]"
+Added Component: Designator=R7(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "100"; VariantName = "[No Variations]"
+Added Component: Designator=R8(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330"; VariantName = "[No Variations]"
+Added Component: Designator=R9(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=R10(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "8.2"; VariantName = "[No Variations]"
+Added Component: Designator=R11(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "5"; VariantName = "[No Variations]"
+Added Component: Designator=R12(RES_2512)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.2"; VariantName = "[No Variations]"
+Added Component: Designator=R13(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=R14(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=R15(RES_2512)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "7.5"; VariantName = "[No Variations]"
+Added Component: Designator=R16(RES_2512)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1.8"; VariantName = "[No Variations]"
+Added Component: Designator=R17(RES_2512)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1,8"; VariantName = "[No Variations]"
+Added Component: Designator=R18(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=R19(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=R20(RES_2512)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "ìÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "7.5"; VariantName = "[No Variations]"
+Added Component: Designator=R21(RES_2512)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1.8"; VariantName = "[No Variations]"
+Added Component: Designator=R22(RES_2512)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1,8"; VariantName = "[No Variations]"
+Added Component: Designator=R23(RES_0603)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "êÎì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10"; VariantName = "[No Variations]"
+Added Component: Designator=SA1(SPDT 1P2T)
+Added Component: Designator=SB1(SMD-BUTTON_6x3.5)
+Added Component: Designator=SB2(SMD-BUTTON_6x3.5)
+Added Component: Designator=VD1(SOD-123)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=VD2(SOD-123)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=VD3(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=VD4(SOD-123)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=VD5(SOD-323)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "New link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit_of_measurement"; Value = "Îì"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=VT1(DPAK_TO252)
+Added Component: Designator=VT2(SOP-8 WithoutTP)
+Added Component: Designator=VT3(SOP-8 WithoutTP)
+Added Component: Designator=VT4(SOP-8 WithoutTP)
+Added Component: Designator=VT5(SOP-8 WithoutTP)
+Added Component: Designator=VT6(SOP-8 WithoutTP)
+Added Component: Designator=VT7(SOP-8 WithoutTP)
+Added Component: Designator=VT8(SOP-8 WithoutTP)
+Added Component: Designator=VT9(SOP-8 WithoutTP)
+Added Component: Designator=XP1(S5B-PH-K-S)
+Added Component: Designator=XP2(S5B-PH-K-S)
+Added Component: Designator=XP3(S4B-ZR)
+Added Component: Designator=XP4(S4B-ZR)
+Added Component: Designator=XP5(XT30PW-M)
+Added Component: Designator=XP6(XT30PW-M)
+Added Component: Designator=XP7(XT30PW-M)
+Added Pin To Net: NetName=A1 Pin=R15-1
+Added Pin To Net: NetName=A1 Pin=XP6-1
+Added Net: Name=A1
+Added Pin To Net: NetName=A2 Pin=R20-1
+Added Pin To Net: NetName=A2 Pin=XP7-1
+Added Net: Name=A2
+Added Pin To Net: NetName=B1 Pin=DD7-21
+Added Pin To Net: NetName=B1 Pin=HL4-C
+Added Pin To Net: NetName=B1 Pin=R17-2
+Added Pin To Net: NetName=B1 Pin=XP6-2
+Added Pin To Net: NetName=B1 Pin=VT4-1
+Added Pin To Net: NetName=B1 Pin=VT4-2
+Added Pin To Net: NetName=B1 Pin=VT4-3
+Added Pin To Net: NetName=B1 Pin=VT5-5
+Added Pin To Net: NetName=B1 Pin=VT5-6
+Added Pin To Net: NetName=B1 Pin=VT5-7
+Added Pin To Net: NetName=B1 Pin=VT5-8
+Added Net: Name=B1
+Added Pin To Net: NetName=B2 Pin=DD9-21
+Added Pin To Net: NetName=B2 Pin=HL6-C
+Added Pin To Net: NetName=B2 Pin=R22-2
+Added Pin To Net: NetName=B2 Pin=XP7-2
+Added Pin To Net: NetName=B2 Pin=VT8-1
+Added Pin To Net: NetName=B2 Pin=VT8-2
+Added Pin To Net: NetName=B2 Pin=VT8-3
+Added Pin To Net: NetName=B2 Pin=VT9-5
+Added Pin To Net: NetName=B2 Pin=VT9-6
+Added Pin To Net: NetName=B2 Pin=VT9-7
+Added Pin To Net: NetName=B2 Pin=VT9-8
+Added Net: Name=B2
+Added Pin To Net: NetName=CAN_RX Pin=DD2-32
+Added Pin To Net: NetName=CAN_RX Pin=DD5-4
+Added Net: Name=CAN_RX
+Added Pin To Net: NetName=CAN_TX Pin=C19-2
+Added Pin To Net: NetName=CAN_TX Pin=DD2-33
+Added Pin To Net: NetName=CAN_TX Pin=DD5-1
+Added Net: Name=CAN_TX
+Added Pin To Net: NetName=CS1 Pin=DD2-12
+Added Net: Name=CS1
+Added Pin To Net: NetName=CS2 Pin=DD2-13
+Added Net: Name=CS2
+Added Pin To Net: NetName=DIR1 Pin=DD2-40
+Added Net: Name=DIR1
+Added Pin To Net: NetName=DIR2 Pin=DD2-42
+Added Net: Name=DIR2
+Added Pin To Net: NetName=DRAIN Pin=C24-2
+Added Pin To Net: NetName=DRAIN Pin=C25-2
+Added Pin To Net: NetName=DRAIN Pin=C28-2
+Added Pin To Net: NetName=DRAIN Pin=C30-2
+Added Pin To Net: NetName=DRAIN Pin=C31-2
+Added Pin To Net: NetName=DRAIN Pin=C32-2
+Added Pin To Net: NetName=DRAIN Pin=C35-2
+Added Pin To Net: NetName=DRAIN Pin=C40-2
+Added Pin To Net: NetName=DRAIN Pin=C43-2
+Added Pin To Net: NetName=DRAIN Pin=DA1-6
+Added Pin To Net: NetName=DRAIN Pin=DD6-28
+Added Pin To Net: NetName=DRAIN Pin=DD6-29
+Added Pin To Net: NetName=DRAIN Pin=DD7-28
+Added Pin To Net: NetName=DRAIN Pin=DD7-29
+Added Pin To Net: NetName=DRAIN Pin=DD8-28
+Added Pin To Net: NetName=DRAIN Pin=DD8-29
+Added Pin To Net: NetName=DRAIN Pin=DD9-28
+Added Pin To Net: NetName=DRAIN Pin=DD9-29
+Added Pin To Net: NetName=DRAIN Pin=R12-1
+Added Pin To Net: NetName=DRAIN Pin=VD5-1
+Added Pin To Net: NetName=DRAIN Pin=VT1-3
+Added Pin To Net: NetName=DRAIN Pin=VT2-5
+Added Pin To Net: NetName=DRAIN Pin=VT2-6
+Added Pin To Net: NetName=DRAIN Pin=VT2-7
+Added Pin To Net: NetName=DRAIN Pin=VT2-8
+Added Pin To Net: NetName=DRAIN Pin=VT4-5
+Added Pin To Net: NetName=DRAIN Pin=VT4-6
+Added Pin To Net: NetName=DRAIN Pin=VT4-7
+Added Pin To Net: NetName=DRAIN Pin=VT4-8
+Added Pin To Net: NetName=DRAIN Pin=VT6-5
+Added Pin To Net: NetName=DRAIN Pin=VT6-6
+Added Pin To Net: NetName=DRAIN Pin=VT6-7
+Added Pin To Net: NetName=DRAIN Pin=VT6-8
+Added Pin To Net: NetName=DRAIN Pin=VT8-5
+Added Pin To Net: NetName=DRAIN Pin=VT8-6
+Added Pin To Net: NetName=DRAIN Pin=VT8-7
+Added Pin To Net: NetName=DRAIN Pin=VT8-8
+Added Net: Name=DRAIN
+Added Pin To Net: NetName=DRVOFF1 Pin=DD2-41
+Added Net: Name=DRVOFF1
+Added Pin To Net: NetName=DRVOFF2 Pin=DD2-43
+Added Net: Name=DRVOFF2
+Added Pin To Net: NetName=DRVOFF_L1 Pin=DD6-12
+Added Net: Name=DRVOFF_L1
+Added Pin To Net: NetName=DRVOFF_L2 Pin=DD8-12
+Added Net: Name=DRVOFF_L2
+Added Pin To Net: NetName=DRVOFF_R1 Pin=DD7-12
+Added Net: Name=DRVOFF_R1
+Added Pin To Net: NetName=DRVOFF_R2 Pin=DD9-12
+Added Net: Name=DRVOFF_R2
+Added Pin To Net: NetName=ENC1_CH1_F Pin=DD1-4
+Added Pin To Net: NetName=ENC1_CH1_F Pin=DD1-6
+Added Pin To Net: NetName=ENC1_CH1_F Pin=DD2-45
+Added Net: Name=ENC1_CH1_F
+Added Pin To Net: NetName=ENC1_CH1 Pin=DD2-30
+Added Pin To Net: NetName=ENC1_CH1 Pin=R2-2
+Added Pin To Net: NetName=ENC1_CH1 Pin=XP1-2
+Added Net: Name=ENC1_CH1
+Added Pin To Net: NetName=ENC1_CH2 Pin=DD2-29
+Added Pin To Net: NetName=ENC1_CH2 Pin=XP1-3
+Added Net: Name=ENC1_CH2
+Added Pin To Net: NetName=ENC1_Z Pin=DD2-39
+Added Pin To Net: NetName=ENC1_Z Pin=XP1-4
+Added Net: Name=ENC1_Z
+Added Pin To Net: NetName=ENC2_CH1_F Pin=DD2-46
+Added Net: Name=ENC2_CH1_F
+Added Pin To Net: NetName=ENC2_CH1 Pin=DD2-10
+Added Pin To Net: NetName=ENC2_CH1 Pin=R3-2
+Added Pin To Net: NetName=ENC2_CH1 Pin=XP2-2
+Added Net: Name=ENC2_CH1
+Added Pin To Net: NetName=ENC2_CH2 Pin=DD2-11
+Added Pin To Net: NetName=ENC2_CH2 Pin=XP2-3
+Added Net: Name=ENC2_CH2
+Added Pin To Net: NetName=ENC2_Z Pin=DD2-38
+Added Pin To Net: NetName=ENC2_Z Pin=XP2-4
+Added Net: Name=ENC2_Z
+Added Pin To Net: NetName=GH1 Pin=DD7-20
+Added Pin To Net: NetName=GH1 Pin=VT4-4
+Added Net: Name=GH1
+Add Net: Net with name "GH1" already exists
+Added Pin To Net: NetName=GL1 Pin=DD9-22
+Added Pin To Net: NetName=GL1 Pin=VT9-4
+Added Net: Name=GL1
+Add Net: Net with name "GL1" already exists
+Added Net: Name=IN1_L1
+Add Net: Net with name "IN1_L1" already exists
+Added Net: Name=IN1_L2
+Add Net: Net with name "IN1_L2" already exists
+Added Pin To Net: NetName=IN1_R1 Pin=DD7-7
+Added Net: Name=IN1_R1
+Add Net: Net with name "IN1_R1" already exists
+Added Pin To Net: NetName=IN1_R2 Pin=DD9-7
+Added Net: Name=IN1_R2
+Add Net: Net with name "IN1_R2" already exists
+Added Pin To Net: NetName=NetC8_2 Pin=C8-2
+Added Pin To Net: NetName=NetC8_2 Pin=DD2-3
+Added Pin To Net: NetName=NetC8_2 Pin=G1-1
+Added Net: Name=NetC8_2
+Added Pin To Net: NetName=NetC9_2 Pin=C9-2
+Added Pin To Net: NetName=NetC9_2 Pin=DD1-1
+Added Pin To Net: NetName=NetC9_2 Pin=R2-1
+Added Net: Name=NetC9_2
+Added Pin To Net: NetName=NetC10_2 Pin=C10-2
+Added Pin To Net: NetName=NetC10_2 Pin=DD1-3
+Added Pin To Net: NetName=NetC10_2 Pin=R3-1
+Added Net: Name=NetC10_2
+Added Pin To Net: NetName=NetC11_2 Pin=C11-2
+Added Pin To Net: NetName=NetC11_2 Pin=DD2-44
+Added Pin To Net: NetName=NetC11_2 Pin=R4-1
+Added Pin To Net: NetName=NetC11_2 Pin=SB1-2
+Added Net: Name=NetC11_2
+Added Pin To Net: NetName=NetC12_2 Pin=C12-2
+Added Pin To Net: NetName=NetC12_2 Pin=DD2-4
+Added Pin To Net: NetName=NetC12_2 Pin=G1-2
+Added Net: Name=NetC12_2
+Added Pin To Net: NetName=NetC13_2 Pin=C13-2
+Added Pin To Net: NetName=NetC13_2 Pin=DD2-7
+Added Pin To Net: NetName=NetC13_2 Pin=R5-1
+Added Pin To Net: NetName=NetC13_2 Pin=SB2-2
+Added Net: Name=NetC13_2
+Added Pin To Net: NetName=NetC14_2 Pin=C14-2
+Added Pin To Net: NetName=NetC14_2 Pin=DD2-5
+Added Pin To Net: NetName=NetC14_2 Pin=G2-1
+Added Pin To Net: NetName=NetC14_2 Pin=R6-1
+Added Net: Name=NetC14_2
+Added Pin To Net: NetName=NetC15_2 Pin=C15-2
+Added Pin To Net: NetName=NetC15_2 Pin=G2-2
+Added Pin To Net: NetName=NetC15_2 Pin=R7-2
+Added Net: Name=NetC15_2
+Added Pin To Net: NetName=NetC18_2 Pin=C18-2
+Added Pin To Net: NetName=NetC18_2 Pin=C20-2
+Added Pin To Net: NetName=NetC18_2 Pin=L1-2
+Added Pin To Net: NetName=NetC18_2 Pin=R8-1
+Added Pin To Net: NetName=NetC18_2 Pin=R10-1
+Added Pin To Net: NetName=NetC18_2 Pin=VD1-2
+Added Net: Name=NetC18_2
+Added Pin To Net: NetName=NetC21_2 Pin=C21-2
+Added Pin To Net: NetName=NetC21_2 Pin=DA1-3
+Added Net: Name=NetC21_2
+Added Pin To Net: NetName=NetC22_2 Pin=C22-2
+Added Pin To Net: NetName=NetC22_2 Pin=DD5-6
+Added Pin To Net: NetName=NetC22_2 Pin=VD3-2
+Added Pin To Net: NetName=NetC22_2 Pin=XP4-3
+Added Net: Name=NetC22_2
+Added Pin To Net: NetName=NetC23_1 Pin=C23-1
+Added Pin To Net: NetName=NetC23_1 Pin=DD5-7
+Added Pin To Net: NetName=NetC23_1 Pin=VD3-1
+Added Pin To Net: NetName=NetC23_1 Pin=XP4-2
+Added Net: Name=NetC23_1
+Added Pin To Net: NetName=NetC29_1 Pin=C29-1
+Added Pin To Net: NetName=NetC29_1 Pin=DD6-32
+Added Net: Name=NetC29_1
+Added Pin To Net: NetName=NetC29_2 Pin=C29-2
+Added Pin To Net: NetName=NetC29_2 Pin=DD6-31
+Added Net: Name=NetC29_2
+Added Pin To Net: NetName=NetC30_1 Pin=C30-1
+Added Pin To Net: NetName=NetC30_1 Pin=DD6-30
+Added Net: Name=NetC30_1
+Added Pin To Net: NetName=NetC35_1 Pin=C35-1
+Added Pin To Net: NetName=NetC35_1 Pin=DD7-30
+Added Net: Name=NetC35_1
+Added Pin To Net: NetName=NetC36_1 Pin=C36-1
+Added Pin To Net: NetName=NetC36_1 Pin=DD7-32
+Added Net: Name=NetC36_1
+Added Pin To Net: NetName=NetC36_2 Pin=C36-2
+Added Pin To Net: NetName=NetC36_2 Pin=DD7-31
+Added Net: Name=NetC36_2
+Added Pin To Net: NetName=NetC39_1 Pin=C39-1
+Added Pin To Net: NetName=NetC39_1 Pin=DD8-32
+Added Net: Name=NetC39_1
+Added Pin To Net: NetName=NetC39_2 Pin=C39-2
+Added Pin To Net: NetName=NetC39_2 Pin=DD8-31
+Added Net: Name=NetC39_2
+Added Pin To Net: NetName=NetC40_1 Pin=C40-1
+Added Pin To Net: NetName=NetC40_1 Pin=DD8-30
+Added Net: Name=NetC40_1
+Added Pin To Net: NetName=NetC43_1 Pin=C43-1
+Added Pin To Net: NetName=NetC43_1 Pin=DD9-30
+Added Net: Name=NetC43_1
+Added Pin To Net: NetName=NetC44_1 Pin=C44-1
+Added Pin To Net: NetName=NetC44_1 Pin=DD9-32
+Added Net: Name=NetC44_1
+Added Pin To Net: NetName=NetC44_2 Pin=C44-2
+Added Pin To Net: NetName=NetC44_2 Pin=DD9-31
+Added Net: Name=NetC44_2
+Added Pin To Net: NetName=NetDA1_1 Pin=DA1-1
+Added Pin To Net: NetName=NetDA1_1 Pin=DA1-7
+Added Pin To Net: NetName=NetDA1_1 Pin=DA1-8
+Added Pin To Net: NetName=NetDA1_1 Pin=R12-2
+Added Net: Name=NetDA1_1
+Added Pin To Net: NetName=NetDA1_2 Pin=DA1-2
+Added Pin To Net: NetName=NetDA1_2 Pin=L1-1
+Added Pin To Net: NetName=NetDA1_2 Pin=VD2-1
+Added Net: Name=NetDA1_2
+Added Pin To Net: NetName=NetDA1_5 Pin=DA1-5
+Added Pin To Net: NetName=NetDA1_5 Pin=R10-2
+Added Pin To Net: NetName=NetDA1_5 Pin=R11-2
+Added Net: Name=NetDA1_5
+Added Pin To Net: NetName=NetDD2_2 Pin=DD2-2
+Added Pin To Net: NetName=NetDD2_2 Pin=HL1-A
+Added Net: Name=NetDD2_2
+Added Pin To Net: NetName=NetDD2_6 Pin=DD2-6
+Added Pin To Net: NetName=NetDD2_6 Pin=R6-2
+Added Pin To Net: NetName=NetDD2_6 Pin=R7-1
+Added Net: Name=NetDD2_6
+Added Net: Name=NetDD3_4
+Added Net: Name=NetDD3_6
+Added Pin To Net: NetName=NetDD5_8 Pin=DD5-8
+Added Pin To Net: NetName=NetDD5_8 Pin=R9-1
+Added Pin To Net: NetName=NetDD5_8 Pin=SA1-1
+Added Net: Name=NetDD5_8
+Added Pin To Net: NetName=NetDD6_20 Pin=DD6-20
+Added Pin To Net: NetName=NetDD6_20 Pin=VT2-4
+Added Net: Name=NetDD6_20
+Added Pin To Net: NetName=NetDD6_21 Pin=DD6-21
+Added Pin To Net: NetName=NetDD6_21 Pin=HL3-C
+Added Pin To Net: NetName=NetDD6_21 Pin=R15-2
+Added Pin To Net: NetName=NetDD6_21 Pin=R16-1
+Added Pin To Net: NetName=NetDD6_21 Pin=VT2-1
+Added Pin To Net: NetName=NetDD6_21 Pin=VT2-2
+Added Pin To Net: NetName=NetDD6_21 Pin=VT2-3
+Added Pin To Net: NetName=NetDD6_21 Pin=VT3-5
+Added Pin To Net: NetName=NetDD6_21 Pin=VT3-6
+Added Pin To Net: NetName=NetDD6_21 Pin=VT3-7
+Added Pin To Net: NetName=NetDD6_21 Pin=VT3-8
+Added Net: Name=NetDD6_21
+Added Pin To Net: NetName=NetDD6_22 Pin=DD6-22
+Added Pin To Net: NetName=NetDD6_22 Pin=VT3-4
+Added Net: Name=NetDD6_22
+Added Pin To Net: NetName=NetDD8_20 Pin=DD8-20
+Added Pin To Net: NetName=NetDD8_20 Pin=VT6-4
+Added Net: Name=NetDD8_20
+Added Pin To Net: NetName=NetDD8_21 Pin=DD8-21
+Added Pin To Net: NetName=NetDD8_21 Pin=HL5-C
+Added Pin To Net: NetName=NetDD8_21 Pin=R20-2
+Added Pin To Net: NetName=NetDD8_21 Pin=R21-1
+Added Pin To Net: NetName=NetDD8_21 Pin=VT6-1
+Added Pin To Net: NetName=NetDD8_21 Pin=VT6-2
+Added Pin To Net: NetName=NetDD8_21 Pin=VT6-3
+Added Pin To Net: NetName=NetDD8_21 Pin=VT7-5
+Added Pin To Net: NetName=NetDD8_21 Pin=VT7-6
+Added Pin To Net: NetName=NetDD8_21 Pin=VT7-7
+Added Pin To Net: NetName=NetDD8_21 Pin=VT7-8
+Added Net: Name=NetDD8_21
+Added Pin To Net: NetName=NetDD8_22 Pin=DD8-22
+Added Pin To Net: NetName=NetDD8_22 Pin=VT7-4
+Added Net: Name=NetDD8_22
+Added Pin To Net: NetName=NetF1_1 Pin=XP5-1
+Added Net: Name=NetF1_1
+Added Pin To Net: NetName=NetF1_2 Pin=VT1-4
+Added Net: Name=NetF1_2
+Added Pin To Net: NetName=NetHL1_C Pin=HL1-C
+Added Pin To Net: NetName=NetHL1_C Pin=R1-1
+Added Net: Name=NetHL1_C
+Added Pin To Net: NetName=NetHL2_A Pin=HL2-A
+Added Pin To Net: NetName=NetHL2_A Pin=R8-2
+Added Net: Name=NetHL2_A
+Added Pin To Net: NetName=NetHL3_A Pin=HL3-A
+Added Pin To Net: NetName=NetHL3_A Pin=R17-1
+Added Net: Name=NetHL3_A
+Added Pin To Net: NetName=NetHL4_A Pin=HL4-A
+Added Pin To Net: NetName=NetHL4_A Pin=R16-2
+Added Net: Name=NetHL4_A
+Added Pin To Net: NetName=NetHL5_A Pin=HL5-A
+Added Pin To Net: NetName=NetHL5_A Pin=R22-1
+Added Net: Name=NetHL5_A
+Added Pin To Net: NetName=NetHL6_A Pin=HL6-A
+Added Pin To Net: NetName=NetHL6_A Pin=R21-2
+Added Net: Name=NetHL6_A
+Added Pin To Net: NetName=NetR14_2 Pin=R14-2
+Added Pin To Net: NetName=NetR14_2 Pin=VD5-2
+Added Pin To Net: NetName=NetR14_2 Pin=VT1-1
+Added Net: Name=NetR14_2
+Added Pin To Net: NetName=NetVD4_2 Pin=VD4-2
+Added Pin To Net: NetName=NetVD4_2 Pin=XP4-1
+Added Net: Name=NetVD4_2
+Added Pin To Net: NetName=nFAULT1L Pin=DD2-25
+Added Net: Name=nFAULT1L
+Added Pin To Net: NetName=nFAULT1R Pin=DD2-26
+Added Net: Name=nFAULT1R
+Added Pin To Net: NetName=nFAULT2L Pin=DD2-27
+Added Net: Name=nFAULT2L
+Added Pin To Net: NetName=nFAULT2R Pin=DD2-28
+Added Net: Name=nFAULT2R
+Added Pin To Net: NetName=nFAULT_L1 Pin=DD6-13
+Added Pin To Net: NetName=nFAULT_L1 Pin=R13-1
+Added Net: Name=nFAULT_L1
+Added Pin To Net: NetName=nFAULT_L2 Pin=DD8-13
+Added Pin To Net: NetName=nFAULT_L2 Pin=R19-1
+Added Net: Name=nFAULT_L2
+Added Pin To Net: NetName=nFAULT_R1 Pin=DD7-13
+Added Pin To Net: NetName=nFAULT_R1 Pin=R18-1
+Added Net: Name=nFAULT_R1
+Added Pin To Net: NetName=nFAULT_R2 Pin=DD9-13
+Added Pin To Net: NetName=nFAULT_R2 Pin=R23-1
+Added Net: Name=nFAULT_R2
+Added Pin To Net: NetName=nSCS_L1 Pin=DD6-3
+Added Net: Name=nSCS_L1
+Add Net: Net with name "nSCS_L1" already exists
+Added Pin To Net: NetName=nSCS_L2 Pin=DD2-21
+Added Net: Name=nSCS_L2
+Add Net: Net with name "nSCS_L2" already exists
+Added Pin To Net: NetName=nSCS_R1 Pin=DD7-3
+Added Net: Name=nSCS_R1
+Add Net: Net with name "nSCS_R1" already exists
+Added Pin To Net: NetName=nSCS_R2 Pin=DD9-3
+Added Net: Name=nSCS_R2
+Add Net: Net with name "nSCS_R2" already exists
+Added Pin To Net: NetName=nSLEEP_L1 Pin=DD6-11
+Added Net: Name=nSLEEP_L1
+Added Pin To Net: NetName=nSLEEP_L2 Pin=DD8-11
+Added Net: Name=nSLEEP_L2
+Added Pin To Net: NetName=nSLEEP_R1 Pin=DD7-11
+Added Net: Name=nSLEEP_R1
+Added Pin To Net: NetName=nSLEEP_R2 Pin=DD9-11
+Added Net: Name=nSLEEP_R2
+Added Pin To Net: NetName=PWM1 Pin=DD2-18
+Added Net: Name=PWM1
+Added Pin To Net: NetName=PWM2 Pin=DD2-19
+Added Net: Name=PWM2
+Added Pin To Net: NetName=SCLK_L1 Pin=DD2-15
+Added Net: Name=SCLK_L1
+Add Net: Net with name "SCLK_L1" already exists
+Added Pin To Net: NetName=SCLK_L2 Pin=DD8-4
+Added Net: Name=SCLK_L2
+Added Pin To Net: NetName=SCLK_R1 Pin=DD7-4
+Added Net: Name=SCLK_R1
+Added Pin To Net: NetName=SCLK_R2 Pin=DD9-4
+Added Net: Name=SCLK_R2
+Added Pin To Net: NetName=SDI_L1 Pin=DD2-17
+Added Net: Name=SDI_L1
+Add Net: Net with name "SDI_L1" already exists
+Added Pin To Net: NetName=SDI_L2 Pin=DD8-5
+Added Net: Name=SDI_L2
+Added Pin To Net: NetName=SDI_R1 Pin=DD7-5
+Added Net: Name=SDI_R1
+Added Pin To Net: NetName=SDI_R2 Pin=DD9-5
+Added Net: Name=SDI_R2
+Added Pin To Net: NetName=SDO_L1 Pin=DD2-16
+Added Net: Name=SDO_L1
+Add Net: Net with name "SDO_L1" already exists
+Added Pin To Net: NetName=SDO_L2 Pin=DD8-6
+Added Net: Name=SDO_L2
+Added Pin To Net: NetName=SDO_R1 Pin=DD7-6
+Added Net: Name=SDO_R1
+Added Pin To Net: NetName=SDO_R2 Pin=DD9-6
+Added Net: Name=SDO_R2
+Added Pin To Net: NetName=SL1 Pin=C1-1
+Added Pin To Net: NetName=SL1 Pin=C2-1
+Added Pin To Net: NetName=SL1 Pin=C3-1
+Added Pin To Net: NetName=SL1 Pin=C4-1
+Added Pin To Net: NetName=SL1 Pin=C5-1
+Added Pin To Net: NetName=SL1 Pin=C6-2
+Added Pin To Net: NetName=SL1 Pin=C7-2
+Added Pin To Net: NetName=SL1 Pin=C8-1
+Added Pin To Net: NetName=SL1 Pin=C9-1
+Added Pin To Net: NetName=SL1 Pin=C10-1
+Added Pin To Net: NetName=SL1 Pin=C11-1
+Added Pin To Net: NetName=SL1 Pin=C12-1
+Added Pin To Net: NetName=SL1 Pin=C13-1
+Added Pin To Net: NetName=SL1 Pin=C14-1
+Added Pin To Net: NetName=SL1 Pin=C15-1
+Added Pin To Net: NetName=SL1 Pin=C16-1
+Added Pin To Net: NetName=SL1 Pin=C17-2
+Added Pin To Net: NetName=SL1 Pin=C18-1
+Added Pin To Net: NetName=SL1 Pin=C19-1
+Added Pin To Net: NetName=SL1 Pin=C20-1
+Added Pin To Net: NetName=SL1 Pin=C21-1
+Added Pin To Net: NetName=SL1 Pin=C22-1
+Added Pin To Net: NetName=SL1 Pin=C23-2
+Added Pin To Net: NetName=SL1 Pin=C24-1
+Added Pin To Net: NetName=SL1 Pin=C25-1
+Added Pin To Net: NetName=SL1 Pin=C26-1
+Added Pin To Net: NetName=SL1 Pin=C27-1
+Added Pin To Net: NetName=SL1 Pin=C28-1
+Added Pin To Net: NetName=SL1 Pin=C31-1
+Added Pin To Net: NetName=SL1 Pin=C32-1
+Added Pin To Net: NetName=SL1 Pin=C33-1
+Added Pin To Net: NetName=SL1 Pin=C34-1
+Added Pin To Net: NetName=SL1 Pin=C37-1
+Added Pin To Net: NetName=SL1 Pin=C38-1
+Added Pin To Net: NetName=SL1 Pin=C41-1
+Added Pin To Net: NetName=SL1 Pin=C42-1
+Added Pin To Net: NetName=SL1 Pin=DA1-4
+Added Pin To Net: NetName=SL1 Pin=DD1-2
+Added Pin To Net: NetName=SL1 Pin=DD2-8
+Added Pin To Net: NetName=SL1 Pin=DD2-23
+Added Pin To Net: NetName=SL1 Pin=DD2-35
+Added Pin To Net: NetName=SL1 Pin=DD2-47
+Added Pin To Net: NetName=SL1 Pin=DD5-2
+Added Pin To Net: NetName=SL1 Pin=DD6-0
+Added Pin To Net: NetName=SL1 Pin=DD6-1
+Added Pin To Net: NetName=SL1 Pin=DD6-8
+Added Pin To Net: NetName=SL1 Pin=DD6-15
+Added Pin To Net: NetName=SL1 Pin=DD6-17
+Added Pin To Net: NetName=SL1 Pin=DD6-23
+Added Pin To Net: NetName=SL1 Pin=DD7-0
+Added Pin To Net: NetName=SL1 Pin=DD7-1
+Added Pin To Net: NetName=SL1 Pin=DD7-8
+Added Pin To Net: NetName=SL1 Pin=DD7-15
+Added Pin To Net: NetName=SL1 Pin=DD7-17
+Added Pin To Net: NetName=SL1 Pin=DD7-23
+Added Pin To Net: NetName=SL1 Pin=DD8-0
+Added Pin To Net: NetName=SL1 Pin=DD8-1
+Added Pin To Net: NetName=SL1 Pin=DD8-8
+Added Pin To Net: NetName=SL1 Pin=DD8-15
+Added Pin To Net: NetName=SL1 Pin=DD8-17
+Added Pin To Net: NetName=SL1 Pin=DD8-23
+Added Pin To Net: NetName=SL1 Pin=DD9-0
+Added Pin To Net: NetName=SL1 Pin=DD9-1
+Added Pin To Net: NetName=SL1 Pin=DD9-8
+Added Pin To Net: NetName=SL1 Pin=DD9-15
+Added Pin To Net: NetName=SL1 Pin=DD9-17
+Added Pin To Net: NetName=SL1 Pin=DD9-23
+Added Pin To Net: NetName=SL1 Pin=HL2-C
+Added Pin To Net: NetName=SL1 Pin=R1-2
+Added Pin To Net: NetName=SL1 Pin=R4-2
+Added Pin To Net: NetName=SL1 Pin=R11-1
+Added Pin To Net: NetName=SL1 Pin=R14-1
+Added Pin To Net: NetName=SL1 Pin=SB2-1
+Added Pin To Net: NetName=SL1 Pin=VD2-2
+Added Pin To Net: NetName=SL1 Pin=VD3-3
+Added Pin To Net: NetName=SL1 Pin=XP1-5
+Added Pin To Net: NetName=SL1 Pin=XP2-5
+Added Pin To Net: NetName=SL1 Pin=XP3-4
+Added Pin To Net: NetName=SL1 Pin=XP4-4
+Added Pin To Net: NetName=SL1 Pin=XP5-2
+Added Pin To Net: NetName=SL1 Pin=VT3-1
+Added Pin To Net: NetName=SL1 Pin=VT3-2
+Added Pin To Net: NetName=SL1 Pin=VT3-3
+Added Pin To Net: NetName=SL1 Pin=VT5-1
+Added Pin To Net: NetName=SL1 Pin=VT5-2
+Added Pin To Net: NetName=SL1 Pin=VT5-3
+Added Pin To Net: NetName=SL1 Pin=VT7-1
+Added Pin To Net: NetName=SL1 Pin=VT7-2
+Added Pin To Net: NetName=SL1 Pin=VT7-3
+Added Pin To Net: NetName=SL1 Pin=VT9-1
+Added Pin To Net: NetName=SL1 Pin=VT9-2
+Added Pin To Net: NetName=SL1 Pin=VT9-3
+Added Net: Name=SL1
+Added Pin To Net: NetName=SLEEP Pin=DD2-31
+Added Pin To Net: NetName=SLEEP Pin=R9-2
+Added Pin To Net: NetName=SLEEP Pin=SA1-2
+Added Net: Name=SLEEP
+Added Pin To Net: NetName=SN Pin=DD8-19
+Added Pin To Net: NetName=SN Pin=DD9-19
+Added Pin To Net: NetName=SN Pin=R20-1
+Added Net: Name=SN
+Add Net: Net with name "SN" already exists
+Added Pin To Net: NetName=SO_L1 Pin=DD6-14
+Added Net: Name=SO_L1
+Added Pin To Net: NetName=SO_L2 Pin=DD8-14
+Added Net: Name=SO_L2
+Added Pin To Net: NetName=SO_R1 Pin=DD7-14
+Added Net: Name=SO_R1
+Added Pin To Net: NetName=SO_R2 Pin=DD9-14
+Added Net: Name=SO_R2
+Added Pin To Net: NetName=SP Pin=DD6-18
+Added Pin To Net: NetName=SP Pin=DD7-18
+Added Pin To Net: NetName=SP Pin=R15-2
+Added Net: Name=SP
+Add Net: Net with name "SP" already exists
+Added Pin To Net: NetName=SWCLK Pin=DD2-37
+Added Pin To Net: NetName=SWCLK Pin=XP3-3
+Added Net: Name=SWCLK
+Added Pin To Net: NetName=SWDIO Pin=DD2-34
+Added Pin To Net: NetName=SWDIO Pin=XP3-2
+Added Net: Name=SWDIO
+Added Pin To Net: NetName=VBAT Pin=C1-2
+Added Pin To Net: NetName=VBAT Pin=C2-2
+Added Pin To Net: NetName=VBAT Pin=C3-2
+Added Pin To Net: NetName=VBAT Pin=C4-2
+Added Pin To Net: NetName=VBAT Pin=C5-2
+Added Pin To Net: NetName=VBAT Pin=C6-1
+Added Pin To Net: NetName=VBAT Pin=C7-1
+Added Pin To Net: NetName=VBAT Pin=C16-2
+Added Pin To Net: NetName=VBAT Pin=C17-1
+Added Pin To Net: NetName=VBAT Pin=C26-2
+Added Pin To Net: NetName=VBAT Pin=C27-2
+Added Pin To Net: NetName=VBAT Pin=C33-2
+Added Pin To Net: NetName=VBAT Pin=C34-2
+Added Pin To Net: NetName=VBAT Pin=C37-2
+Added Pin To Net: NetName=VBAT Pin=C38-2
+Added Pin To Net: NetName=VBAT Pin=C41-2
+Added Pin To Net: NetName=VBAT Pin=C42-2
+Added Pin To Net: NetName=VBAT Pin=DD1-5
+Added Pin To Net: NetName=VBAT Pin=DD2-1
+Added Pin To Net: NetName=VBAT Pin=DD2-9
+Added Pin To Net: NetName=VBAT Pin=DD2-24
+Added Pin To Net: NetName=VBAT Pin=DD2-36
+Added Pin To Net: NetName=VBAT Pin=DD2-48
+Added Pin To Net: NetName=VBAT Pin=DD5-3
+Added Pin To Net: NetName=VBAT Pin=DD6-2
+Added Pin To Net: NetName=VBAT Pin=DD6-16
+Added Pin To Net: NetName=VBAT Pin=DD7-2
+Added Pin To Net: NetName=VBAT Pin=DD7-16
+Added Pin To Net: NetName=VBAT Pin=DD8-2
+Added Pin To Net: NetName=VBAT Pin=DD8-16
+Added Pin To Net: NetName=VBAT Pin=DD9-2
+Added Pin To Net: NetName=VBAT Pin=DD9-16
+Added Pin To Net: NetName=VBAT Pin=R5-2
+Added Pin To Net: NetName=VBAT Pin=R13-2
+Added Pin To Net: NetName=VBAT Pin=R18-2
+Added Pin To Net: NetName=VBAT Pin=R19-2
+Added Pin To Net: NetName=VBAT Pin=R23-2
+Added Pin To Net: NetName=VBAT Pin=SB1-1
+Added Pin To Net: NetName=VBAT Pin=VD1-1
+Added Pin To Net: NetName=VBAT Pin=VD4-1
+Added Pin To Net: NetName=VBAT Pin=XP1-1
+Added Pin To Net: NetName=VBAT Pin=XP2-1
+Added Pin To Net: NetName=VBAT Pin=XP3-1
+Added Net: Name=VBAT
+Added Class: Name=Sheet1
+Added Class: Name=Sheet2
+Added Class: Name=Sheet3
+Added Class: Name=Sheet4

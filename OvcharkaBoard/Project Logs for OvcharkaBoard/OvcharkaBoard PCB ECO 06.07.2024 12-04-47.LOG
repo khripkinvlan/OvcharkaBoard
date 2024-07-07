@@ -1,0 +1,117 @@
+Added Component: Designator=DD7(VQFN32)
+Added Component: Designator=DD8(VQFN32)
+Added Component: Designator=DD9(VQFN32)
+Added Component: Designator=DD10(VQFN32)
+Added Pin To Net: NetName=GND Pin=DD7-0
+Added Pin To Net: NetName=GND Pin=DD7-1
+Added Pin To Net: NetName=3V3 Pin=DD7-2
+Added Pin To Net: NetName=SPI1_SS1 Pin=DD7-3
+Added Pin To Net: NetName=SPI1_SCK Pin=DD7-4
+Added Pin To Net: NetName=SPI1_MOSI Pin=DD7-5
+Added Pin To Net: NetName=SPI1_MISO Pin=DD7-6
+Added Pin To Net: NetName=NetDD4_11 Pin=DD7-7
+Added Pin To Net: NetName=GND Pin=DD7-8
+Added Pin To Net: NetName=BRIDGESLEEP_1 Pin=DD7-11
+Added Pin To Net: NetName=DRVOFF1 Pin=DD7-12
+Added Pin To Net: NetName=NetDD6_13 Pin=DD7-13
+Added Pin To Net: NetName=CS1 Pin=DD7-14
+Added Pin To Net: NetName=GND Pin=DD7-15
+Added Pin To Net: NetName=3V3 Pin=DD7-16
+Added Pin To Net: NetName=GND Pin=DD7-17
+Added Pin To Net: NetName=SP_3 Pin=DD7-18
+Added Pin To Net: NetName=SN_3 Pin=DD7-19
+Added Pin To Net: NetName=NetDD7_20 Pin=DD7-20
+Added Pin To Net: NetName=NetDD7_21 Pin=DD7-21
+Added Pin To Net: NetName=NetDD7_22 Pin=DD7-22
+Added Pin To Net: NetName=GND Pin=DD7-23
+Added Pin To Net: NetName=VPVDD Pin=DD7-28
+Added Pin To Net: NetName=VPVDD Pin=DD7-29
+Added Pin To Net: NetName=NetC30_1 Pin=DD7-30
+Added Pin To Net: NetName=NetC29_2 Pin=DD7-31
+Added Pin To Net: NetName=NetC29_1 Pin=DD7-32
+Added Pin To Net: NetName=GND Pin=DD8-0
+Added Pin To Net: NetName=GND Pin=DD8-1
+Added Pin To Net: NetName=3V3 Pin=DD8-2
+Added Pin To Net: NetName=SPI1_SS2 Pin=DD8-3
+Added Pin To Net: NetName=SPI1_SCK Pin=DD8-4
+Added Pin To Net: NetName=SPI1_MOSI Pin=DD8-5
+Added Pin To Net: NetName=SPI1_MISO Pin=DD8-6
+Added Pin To Net: NetName=NetDD4_8 Pin=DD8-7
+Added Pin To Net: NetName=GND Pin=DD8-8
+Added Pin To Net: NetName=BRIDGESLEEP_1 Pin=DD8-11
+Added Pin To Net: NetName=DRVOFF1 Pin=DD8-12
+Added Pin To Net: NetName=NetDD6_12 Pin=DD8-13
+Added Pin To Net: NetName=GND Pin=DD8-15
+Added Pin To Net: NetName=3V3 Pin=DD8-16
+Added Pin To Net: NetName=GND Pin=DD8-17
+Added Pin To Net: NetName=GH1_3 Pin=DD8-20
+Added Pin To Net: NetName=B1_3 Pin=DD8-21
+Added Pin To Net: NetName=GL1_3 Pin=DD8-22
+Added Pin To Net: NetName=GND Pin=DD8-23
+Added Pin To Net: NetName=VPVDD Pin=DD8-28
+Added Pin To Net: NetName=VPVDD Pin=DD8-29
+Added Pin To Net: NetName=NetC35_1 Pin=DD8-30
+Added Pin To Net: NetName=NetC36_2 Pin=DD8-31
+Added Pin To Net: NetName=NetC36_1 Pin=DD8-32
+Added Pin To Net: NetName=GND Pin=DD9-0
+Added Pin To Net: NetName=GND Pin=DD9-1
+Added Pin To Net: NetName=3V3 Pin=DD9-2
+Added Pin To Net: NetName=SPI1_SS3 Pin=DD9-3
+Added Pin To Net: NetName=SPI1_SCK Pin=DD9-4
+Added Pin To Net: NetName=SPI1_MOSI Pin=DD9-5
+Added Pin To Net: NetName=SPI1_MISO Pin=DD9-6
+Added Pin To Net: NetName=NetDD4_3 Pin=DD9-7
+Added Pin To Net: NetName=GND Pin=DD9-8
+Added Pin To Net: NetName=BRIDGESLEEP_2 Pin=DD9-11
+Added Pin To Net: NetName=DRVOFF2 Pin=DD9-12
+Added Pin To Net: NetName=NetDD6_11 Pin=DD9-13
+Added Pin To Net: NetName=CS2 Pin=DD9-14
+Added Pin To Net: NetName=GND Pin=DD9-15
+Added Pin To Net: NetName=3V3 Pin=DD9-16
+Added Pin To Net: NetName=GND Pin=DD9-17
+Added Pin To Net: NetName=SP_4 Pin=DD9-18
+Added Pin To Net: NetName=SN_4 Pin=DD9-19
+Added Pin To Net: NetName=NetDD9_20 Pin=DD9-20
+Added Pin To Net: NetName=NetDD9_21 Pin=DD9-21
+Added Pin To Net: NetName=NetDD9_22 Pin=DD9-22
+Added Pin To Net: NetName=GND Pin=DD9-23
+Added Pin To Net: NetName=VPVDD Pin=DD9-28
+Added Pin To Net: NetName=VPVDD Pin=DD9-29
+Added Pin To Net: NetName=NetC40_1 Pin=DD9-30
+Added Pin To Net: NetName=NetC39_2 Pin=DD9-31
+Added Pin To Net: NetName=NetC39_1 Pin=DD9-32
+Added Pin To Net: NetName=GND Pin=DD10-0
+Added Pin To Net: NetName=GND Pin=DD10-1
+Added Pin To Net: NetName=3V3 Pin=DD10-2
+Added Pin To Net: NetName=SPI1_SS4 Pin=DD10-3
+Added Pin To Net: NetName=SPI1_SCK Pin=DD10-4
+Added Pin To Net: NetName=SPI1_MOSI Pin=DD10-5
+Added Pin To Net: NetName=SPI1_MISO Pin=DD10-6
+Added Pin To Net: NetName=NetDD4_6 Pin=DD10-7
+Added Pin To Net: NetName=GND Pin=DD10-8
+Added Pin To Net: NetName=BRIDGESLEEP_2 Pin=DD10-11
+Added Pin To Net: NetName=DRVOFF2 Pin=DD10-12
+Added Pin To Net: NetName=NetDD6_10 Pin=DD10-13
+Added Pin To Net: NetName=GND Pin=DD10-15
+Added Pin To Net: NetName=3V3 Pin=DD10-16
+Added Pin To Net: NetName=GND Pin=DD10-17
+Added Pin To Net: NetName=GH1_4 Pin=DD10-20
+Added Pin To Net: NetName=B2_4 Pin=DD10-21
+Added Pin To Net: NetName=GL1_4 Pin=DD10-22
+Added Pin To Net: NetName=GND Pin=DD10-23
+Added Pin To Net: NetName=VPVDD Pin=DD10-28
+Added Pin To Net: NetName=VPVDD Pin=DD10-29
+Added Pin To Net: NetName=NetC43_1 Pin=DD10-30
+Added Pin To Net: NetName=NetC44_2 Pin=DD10-31
+Added Pin To Net: NetName=NetC44_1 Pin=DD10-32
+Added Pin To Net: NetName=A1_3 Pin=R15-1
+Added Pin To Net: NetName=NetDD7_21 Pin=R15-2
+Added Pin To Net: NetName=A2_4 Pin=R20-1
+Added Pin To Net: NetName=NetDD9_21 Pin=R20-2
+Change Net Name : Old Net Name=3V3 New Net Name=VBAT
+Change Net Name : Old Net Name=GND New Net Name=SL1
+Change Net Name : Old Net Name=VPVDD New Net Name=DRAIN
+Added Member To Class: ClassName=Sheet3 Member=Component DD7 DRV8106SQRHBRQ1
+Added Member To Class: ClassName=Sheet3 Member=Component DD8 DRV8106SQRHBRQ1
+Added Member To Class: ClassName=Sheet4 Member=Component DD9 DRV8106SQRHBRQ1
+Added Member To Class: ClassName=Sheet4 Member=Component DD10 DRV8106SQRHBRQ1
