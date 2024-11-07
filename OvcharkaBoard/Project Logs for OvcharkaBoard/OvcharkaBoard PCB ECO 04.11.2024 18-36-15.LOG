@@ -1,0 +1,14 @@
+Added Component: Designator=DD5(SOIC-8 WIthoutTP)
+Added Pin To Net: NetName=USART1_RX Pin=DD5-1
+Added Pin To Net: NetName=RS485_Ctrl Pin=DD5-2
+Added Pin To Net: NetName=RS485_Ctrl Pin=DD5-3
+Added Pin To Net: NetName=USART1_TX Pin=DD5-4
+Added Pin To Net: NetName=SL1 Pin=DD5-5
+Added Pin To Net: NetName=NetDD5_6 Pin=DD5-6
+Added Pin To Net: NetName=NetDD5_7 Pin=DD5-7
+Added Pin To Net: NetName=VBAT Pin=DD5-8
+Added Pin To Net: NetName=SN_3 Pin=R18-1
+Added Pin To Net: NetName=SP_3 Pin=R18-2
+Added Pin To Net: NetName=SN_4 Pin=R23-1
+Added Pin To Net: NetName=SP_4 Pin=R23-2
+Added Member To Class: ClassName=Sheet2 Member=Component DD5 SP3485EN-L/TR

@@ -1,0 +1,18 @@
+Add Component: Footprint Not Found SOIC-8 WIthoutTP
+Added Component: Designator=F1(Fuse 5x20)
+Add Pin To Net: Unknown Pin: Pin DD5-1
+Add Pin To Net: Unknown Pin: Pin DD5-2
+Add Pin To Net: Unknown Pin: Pin DD5-3
+Add Pin To Net: Unknown Pin: Pin DD5-4
+Add Pin To Net: Unknown Pin: Pin DD5-5
+Add Pin To Net: Unknown Pin: Pin DD5-6
+Add Pin To Net: Unknown Pin: Pin DD5-7
+Add Pin To Net: Unknown Pin: Pin DD5-8
+Added Pin To Net: NetName=NetF1_1 Pin=F1-1
+Added Pin To Net: NetName=NetF1_2 Pin=F1-2
+Added Pin To Net: NetName=A1_3 Pin=R18-1
+Added Pin To Net: NetName=NetDD7_21 Pin=R18-2
+Added Pin To Net: NetName=A2_4 Pin=R23-1
+Added Pin To Net: NetName=NetDD9_21 Pin=R23-2
+Add Class Member: Failed to add class member : Component DD5 SP3485EN-L/TR
+Added Member To Class: ClassName=Sheet3 Member=Component F1 ва

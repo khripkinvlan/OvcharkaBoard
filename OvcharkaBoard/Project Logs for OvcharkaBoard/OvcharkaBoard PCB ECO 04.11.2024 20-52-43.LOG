@@ -1,0 +1,17 @@
+Removed Member From Class: ClassName=Sheet3 Member=R10
+Removed Member From Class: ClassName=Sheet4 Member=R18
+Added Pin To Net: NetName=SN_3 Pin=R15-1
+Added Pin To Net: NetName=SP_3 Pin=R15-2
+Added Pin To Net: NetName=SN_4 Pin=R20-1
+Added Pin To Net: NetName=SP_4 Pin=R20-2
+Change Net Name : Old Net Name=3V3 New Net Name=VBAT
+Change Net Name : Old Net Name=GND New Net Name=SL1
+Added Member To Class: ClassName=Sheet2 Member=Component R9 120Îì
+Added Member To Class: ClassName=Sheet2 Member=Component R10 8.2êÎì 1%
+Added Member To Class: ClassName=Sheet2 Member=Component R11 5êÎì 1%
+Added Member To Class: ClassName=Sheet2 Member=Component R12 0.2Îì 1%
+Added Member To Class: ClassName=Sheet3 Member=Component R13 10êÎì
+Added Member To Class: ClassName=Sheet3 Member=Component R14 10êÎì
+Added Member To Class: ClassName=Sheet3 Member=Component R15 7.5ìÎì
+Added Member To Class: ClassName=Sheet4 Member=Component R21 1.8êÎì
+Added Member To Class: ClassName=Sheet4 Member=Component R23 10êÎì

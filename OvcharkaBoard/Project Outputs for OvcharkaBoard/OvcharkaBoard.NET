@@ -1,0 +1,919 @@
+{COMPONENT PROTEL.PCB
+  {ENVIRONMENT PROTEL.SCH}
+  {DETAIL
+    {SUBCOMP
+      {I CAP_0603.PRT C1
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C2
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C3
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C4
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C5
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I TECAP_A.PRT C6
+        {CN
+        1 VBAT
+        2 SL1
+        }
+      }
+      {I TECAP_A.PRT C7
+        {CN
+        1 VBAT
+        2 SL1
+        }
+      }
+      {I CAP_0603.PRT C8
+        {CN
+        1 SL1
+        2 NetC8_2
+        }
+      }
+      {I CAP_0603.PRT C9
+        {CN
+        1 SL1
+        2 NetC9_2
+        }
+      }
+      {I CAP_0603.PRT C10
+        {CN
+        1 SL1
+        2 NetC10_2
+        }
+      }
+      {I CAP_0603.PRT C11
+        {CN
+        1 SL1
+        2 NetC11_2
+        }
+      }
+      {I CAP_0603.PRT C12
+        {CN
+        1 SL1
+        2 NetC12_2
+        }
+      }
+      {I CAP_0603.PRT C13
+        {CN
+        1 SL1
+        2 NetC13_2
+        }
+      }
+      {I CAP_0603.PRT C14
+        {CN
+        1 SL1
+        2 NetC14_2
+        }
+      }
+      {I CAP_0603.PRT C15
+        {CN
+        1 SL1
+        2 NetC15_2
+        }
+      }
+      {I CAP_1206.PRT C16
+        {CN
+        1 SL1
+        2 NetC16_2
+        }
+      }
+      {I CAP_1206.PRT C17
+        {CN
+        1 SL1
+        2 NetC16_2
+        }
+      }
+      {I CAP_0603.PRT C18
+        {CN
+        1 SL1
+        2 NetC18_2
+        }
+      }
+      {I CAP_0603.PRT C19
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I TECAP_A.PRT C20
+        {CN
+        1 VBAT
+        2 SL1
+        }
+      }
+      {I CAP_1206.PRT C21
+        {CN
+        1 SL1
+        2 DRAIN
+        }
+      }
+      {I CAP_1206.PRT C22
+        {CN
+        1 SL1
+        2 DRAIN
+        }
+      }
+      {I CAP_0603.PRT C23
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C24
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C25
+        {CN
+        1 SL1
+        2 DRAIN
+        }
+      }
+      {I CAP_0603.PRT C26
+        {CN
+        1 NetC26_1
+        2 NetC26_2
+        }
+      }
+      {I CAP_0603.PRT C27
+        {CN
+        1 NetC27_1
+        2 DRAIN
+        }
+      }
+      {I CAP_1206.PRT C28
+        {CN
+        1 SL1
+        2 DRAIN
+        }
+      }
+      {I CAP_1206.PRT C29
+        {CN
+        1 SL1
+        2 DRAIN
+        }
+      }
+      {I CAP_1206.PRT C30
+        {CN
+        1 SL1
+        2 DRAIN
+        }
+      }
+      {I CAP_0603.PRT C31
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C32
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C33
+        {CN
+        1 NetC33_1
+        2 DRAIN
+        }
+      }
+      {I CAP_0603.PRT C34
+        {CN
+        1 NetC34_1
+        2 NetC34_2
+        }
+      }
+      {I CAP_0603.PRT C35
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C36
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C37
+        {CN
+        1 NetC37_1
+        2 NetC37_2
+        }
+      }
+      {I CAP_0603.PRT C38
+        {CN
+        1 NetC38_1
+        2 DRAIN
+        }
+      }
+      {I CAP_0603.PRT C39
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C40
+        {CN
+        1 SL1
+        2 VBAT
+        }
+      }
+      {I CAP_0603.PRT C41
+        {CN
+        1 NetC41_1
+        2 DRAIN
+        }
+      }
+      {I CAP_0603.PRT C42
+        {CN
+        1 NetC42_1
+        2 NetC42_2
+        }
+      }
+      {I SOP-8 WithoutTP.PRT DA1
+        {CN
+        1 NetDA1_1
+        2 NetDA1_2
+        3 NetC18_2
+        4 SL1
+        5 NetDA1_5
+        6 DRAIN
+        7 NetDA1_1
+        8 NetDA1_1
+        }
+      }
+      {I SOT23-6.PRT DD1
+        {CN
+        1 NetC10_2
+        2 SL1
+        3 NetC11_2
+        4 ENC2_CH1_F_1
+        5 VBAT
+        6 ENC1_CH1_F_1
+        }
+      }
+      {I LQFP-48.PRT DD2
+        {CN
+        1 VBAT
+        2 NetDD2_2
+        3 NetC8_2
+        4 NetC12_2
+        5 NetC14_2
+        6 NetDD2_6
+        7 NetC13_2
+        8 SL1
+        9 VBAT
+       10 DIR1_1
+       11 DIR2_1
+       12 CS1
+       13 CS2
+       14 SPI1_SS1
+       15 SPI1_SCK
+       16 SPI1_MISO
+       17 SPI1_MOSI
+       18 PWM1_1
+       19 PWM2_1
+       20 SPI1_SS2
+       21 SPI1_SS3
+       22 SPI1_SS4
+       23 SL1
+       24 VBAT
+       25 BRIDGESLEEP_1
+       26 BRIDGESLEEP_2
+       27 FAULT_A
+       28 FAULT_B
+       29 ENC1_CH1_1
+       30 ENC1_CH2_1
+       31 ENC1_Z_1
+       32 ENC2_Z_1
+       33 DRVOFF1
+       34 SWDIO_1
+       35 SL1
+       36 VBAT
+       37 SWCLK_1
+       38 ENC2_CH1_1
+       39 ENC2_CH2_1
+       40 DRVOFF2
+       41 RS485_Ctrl
+       42 USART1_TX
+       43 USART1_RX
+       44 NetC9_2
+       45 ENC1_CH1_F_1
+       46 ENC2_CH1_F_1
+       47 SL1
+       48 VBAT
+        }
+      }
+      {I SOT363 (SC70-6).PRT DD3
+        {CN
+        1 DIR2_1
+        2 SL1
+        3 DIR1_1
+        4 NetDD3_4
+        5 VBAT
+        6 NetDD3_6
+        }
+      }
+      {I SO14.PRT DD4
+        {CN
+        1 PWM2_1
+        2 DIR2_1
+        3 NetDD4_3
+        4 PWM2_1
+        5 NetDD3_6
+        6 NetDD4_6
+        7 SL1
+        8 NetDD4_8
+        9 PWM1_1
+       10 NetDD3_4
+       11 NetDD4_11
+       12 PWM1_1
+       13 DIR1_1
+       14 VBAT
+        }
+      }
+      {I SOIC-8 WIthoutTP.PRT DD5
+        {CN
+        1 USART1_RX
+        2 RS485_Ctrl
+        3 RS485_Ctrl
+        4 USART1_TX
+        5 SL1
+        6 NetDD5_6
+        7 NetDD5_7
+        8 VBAT
+        }
+      }
+      {I SOIC-16.PRT DD6
+        {CN
+        1 NetDD6_1
+        2 NetDD6_2
+        3 NetDD6_3
+        4 NetDD6_4
+        5 SL1
+        6 NetDD6_6
+        6 NetDD6_6
+        7 FAULT_A
+        8 SL1
+        9 FAULT_B
+       10 NetDD6_10
+       11 NetDD6_11
+       12 NetDD6_12
+       13 NetDD6_13
+       14 NetDD6_14
+       16 VBAT
+        }
+      }
+      {I VQFN32.PRT DD7
+        {CN
+        0 SL1
+        1 SL1
+        2 VBAT
+        3 SPI1_SS1
+        4 SPI1_SCK
+        5 SPI1_MOSI
+        6 SPI1_MISO
+        7 NetDD4_11
+        8 SL1
+        9 NetDD7_9
+       10 NetDD7_10
+       11 BRIDGESLEEP_2
+       12 DRVOFF1
+       13 NetDD6_13
+       14 CS1
+       15 SL1
+       16 VBAT
+       17 SL1
+       18 SP_3
+       19 SN_3
+       20 NetDD7_20
+       21 NetDD7_21
+       22 NetDD7_22
+       23 SL1
+       24 NetDD7_24
+       25 NetDD7_25
+       26 NetDD7_26
+       27 NetDD7_27
+       28 DRAIN
+       29 DRAIN
+       30 NetC27_1
+       31 NetC26_2
+       32 NetC26_1
+        }
+      }
+      {I VQFN32.PRT DD8
+        {CN
+        0 SL1
+        1 SL1
+        2 VBAT
+        3 SPI1_SS2
+        4 SPI1_SCK
+        5 SPI1_MOSI
+        6 SPI1_MISO
+        7 NetDD4_8
+        8 SL1
+        9 NetDD8_9
+       10 NetDD8_10
+       11 BRIDGESLEEP_2
+       12 DRVOFF1
+       13 NetDD6_12
+       14 NetDD8_14
+       15 SL1
+       16 VBAT
+       17 SL1
+       18 NetDD8_18
+       19 NetDD8_19
+       20 GH1_3
+       21 B1_3
+       22 GL1_3
+       23 SL1
+       24 NetDD8_24
+       25 NetDD8_25
+       26 NetDD8_26
+       27 NetDD8_27
+       28 DRAIN
+       29 DRAIN
+       30 NetC33_1
+       31 NetC34_2
+       32 NetC34_1
+        }
+      }
+      {I VQFN32.PRT DD9
+        {CN
+        0 SL1
+        1 SL1
+        2 VBAT
+        3 SPI1_SS3
+        4 SPI1_SCK
+        5 SPI1_MOSI
+        6 SPI1_MISO
+        7 NetDD4_3
+        8 SL1
+        9 NetDD9_9
+       10 NetDD9_10
+       11 BRIDGESLEEP_1
+       12 DRVOFF2
+       13 NetDD6_11
+       14 CS2
+       15 SL1
+       16 VBAT
+       17 SL1
+       18 SP_4
+       19 SN_4
+       20 NetDD9_20
+       21 NetDD9_21
+       22 NetDD9_22
+       23 SL1
+       24 NetDD9_24
+       25 NetDD9_25
+       26 NetDD9_26
+       27 NetDD9_27
+       28 DRAIN
+       29 DRAIN
+       30 NetC38_1
+       31 NetC37_2
+       32 NetC37_1
+        }
+      }
+      {I VQFN32.PRT DD10
+        {CN
+        0 SL1
+        1 SL1
+        2 VBAT
+        3 SPI1_SS4
+        4 SPI1_SCK
+        5 SPI1_MOSI
+        6 SPI1_MISO
+        7 NetDD4_6
+        8 SL1
+        9 NetDD10_9
+       10 NetDD10_10
+       11 BRIDGESLEEP_1
+       12 DRVOFF2
+       13 NetDD6_10
+       14 NetDD10_14
+       15 SL1
+       16 VBAT
+       17 SL1
+       18 NetDD10_18
+       19 NetDD10_19
+       20 GH1_4
+       21 B2_4
+       22 GL1_4
+       23 SL1
+       24 NetDD10_24
+       25 NetDD10_25
+       26 NetDD10_26
+       27 NetDD10_27
+       28 DRAIN
+       29 DRAIN
+       30 NetC41_1
+       31 NetC42_2
+       32 NetC42_1
+        }
+      }
+      {I Fuse 5x20.PRT F1
+        {CN
+        1 NetF1_1
+        2 NetF1_2
+        }
+      }
+      {I FC-135R.PRT G1
+        {CN
+        1 NetC8_2
+        2 NetC12_2
+        }
+      }
+      {I HC-49SM.PRT G2
+        {CN
+        1 NetC14_2
+        2 NetC15_2
+        }
+      }
+      {I LED_0805.PRT HL1
+        {CN
+        A NetDD2_2
+        C NetHL1_C
+        }
+      }
+      {I LED_0805.PRT HL2
+        {CN
+        A NetHL2_A
+        C SL1
+        }
+      }
+      {I LED_0805.PRT HL3
+        {CN
+        A NetHL3_A
+        C NetDD7_21
+        }
+      }
+      {I LED_0805.PRT HL4
+        {CN
+        A NetHL4_A
+        C B1_3
+        }
+      }
+      {I LED_0805.PRT HL5
+        {CN
+        A NetHL5_A
+        C NetDD9_21
+        }
+      }
+      {I LED_0805.PRT HL6
+        {CN
+        A NetHL6_A
+        C B2_4
+        }
+      }
+      {I CD54.PRT L1
+        {CN
+        1 NetDA1_2
+        2 NetC16_2
+        }
+      }
+      {I RES_0603.PRT R1
+        {CN
+        1 NetHL1_C
+        2 SL1
+        }
+      }
+      {I RES_0603.PRT R2
+        {CN
+        1 NetC10_2
+        2 ENC1_CH1_1
+        }
+      }
+      {I RES_0603.PRT R3
+        {CN
+        1 NetC11_2
+        2 ENC2_CH1_1
+        }
+      }
+      {I RES_0603.PRT R4
+        {CN
+        1 NetC9_2
+        2 SL1
+        }
+      }
+      {I RES_0603.PRT R5
+        {CN
+        1 NetC13_2
+        2 VBAT
+        }
+      }
+      {I RES_0603.PRT R6
+        {CN
+        1 NetC14_2
+        2 NetDD2_6
+        }
+      }
+      {I RES_0603.PRT R7
+        {CN
+        1 NetDD2_6
+        2 NetC15_2
+        }
+      }
+      {I RES_0603.PRT R8
+        {CN
+        1 NetC16_2
+        2 NetHL2_A
+        }
+      }
+      {I RES_0603.PRT R9
+        {CN
+        1 NetDD5_7
+        2 NetDD5_6
+        }
+      }
+      {I RES_0603.PRT R10
+        {CN
+        1 NetC16_2
+        2 NetDA1_5
+        }
+      }
+      {I RES_0603.PRT R11
+        {CN
+        1 NetDD5_6
+        2 VBAT
+        }
+      }
+      {I RES_0603.PRT R12
+        {CN
+        1 NetDD5_7
+        2 SL1
+        }
+      }
+      {I RES_0603.PRT R13
+        {CN
+        1 SL1
+        2 NetDA1_5
+        }
+      }
+      {I RES_2512.PRT R14
+        {CN
+        1 DRAIN
+        2 NetDA1_1
+        }
+      }
+      {I RES_0603.PRT R15
+        {CN
+        1 NetDD6_13
+        2 VBAT
+        }
+      }
+      {I RES_0603.PRT R16
+        {CN
+        1 SL1
+        2 NetR16_2
+        }
+      }
+      {I RES_2512.PRT R17
+        {CN
+        1 SN_3
+        1 A1_3
+        2 NetDD7_21
+        2 SP_3
+        }
+      }
+      {I RES_2512.PRT R18
+        {CN
+        1 NetDD7_21
+        2 NetHL4_A
+        }
+      }
+      {I RES_2512.PRT R19
+        {CN
+        1 NetHL3_A
+        2 B1_3
+        }
+      }
+      {I RES_0603.PRT R20
+        {CN
+        1 NetDD6_12
+        2 VBAT
+        }
+      }
+      {I RES_0603.PRT R21
+        {CN
+        1 NetDD6_11
+        2 VBAT
+        }
+      }
+      {I RES_2512.PRT R22
+        {CN
+        1 SN_4
+        1 A2_4
+        2 NetDD9_21
+        2 SP_4
+        }
+      }
+      {I RES_2512.PRT R23
+        {CN
+        1 NetDD9_21
+        2 NetHL6_A
+        }
+      }
+      {I RES_2512.PRT R24
+        {CN
+        1 NetHL5_A
+        2 B2_4
+        }
+      }
+      {I RES_0603.PRT R25
+        {CN
+        1 NetDD6_10
+        2 VBAT
+        }
+      }
+      {I SMD-BUTTON_6x3.5.PRT SB1
+        {CN
+        1 VBAT
+        2 NetC9_2
+        }
+      }
+      {I SMD-BUTTON_6x3.5.PRT SB2
+        {CN
+        1 SL1
+        2 NetC13_2
+        }
+      }
+      {I SOD-123.PRT VD1
+        {CN
+        1 VBAT
+        2 NetC16_2
+        }
+      }
+      {I SOD-123.PRT VD2
+        {CN
+        1 NetDA1_2
+        2 SL1
+        }
+      }
+      {I SOT23.PRT VD3
+        {CN
+        1 NetDD5_7
+        2 NetDD5_6
+        3 SL1
+        }
+      }
+      {I SOD-123.PRT VD4
+        {CN
+        1 VBAT
+        2 NetVD4_2
+        }
+      }
+      {I SOD-323.PRT VD5
+        {CN
+        1 DRAIN
+        2 NetR16_2
+        }
+      }
+      {I DPAK_TO252.PRT VT1
+        {CN
+        1 NetR16_2
+        3 DRAIN
+        4 NetF1_2
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT2
+        {CN
+        1 NetDD7_20
+        2 NetDD7_21
+        3 DRAIN
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT3
+        {CN
+        1 NetDD7_22
+        2 SL1
+        3 NetDD7_21
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT4
+        {CN
+        1 GH1_3
+        2 B1_3
+        3 DRAIN
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT5
+        {CN
+        1 GL1_3
+        2 SL1
+        3 B1_3
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT6
+        {CN
+        1 NetDD9_20
+        2 NetDD9_21
+        3 DRAIN
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT7
+        {CN
+        1 NetDD9_22
+        2 SL1
+        3 NetDD9_21
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT8
+        {CN
+        1 GH1_4
+        2 B2_4
+        3 DRAIN
+        }
+      }
+      {I SOP-8 WithoutTP.PRT VT9
+        {CN
+        1 GL1_4
+        2 SL1
+        3 B2_4
+        }
+      }
+      {I NetTie.PRT X?
+        {CN
+        1 NetX?_1
+        2 NetX?_2
+        }
+      }
+      {I S5B-PH-K-S.PRT XP1
+        {CN
+        1 VBAT
+        2 ENC1_CH1_1
+        3 ENC1_CH2_1
+        4 ENC1_Z_1
+        5 SL1
+        }
+      }
+      {I S5B-PH-K-S.PRT XP2
+        {CN
+        1 VBAT
+        2 ENC2_CH1_1
+        3 ENC2_CH2_1
+        4 ENC2_Z_1
+        5 SL1
+        }
+      }
+      {I S4B-ZR-SM4A-TF.PRT XP3
+        {CN
+        1 VBAT
+        2 SWDIO_1
+        3 SWCLK_1
+        4 SL1
+        }
+      }
+      {I S4B-PH.PRT XP4
+        {CN
+        1 NetVD4_2
+        2 NetDD5_7
+        3 NetDD5_6
+        4 SL1
+        }
+      }
+      {I XT30PW-M.PRT XP5
+        {CN
+        1 NetF1_1
+        2 SL1
+        }
+      }
+      {I XT30PW-M.PRT XP6
+        {CN
+        1 A1_3
+        2 B1_3
+        }
+      }
+      {I XT30PW-M.PRT XP7
+        {CN
+        1 A2_4
+        2 B2_4
+        }
+      }
+    }
+  }
+}
