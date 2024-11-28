@@ -152,6 +152,10 @@ GenerateClassCluster=0
 DocumentUniqueId=DVIMDXKY
 
 [GeneratedDocument1]
+DocumentPath=..\bomchik.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument2]
 DocumentPath=Project Outputs for OvcharkaBoard\OvcharkaBoard.NET
 DItemRevisionGUID=
 

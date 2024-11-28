@@ -1,0 +1,39 @@
+Removed Member From Class: ClassName=Sheet2 Member=R21
+Removed Member From Class: ClassName=Sheet3 Member=R21
+Removed Member From Class: ClassName=Sheet2 Member=R24
+Removed Member From Class: ClassName=Sheet3 Member=R24
+Change Component Comment : Designator=R11 Old Comment=4.7 кќм New Comment=4.7кќм
+Change Component Comment : Designator=R12 Old Comment=4.7 кќм New Comment=4.7кќм
+Change Component Comment : Designator=R9 Old Comment=120 ќм New Comment=120ќм
+Added Component: Designator=X1(NetTie)
+Added Component: Designator=X2(NetTie)
+Added Component: Designator=X3(NetTie)
+Added Component: Designator=X4(NetTie)
+Added Pin To Net: NetName=A1_3 Pin=R17-1
+Added Pin To Net: NetName=NetDD7_21 Pin=R17-2
+Added Pin To Net: NetName=A2_4 Pin=R22-1
+Added Pin To Net: NetName=NetDD9_21 Pin=R22-2
+Added Pin To Net: NetName=SP_3 Pin=X1-1
+Added Pin To Net: NetName=NetDD7_21 Pin=X1-2
+Added Pin To Net: NetName=SN_3 Pin=X2-1
+Added Pin To Net: NetName=A1_3 Pin=X2-2
+Added Pin To Net: NetName=SP_4 Pin=X3-1
+Added Pin To Net: NetName=NetDD9_21 Pin=X3-2
+Added Pin To Net: NetName=SN_4 Pin=X4-1
+Added Pin To Net: NetName=A2_4 Pin=X4-2
+Change Net Name : Old Net Name=NetDD7_21 New Net Name=MP1_3
+Change Net Name : Old Net Name=NetDD9_21 New Net Name=MP1_4
+Added Member To Class: ClassName=Sheet2 Member=Component R11 4.7кќм
+Added Member To Class: ClassName=Sheet2 Member=Component R12 4.7кќм
+Added Member To Class: ClassName=Sheet3 Member=Component R15 10кќм
+Added Member To Class: ClassName=Sheet3 Member=Component R16 10кќм
+Added Member To Class: ClassName=Sheet3 Member=Component R17 7.5мќм
+Added Member To Class: ClassName=Sheet3 Member=Component R18 1.8кќм
+Added Member To Class: ClassName=Sheet3 Member=Component R19 1.8кќм
+Added Member To Class: ClassName=Sheet3 Member=Component R20 10кќм
+Added Member To Class: ClassName=Sheet4 Member=Component R22 7.5мќм
+Added Member To Class: ClassName=Sheet4 Member=Component R23 1.8кќм
+Added Member To Class: ClassName=Sheet3 Member=Component X1 ќбозначение при заказе
+Added Member To Class: ClassName=Sheet3 Member=Component X2 ќбозначение при заказе
+Added Member To Class: ClassName=Sheet4 Member=Component X3 ќбозначение при заказе
+Added Member To Class: ClassName=Sheet4 Member=Component X4 ќбозначение при заказе

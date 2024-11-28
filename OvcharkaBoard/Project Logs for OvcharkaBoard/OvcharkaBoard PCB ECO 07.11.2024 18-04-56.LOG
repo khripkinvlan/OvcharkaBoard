@@ -1,0 +1,20 @@
+Removed Pin From Net: NetName=MP1_3 Pin=HL3-C
+Removed Pin From Net: NetName=MP1_4 Pin=HL5-C
+Removed Pin From Net: NetName=B1_3 Pin=R19-2
+Removed Pin From Net: NetName=B2_4 Pin=R24-2
+Removed Member From Class: ClassName=Sheet3 Member=R19
+Removed Member From Class: ClassName=Sheet4 Member=R24
+Added Pin To Net: NetName=B1_3 Pin=HL3-A
+Added Pin To Net: NetName=B2_4 Pin=HL5-A
+Added Pin To Net: NetName=SN_3 Pin=R17-1
+Added Pin To Net: NetName=SP_3 Pin=R17-2
+Added Pin To Net: NetName=SN_4 Pin=R22-1
+Added Pin To Net: NetName=SP_4 Pin=R22-2
+Added Pin To Net: NetName=NetHL3_C Pin=HL3-C
+Added Pin To Net: NetName=NetHL3_C Pin=HL4-A
+Added Pin To Net: NetName=NetHL3_C Pin=R18-2
+Added Net: Name=NetHL3_C
+Added Pin To Net: NetName=NetHL5_C Pin=HL5-C
+Added Pin To Net: NetName=NetHL5_C Pin=HL6-A
+Added Pin To Net: NetName=NetHL5_C Pin=R23-2
+Added Net: Name=NetHL5_C
