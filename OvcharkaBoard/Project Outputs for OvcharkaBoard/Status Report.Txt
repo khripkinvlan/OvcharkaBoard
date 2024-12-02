@@ -1,10 +1,26 @@
-Output: PCAD Netlist
-Type  : PCADNetlist
-From  : Project [OvcharkaBoard.PrjPcb]
-   Generated File[OvcharkaBoard.NET]
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [OvcharkaBoard.PrjPcb]
+   Generated File[OvcharkaBoard_Copper_Signal_Top.gbr]
+   Generated File[OvcharkaBoard_Copper_Signal_1.gbr]
+   Generated File[OvcharkaBoard_Copper_Signal_2.gbr]
+   Generated File[OvcharkaBoard_Copper_Signal_Bot.gbr]
+   Generated File[OvcharkaBoard_Legend_Top.gbr]
+   Generated File[OvcharkaBoard_Legend_Bot.gbr]
+   Generated File[OvcharkaBoard_Soldermask_Top.gbr]
+   Generated File[OvcharkaBoard_Soldermask_Bot.gbr]
+   Generated File[OvcharkaBoard_Paste_Top.gbr]
+   Generated File[OvcharkaBoard_Paste_Bot.gbr]
+   Generated File[OvcharkaBoard_Profile.gbr]
+   Generated File[OvcharkaBoard_NPTH_Drill.gbr]
+   Generated File[OvcharkaBoard_PTH_Drill.gbr]
+   Generated File[OvcharkaBoard_Drawing_1.gbr]
+   Generated File[OvcharkaBoard_Drillmap_1.gbr]
+   Generated File[OvcharkaBoard.EXTREP]
+   Generated File[OvcharkaBoard.REP]
 
 
-Files Generated   : 1
+Files Generated   : 17
 Documents Printed : 0
 
-Finished Output Generation At 15:56:46 On 05.11.2024
+Finished Output Generation At 22:53:06 On 29.11.2024
