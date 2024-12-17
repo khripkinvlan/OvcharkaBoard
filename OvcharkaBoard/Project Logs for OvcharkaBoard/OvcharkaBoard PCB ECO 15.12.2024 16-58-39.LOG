@@ -1,0 +1,64 @@
+Removed Pin From Net: NetName=3V3 Pin=HL1-C
+Removed Member From Class: ClassName=Sheet1 Member=C17
+Removed Member From Class: ClassName=Sheet3 Member=C43
+Removed Member From Class: ClassName=Sheet2 Member=C44
+Removed Member From Class: ClassName=Sheet3 Member=C44
+Removed Member From Class: ClassName=Sheet2 Member=R17
+Removed Member From Class: ClassName=Sheet3 Member=R21
+Removed Member From Class: ClassName=Sheet2 Member=VD7
+Added Pin To Net: NetName=GND Pin=C42-1
+Added Pin To Net: NetName=GND Pin=DD9-1
+Added Pin To Net: NetName=NetDD4_56 Pin=HL1-A
+Added Pin To Net: NetName=NetHL1_C Pin=HL1-C
+Added Pin To Net: NetName=A1_3 Pin=R18-1
+Added Pin To Net: NetName=MP1_3 Pin=R18-2
+Added Pin To Net: NetName=A2_4 Pin=R22-1
+Added Pin To Net: NetName=MP1_4 Pin=R22-2
+Added Member To Class: ClassName=Sheet1 Member=Component C5 100םÔ
+Added Member To Class: ClassName=Sheet1 Member=Component C6 100םÔ
+Added Member To Class: ClassName=Sheet1 Member=Component C8 1לךÔ
+Added Member To Class: ClassName=Sheet1 Member=Component C10 10ןÔ
+Added Member To Class: ClassName=Sheet1 Member=Component C13 100םÔ
+Added Member To Class: ClassName=Sheet1 Member=Component C14 100םÔ
+Added Member To Class: ClassName=Sheet1 Member=Component C16 20ןÔ
+Added Member To Class: ClassName=Sheet2 Member=Component C18 10לךÔ 50Â
+Added Member To Class: ClassName=Sheet2 Member=Component C20 3.9םÔ
+Added Member To Class: ClassName=Sheet2 Member=Component C22 10לךÔ 50Â
+Added Member To Class: ClassName=Sheet2 Member=Component C24 100םÔ
+Added Member To Class: ClassName=Sheet3 Member=Component C25 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet3 Member=Component C26 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet3 Member=Component C27 0,1לךÔ 50 Â
+Added Member To Class: ClassName=Sheet3 Member=Component C28 0,1לךÔ 50 Â
+Added Member To Class: ClassName=Sheet3 Member=Component C29 1לךÔ 16 Â
+Added Member To Class: ClassName=Sheet3 Member=Component C30 10לךÔ 50Â
+Added Member To Class: ClassName=Sheet3 Member=Component C31 10לךÔ 50Â
+Added Member To Class: ClassName=Sheet3 Member=Component C32 10לךÔ 50Â
+Added Member To Class: ClassName=Sheet3 Member=Component C33 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet3 Member=Component C34 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet3 Member=Component C35 1לךÔ 16 Â
+Added Member To Class: ClassName=Sheet3 Member=Component C36 0,1לךÔ 50 Â
+Added Member To Class: ClassName=Sheet4 Member=Component C37 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet4 Member=Component C38 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet4 Member=Component C39 0,1לךÔ 50 Â
+Added Member To Class: ClassName=Sheet4 Member=Component C40 1לךÔ 16 Â
+Added Member To Class: ClassName=Sheet4 Member=Component C41 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet4 Member=Component C42 1לךÔ 6.3Â
+Added Member To Class: ClassName=Sheet1 Member=Component DD1 SN74LVC2G14DCKR
+Added Member To Class: ClassName=Sheet1 Member=Component DD3 SN74LVC2G17DBVR
+Added Member To Class: ClassName=Sheet3 Member=Component DD6 DRV8106SQRHBRQ1
+Added Member To Class: ClassName=Sheet3 Member=Component DD7 DRV8106SQRHBRQ1
+Added Member To Class: ClassName=Sheet4 Member=Component DD9 DRV8106SQRHBRQ1
+Added Member To Class: ClassName=Sheet1 Member=Component HL1 3
+Added Member To Class: ClassName=Sheet2 Member=Component L1 47לךÃם
+Added Member To Class: ClassName=Sheet1 Member=Component R1 100ךÎל
+Added Member To Class: ClassName=Sheet1 Member=Component R2 100ךÎל
+Added Member To Class: ClassName=Sheet1 Member=Component R4 10ךÎל
+Added Member To Class: ClassName=Sheet1 Member=Component R5 330 Îל
+Added Member To Class: ClassName=Sheet2 Member=Component R11 4.7ךÎל
+Added Member To Class: ClassName=Sheet2 Member=Component R14 0.2Îל 1%
+Added Member To Class: ClassName=Sheet2 Member=Component R15 100ךÎל
+Added Member To Class: ClassName=Sheet3 Member=Component R16 10ךÎל
+Added Member To Class: ClassName=Sheet3 Member=Component R18 7.5לÎל
+Added Member To Class: ClassName=Sheet3 Member=Component R20 10ךÎל
+Added Member To Class: ClassName=Sheet4 Member=Component R22 7.5לÎל
+Added Member To Class: ClassName=Sheet2 Member=Component VD5 1N5819W
