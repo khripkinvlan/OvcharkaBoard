@@ -1,0 +1,5 @@
+Remove Pin=R18-1 From Net=SN
+Remove Pin=R18-2 From Net=SP
+Remove Pin=R22-1 From Net=SN
+Remove Pin=R22-2 From Net=SP
+Change Component Comment: Designator=R5 Old Comment==Value + " " + Unit_of_measurement New Comment=330 Îì
