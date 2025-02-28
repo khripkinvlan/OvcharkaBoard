@@ -1,0 +1,154 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"drv8106.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/drv8106.c"
+  18              		.section	.text.drv8106_read_reg,"ax",%progbits
+  19              		.align	1
+  20              		.global	drv8106_read_reg
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	drv8106_read_reg:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/drv8106.c **** #include "drv8106.h"
+   2:Core/Src/drv8106.c **** 
+   3:Core/Src/drv8106.c **** void drv8106_read_reg(drv8106_spi* spi_inst, uint8_t reg_addr)
+   4:Core/Src/drv8106.c **** {
+  28              		.loc 1 4 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 4 1 is_stmt 0 view .LVU1
+  33 0000 00B5     		push	{lr}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 14, -4
+  36 0002 85B0     		sub	sp, sp, #20
+  37              		.cfi_def_cfa_offset 24
+   5:Core/Src/drv8106.c ****     uint16_t tx = (reg_addr | DRV8106_RW_MASK) << 8;
+  38              		.loc 1 5 5 is_stmt 1 view .LVU2
+  39              		.loc 1 5 48 is_stmt 0 view .LVU3
+  40 0004 41F04001 		orr	r1, r1, #64
+  41              	.LVL1:
+  42              		.loc 1 5 48 view .LVU4
+  43 0008 0902     		lsls	r1, r1, #8
+  44              		.loc 1 5 14 view .LVU5
+  45 000a ADF80E10 		strh	r1, [sp, #14]	@ movhi
+   6:Core/Src/drv8106.c ****     HAL_SPI_TransmitReceive(spi_inst->spi_handler_ptr, (uint8_t*)&tx, (uint8_t*)&spi_inst->rxbuff, 
+  46              		.loc 1 6 5 is_stmt 1 view .LVU6
+  47              		.loc 1 6 81 is_stmt 0 view .LVU7
+  48 000e 0246     		mov	r2, r0
+  49              		.loc 1 6 5 view .LVU8
+  50 0010 52F80A0B 		ldr	r0, [r2], #10
+  51              	.LVL2:
+  52              		.loc 1 6 5 view .LVU9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s 			page 2
+
+
+  53 0014 4FF0FF33 		mov	r3, #-1
+  54 0018 0093     		str	r3, [sp]
+  55 001a 0223     		movs	r3, #2
+  56 001c 0DF10E01 		add	r1, sp, #14
+  57 0020 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+  58              	.LVL3:
+   7:Core/Src/drv8106.c **** }
+  59              		.loc 1 7 1 view .LVU10
+  60 0024 05B0     		add	sp, sp, #20
+  61              		.cfi_def_cfa_offset 4
+  62              		@ sp needed
+  63 0026 5DF804FB 		ldr	pc, [sp], #4
+  64              		.cfi_endproc
+  65              	.LFE65:
+  67              		.section	.text.drv8106_write_reg,"ax",%progbits
+  68              		.align	1
+  69              		.global	drv8106_write_reg
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	drv8106_write_reg:
+  75              	.LVL4:
+  76              	.LFB66:
+   8:Core/Src/drv8106.c **** 
+   9:Core/Src/drv8106.c **** void drv8106_write_reg(drv8106_spi* spi_inst, uint8_t reg_addr, uint8_t data){
+  77              		.loc 1 9 78 is_stmt 1 view -0
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 8
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		.loc 1 9 78 is_stmt 0 view .LVU12
+  82 0000 00B5     		push	{lr}
+  83              		.cfi_def_cfa_offset 4
+  84              		.cfi_offset 14, -4
+  85 0002 85B0     		sub	sp, sp, #20
+  86              		.cfi_def_cfa_offset 24
+  10:Core/Src/drv8106.c ****     uint16_t tx = ((reg_addr | DRV8106_RW_MASK) << 8) | data;
+  87              		.loc 1 10 5 is_stmt 1 view .LVU13
+  88              		.loc 1 10 55 is_stmt 0 view .LVU14
+  89 0004 41F04001 		orr	r1, r1, #64
+  90              	.LVL5:
+  91              		.loc 1 10 55 view .LVU15
+  92 0008 42EA0122 		orr	r2, r2, r1, lsl #8
+  93              	.LVL6:
+  94              		.loc 1 10 14 view .LVU16
+  95 000c ADF80E20 		strh	r2, [sp, #14]	@ movhi
+  11:Core/Src/drv8106.c ****     HAL_SPI_TransmitReceive(spi_inst->spi_handler_ptr, (uint8_t*)&tx, (uint8_t*)&spi_inst->rxbuff, 
+  96              		.loc 1 11 5 is_stmt 1 view .LVU17
+  97              		.loc 1 11 81 is_stmt 0 view .LVU18
+  98 0010 0246     		mov	r2, r0
+  99              		.loc 1 11 5 view .LVU19
+ 100 0012 52F80A0B 		ldr	r0, [r2], #10
+ 101              	.LVL7:
+ 102              		.loc 1 11 5 view .LVU20
+ 103 0016 4FF0FF33 		mov	r3, #-1
+ 104 001a 0093     		str	r3, [sp]
+ 105 001c 0223     		movs	r3, #2
+ 106 001e 0DF10E01 		add	r1, sp, #14
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s 			page 3
+
+
+ 107 0022 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 108              	.LVL8:
+  12:Core/Src/drv8106.c **** }...
+ 109              		.loc 1 12 1 view .LVU21
+ 110 0026 05B0     		add	sp, sp, #20
+ 111              		.cfi_def_cfa_offset 4
+ 112              		@ sp needed
+ 113 0028 5DF804FB 		ldr	pc, [sp], #4
+ 114              		.cfi_endproc
+ 115              	.LFE66:
+ 117              		.text
+ 118              	.Letext0:
+ 119              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 120              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 121              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 122              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 123              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 124              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
+ 125              		.file 8 "Core/Inc/drv8106.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 drv8106.c
+C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s:19     .text.drv8106_read_reg:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s:25     .text.drv8106_read_reg:00000000 drv8106_read_reg
+C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s:68     .text.drv8106_write_reg:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccVyb31d.s:74     .text.drv8106_write_reg:00000000 drv8106_write_reg
+
+UNDEFINED SYMBOLS
+HAL_SPI_TransmitReceive
