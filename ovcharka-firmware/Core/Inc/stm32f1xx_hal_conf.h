@@ -57,7 +57,7 @@
 /*#define HAL_HCD_MODULE_ENABLED   */
 /*#define HAL_PWR_MODULE_ENABLED   */
 /*#define HAL_RCC_MODULE_ENABLED   */
-/*#define HAL_RTC_MODULE_ENABLED   */
+#define HAL_RTC_MODULE_ENABLED
 /*#define HAL_SD_MODULE_ENABLED   */
 /*#define HAL_MMC_MODULE_ENABLED   */
 /*#define HAL_SDRAM_MODULE_ENABLED   */
@@ -128,7 +128,7 @@
 /**
   * @brief This is the HAL system configuration section
   */
-#define  VDD_VALUE                    3300U /*!< Value of VDD in mv */
+#define  VDD_VALUE                    3296U /*!< Value of VDD in mv */
 #define  TICK_INT_PRIORITY            15U    /*!< tick interrupt priority (lowest by default)  */
 #define  USE_RTOS                     0U
 #define  PREFETCH_ENABLE              1U

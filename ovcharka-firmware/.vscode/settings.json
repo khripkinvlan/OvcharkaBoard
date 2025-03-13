@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "drv8106.h": "c"
-    }
+        "drv8106.h": "c",
+        "spi.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": false
 }

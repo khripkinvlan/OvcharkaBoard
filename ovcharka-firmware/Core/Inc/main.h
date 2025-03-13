@@ -61,8 +61,8 @@ void Error_Handler(void);
 #define nFAULT_L2_GPIO_Port GPIOC
 #define nFAULT_R2_Pin GPIO_PIN_1
 #define nFAULT_R2_GPIO_Port GPIOC
-#define BRIDGESLEEP2_Pin GPIO_PIN_2
-#define BRIDGESLEEP2_GPIO_Port GPIOC
+#define BRIDGESLEEP1_Pin GPIO_PIN_2
+#define BRIDGESLEEP1_GPIO_Port GPIOC
 #define DRVOFF2_Pin GPIO_PIN_3
 #define DRVOFF2_GPIO_Port GPIOC
 #define DIR2_1_Pin GPIO_PIN_1
@@ -81,10 +81,14 @@ void Error_Handler(void);
 #define SPI1_SS4_GPIO_Port GPIOB
 #define DIR1_1_Pin GPIO_PIN_1
 #define DIR1_1_GPIO_Port GPIOB
+#define HIZ1_Pin GPIO_PIN_2
+#define HIZ1_GPIO_Port GPIOB
+#define HIZ2_Pin GPIO_PIN_11
+#define HIZ2_GPIO_Port GPIOB
 #define DRVOFF1_Pin GPIO_PIN_12
 #define DRVOFF1_GPIO_Port GPIOB
-#define BRIDGESLEEP1_Pin GPIO_PIN_13
-#define BRIDGESLEEP1_GPIO_Port GPIOB
+#define BRIDGESLEEP2_Pin GPIO_PIN_13
+#define BRIDGESLEEP2_GPIO_Port GPIOB
 #define nFAULT_R1_Pin GPIO_PIN_14
 #define nFAULT_R1_GPIO_Port GPIOB
 #define nFAULT_L1_Pin GPIO_PIN_15
