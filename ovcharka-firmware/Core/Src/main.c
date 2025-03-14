@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dma.h"
 #include "rtc.h"
 #include "spi.h"
 #include "tim.h"
@@ -49,8 +50,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint16_t rx;
-uint16_t tx = 0x4480;
+volatile uint16_t adc[2];
+int16_t CS_ADC_M1_Offset = 1993;
+int16_t CS_ADC_M2_Offset = 1993;
+float CS_ADC_M1_Gain = 0.00107;
+float CS_ADC_M2_Gain = 0.00107;
+float current[2];
 
 uint16_t duty1, duty2, dir1, dir2;
 
@@ -103,6 +108,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_ADC1_Init();
   MX_SPI1_Init();
   MX_TIM1_Init();
@@ -114,6 +120,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // Pull down all CS pins of drivers
+
   HAL_GPIO_WritePin(SPI1_SS1_GPIO_Port, SPI1_SS1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SPI1_SS2_GPIO_Port, SPI1_SS2_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SPI1_SS3_GPIO_Port, SPI1_SS3_Pin, GPIO_PIN_SET);
@@ -124,30 +131,34 @@ int main(void)
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
   HAL_TIM_Base_Start_IT(&htim3);
+
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc, 2);
   
   HAL_Delay(1);
   HAL_GPIO_WritePin(BRIDGESLEEP1_GPIO_Port, BRIDGESLEEP1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(BRIDGESLEEP2_GPIO_Port, BRIDGESLEEP2_Pin, GPIO_PIN_SET);
   HAL_Delay(1);
   
-  drv8106_write_reg(&drv1, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
-  drv8106_write_reg(&drv2, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
-  drv8106_write_reg(&drv3, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
-  drv8106_write_reg(&drv4, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
+  drv8106_write_reg_blocking(&drv1, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
+  drv8106_write_reg_blocking(&drv2, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
+  drv8106_write_reg_blocking(&drv3, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
+  drv8106_write_reg_blocking(&drv4, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
 
   HAL_GPIO_WritePin(HIZ1_GPIO_Port, HIZ1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(HIZ2_GPIO_Port, HIZ2_Pin, GPIO_PIN_SET);
 
-  drv8106_write_reg(&drv1, DRV8106_IC_CTRL, DRV8106_EN_DRV);
-  drv8106_write_reg(&drv2, DRV8106_IC_CTRL, DRV8106_EN_DRV);
-  drv8106_write_reg(&drv3, DRV8106_IC_CTRL, DRV8106_EN_DRV);
-  drv8106_write_reg(&drv4, DRV8106_IC_CTRL, DRV8106_EN_DRV);
+  drv8106_write_reg_blocking(&drv1, DRV8106_IC_CTRL, DRV8106_EN_DRV);
+  drv8106_write_reg_blocking(&drv2, DRV8106_IC_CTRL, DRV8106_EN_DRV);
+  drv8106_write_reg_blocking(&drv3, DRV8106_IC_CTRL, DRV8106_EN_DRV);
+  drv8106_write_reg_blocking(&drv4, DRV8106_IC_CTRL, DRV8106_EN_DRV);
 
-  // drv8106_read_reg(&drv4, DRV8106_IC_STAT_1);
-  // drv8106_read_reg(&drv2, DRV8106_IC_STAT_1);
+  drv8106_write_reg_blocking(&drv1, DRV8106_CSA_CTRL, DRV8106_CSA_SH_EN | DRV8106_CSA_GAIN_10);
+  drv8106_write_reg_blocking(&drv3, DRV8106_CSA_CTRL, DRV8106_CSA_SH_EN | DRV8106_CSA_GAIN_10);
 
-  // drv8106_read_reg(&drv1, DRV8106_IC_STAT_2);
-
+  drv8106_read_all_blocking(&drv1);
+  drv8106_read_all_blocking(&drv2);
+  drv8106_read_all_blocking(&drv3);
+  drv8106_read_all_blocking(&drv4);
 
   /* USER CODE END 2 */
 
@@ -231,8 +242,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     TIM3->CCR2 = duty2;
     HAL_GPIO_WritePin(DIR1_1_GPIO_Port, DIR1_1_Pin, dir1);   
     HAL_GPIO_WritePin(DIR2_1_GPIO_Port, DIR2_1_Pin, dir2);   
+
   }
   
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+  current[0] = (float)((int16_t)adc[0] - CS_ADC_M1_Offset) * CS_ADC_M1_Gain;
+  current[1] = (float)((int16_t)adc[1] - CS_ADC_M2_Offset) * CS_ADC_M2_Gain;
 }
 
 /* USER CODE END 4 */

@@ -16,14 +16,15 @@
 extern "C" {
 #endif
 
+#include "main.h"
 #include "gpio.h"
 #include "spi.h"
 
 /* ----------DRV8106q1 registers addresses------------*/
-#define DRV8106_IC_STAT_1       0x0
-#define DRV8106_VGS_VDS_STAT    0x1
-#define DRV8106_IC_STAT_2       0x2
-#define DRV8106_RSVD_STAT       0x3
+#define DRV8106_IC_STAT_1       0x0 //read
+#define DRV8106_VGS_VDS_STAT    0x1 //read
+#define DRV8106_IC_STAT_2       0x2 //read
+#define DRV8106_RSVD_STAT       0x3 //read
 #define DRV8106_IC_CTRL         0x4
 #define DRV8106_BRG_CTRL        0x5
 #define DRV8106_DRV_CTRL_1      0x6
@@ -34,6 +35,24 @@ extern "C" {
 #define DRV8106_OLSC_CTRL       0xB
 #define DRV8106_UVOV_CTRL       0xC
 #define DRV8106_CSA_CTRL        0xD
+
+
+/* ----------DRV8106q1 registers default values------------*/
+#define DRV8106_IC_STAT_1_DEFAULT       0x80
+#define DRV8106_VGS_VDS_STAT_DEFAULT    0x0
+#define DRV8106_IC_STAT_2_DEFAULT       0x10
+#define DRV8106_RSVD_STAT_DEFAULT       0x0
+#define DRV8106_IC_CTRL_DEFAULT         0x6
+#define DRV8106_BRG_CTRL_DEFAULT        0x0
+#define DRV8106_DRV_CTRL_1_DEFAULT      0xFF
+#define DRV8106_DRV_CTRL_2_DEFAULT      0xFF
+#define DRV8106_DRV_CTRL_3_DEFAULT      0x20
+#define DRV8106_VDS_CTRL_1_DEFAULT      0x20
+#define DRV8106_VDS_CTRL_2_DEFAULT      0xDD
+#define DRV8106_OLSC_CTRL_DEFAULT       0x0
+#define DRV8106_UVOV_CTRL_DEFAULT       0x14
+#define DRV8106_CSA_CTRL_DEFAULT        0x1
+
 
 /* READ command mask*/
 #define DRV8106_READ_MASK     (1 << 6) // Set bit for read and reset for write
@@ -208,13 +227,107 @@ extern "C" {
 #define DRV8106_VDS_IND             (1) // default is 0
 
 
+/* VDS_CTRL_2 -   Control register for VDS threshold voltage. (READ-WRITE) */
+
+// VDS_HS_LVL - High-side VDS overcurrent monitor threshold.
+#define DRV8106_VDS_HS_LVL_60mV      (0b0000 << 4)
+#define DRV8106_VDS_HS_LVL_80mV      (0b0001 << 4)
+#define DRV8106_VDS_HS_LVL_100mV     (0b0010 << 4)
+#define DRV8106_VDS_HS_LVL_120mV     (0b0011 << 4)
+#define DRV8106_VDS_HS_LVL_140mV     (0b0100 << 4)
+#define DRV8106_VDS_HS_LVL_160mV     (0b0101 << 4)
+#define DRV8106_VDS_HS_LVL_180mV     (0b0110 << 4)
+#define DRV8106_VDS_HS_LVL_200mV     (0b0111 << 4)
+#define DRV8106_VDS_HS_LVL_300mV     (0b1000 << 4)
+#define DRV8106_VDS_HS_LVL_400mV     (0b1001 << 4)
+#define DRV8106_VDS_HS_LVL_500mV     (0b1010 << 4)
+#define DRV8106_VDS_HS_LVL_600mV     (0b1011 << 4)
+#define DRV8106_VDS_HS_LVL_700mV     (0b1100 << 4)
+#define DRV8106_VDS_HS_LVL_1V        (0b1101 << 4)
+#define DRV8106_VDS_HS_LVL_1V4       (0b1110 << 4)
+#define DRV8106_VDS_HS_LVL_2V        (0b1111 << 4)
+
+// VDS_LS_LVL - Low-side VDS overcurrent monitor threshold.
+#define DRV8106_VDS_LS_LVL_60mV      (0b0000)
+#define DRV8106_VDS_LS_LVL_80mV      (0b0001)
+#define DRV8106_VDS_LS_LVL_100mV     (0b0010)
+#define DRV8106_VDS_LS_LVL_120mV     (0b0011)
+#define DRV8106_VDS_LS_LVL_140mV     (0b0100)
+#define DRV8106_VDS_LS_LVL_160mV     (0b0101)
+#define DRV8106_VDS_LS_LVL_180mV     (0b0110)
+#define DRV8106_VDS_LS_LVL_200mV     (0b0111)
+#define DRV8106_VDS_LS_LVL_300mV     (0b1000)
+#define DRV8106_VDS_LS_LVL_400mV     (0b1001)
+#define DRV8106_VDS_LS_LVL_500mV     (0b1010)
+#define DRV8106_VDS_LS_LVL_600mV     (0b1011)
+#define DRV8106_VDS_LS_LVL_700mV     (0b1100)
+#define DRV8106_VDS_LS_LVL_1V        (0b1101)
+#define DRV8106_VDS_LS_LVL_1V4       (0b1110)
+#define DRV8106_VDS_LS_LVL_2V        (0b1111)
+
+/* OLSC_CTRL - Control register for undervoltage and overvoltage monitors. (READ-WRITE) */
+#define DRV8106_OLSC_EN              (1 << 4)
+#define DRV8106_PU_SH1               (1 << 3)
+#define DRV8106_PD_SH1               (1 << 2)
 
 
-// TODO: Deprecated shit, remove and change to uint16_t in all funcs
+/* UVOV_CTRL -    Control register of offline diagnostics. (READ-WRITE) */
+// PVDD supply undervoltage monitor mode. 0b = Latched fault (default). 1b = Automatic recovery.
+#define DRV8106_PVDD_UV_MODE              (1 << 7)
+
+// PVDD supply overvoltage monitor mode.
+#define DRV8106_OV_MODE_LATCHED      (0b00 << 5)
+#define DRV8106_OV_MODE_AUTO         (0b00 << 5)
+#define DRV8106_OV_MODE_WAEN         (0b00 << 5)
+#define DRV8106_OV_MODE_OFF          (0b00 << 5)
+
+// PVDD supply overvoltage monitor deglitch time.
+#define DRV8106_OV_DG_1us            (0b00 << 3)
+#define DRV8106_OV_DG_2us            (0b01 << 3)
+#define DRV8106_OV_DG_4us            (0b10 << 3) // default
+#define DRV8106_OV_DG_8us            (0b11 << 3)
+
+// PVDD supply overvoltage monitor threshold.
+#define DRV8106_OV_LVL               (1 << 2) // default is 1; 0b=21.5V; 1b=28.5V
+
+// VCP charge pump undervoltage monitor mode.
+#define DRV8106_UV_MODE              (1 << 1) // default is 0; 0b=Latched; 1b=Automatic recovery
+#define VCP_UV_LVL                   (1) // default is 0; 0b=2.5V; 1b=5V
+
+
+/* CSA_CTRL - Control register for current shunt amplifier. (READ-WRITE) */
+#define DRV8106_CSA_SH_EN            (1 << 7) // 0b=Disabled (default); 1b=Enabled
+#define DRV8106_CSA_BLK_SEL          (1 << 6) // Current shunt amplifier blanking trigger source. 0b = Half-bridge 1. 1b = Half-bridge 2
+
+// TODO:
+#define DRV8106_CSA_BLK
+
+// TODO:
+#define DRV8106_CSA_DIV
+
+#define DRV8106_CSA_GAIN_10            (0b00)
+#define DRV8106_CSA_GAIN_20            (0b01) // default
+#define DRV8106_CSA_GAIN_40            (0b10)
+#define DRV8106_CSA_GAIN_80            (0b11)
+
+
+
 typedef struct {
-    uint8_t byte1;
-    uint8_t byte2;
-} drv8106_msg;
+    uint8_t IC_STAT_1;
+    uint8_t VGS_VDS_STAT;
+    uint8_t IC_STAT_2;
+    uint8_t RSVD_STAT;
+    uint8_t IC_CTRL;
+    uint8_t BRG_CTRL;
+    uint8_t DRV_CTRL_1;
+    uint8_t DRV_CTRL_2;
+    uint8_t DRV_CTRL_3;
+    uint8_t VDS_CTRL_1;
+    uint8_t VDS_CTRL_2;
+    uint8_t OLSC_CTRL;
+    uint8_t UVOV_CTRL;
+    uint8_t CSA_CTRL;
+} drv8106_registers;
 
 /* SPI comms handler struct */
 typedef struct {
@@ -222,18 +335,19 @@ typedef struct {
     GPIO_TypeDef* CS_PORT;
     uint16_t CS_PIN;
     uint16_t rxbuff;
+    uint16_t txbuff;
+    drv8106_registers register_map;
 } drv8106_spi;
 
 
-void drv8106_read_reg(drv8106_spi* spi_inst, uint8_t reg_addr);
-void drv8106_write_reg(drv8106_spi* spi_inst, uint8_t reg_addr, uint8_t data);
+void drv8106_read_reg_blocking(drv8106_spi* spi_inst, uint8_t reg_addr);
+void drv8106_write_reg_blocking(drv8106_spi* spi_inst, uint8_t reg_addr, uint8_t data);
 
-
-void drv8106_en_drv(drv8106_spi* spi_inst);
-void drv8106_disable_drv(drv8106_spi* spi_inst);
+void drv8106_read_all_blocking(drv8106_spi* spi_inst);
+void drv8106_reset_blocking(drv8106_spi* spi_inst);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /*__DRV8106_H__*/
+#endif /* __DRV8106_H__ */
