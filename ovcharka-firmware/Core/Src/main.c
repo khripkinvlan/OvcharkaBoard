@@ -61,11 +61,6 @@ uint16_t duty1, duty2, dir1, dir2;
 
 uint8_t fault1, fault2, fault3, fault4;
 
-drv8106_spi drv1 = {&hspi1, SPI1_SS1_GPIO_Port, SPI1_SS1_Pin, 0};
-drv8106_spi drv2 = {&hspi1, SPI1_SS2_GPIO_Port, SPI1_SS2_Pin, 0};
-drv8106_spi drv3 = {&hspi1, SPI1_SS3_GPIO_Port, SPI1_SS3_Pin, 0};
-drv8106_spi drv4 = {&hspi1, SPI1_SS4_GPIO_Port, SPI1_SS4_Pin, 0};
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -125,40 +120,44 @@ int main(void)
   HAL_GPIO_WritePin(SPI1_SS2_GPIO_Port, SPI1_SS2_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SPI1_SS3_GPIO_Port, SPI1_SS3_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SPI1_SS4_GPIO_Port, SPI1_SS4_Pin, GPIO_PIN_SET);
+  HAL_Delay(1);
+  HAL_GPIO_WritePin(BRIDGESLEEP1_GPIO_Port, BRIDGESLEEP1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(BRIDGESLEEP2_GPIO_Port, BRIDGESLEEP2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(HIZ1_GPIO_Port, HIZ1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(HIZ2_GPIO_Port, HIZ2_Pin, GPIO_PIN_SET);
+  HAL_Delay(1);
+
+  drv8106_reset_blocking(&drv_l1_dd6);
+  drv8106_reset_blocking(&drv_r1_dd7);
+  drv8106_reset_blocking(&drv_l2_dd8);
+  drv8106_reset_blocking(&drv_r2_dd9);
+
+  drv8106_clear_fault_blocking(&drv_l1_dd6);
+  drv8106_clear_fault_blocking(&drv_r1_dd7);
+  drv8106_clear_fault_blocking(&drv_l2_dd8);
+  drv8106_clear_fault_blocking(&drv_r2_dd9);
+
+  drv8106_read_all_blocking(&drv_l1_dd6);
+  drv8106_read_all_blocking(&drv_r1_dd7);
+  drv8106_read_all_blocking(&drv_l2_dd8);
+  drv8106_read_all_blocking(&drv_r2_dd9);
+
+  drv8106_CSA_enable_g10_blocking(&drv_l1_dd6);
+  drv8106_CSA_enable_g10_blocking(&drv_r1_dd7);
+  drv8106_CSA_enable_g10_blocking(&drv_l2_dd8);
+  drv8106_CSA_enable_g10_blocking(&drv_r2_dd9);
+
+  drv8106_Enable_blocking(&drv_l1_dd6);
+  drv8106_Enable_blocking(&drv_r1_dd7);
+  drv8106_Enable_blocking(&drv_l2_dd8);
+  drv8106_Enable_blocking(&drv_r2_dd9);
 
   TIM3->CCR1 = 0;
   TIM3->CCR2 = 0;
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
   HAL_TIM_Base_Start_IT(&htim3);
-
   HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc, 2);
-  
-  HAL_Delay(1);
-  HAL_GPIO_WritePin(BRIDGESLEEP1_GPIO_Port, BRIDGESLEEP1_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(BRIDGESLEEP2_GPIO_Port, BRIDGESLEEP2_Pin, GPIO_PIN_SET);
-  HAL_Delay(1);
-  
-  drv8106_write_reg_blocking(&drv1, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
-  drv8106_write_reg_blocking(&drv2, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
-  drv8106_write_reg_blocking(&drv3, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
-  drv8106_write_reg_blocking(&drv4, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
-
-  HAL_GPIO_WritePin(HIZ1_GPIO_Port, HIZ1_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(HIZ2_GPIO_Port, HIZ2_Pin, GPIO_PIN_SET);
-
-  drv8106_write_reg_blocking(&drv1, DRV8106_IC_CTRL, DRV8106_EN_DRV);
-  drv8106_write_reg_blocking(&drv2, DRV8106_IC_CTRL, DRV8106_EN_DRV);
-  drv8106_write_reg_blocking(&drv3, DRV8106_IC_CTRL, DRV8106_EN_DRV);
-  drv8106_write_reg_blocking(&drv4, DRV8106_IC_CTRL, DRV8106_EN_DRV);
-
-  drv8106_write_reg_blocking(&drv1, DRV8106_CSA_CTRL, DRV8106_CSA_SH_EN | DRV8106_CSA_GAIN_10);
-  drv8106_write_reg_blocking(&drv3, DRV8106_CSA_CTRL, DRV8106_CSA_SH_EN | DRV8106_CSA_GAIN_10);
-
-  drv8106_read_all_blocking(&drv1);
-  drv8106_read_all_blocking(&drv2);
-  drv8106_read_all_blocking(&drv3);
-  drv8106_read_all_blocking(&drv4);
 
   /* USER CODE END 2 */
 

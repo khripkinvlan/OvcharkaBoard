@@ -16,7 +16,6 @@
 extern "C" {
 #endif
 
-#include "main.h"
 #include "gpio.h"
 #include "spi.h"
 
@@ -278,7 +277,7 @@ extern "C" {
 // PVDD supply overvoltage monitor mode.
 #define DRV8106_OV_MODE_LATCHED      (0b00 << 5)
 #define DRV8106_OV_MODE_AUTO         (0b00 << 5)
-#define DRV8106_OV_MODE_WAEN         (0b00 << 5)
+#define DRV8106_OV_MODE_WARN         (0b00 << 5)
 #define DRV8106_OV_MODE_OFF          (0b00 << 5)
 
 // PVDD supply overvoltage monitor deglitch time.
@@ -311,7 +310,6 @@ extern "C" {
 #define DRV8106_CSA_GAIN_80            (0b11)
 
 
-
 typedef struct {
     uint8_t IC_STAT_1;
     uint8_t VGS_VDS_STAT;
@@ -329,6 +327,18 @@ typedef struct {
     uint8_t CSA_CTRL;
 } drv8106_registers;
 
+typedef struct {
+    uint8_t SPI_OK;
+    uint8_t POR;
+    uint8_t FAULT; // Indicates there is any fault present
+    uint8_t WARN;
+    uint8_t DS_GS;
+    uint8_t Undervoltage;
+    uint8_t Overvoltage;
+    uint8_t Overtemperature;
+} drv8106_faults;
+
+
 /* SPI comms handler struct */
 typedef struct {
     SPI_HandleTypeDef* spi_handler_ptr;
@@ -337,14 +347,35 @@ typedef struct {
     uint16_t rxbuff;
     uint16_t txbuff;
     drv8106_registers register_map;
-} drv8106_spi;
+    drv8106_faults faults_list;
+} drv8106_t;
 
 
-void drv8106_read_reg_blocking(drv8106_spi* spi_inst, uint8_t reg_addr);
-void drv8106_write_reg_blocking(drv8106_spi* spi_inst, uint8_t reg_addr, uint8_t data);
+void drv8106_read_reg_blocking(drv8106_t* spi_inst, uint8_t reg_addr);
+void drv8106_write_reg_blocking(drv8106_t* spi_inst, uint8_t reg_addr, uint8_t data);
 
-void drv8106_read_all_blocking(drv8106_spi* spi_inst);
-void drv8106_reset_blocking(drv8106_spi* spi_inst);
+void drv8106_read_all_blocking(drv8106_t* spi_inst);
+void drv8106_reset_blocking(drv8106_t* spi_inst);
+
+void drv8106_read_reg_dma(drv8106_t* spi_inst, uint8_t reg_addr);
+
+// void drv8106_Enable_dma(drv8106_t* spi_inst);
+// void drv8106_Disable_dma(drv8106_t* spi_inst);
+
+void drv8106_Enable_blocking(drv8106_t* drv_inst);
+void drv8106_Disable_blocking(drv8106_t* drv_inst);
+
+void drv8106_check_faults(drv8106_t* drv_inst);
+void drv8106_clear_fault_blocking(drv8106_t* drv_inst);
+void drv8106_clear_fault_dma(drv8106_t* drv_inst);
+
+void drv8106_CSA_enable_g10_blocking(drv8106_t* drv_inst);
+
+/* GLOBAL INSTANCES AND VARIABLES */
+extern drv8106_t drv_l1_dd6, drv_r1_dd7, drv_l2_dd8, drv_r2_dd9;
+extern drv8106_t* drv_cur_ptr;
+extern uint8_t drv8106_cur_read_addr;
+extern uint8_t drv8106_read_flag;
 
 #ifdef __cplusplus
 }
