@@ -20,7 +20,6 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
-#include "rtc.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -29,6 +28,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "drv8106.h"
+#include "IQmathLib.h"
+#include "main_init.h"
 
 /* USER CODE END Includes */
 
@@ -50,16 +51,10 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-volatile uint16_t adc[2];
-int16_t CS_ADC_M1_Offset = 1993;
-int16_t CS_ADC_M2_Offset = 1993;
-float CS_ADC_M1_Gain = 0.00107;
-float CS_ADC_M2_Gain = 0.00107;
-float current[2];
 
-uint16_t duty1, duty2, dir1, dir2;
-
-uint8_t fault1, fault2, fault3, fault4;
+// uint16_t duty1, duty2, dir1, dir2;
+_iq18 test_iq;
+servo_iq18_t servo1_g, servo2_g;
 
 /* USER CODE END PV */
 
@@ -111,7 +106,6 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_USART1_UART_Init();
-  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
 
   // Pull down all CS pins of drivers
@@ -152,12 +146,22 @@ int main(void)
   drv8106_Enable_blocking(&drv_l2_dd8);
   drv8106_Enable_blocking(&drv_r2_dd9);
 
-  TIM3->CCR1 = 0;
-  TIM3->CCR2 = 0;
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
-  HAL_TIM_Base_Start_IT(&htim3);
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc, 2);
+  HAL_Delay(1);
+
+  test_iq = _IQ18(0.2 * (int8_t)(-1));
+
+  init_mtr_ctrl();
+
+  // // __HAL_TIM_CLEAR_IT(&htim3, TIM_IT_UPDATE);
+  // HAL_TIM_Base_Start_IT(&htim3);
+  // // __HAL_TIM_ENABLE_IT(&htim3, TIM_IT_UPDATE);
+  // // __HAL_TIM_ENABLE(&htim3);
+
+  // HAL_Delay(1);
+  // HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  // HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+  
+  // HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc, 2);
 
   /* USER CODE END 2 */
 
@@ -185,11 +189,10 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
@@ -211,8 +214,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC|RCC_PERIPHCLK_ADC;
-  PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
   PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
@@ -222,34 +224,29 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  if(htim == &htim3){
-    static uint16_t cntr = 0;
-    cntr++;
-    if (cntr >= 3600){
-      HAL_GPIO_TogglePin(IND_LED_GPIO_Port, IND_LED_Pin);
-      cntr = 0;
-    }
+// void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+// {
+//   if(htim == &htim3){
+//     static uint16_t cntr = 0;
+//     cntr++;
+//     if (cntr >= 3600){
+//       HAL_GPIO_TogglePin(IND_LED_GPIO_Port, IND_LED_Pin);
+//       cntr = 0;
+//     }
 
-    fault1 = HAL_GPIO_ReadPin(nFAULT_L1_GPIO_Port, nFAULT_L1_Pin);
-    fault2 = HAL_GPIO_ReadPin(nFAULT_R1_GPIO_Port, nFAULT_R1_Pin);
-    fault3 = HAL_GPIO_ReadPin(nFAULT_L2_GPIO_Port, nFAULT_L2_Pin);
-    fault4 = HAL_GPIO_ReadPin(nFAULT_R2_GPIO_Port, nFAULT_R2_Pin);
+//     fault1 = HAL_GPIO_ReadPin(nFAULT_L1_GPIO_Port, nFAULT_L1_Pin);
+//     fault2 = HAL_GPIO_ReadPin(nFAULT_R1_GPIO_Port, nFAULT_R1_Pin);
+//     fault3 = HAL_GPIO_ReadPin(nFAULT_L2_GPIO_Port, nFAULT_L2_Pin);
+//     fault4 = HAL_GPIO_ReadPin(nFAULT_R2_GPIO_Port, nFAULT_R2_Pin);
 
-    TIM3->CCR1 = duty1;
-    TIM3->CCR2 = duty2;
-    HAL_GPIO_WritePin(DIR1_1_GPIO_Port, DIR1_1_Pin, dir1);   
-    HAL_GPIO_WritePin(DIR2_1_GPIO_Port, DIR2_1_Pin, dir2);   
+//     TIM3->CCR1 = duty1;
+//     TIM3->CCR2 = duty2;
+//     HAL_GPIO_WritePin(DIR1_1_GPIO_Port, DIR1_1_Pin, dir1);   
+//     HAL_GPIO_WritePin(DIR2_1_GPIO_Port, DIR2_1_Pin, dir2);   
 
-  }
+//   }
   
-}
-
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
-  current[0] = (float)((int16_t)adc[0] - CS_ADC_M1_Offset) * CS_ADC_M1_Gain;
-  current[1] = (float)((int16_t)adc[1] - CS_ADC_M2_Offset) * CS_ADC_M2_Gain;
-}
+// }
 
 /* USER CODE END 4 */
 

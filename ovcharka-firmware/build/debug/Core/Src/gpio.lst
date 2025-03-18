@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
   30:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   31:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
   32:Core/Src/gpio.c **** 
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 2
 
 
   33:Core/Src/gpio.c **** /* USER CODE END 1 */
@@ -99,37 +99,37 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
   49 000e 0794     		str	r4, [sp, #28]
   46:Core/Src/gpio.c **** 
   47:Core/Src/gpio.c ****   /* GPIO Ports Clock Enable */
-  48:Core/Src/gpio.c ****   __HAL_RCC_GPIOC_CLK_ENABLE();
+  48:Core/Src/gpio.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
   50              		.loc 1 48 3 is_stmt 1 view .LVU3
   51              	.LBB2:
   52              		.loc 1 48 3 view .LVU4
   53              		.loc 1 48 3 view .LVU5
   54 0010 4C4B     		ldr	r3, .L3
   55 0012 9A69     		ldr	r2, [r3, #24]
-  56 0014 42F01002 		orr	r2, r2, #16
+  56 0014 42F02002 		orr	r2, r2, #32
   57 0018 9A61     		str	r2, [r3, #24]
   58              		.loc 1 48 3 view .LVU6
   59 001a 9A69     		ldr	r2, [r3, #24]
-  60 001c 02F01002 		and	r2, r2, #16
+  60 001c 02F02002 		and	r2, r2, #32
   61 0020 0092     		str	r2, [sp]
   62              		.loc 1 48 3 view .LVU7
   63 0022 009A     		ldr	r2, [sp]
   64              	.LBE2:
   65              		.loc 1 48 3 view .LVU8
-  49:Core/Src/gpio.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
+  49:Core/Src/gpio.c ****   __HAL_RCC_GPIOC_CLK_ENABLE();
   66              		.loc 1 49 3 view .LVU9
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 3
 
 
   67              	.LBB3:
   68              		.loc 1 49 3 view .LVU10
   69              		.loc 1 49 3 view .LVU11
   70 0024 9A69     		ldr	r2, [r3, #24]
-  71 0026 42F02002 		orr	r2, r2, #32
+  71 0026 42F01002 		orr	r2, r2, #16
   72 002a 9A61     		str	r2, [r3, #24]
   73              		.loc 1 49 3 view .LVU12
   74 002c 9A69     		ldr	r2, [r3, #24]
-  75 002e 02F02002 		and	r2, r2, #32
+  75 002e 02F01002 		and	r2, r2, #16
   76 0032 0192     		str	r2, [sp, #4]
   77              		.loc 1 49 3 view .LVU13
   78 0034 019A     		ldr	r2, [sp, #4]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
  116 0064 FFF7FEFF 		bl	HAL_GPIO_WritePin
  117              	.LVL0:
   55:Core/Src/gpio.c **** 
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 4
 
 
   56:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
  155              		.loc 1 72 3 is_stmt 1 view .LVU41
  156              		.loc 1 72 24 is_stmt 0 view .LVU42
  157 009c 0694     		str	r4, [sp, #24]
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 5
 
 
   73:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
  197 00ce CDF81CA0 		str	r10, [sp, #28]
   88:Core/Src/gpio.c ****   HAL_GPIO_Init(SPI1_SS1_GPIO_Port, &GPIO_InitStruct);
  198              		.loc 1 88 3 is_stmt 1 view .LVU63
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 6
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 6
 
 
  199 00d2 0DEB0301 		add	r1, sp, r3
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
  104:Core/Src/gpio.c ****   /*Configure GPIO pins : DIR1_1_Pin HIZ1_Pin HIZ2_Pin DRVOFF1_Pin
  105:Core/Src/gpio.c ****                            BRIDGESLEEP2_Pin IND_LED_Pin */
  106:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = DIR1_1_Pin|HIZ1_Pin|HIZ2_Pin|DRVOFF1_Pin
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 7
 
 
  238              		.loc 1 106 3 view .LVU82
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
  277 0130 0594     		str	r4, [sp, #20]
  122:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
  278              		.loc 1 122 3 is_stmt 1 view .LVU102
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 8
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 8
 
 
  279              		.loc 1 122 24 is_stmt 0 view .LVU103
@@ -451,14 +451,14 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 1
  304              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
  305              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
  306              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s 			page 9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s:25     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\zhmis\AppData\Local\Temp\ccl445hh.s:294    .text.MX_GPIO_Init:00000144 $d
+C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s:25     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\zhmis\AppData\Local\Temp\ccqH7p37.s:294    .text.MX_GPIO_Init:00000144 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

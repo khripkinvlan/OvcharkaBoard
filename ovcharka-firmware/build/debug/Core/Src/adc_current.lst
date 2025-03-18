@@ -1,0 +1,369 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"adc_current.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/adc_current.c"
+  18              		.section	.text.adc_cur_init,"ax",%progbits
+  19              		.align	1
+  20              		.global	adc_cur_init
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	adc_cur_init:
+  26              	.LFB65:
+   1:Core/Src/adc_current.c **** #include "adc_current.h"
+   2:Core/Src/adc_current.c **** 
+   3:Core/Src/adc_current.c **** volatile uint16_t adc[2];
+   4:Core/Src/adc_current.c **** _iq18 current[2];
+   5:Core/Src/adc_current.c **** EMA_iq18 *filter1, *filter2;
+   6:Core/Src/adc_current.c **** 
+   7:Core/Src/adc_current.c **** // uint32_t check;
+   8:Core/Src/adc_current.c **** 
+   9:Core/Src/adc_current.c **** int16_t CS_ADC_M1_Offset = 2055;
+  10:Core/Src/adc_current.c **** int16_t CS_ADC_M2_Offset = 2055;
+  11:Core/Src/adc_current.c **** float CS_ADC_M1_Gain = 0.00107;
+  12:Core/Src/adc_current.c **** float CS_ADC_M2_Gain = 0.00107;
+  13:Core/Src/adc_current.c **** 
+  14:Core/Src/adc_current.c **** void adc_cur_init()
+  15:Core/Src/adc_current.c **** {
+  27              		.loc 1 15 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  32              		.cfi_def_cfa_offset 24
+  33              		.cfi_offset 3, -24
+  34              		.cfi_offset 4, -20
+  35              		.cfi_offset 5, -16
+  36              		.cfi_offset 6, -12
+  37              		.cfi_offset 7, -8
+  38              		.cfi_offset 14, -4
+  16:Core/Src/adc_current.c ****     // Starting DMA for capturing current measures from ADC
+  17:Core/Src/adc_current.c ****     HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc, 2);
+  39              		.loc 1 17 5 view .LVU1
+  40 0002 0F4C     		ldr	r4, .L3
+  41 0004 0222     		movs	r2, #2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s 			page 2
+
+
+  42 0006 2146     		mov	r1, r4
+  43 0008 0E48     		ldr	r0, .L3+4
+  44 000a FFF7FEFF 		bl	HAL_ADC_Start_DMA
+  45              	.LVL0:
+  18:Core/Src/adc_current.c **** 
+  19:Core/Src/adc_current.c ****     // Initia;lization of filters
+  20:Core/Src/adc_current.c ****     filter1 = initEMA_iq18(0.005, _IQ18(CS_ADC_M1_Offset));
+  46              		.loc 1 20 5 view .LVU2
+  47              		.loc 1 20 15 is_stmt 0 view .LVU3
+  48 000e 0E4E     		ldr	r6, .L3+8
+  49 0010 B6F90010 		ldrsh	r1, [r6]
+  50 0014 0D4F     		ldr	r7, .L3+12
+  51 0016 8904     		lsls	r1, r1, #18
+  52 0018 3846     		mov	r0, r7
+  53 001a FFF7FEFF 		bl	initEMA_iq18
+  54              	.LVL1:
+  55              		.loc 1 20 13 discriminator 1 view .LVU4
+  56 001e 0C4B     		ldr	r3, .L3+16
+  57 0020 1860     		str	r0, [r3]
+  21:Core/Src/adc_current.c ****     filter2 = initEMA_iq18(0.005, _IQ18(CS_ADC_M2_Offset));
+  58              		.loc 1 21 5 is_stmt 1 view .LVU5
+  59              		.loc 1 21 15 is_stmt 0 view .LVU6
+  60 0022 0C4D     		ldr	r5, .L3+20
+  61 0024 B5F90010 		ldrsh	r1, [r5]
+  62 0028 8904     		lsls	r1, r1, #18
+  63 002a 3846     		mov	r0, r7
+  64 002c FFF7FEFF 		bl	initEMA_iq18
+  65              	.LVL2:
+  66              		.loc 1 21 13 discriminator 1 view .LVU7
+  67 0030 094B     		ldr	r3, .L3+24
+  68 0032 1860     		str	r0, [r3]
+  22:Core/Src/adc_current.c ****     adc[0] = CS_ADC_M1_Offset;
+  69              		.loc 1 22 5 is_stmt 1 view .LVU8
+  70              		.loc 1 22 12 is_stmt 0 view .LVU9
+  71 0034 3388     		ldrh	r3, [r6]
+  72 0036 2380     		strh	r3, [r4]	@ movhi
+  23:Core/Src/adc_current.c ****     adc[1] = CS_ADC_M2_Offset;
+  73              		.loc 1 23 5 is_stmt 1 view .LVU10
+  74              		.loc 1 23 12 is_stmt 0 view .LVU11
+  75 0038 2B88     		ldrh	r3, [r5]
+  76 003a 6380     		strh	r3, [r4, #2]	@ movhi
+  24:Core/Src/adc_current.c **** }
+  77              		.loc 1 24 1 view .LVU12
+  78 003c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  79              	.L4:
+  80 003e 00BF     		.align	2
+  81              	.L3:
+  82 0040 00000000 		.word	adc
+  83 0044 00000000 		.word	hadc1
+  84 0048 00000000 		.word	CS_ADC_M1_Offset
+  85 004c 0AD7A33B 		.word	1000593162
+  86 0050 00000000 		.word	filter1
+  87 0054 00000000 		.word	CS_ADC_M2_Offset
+  88 0058 00000000 		.word	filter2
+  89              		.cfi_endproc
+  90              	.LFE65:
+  92              		.global	__aeabi_fmul
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s 			page 3
+
+
+  93              		.global	__aeabi_f2iz
+  94              		.section	.text.adc_callback_handler,"ax",%progbits
+  95              		.align	1
+  96              		.global	adc_callback_handler
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 101              	adc_callback_handler:
+ 102              	.LFB66:
+  25:Core/Src/adc_current.c **** 
+  26:Core/Src/adc_current.c **** void adc_callback_handler()
+  27:Core/Src/adc_current.c **** {
+ 103              		.loc 1 27 1 is_stmt 1 view -0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 108              		.cfi_def_cfa_offset 24
+ 109              		.cfi_offset 3, -24
+ 110              		.cfi_offset 4, -20
+ 111              		.cfi_offset 5, -16
+ 112              		.cfi_offset 6, -12
+ 113              		.cfi_offset 7, -8
+ 114              		.cfi_offset 14, -4
+  28:Core/Src/adc_current.c ****     _iq18 adc0_filtered = updateEMA_iq18(filter1, _IQ18(adc[0]));
+ 115              		.loc 1 28 5 view .LVU14
+ 116              		.loc 1 28 51 is_stmt 0 view .LVU15
+ 117 0002 194F     		ldr	r7, .L7
+ 118 0004 3988     		ldrh	r1, [r7]
+ 119              		.loc 1 28 27 view .LVU16
+ 120 0006 8904     		lsls	r1, r1, #18
+ 121 0008 184B     		ldr	r3, .L7+4
+ 122 000a 1868     		ldr	r0, [r3]
+ 123 000c FFF7FEFF 		bl	updateEMA_iq18
+ 124              	.LVL3:
+ 125 0010 0546     		mov	r5, r0
+ 126              	.LVL4:
+  29:Core/Src/adc_current.c ****     current[0] = _IQ18mpy((adc0_filtered - _IQ18(CS_ADC_M1_Offset)), _IQ18(CS_ADC_M1_Gain));
+ 127              		.loc 1 29 5 is_stmt 1 view .LVU17
+ 128              		.loc 1 29 44 is_stmt 0 view .LVU18
+ 129 0012 174B     		ldr	r3, .L7+8
+ 130 0014 B3F90040 		ldrsh	r4, [r3]
+ 131 0018 A404     		lsls	r4, r4, #18
+ 132              		.loc 1 29 70 view .LVU19
+ 133 001a 4FF09141 		mov	r1, #1216348160
+ 134 001e 154B     		ldr	r3, .L7+12
+ 135 0020 1868     		ldr	r0, [r3]	@ float
+ 136              	.LVL5:
+ 137              		.loc 1 29 70 view .LVU20
+ 138 0022 FFF7FEFF 		bl	__aeabi_fmul
+ 139              	.LVL6:
+ 140              		.loc 1 29 18 view .LVU21
+ 141 0026 FFF7FEFF 		bl	__aeabi_f2iz
+ 142              	.LVL7:
+ 143 002a 0146     		mov	r1, r0
+ 144 002c 281B     		subs	r0, r5, r4
+ 145 002e FFF7FEFF 		bl	_IQ18mpy
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s 			page 4
+
+
+ 146              	.LVL8:
+ 147              		.loc 1 29 16 discriminator 1 view .LVU22
+ 148 0032 114E     		ldr	r6, .L7+16
+ 149 0034 3060     		str	r0, [r6]
+  30:Core/Src/adc_current.c **** 
+  31:Core/Src/adc_current.c ****     _iq18 adc1_filtered = updateEMA_iq18(filter2, _IQ18(adc[1]));
+ 150              		.loc 1 31 5 is_stmt 1 view .LVU23
+ 151              		.loc 1 31 51 is_stmt 0 view .LVU24
+ 152 0036 7988     		ldrh	r1, [r7, #2]
+ 153              		.loc 1 31 27 view .LVU25
+ 154 0038 8904     		lsls	r1, r1, #18
+ 155 003a 104B     		ldr	r3, .L7+20
+ 156 003c 1868     		ldr	r0, [r3]
+ 157 003e FFF7FEFF 		bl	updateEMA_iq18
+ 158              	.LVL9:
+ 159 0042 0546     		mov	r5, r0
+ 160              	.LVL10:
+  32:Core/Src/adc_current.c ****     current[1] = _IQ18mpy((adc1_filtered - _IQ18(CS_ADC_M2_Offset)), _IQ18(CS_ADC_M2_Gain));
+ 161              		.loc 1 32 5 is_stmt 1 view .LVU26
+ 162              		.loc 1 32 44 is_stmt 0 view .LVU27
+ 163 0044 0E4B     		ldr	r3, .L7+24
+ 164 0046 B3F90040 		ldrsh	r4, [r3]
+ 165 004a A404     		lsls	r4, r4, #18
+ 166              		.loc 1 32 70 view .LVU28
+ 167 004c 4FF09141 		mov	r1, #1216348160
+ 168 0050 0C4B     		ldr	r3, .L7+28
+ 169 0052 1868     		ldr	r0, [r3]	@ float
+ 170              	.LVL11:
+ 171              		.loc 1 32 70 view .LVU29
+ 172 0054 FFF7FEFF 		bl	__aeabi_fmul
+ 173              	.LVL12:
+ 174              		.loc 1 32 18 view .LVU30
+ 175 0058 FFF7FEFF 		bl	__aeabi_f2iz
+ 176              	.LVL13:
+ 177 005c 0146     		mov	r1, r0
+ 178 005e 281B     		subs	r0, r5, r4
+ 179 0060 FFF7FEFF 		bl	_IQ18mpy
+ 180              	.LVL14:
+ 181              		.loc 1 32 16 discriminator 1 view .LVU31
+ 182 0064 7060     		str	r0, [r6, #4]
+  33:Core/Src/adc_current.c **** }
+ 183              		.loc 1 33 1 view .LVU32
+ 184 0066 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 185              	.LVL15:
+ 186              	.L8:
+ 187              		.loc 1 33 1 view .LVU33
+ 188              		.align	2
+ 189              	.L7:
+ 190 0068 00000000 		.word	adc
+ 191 006c 00000000 		.word	filter1
+ 192 0070 00000000 		.word	CS_ADC_M1_Offset
+ 193 0074 00000000 		.word	CS_ADC_M1_Gain
+ 194 0078 00000000 		.word	current
+ 195 007c 00000000 		.word	filter2
+ 196 0080 00000000 		.word	CS_ADC_M2_Offset
+ 197 0084 00000000 		.word	CS_ADC_M2_Gain
+ 198              		.cfi_endproc
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s 			page 5
+
+
+ 199              	.LFE66:
+ 201              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
+ 202              		.align	1
+ 203              		.global	HAL_ADC_ConvCpltCallback
+ 204              		.syntax unified
+ 205              		.thumb
+ 206              		.thumb_func
+ 208              	HAL_ADC_ConvCpltCallback:
+ 209              	.LVL16:
+ 210              	.LFB67:
+  34:Core/Src/adc_current.c **** 
+  35:Core/Src/adc_current.c **** void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+  36:Core/Src/adc_current.c **** {
+ 211              		.loc 1 36 1 is_stmt 1 view -0
+ 212              		.cfi_startproc
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215              		.loc 1 36 1 is_stmt 0 view .LVU35
+ 216 0000 08B5     		push	{r3, lr}
+ 217              		.cfi_def_cfa_offset 8
+ 218              		.cfi_offset 3, -8
+ 219              		.cfi_offset 14, -4
+  37:Core/Src/adc_current.c ****     adc_callback_handler();
+ 220              		.loc 1 37 5 is_stmt 1 view .LVU36
+ 221 0002 FFF7FEFF 		bl	adc_callback_handler
+ 222              	.LVL17:
+  38:Core/Src/adc_current.c **** }...
+ 223              		.loc 1 38 1 is_stmt 0 view .LVU37
+ 224 0006 08BD     		pop	{r3, pc}
+ 225              		.cfi_endproc
+ 226              	.LFE67:
+ 228              		.global	CS_ADC_M2_Gain
+ 229              		.section	.data.CS_ADC_M2_Gain,"aw"
+ 230              		.align	2
+ 233              	CS_ADC_M2_Gain:
+ 234 0000 3E3F8C3A 		.word	982269758
+ 235              		.global	CS_ADC_M1_Gain
+ 236              		.section	.data.CS_ADC_M1_Gain,"aw"
+ 237              		.align	2
+ 240              	CS_ADC_M1_Gain:
+ 241 0000 3E3F8C3A 		.word	982269758
+ 242              		.global	CS_ADC_M2_Offset
+ 243              		.section	.data.CS_ADC_M2_Offset,"aw"
+ 244              		.align	1
+ 247              	CS_ADC_M2_Offset:
+ 248 0000 0708     		.short	2055
+ 249              		.global	CS_ADC_M1_Offset
+ 250              		.section	.data.CS_ADC_M1_Offset,"aw"
+ 251              		.align	1
+ 254              	CS_ADC_M1_Offset:
+ 255 0000 0708     		.short	2055
+ 256              		.global	filter2
+ 257              		.section	.bss.filter2,"aw",%nobits
+ 258              		.align	2
+ 261              	filter2:
+ 262 0000 00000000 		.space	4
+ 263              		.global	filter1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s 			page 6
+
+
+ 264              		.section	.bss.filter1,"aw",%nobits
+ 265              		.align	2
+ 268              	filter1:
+ 269 0000 00000000 		.space	4
+ 270              		.global	current
+ 271              		.section	.bss.current,"aw",%nobits
+ 272              		.align	2
+ 275              	current:
+ 276 0000 00000000 		.space	8
+ 276      00000000 
+ 277              		.global	adc
+ 278              		.section	.bss.adc,"aw",%nobits
+ 279              		.align	2
+ 282              	adc:
+ 283 0000 00000000 		.space	4
+ 284              		.text
+ 285              	.Letext0:
+ 286              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 287              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 288              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 289              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 290              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 291              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 292              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h"
+ 293              		.file 9 "Core/Inc/IQmathLib.h"
+ 294              		.file 10 "Core/Inc/ema_iq18.h"
+ 295              		.file 11 "Core/Inc/adc.h"
+ 296              		.file 12 "Core/Inc/adc_current.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 adc_current.c
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:19     .text.adc_cur_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:25     .text.adc_cur_init:00000000 adc_cur_init
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:82     .text.adc_cur_init:00000040 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:282    .bss.adc:00000000 adc
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:254    .data.CS_ADC_M1_Offset:00000000 CS_ADC_M1_Offset
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:268    .bss.filter1:00000000 filter1
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:247    .data.CS_ADC_M2_Offset:00000000 CS_ADC_M2_Offset
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:261    .bss.filter2:00000000 filter2
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:95     .text.adc_callback_handler:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:101    .text.adc_callback_handler:00000000 adc_callback_handler
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:190    .text.adc_callback_handler:00000068 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:240    .data.CS_ADC_M1_Gain:00000000 CS_ADC_M1_Gain
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:275    .bss.current:00000000 current
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:233    .data.CS_ADC_M2_Gain:00000000 CS_ADC_M2_Gain
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:202    .text.HAL_ADC_ConvCpltCallback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:208    .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:230    .data.CS_ADC_M2_Gain:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:237    .data.CS_ADC_M1_Gain:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:244    .data.CS_ADC_M2_Offset:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:251    .data.CS_ADC_M1_Offset:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:258    .bss.filter2:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:265    .bss.filter1:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:272    .bss.current:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccyLiciM.s:279    .bss.adc:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_ADC_Start_DMA
+initEMA_iq18
+hadc1
+__aeabi_fmul
+__aeabi_f2iz
+updateEMA_iq18
+_IQ18mpy

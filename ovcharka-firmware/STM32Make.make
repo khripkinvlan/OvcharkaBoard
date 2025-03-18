@@ -76,11 +76,21 @@ endif
 # C sources
 C_SOURCES =  \
 Core/Src/adc.c \
+Core/Src/adc_current.c \
 Core/Src/dma.c \
 Core/Src/drv8106.c \
+Core/Src/ema_iq18.c \
+Core/Src/encoder_iq18.c \
+Core/Src/global_flags.c \
 Core/Src/gpio.c \
+Core/Src/loops_handler.c \
 Core/Src/main.c \
-Core/Src/rtc.c \
+Core/Src/main_init.c \
+Core/Src/pid_iq18.c \
+Core/Src/pins_init.c \
+Core/Src/pwm.c \
+Core/Src/servo_init.c \
+Core/Src/servo_iq18.c \
 Core/Src/spi.c \
 Core/Src/stm32f1xx_hal_msp.c \
 Core/Src/stm32f1xx_it.c \
@@ -102,8 +112,6 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c \
-Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c \
@@ -237,8 +245,9 @@ CXXFLAGS += $(ASSEMBLER_LIST_OUTPUT_FLAG)
 LDSCRIPT = stm32f103rbtx_flash.ld
 
 # libraries
-LIBS = -lc -lm -lnosys 
+LIBS = -lIQmathLib-cm3 -lc -lm -lnosys 
 LIBDIR = \
+-L.
 
 
 # Additional LD Flags from config file

@@ -1,0 +1,1647 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"servo_iq18.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/servo_iq18.c"
+  18              		.global	__aeabi_fmul
+  19              		.global	__aeabi_f2iz
+  20              		.global	__aeabi_fdiv
+  21              		.section	.text.servo_iq18_base_init,"ax",%progbits
+  22              		.align	1
+  23              		.global	servo_iq18_base_init
+  24              		.syntax unified
+  25              		.thumb
+  26              		.thumb_func
+  28              	servo_iq18_base_init:
+  29              	.LVL0:
+  30              	.LFB65:
+   1:Core/Src/servo_iq18.c **** /*
+   2:Core/Src/servo_iq18.c ****  * servo_iq18.c
+   3:Core/Src/servo_iq18.c ****  *
+   4:Core/Src/servo_iq18.c ****  *  Created on: Dec 18, 2023
+   5:Core/Src/servo_iq18.c ****  *      Author: zhmis
+   6:Core/Src/servo_iq18.c ****  */
+   7:Core/Src/servo_iq18.c **** #include "servo_iq18.h"
+   8:Core/Src/servo_iq18.c **** 
+   9:Core/Src/servo_iq18.c **** void servo_iq18_base_init(servo_iq18_t *servo, enum loops servoLoops,
+  10:Core/Src/servo_iq18.c **** 		float motorSpeed, float gearRatio, uint8_t reverse) {
+  31              		.loc 1 10 55 view -0
+  32              		.cfi_startproc
+  33              		@ args = 4, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		.loc 1 10 55 is_stmt 0 view .LVU1
+  36 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  37              		.cfi_def_cfa_offset 24
+  38              		.cfi_offset 4, -24
+  39              		.cfi_offset 5, -20
+  40              		.cfi_offset 6, -16
+  41              		.cfi_offset 7, -12
+  42              		.cfi_offset 8, -8
+  43              		.cfi_offset 14, -4
+  44 0004 0446     		mov	r4, r0
+  45 0006 0D46     		mov	r5, r1
+  46 0008 1746     		mov	r7, r2
+  47 000a 1E46     		mov	r6, r3
+  48 000c 9DF81880 		ldrb	r8, [sp, #24]	@ zero_extendqisi2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 2
+
+
+  11:Core/Src/servo_iq18.c **** 	servo->controllerLoops = servoLoops;
+  49              		.loc 1 11 2 is_stmt 1 view .LVU2
+  50              		.loc 1 11 25 is_stmt 0 view .LVU3
+  51 0010 80F80811 		strb	r1, [r0, #264]
+  12:Core/Src/servo_iq18.c **** 	servo->encoder.gearRatio = _IQ18(gearRatio);
+  52              		.loc 1 12 2 is_stmt 1 view .LVU4
+  53              		.loc 1 12 29 is_stmt 0 view .LVU5
+  54 0014 4FF09141 		mov	r1, #1216348160
+  55              	.LVL1:
+  56              		.loc 1 12 29 view .LVU6
+  57 0018 1846     		mov	r0, r3
+  58              	.LVL2:
+  59              		.loc 1 12 29 view .LVU7
+  60 001a FFF7FEFF 		bl	__aeabi_fmul
+  61              	.LVL3:
+  62              		.loc 1 12 29 view .LVU8
+  63 001e FFF7FEFF 		bl	__aeabi_f2iz
+  64              	.LVL4:
+  65              		.loc 1 12 27 view .LVU9
+  66 0022 C4F81A00 		str	r0, [r4, #26]	@ unaligned
+  13:Core/Src/servo_iq18.c **** 	if (reverse) {
+  67              		.loc 1 13 2 is_stmt 1 view .LVU10
+  68              		.loc 1 13 5 is_stmt 0 view .LVU11
+  69 0026 B8F1000F 		cmp	r8, #0
+  70 002a 14D0     		beq	.L2
+  14:Core/Src/servo_iq18.c **** 		servo->reverseFlag = -1;
+  71              		.loc 1 14 3 is_stmt 1 view .LVU12
+  72              		.loc 1 14 22 is_stmt 0 view .LVU13
+  73 002c FF23     		movs	r3, #255
+  74 002e 84F8F830 		strb	r3, [r4, #248]
+  75              	.L3:
+  15:Core/Src/servo_iq18.c **** 	} else {
+  16:Core/Src/servo_iq18.c **** 		servo->reverseFlag = 1;
+  17:Core/Src/servo_iq18.c **** 	}
+  18:Core/Src/servo_iq18.c **** 	servo->maxShaftSpeed = _IQ18(motorSpeed / gearRatio);
+  76              		.loc 1 18 2 is_stmt 1 view .LVU14
+  77              		.loc 1 18 25 is_stmt 0 view .LVU15
+  78 0032 3146     		mov	r1, r6
+  79 0034 3846     		mov	r0, r7
+  80 0036 FFF7FEFF 		bl	__aeabi_fdiv
+  81              	.LVL5:
+  82 003a 4FF09141 		mov	r1, #1216348160
+  83 003e FFF7FEFF 		bl	__aeabi_fmul
+  84              	.LVL6:
+  85 0042 FFF7FEFF 		bl	__aeabi_f2iz
+  86              	.LVL7:
+  87              		.loc 1 18 23 view .LVU16
+  88 0046 C4F80A01 		str	r0, [r4, #266]	@ unaligned
+  19:Core/Src/servo_iq18.c **** 
+  20:Core/Src/servo_iq18.c **** 	if (servoLoops != Single) {
+  89              		.loc 1 20 2 is_stmt 1 view .LVU17
+  90              		.loc 1 20 5 is_stmt 0 view .LVU18
+  91 004a 15B1     		cbz	r5, .L1
+  21:Core/Src/servo_iq18.c **** 		servo->pid_position.lowerLimit = -servo->maxShaftSpeed;
+  92              		.loc 1 21 3 is_stmt 1 view .LVU19
+  93              		.loc 1 21 36 is_stmt 0 view .LVU20
+  94 004c 4342     		rsbs	r3, r0, #0
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 3
+
+
+  95              		.loc 1 21 34 view .LVU21
+  96 004e A365     		str	r3, [r4, #88]
+  22:Core/Src/servo_iq18.c **** 		servo->pid_position.upperLimit = servo->maxShaftSpeed;
+  97              		.loc 1 22 3 is_stmt 1 view .LVU22
+  98              		.loc 1 22 34 is_stmt 0 view .LVU23
+  99 0050 6065     		str	r0, [r4, #84]
+ 100              	.L1:
+  23:Core/Src/servo_iq18.c **** 	}
+  24:Core/Src/servo_iq18.c **** }
+ 101              		.loc 1 24 1 view .LVU24
+ 102 0052 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 103              	.LVL8:
+ 104              	.L2:
+  16:Core/Src/servo_iq18.c **** 	}
+ 105              		.loc 1 16 3 is_stmt 1 view .LVU25
+  16:Core/Src/servo_iq18.c **** 	}
+ 106              		.loc 1 16 22 is_stmt 0 view .LVU26
+ 107 0056 0123     		movs	r3, #1
+ 108 0058 84F8F830 		strb	r3, [r4, #248]
+ 109 005c E9E7     		b	.L3
+ 110              		.cfi_endproc
+ 111              	.LFE65:
+ 113              		.section	.text.servo_iq18_encoder_init,"ax",%progbits
+ 114              		.align	1
+ 115              		.global	servo_iq18_encoder_init
+ 116              		.syntax unified
+ 117              		.thumb
+ 118              		.thumb_func
+ 120              	servo_iq18_encoder_init:
+ 121              	.LVL9:
+ 122              	.LFB66:
+  25:Core/Src/servo_iq18.c **** 
+  26:Core/Src/servo_iq18.c **** void servo_iq18_encoder_init(servo_iq18_t *servo, TIM_HandleTypeDef *htim,
+  27:Core/Src/servo_iq18.c **** 		uint16_t CPR, uint8_t encoder_is_reversed) {
+ 123              		.loc 1 27 46 is_stmt 1 view -0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              		.loc 1 27 46 is_stmt 0 view .LVU28
+ 128 0000 38B5     		push	{r3, r4, r5, lr}
+ 129              		.cfi_def_cfa_offset 16
+ 130              		.cfi_offset 3, -16
+ 131              		.cfi_offset 4, -12
+ 132              		.cfi_offset 5, -8
+ 133              		.cfi_offset 14, -4
+ 134 0002 0446     		mov	r4, r0
+ 135 0004 1D46     		mov	r5, r3
+  28:Core/Src/servo_iq18.c **** 	servo->encoder.htim = htim;
+ 136              		.loc 1 28 2 is_stmt 1 view .LVU29
+ 137              		.loc 1 28 22 is_stmt 0 view .LVU30
+ 138 0006 0160     		str	r1, [r0]
+  29:Core/Src/servo_iq18.c **** 	servo->encoder.countsPerRevolution = CPR;
+ 139              		.loc 1 29 2 is_stmt 1 view .LVU31
+ 140              		.loc 1 29 37 is_stmt 0 view .LVU32
+ 141 0008 8280     		strh	r2, [r0, #4]	@ movhi
+  30:Core/Src/servo_iq18.c **** 	servo->encoder.filter = initEMA_iq18(VEL_EMA, 0);
+ 142              		.loc 1 30 2 is_stmt 1 view .LVU33
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 4
+
+
+ 143              		.loc 1 30 26 is_stmt 0 view .LVU34
+ 144 000a 0021     		movs	r1, #0
+ 145              	.LVL10:
+ 146              		.loc 1 30 26 view .LVU35
+ 147 000c 0648     		ldr	r0, .L10
+ 148              	.LVL11:
+ 149              		.loc 1 30 26 view .LVU36
+ 150 000e FFF7FEFF 		bl	initEMA_iq18
+ 151              	.LVL12:
+ 152              		.loc 1 30 24 discriminator 1 view .LVU37
+ 153 0012 C4F82500 		str	r0, [r4, #37]	@ unaligned
+  31:Core/Src/servo_iq18.c **** 	if(!encoder_is_reversed){
+ 154              		.loc 1 31 2 is_stmt 1 view .LVU38
+ 155              		.loc 1 31 4 is_stmt 0 view .LVU39
+ 156 0016 1DB9     		cbnz	r5, .L7
+  32:Core/Src/servo_iq18.c **** 		servo->encoder.reverse_flag = 1;
+ 157              		.loc 1 32 3 is_stmt 1 view .LVU40
+ 158              		.loc 1 32 31 is_stmt 0 view .LVU41
+ 159 0018 0123     		movs	r3, #1
+ 160 001a 84F82430 		strb	r3, [r4, #36]
+ 161              	.L6:
+  33:Core/Src/servo_iq18.c **** 	}else{
+  34:Core/Src/servo_iq18.c **** 		servo->encoder.reverse_flag = -1;
+  35:Core/Src/servo_iq18.c **** 	}
+  36:Core/Src/servo_iq18.c **** }
+ 162              		.loc 1 36 1 view .LVU42
+ 163 001e 38BD     		pop	{r3, r4, r5, pc}
+ 164              	.LVL13:
+ 165              	.L7:
+  34:Core/Src/servo_iq18.c **** 	}
+ 166              		.loc 1 34 3 is_stmt 1 view .LVU43
+  34:Core/Src/servo_iq18.c **** 	}
+ 167              		.loc 1 34 31 is_stmt 0 view .LVU44
+ 168 0020 FF23     		movs	r3, #255
+ 169 0022 84F82430 		strb	r3, [r4, #36]
+ 170              		.loc 1 36 1 view .LVU45
+ 171 0026 FAE7     		b	.L6
+ 172              	.L11:
+ 173              		.align	2
+ 174              	.L10:
+ 175 0028 CDCCCC3E 		.word	1053609165
+ 176              		.cfi_endproc
+ 177              	.LFE66:
+ 179              		.section	.text.servo_iq18_driver_init,"ax",%progbits
+ 180              		.align	1
+ 181              		.global	servo_iq18_driver_init
+ 182              		.syntax unified
+ 183              		.thumb
+ 184              		.thumb_func
+ 186              	servo_iq18_driver_init:
+ 187              	.LVL14:
+ 188              	.LFB67:
+  37:Core/Src/servo_iq18.c **** 
+  38:Core/Src/servo_iq18.c **** void servo_iq18_driver_init(servo_iq18_t *servo, TIM_HandleTypeDef *htim,
+  39:Core/Src/servo_iq18.c **** 		uint8_t timerChannel, GPIO_TypeDef *dir1_Port, uint32_t dir1_Pin, uint16_t minDuty,
+  40:Core/Src/servo_iq18.c **** 		uint16_t maxDuty) {
+ 189              		.loc 1 40 21 is_stmt 1 view -0
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 5
+
+
+ 190              		.cfi_startproc
+ 191              		@ args = 12, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193              		@ link register save eliminated.
+  41:Core/Src/servo_iq18.c **** 	servo->driver.htim = htim;
+ 194              		.loc 1 41 2 view .LVU47
+ 195              		.loc 1 41 21 is_stmt 0 view .LVU48
+ 196 0000 C0F8E010 		str	r1, [r0, #224]
+  42:Core/Src/servo_iq18.c **** 	servo->driver.timerChannel = timerChannel;
+ 197              		.loc 1 42 2 is_stmt 1 view .LVU49
+ 198              		.loc 1 42 29 is_stmt 0 view .LVU50
+ 199 0004 80F8E420 		strb	r2, [r0, #228]
+  43:Core/Src/servo_iq18.c **** 	servo->driver.dir1_Port = dir1_Port;
+ 200              		.loc 1 43 2 is_stmt 1 view .LVU51
+ 201              		.loc 1 43 26 is_stmt 0 view .LVU52
+ 202 0008 C0F8E930 		str	r3, [r0, #233]	@ unaligned
+  44:Core/Src/servo_iq18.c **** 	servo->driver.dir1_Pin = dir1_Pin;
+ 203              		.loc 1 44 2 is_stmt 1 view .LVU53
+ 204              		.loc 1 44 25 is_stmt 0 view .LVU54
+ 205 000c 009B     		ldr	r3, [sp]
+ 206              	.LVL15:
+ 207              		.loc 1 44 25 view .LVU55
+ 208 000e C0F8E530 		str	r3, [r0, #229]	@ unaligned
+  45:Core/Src/servo_iq18.c **** 
+  46:Core/Src/servo_iq18.c **** 	servo->driver.minDuty = minDuty;
+ 209              		.loc 1 46 2 is_stmt 1 view .LVU56
+ 210              		.loc 1 46 24 is_stmt 0 view .LVU57
+ 211 0012 BDF80430 		ldrh	r3, [sp, #4]
+ 212 0016 A0F8EF30 		strh	r3, [r0, #239]	@ unaligned
+  47:Core/Src/servo_iq18.c **** 	servo->driver.maxDuty = maxDuty;
+ 213              		.loc 1 47 2 is_stmt 1 view .LVU58
+ 214              		.loc 1 47 24 is_stmt 0 view .LVU59
+ 215 001a BDF80830 		ldrh	r3, [sp, #8]
+ 216 001e A0F8ED30 		strh	r3, [r0, #237]	@ unaligned
+  48:Core/Src/servo_iq18.c **** 
+  49:Core/Src/servo_iq18.c **** 	switch (servo->controllerLoops) {
+ 217              		.loc 1 49 2 is_stmt 1 view .LVU60
+ 218              		.loc 1 49 15 is_stmt 0 view .LVU61
+ 219 0022 90F80831 		ldrb	r3, [r0, #264]	@ zero_extendqisi2
+ 220              		.loc 1 49 2 view .LVU62
+ 221 0026 012B     		cmp	r3, #1
+ 222 0028 09D0     		beq	.L13
+ 223 002a 022B     		cmp	r3, #2
+ 224 002c 0FD0     		beq	.L14
+ 225 002e ABB9     		cbnz	r3, .L12
+  50:Core/Src/servo_iq18.c **** 	case Single:
+  51:Core/Src/servo_iq18.c **** 		servo->pid_position.lowerLimit = _IQ18(-1);
+ 226              		.loc 1 51 3 is_stmt 1 view .LVU63
+ 227              		.loc 1 51 34 is_stmt 0 view .LVU64
+ 228 0030 A3F58023 		sub	r3, r3, #262144
+ 229 0034 8365     		str	r3, [r0, #88]
+  52:Core/Src/servo_iq18.c **** 		servo->pid_position.upperLimit = _IQ18(1);
+ 230              		.loc 1 52 3 is_stmt 1 view .LVU65
+ 231              		.loc 1 52 34 is_stmt 0 view .LVU66
+ 232 0036 4FF48023 		mov	r3, #262144
+ 233 003a 4365     		str	r3, [r0, #84]
+  53:Core/Src/servo_iq18.c **** 		break;
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 6
+
+
+ 234              		.loc 1 53 3 is_stmt 1 view .LVU67
+ 235 003c 7047     		bx	lr
+ 236              	.L13:
+  54:Core/Src/servo_iq18.c **** 	case Double:
+  55:Core/Src/servo_iq18.c **** 		servo->pid_velocity.lowerLimit = _IQ18(-1);
+ 237              		.loc 1 55 3 view .LVU68
+ 238              		.loc 1 55 34 is_stmt 0 view .LVU69
+ 239 003e 084B     		ldr	r3, .L16
+ 240 0040 C0F89430 		str	r3, [r0, #148]
+  56:Core/Src/servo_iq18.c **** 		servo->pid_velocity.upperLimit = _IQ18(1);
+ 241              		.loc 1 56 3 is_stmt 1 view .LVU70
+ 242              		.loc 1 56 34 is_stmt 0 view .LVU71
+ 243 0044 4FF48023 		mov	r3, #262144
+ 244 0048 C0F89030 		str	r3, [r0, #144]
+  57:Core/Src/servo_iq18.c **** 		break;
+ 245              		.loc 1 57 3 is_stmt 1 view .LVU72
+ 246 004c 7047     		bx	lr
+ 247              	.L14:
+  58:Core/Src/servo_iq18.c **** 	case Triple:
+  59:Core/Src/servo_iq18.c **** 		servo->pid_current.lowerLimit = _IQ18(-1);
+ 248              		.loc 1 59 3 view .LVU73
+ 249              		.loc 1 59 33 is_stmt 0 view .LVU74
+ 250 004e 044B     		ldr	r3, .L16
+ 251 0050 C0F8D030 		str	r3, [r0, #208]
+  60:Core/Src/servo_iq18.c **** 		servo->pid_current.upperLimit = _IQ18(1);
+ 252              		.loc 1 60 3 is_stmt 1 view .LVU75
+ 253              		.loc 1 60 33 is_stmt 0 view .LVU76
+ 254 0054 4FF48023 		mov	r3, #262144
+ 255 0058 C0F8CC30 		str	r3, [r0, #204]
+  61:Core/Src/servo_iq18.c **** 		break;
+ 256              		.loc 1 61 3 is_stmt 1 view .LVU77
+ 257              	.L12:
+  62:Core/Src/servo_iq18.c **** 	default:
+  63:Core/Src/servo_iq18.c **** 		break;
+  64:Core/Src/servo_iq18.c **** 	}
+  65:Core/Src/servo_iq18.c **** }
+ 258              		.loc 1 65 1 is_stmt 0 view .LVU78
+ 259 005c 7047     		bx	lr
+ 260              	.L17:
+ 261 005e 00BF     		.align	2
+ 262              	.L16:
+ 263 0060 0000FCFF 		.word	-262144
+ 264              		.cfi_endproc
+ 265              	.LFE67:
+ 267              		.section	.text.servo_iq18_position_init,"ax",%progbits
+ 268              		.align	1
+ 269              		.global	servo_iq18_position_init
+ 270              		.syntax unified
+ 271              		.thumb
+ 272              		.thumb_func
+ 274              	servo_iq18_position_init:
+ 275              	.LVL16:
+ 276              	.LFB68:
+  66:Core/Src/servo_iq18.c **** 
+  67:Core/Src/servo_iq18.c **** void servo_iq18_position_init(servo_iq18_t *servo, float kp, float ki, float kd,
+  68:Core/Src/servo_iq18.c **** 		float dt, float kb) {
+ 277              		.loc 1 68 23 is_stmt 1 view -0
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 7
+
+
+ 278              		.cfi_startproc
+ 279              		@ args = 8, pretend = 0, frame = 0
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281              		.loc 1 68 23 is_stmt 0 view .LVU80
+ 282 0000 70B5     		push	{r4, r5, r6, lr}
+ 283              		.cfi_def_cfa_offset 16
+ 284              		.cfi_offset 4, -16
+ 285              		.cfi_offset 5, -12
+ 286              		.cfi_offset 6, -8
+ 287              		.cfi_offset 14, -4
+ 288 0002 0446     		mov	r4, r0
+ 289 0004 0846     		mov	r0, r1
+ 290              	.LVL17:
+ 291              		.loc 1 68 23 view .LVU81
+ 292 0006 1646     		mov	r6, r2
+ 293 0008 1D46     		mov	r5, r3
+  69:Core/Src/servo_iq18.c **** 	servo->pid_position.kp = _IQ18(kp);
+ 294              		.loc 1 69 2 is_stmt 1 view .LVU82
+ 295              		.loc 1 69 27 is_stmt 0 view .LVU83
+ 296 000a 4FF09141 		mov	r1, #1216348160
+ 297              	.LVL18:
+ 298              		.loc 1 69 27 view .LVU84
+ 299 000e FFF7FEFF 		bl	__aeabi_fmul
+ 300              	.LVL19:
+ 301              		.loc 1 69 27 view .LVU85
+ 302 0012 FFF7FEFF 		bl	__aeabi_f2iz
+ 303              	.LVL20:
+ 304              		.loc 1 69 25 view .LVU86
+ 305 0016 2063     		str	r0, [r4, #48]
+  70:Core/Src/servo_iq18.c **** 	servo->pid_position.ki = _IQ18(ki);
+ 306              		.loc 1 70 2 is_stmt 1 view .LVU87
+ 307              		.loc 1 70 27 is_stmt 0 view .LVU88
+ 308 0018 4FF09141 		mov	r1, #1216348160
+ 309 001c 3046     		mov	r0, r6
+ 310 001e FFF7FEFF 		bl	__aeabi_fmul
+ 311              	.LVL21:
+ 312 0022 FFF7FEFF 		bl	__aeabi_f2iz
+ 313              	.LVL22:
+ 314              		.loc 1 70 25 view .LVU89
+ 315 0026 6063     		str	r0, [r4, #52]
+  71:Core/Src/servo_iq18.c **** 	servo->pid_position.kd = _IQ18(kd);
+ 316              		.loc 1 71 2 is_stmt 1 view .LVU90
+ 317              		.loc 1 71 27 is_stmt 0 view .LVU91
+ 318 0028 4FF09141 		mov	r1, #1216348160
+ 319 002c 2846     		mov	r0, r5
+ 320 002e FFF7FEFF 		bl	__aeabi_fmul
+ 321              	.LVL23:
+ 322 0032 FFF7FEFF 		bl	__aeabi_f2iz
+ 323              	.LVL24:
+ 324              		.loc 1 71 25 view .LVU92
+ 325 0036 A063     		str	r0, [r4, #56]
+  72:Core/Src/servo_iq18.c **** 	servo->pid_position.dt = _IQ18(dt);
+ 326              		.loc 1 72 2 is_stmt 1 view .LVU93
+ 327              		.loc 1 72 27 is_stmt 0 view .LVU94
+ 328 0038 4FF09141 		mov	r1, #1216348160
+ 329 003c 0498     		ldr	r0, [sp, #16]	@ float
+ 330 003e FFF7FEFF 		bl	__aeabi_fmul
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 8
+
+
+ 331              	.LVL25:
+ 332 0042 FFF7FEFF 		bl	__aeabi_f2iz
+ 333              	.LVL26:
+ 334              		.loc 1 72 25 view .LVU95
+ 335 0046 2065     		str	r0, [r4, #80]
+  73:Core/Src/servo_iq18.c **** 	servo->pid_position.kb = _IQ18(kb);
+ 336              		.loc 1 73 2 is_stmt 1 view .LVU96
+ 337              		.loc 1 73 27 is_stmt 0 view .LVU97
+ 338 0048 4FF09141 		mov	r1, #1216348160
+ 339 004c 0598     		ldr	r0, [sp, #20]	@ float
+ 340 004e FFF7FEFF 		bl	__aeabi_fmul
+ 341              	.LVL27:
+ 342 0052 FFF7FEFF 		bl	__aeabi_f2iz
+ 343              	.LVL28:
+ 344              		.loc 1 73 25 view .LVU98
+ 345 0056 E063     		str	r0, [r4, #60]
+  74:Core/Src/servo_iq18.c **** }
+ 346              		.loc 1 74 1 view .LVU99
+ 347 0058 70BD     		pop	{r4, r5, r6, pc}
+ 348              		.loc 1 74 1 view .LVU100
+ 349              		.cfi_endproc
+ 350              	.LFE68:
+ 352              		.section	.text.servo_iq18_velocity_init,"ax",%progbits
+ 353              		.align	1
+ 354              		.global	servo_iq18_velocity_init
+ 355              		.syntax unified
+ 356              		.thumb
+ 357              		.thumb_func
+ 359              	servo_iq18_velocity_init:
+ 360              	.LVL29:
+ 361              	.LFB69:
+  75:Core/Src/servo_iq18.c **** 
+  76:Core/Src/servo_iq18.c **** void servo_iq18_velocity_init(servo_iq18_t *servo, float kp, float ki, float kd,
+  77:Core/Src/servo_iq18.c **** 		float dt, float kb) {
+ 362              		.loc 1 77 23 is_stmt 1 view -0
+ 363              		.cfi_startproc
+ 364              		@ args = 8, pretend = 0, frame = 0
+ 365              		@ frame_needed = 0, uses_anonymous_args = 0
+ 366              		.loc 1 77 23 is_stmt 0 view .LVU102
+ 367 0000 70B5     		push	{r4, r5, r6, lr}
+ 368              		.cfi_def_cfa_offset 16
+ 369              		.cfi_offset 4, -16
+ 370              		.cfi_offset 5, -12
+ 371              		.cfi_offset 6, -8
+ 372              		.cfi_offset 14, -4
+ 373 0002 0446     		mov	r4, r0
+ 374 0004 0846     		mov	r0, r1
+ 375              	.LVL30:
+ 376              		.loc 1 77 23 view .LVU103
+ 377 0006 1646     		mov	r6, r2
+ 378 0008 1D46     		mov	r5, r3
+  78:Core/Src/servo_iq18.c **** 	servo->pid_velocity.kp = _IQ18(kp);
+ 379              		.loc 1 78 2 is_stmt 1 view .LVU104
+ 380              		.loc 1 78 27 is_stmt 0 view .LVU105
+ 381 000a 4FF09141 		mov	r1, #1216348160
+ 382              	.LVL31:
+ 383              		.loc 1 78 27 view .LVU106
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 9
+
+
+ 384 000e FFF7FEFF 		bl	__aeabi_fmul
+ 385              	.LVL32:
+ 386              		.loc 1 78 27 view .LVU107
+ 387 0012 FFF7FEFF 		bl	__aeabi_f2iz
+ 388              	.LVL33:
+ 389              		.loc 1 78 25 view .LVU108
+ 390 0016 E066     		str	r0, [r4, #108]
+  79:Core/Src/servo_iq18.c **** 	servo->pid_velocity.ki = _IQ18(ki);
+ 391              		.loc 1 79 2 is_stmt 1 view .LVU109
+ 392              		.loc 1 79 27 is_stmt 0 view .LVU110
+ 393 0018 4FF09141 		mov	r1, #1216348160
+ 394 001c 3046     		mov	r0, r6
+ 395 001e FFF7FEFF 		bl	__aeabi_fmul
+ 396              	.LVL34:
+ 397 0022 FFF7FEFF 		bl	__aeabi_f2iz
+ 398              	.LVL35:
+ 399              		.loc 1 79 25 view .LVU111
+ 400 0026 2067     		str	r0, [r4, #112]
+  80:Core/Src/servo_iq18.c **** 	servo->pid_velocity.kd = _IQ18(kd);
+ 401              		.loc 1 80 2 is_stmt 1 view .LVU112
+ 402              		.loc 1 80 27 is_stmt 0 view .LVU113
+ 403 0028 4FF09141 		mov	r1, #1216348160
+ 404 002c 2846     		mov	r0, r5
+ 405 002e FFF7FEFF 		bl	__aeabi_fmul
+ 406              	.LVL36:
+ 407 0032 FFF7FEFF 		bl	__aeabi_f2iz
+ 408              	.LVL37:
+ 409              		.loc 1 80 25 view .LVU114
+ 410 0036 6067     		str	r0, [r4, #116]
+  81:Core/Src/servo_iq18.c **** 	servo->pid_velocity.dt = _IQ18(dt);
+ 411              		.loc 1 81 2 is_stmt 1 view .LVU115
+ 412              		.loc 1 81 27 is_stmt 0 view .LVU116
+ 413 0038 4FF09141 		mov	r1, #1216348160
+ 414 003c 0498     		ldr	r0, [sp, #16]	@ float
+ 415 003e FFF7FEFF 		bl	__aeabi_fmul
+ 416              	.LVL38:
+ 417 0042 FFF7FEFF 		bl	__aeabi_f2iz
+ 418              	.LVL39:
+ 419 0046 0546     		mov	r5, r0
+ 420              	.LVL40:
+ 421              		.loc 1 81 25 view .LVU117
+ 422 0048 C4F88C00 		str	r0, [r4, #140]
+  82:Core/Src/servo_iq18.c **** 	servo->pid_velocity.kb = _IQ18(kb);
+ 423              		.loc 1 82 2 is_stmt 1 view .LVU118
+ 424              		.loc 1 82 27 is_stmt 0 view .LVU119
+ 425 004c 4FF09141 		mov	r1, #1216348160
+ 426 0050 0598     		ldr	r0, [sp, #20]	@ float
+ 427 0052 FFF7FEFF 		bl	__aeabi_fmul
+ 428              	.LVL41:
+ 429 0056 FFF7FEFF 		bl	__aeabi_f2iz
+ 430              	.LVL42:
+ 431              		.loc 1 82 25 view .LVU120
+ 432 005a A067     		str	r0, [r4, #120]
+  83:Core/Src/servo_iq18.c **** 	servo->encoder.dt = _IQ18(dt);
+ 433              		.loc 1 83 2 is_stmt 1 view .LVU121
+ 434              		.loc 1 83 20 is_stmt 0 view .LVU122
+ 435 005c C4F81650 		str	r5, [r4, #22]	@ unaligned
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 10
+
+
+  84:Core/Src/servo_iq18.c **** }
+ 436              		.loc 1 84 1 view .LVU123
+ 437 0060 70BD     		pop	{r4, r5, r6, pc}
+ 438              		.loc 1 84 1 view .LVU124
+ 439              		.cfi_endproc
+ 440              	.LFE69:
+ 442              		.section	.text.servo_iq18_current_init,"ax",%progbits
+ 443              		.align	1
+ 444              		.global	servo_iq18_current_init
+ 445              		.syntax unified
+ 446              		.thumb
+ 447              		.thumb_func
+ 449              	servo_iq18_current_init:
+ 450              	.LVL43:
+ 451              	.LFB70:
+  85:Core/Src/servo_iq18.c **** 
+  86:Core/Src/servo_iq18.c **** void servo_iq18_current_init(servo_iq18_t *servo, float ratedCurrent, float kp,
+  87:Core/Src/servo_iq18.c **** 		float ki, float kd, float dt, float kb) {
+ 452              		.loc 1 87 43 is_stmt 1 view -0
+ 453              		.cfi_startproc
+ 454              		@ args = 12, pretend = 0, frame = 0
+ 455              		@ frame_needed = 0, uses_anonymous_args = 0
+ 456              		.loc 1 87 43 is_stmt 0 view .LVU126
+ 457 0000 70B5     		push	{r4, r5, r6, lr}
+ 458              		.cfi_def_cfa_offset 16
+ 459              		.cfi_offset 4, -16
+ 460              		.cfi_offset 5, -12
+ 461              		.cfi_offset 6, -8
+ 462              		.cfi_offset 14, -4
+ 463 0002 0446     		mov	r4, r0
+ 464 0004 0D46     		mov	r5, r1
+ 465 0006 1E46     		mov	r6, r3
+  88:Core/Src/servo_iq18.c **** 	servo->pid_current.kp = _IQ18(kp);
+ 466              		.loc 1 88 2 is_stmt 1 view .LVU127
+ 467              		.loc 1 88 26 is_stmt 0 view .LVU128
+ 468 0008 4FF09141 		mov	r1, #1216348160
+ 469              	.LVL44:
+ 470              		.loc 1 88 26 view .LVU129
+ 471 000c 1046     		mov	r0, r2
+ 472              	.LVL45:
+ 473              		.loc 1 88 26 view .LVU130
+ 474 000e FFF7FEFF 		bl	__aeabi_fmul
+ 475              	.LVL46:
+ 476              		.loc 1 88 26 view .LVU131
+ 477 0012 FFF7FEFF 		bl	__aeabi_f2iz
+ 478              	.LVL47:
+ 479              		.loc 1 88 24 view .LVU132
+ 480 0016 C4F8A800 		str	r0, [r4, #168]
+  89:Core/Src/servo_iq18.c **** 	servo->pid_current.ki = _IQ18(ki);
+ 481              		.loc 1 89 2 is_stmt 1 view .LVU133
+ 482              		.loc 1 89 26 is_stmt 0 view .LVU134
+ 483 001a 4FF09141 		mov	r1, #1216348160
+ 484 001e 3046     		mov	r0, r6
+ 485 0020 FFF7FEFF 		bl	__aeabi_fmul
+ 486              	.LVL48:
+ 487 0024 FFF7FEFF 		bl	__aeabi_f2iz
+ 488              	.LVL49:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 11
+
+
+ 489              		.loc 1 89 24 view .LVU135
+ 490 0028 C4F8AC00 		str	r0, [r4, #172]
+  90:Core/Src/servo_iq18.c **** 	servo->pid_current.kd = _IQ18(kd);
+ 491              		.loc 1 90 2 is_stmt 1 view .LVU136
+ 492              		.loc 1 90 26 is_stmt 0 view .LVU137
+ 493 002c 4FF09141 		mov	r1, #1216348160
+ 494 0030 0498     		ldr	r0, [sp, #16]	@ float
+ 495 0032 FFF7FEFF 		bl	__aeabi_fmul
+ 496              	.LVL50:
+ 497 0036 FFF7FEFF 		bl	__aeabi_f2iz
+ 498              	.LVL51:
+ 499              		.loc 1 90 24 view .LVU138
+ 500 003a C4F8B000 		str	r0, [r4, #176]
+  91:Core/Src/servo_iq18.c **** 	servo->pid_current.dt = _IQ18(dt);
+ 501              		.loc 1 91 2 is_stmt 1 view .LVU139
+ 502              		.loc 1 91 26 is_stmt 0 view .LVU140
+ 503 003e 4FF09141 		mov	r1, #1216348160
+ 504 0042 0598     		ldr	r0, [sp, #20]	@ float
+ 505 0044 FFF7FEFF 		bl	__aeabi_fmul
+ 506              	.LVL52:
+ 507 0048 FFF7FEFF 		bl	__aeabi_f2iz
+ 508              	.LVL53:
+ 509              		.loc 1 91 24 view .LVU141
+ 510 004c C4F8C800 		str	r0, [r4, #200]
+  92:Core/Src/servo_iq18.c **** 	servo->pid_current.kb = _IQ18(kb);
+ 511              		.loc 1 92 2 is_stmt 1 view .LVU142
+ 512              		.loc 1 92 26 is_stmt 0 view .LVU143
+ 513 0050 4FF09141 		mov	r1, #1216348160
+ 514 0054 0698     		ldr	r0, [sp, #24]	@ float
+ 515 0056 FFF7FEFF 		bl	__aeabi_fmul
+ 516              	.LVL54:
+ 517 005a FFF7FEFF 		bl	__aeabi_f2iz
+ 518              	.LVL55:
+ 519              		.loc 1 92 24 view .LVU144
+ 520 005e C4F8B400 		str	r0, [r4, #180]
+  93:Core/Src/servo_iq18.c **** 	servo->maxCurrent = _IQ18(ratedCurrent);
+ 521              		.loc 1 93 2 is_stmt 1 view .LVU145
+ 522              		.loc 1 93 22 is_stmt 0 view .LVU146
+ 523 0062 4FF09141 		mov	r1, #1216348160
+ 524 0066 2846     		mov	r0, r5
+ 525 0068 FFF7FEFF 		bl	__aeabi_fmul
+ 526              	.LVL56:
+ 527 006c 0646     		mov	r6, r0
+ 528              	.LVL57:
+ 529              		.loc 1 93 22 view .LVU147
+ 530 006e FFF7FEFF 		bl	__aeabi_f2iz
+ 531              	.LVL58:
+ 532              		.loc 1 93 20 view .LVU148
+ 533 0072 C4F80E01 		str	r0, [r4, #270]	@ unaligned
+  94:Core/Src/servo_iq18.c **** 	if (servo->controllerLoops == Triple) {
+ 534              		.loc 1 94 2 is_stmt 1 view .LVU149
+ 535              		.loc 1 94 11 is_stmt 0 view .LVU150
+ 536 0076 94F80831 		ldrb	r3, [r4, #264]	@ zero_extendqisi2
+ 537              		.loc 1 94 5 view .LVU151
+ 538 007a 022B     		cmp	r3, #2
+ 539 007c 00D0     		beq	.L25
+ 540              	.LVL59:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 12
+
+
+ 541              	.L22:
+  95:Core/Src/servo_iq18.c **** 		servo->pid_velocity.lowerLimit = _IQ18(-ratedCurrent);
+  96:Core/Src/servo_iq18.c **** 		servo->pid_velocity.upperLimit = _IQ18(ratedCurrent);
+  97:Core/Src/servo_iq18.c **** 	}
+  98:Core/Src/servo_iq18.c **** }
+ 542              		.loc 1 98 1 view .LVU152
+ 543 007e 70BD     		pop	{r4, r5, r6, pc}
+ 544              	.LVL60:
+ 545              	.L25:
+ 546              		.loc 1 98 1 view .LVU153
+ 547 0080 0546     		mov	r5, r0
+ 548              	.LVL61:
+  95:Core/Src/servo_iq18.c **** 		servo->pid_velocity.lowerLimit = _IQ18(-ratedCurrent);
+ 549              		.loc 1 95 3 is_stmt 1 view .LVU154
+  95:Core/Src/servo_iq18.c **** 		servo->pid_velocity.lowerLimit = _IQ18(-ratedCurrent);
+ 550              		.loc 1 95 36 is_stmt 0 view .LVU155
+ 551 0082 06F10040 		add	r0, r6, #-2147483648
+ 552 0086 FFF7FEFF 		bl	__aeabi_f2iz
+ 553              	.LVL62:
+  95:Core/Src/servo_iq18.c **** 		servo->pid_velocity.lowerLimit = _IQ18(-ratedCurrent);
+ 554              		.loc 1 95 34 view .LVU156
+ 555 008a C4F89400 		str	r0, [r4, #148]
+  96:Core/Src/servo_iq18.c **** 	}
+ 556              		.loc 1 96 3 is_stmt 1 view .LVU157
+  96:Core/Src/servo_iq18.c **** 	}
+ 557              		.loc 1 96 34 is_stmt 0 view .LVU158
+ 558 008e C4F89050 		str	r5, [r4, #144]
+ 559              		.loc 1 98 1 view .LVU159
+ 560 0092 F4E7     		b	.L22
+ 561              		.cfi_endproc
+ 562              	.LFE70:
+ 564              		.section	.text.servo_iq18_setPositionTolerance,"ax",%progbits
+ 565              		.align	1
+ 566              		.global	servo_iq18_setPositionTolerance
+ 567              		.syntax unified
+ 568              		.thumb
+ 569              		.thumb_func
+ 571              	servo_iq18_setPositionTolerance:
+ 572              	.LVL63:
+ 573              	.LFB71:
+  99:Core/Src/servo_iq18.c **** 
+ 100:Core/Src/servo_iq18.c **** void servo_iq18_setPositionTolerance(servo_iq18_t *servo, float tolerance) {
+ 574              		.loc 1 100 76 is_stmt 1 view -0
+ 575              		.cfi_startproc
+ 576              		@ args = 0, pretend = 0, frame = 0
+ 577              		@ frame_needed = 0, uses_anonymous_args = 0
+ 578              		.loc 1 100 76 is_stmt 0 view .LVU161
+ 579 0000 10B5     		push	{r4, lr}
+ 580              		.cfi_def_cfa_offset 8
+ 581              		.cfi_offset 4, -8
+ 582              		.cfi_offset 14, -4
+ 583 0002 0446     		mov	r4, r0
+ 584 0004 0846     		mov	r0, r1
+ 585              	.LVL64:
+ 101:Core/Src/servo_iq18.c **** 	servo->pid_position.toleranceBand = _IQ18(tolerance);
+ 586              		.loc 1 101 2 is_stmt 1 view .LVU162
+ 587              		.loc 1 101 38 is_stmt 0 view .LVU163
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 13
+
+
+ 588 0006 4FF09141 		mov	r1, #1216348160
+ 589              	.LVL65:
+ 590              		.loc 1 101 38 view .LVU164
+ 591 000a FFF7FEFF 		bl	__aeabi_fmul
+ 592              	.LVL66:
+ 593              		.loc 1 101 38 view .LVU165
+ 594 000e FFF7FEFF 		bl	__aeabi_f2iz
+ 595              	.LVL67:
+ 596              		.loc 1 101 36 view .LVU166
+ 597 0012 2064     		str	r0, [r4, #64]
+ 102:Core/Src/servo_iq18.c **** }
+ 598              		.loc 1 102 1 view .LVU167
+ 599 0014 10BD     		pop	{r4, pc}
+ 600              		.loc 1 102 1 view .LVU168
+ 601              		.cfi_endproc
+ 602              	.LFE71:
+ 604              		.section	.text.servo_iq18_getState,"ax",%progbits
+ 605              		.align	1
+ 606              		.global	servo_iq18_getState
+ 607              		.syntax unified
+ 608              		.thumb
+ 609              		.thumb_func
+ 611              	servo_iq18_getState:
+ 612              	.LVL68:
+ 613              	.LFB72:
+ 103:Core/Src/servo_iq18.c **** 
+ 104:Core/Src/servo_iq18.c **** int servo_iq18_getState(servo_iq18_t *servo) {
+ 614              		.loc 1 104 46 is_stmt 1 view -0
+ 615              		.cfi_startproc
+ 616              		@ args = 0, pretend = 0, frame = 0
+ 617              		@ frame_needed = 0, uses_anonymous_args = 0
+ 618              		@ link register save eliminated.
+ 105:Core/Src/servo_iq18.c **** 	if (servo->pid_position.error == 0) {
+ 619              		.loc 1 105 2 view .LVU170
+ 620              		.loc 1 105 25 is_stmt 0 view .LVU171
+ 621 0000 C06A     		ldr	r0, [r0, #44]
+ 622              	.LVL69:
+ 623              		.loc 1 105 5 view .LVU172
+ 624 0002 00B1     		cbz	r0, .L28
+ 106:Core/Src/servo_iq18.c **** 		return 0;
+ 107:Core/Src/servo_iq18.c **** 	}
+ 108:Core/Src/servo_iq18.c **** 	return 1;
+ 625              		.loc 1 108 9 view .LVU173
+ 626 0004 0120     		movs	r0, #1
+ 627              	.L28:
+ 109:Core/Src/servo_iq18.c **** }
+ 628              		.loc 1 109 1 view .LVU174
+ 629 0006 7047     		bx	lr
+ 630              		.cfi_endproc
+ 631              	.LFE72:
+ 633              		.section	.text.servo_iq18_getDirection,"ax",%progbits
+ 634              		.align	1
+ 635              		.global	servo_iq18_getDirection
+ 636              		.syntax unified
+ 637              		.thumb
+ 638              		.thumb_func
+ 640              	servo_iq18_getDirection:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 14
+
+
+ 641              	.LVL70:
+ 642              	.LFB73:
+ 110:Core/Src/servo_iq18.c **** int servo_iq18_getDirection(servo_iq18_t *servo) {
+ 643              		.loc 1 110 50 is_stmt 1 view -0
+ 644              		.cfi_startproc
+ 645              		@ args = 0, pretend = 0, frame = 0
+ 646              		@ frame_needed = 0, uses_anonymous_args = 0
+ 647              		@ link register save eliminated.
+ 111:Core/Src/servo_iq18.c **** 	if (servo->encoder.angularVelocity > 0) {
+ 648              		.loc 1 111 2 view .LVU176
+ 649              		.loc 1 111 20 is_stmt 0 view .LVU177
+ 650 0000 D0F80A30 		ldr	r3, [r0, #10]	@ unaligned
+ 651              		.loc 1 111 5 view .LVU178
+ 652 0004 002B     		cmp	r3, #0
+ 653 0006 03DC     		bgt	.L34
+ 112:Core/Src/servo_iq18.c **** 		return 1 * servo->reverseFlag;
+ 113:Core/Src/servo_iq18.c **** 	}
+ 114:Core/Src/servo_iq18.c **** 	if (servo->encoder.angularVelocity < 0) {
+ 654              		.loc 1 114 2 is_stmt 1 view .LVU179
+ 655              		.loc 1 114 5 is_stmt 0 view .LVU180
+ 656 0008 002B     		cmp	r3, #0
+ 657 000a 04DB     		blt	.L35
+ 115:Core/Src/servo_iq18.c **** 		return -1 * servo->reverseFlag;
+ 116:Core/Src/servo_iq18.c **** 	}
+ 117:Core/Src/servo_iq18.c **** 	return 0;
+ 658              		.loc 1 117 9 view .LVU181
+ 659 000c 0020     		movs	r0, #0
+ 660              	.LVL71:
+ 118:Core/Src/servo_iq18.c **** }
+ 661              		.loc 1 118 1 view .LVU182
+ 662 000e 7047     		bx	lr
+ 663              	.LVL72:
+ 664              	.L34:
+ 112:Core/Src/servo_iq18.c **** 		return 1 * servo->reverseFlag;
+ 665              		.loc 1 112 3 is_stmt 1 view .LVU183
+ 112:Core/Src/servo_iq18.c **** 		return 1 * servo->reverseFlag;
+ 666              		.loc 1 112 19 is_stmt 0 view .LVU184
+ 667 0010 90F9F800 		ldrsb	r0, [r0, #248]
+ 668              	.LVL73:
+ 112:Core/Src/servo_iq18.c **** 		return 1 * servo->reverseFlag;
+ 669              		.loc 1 112 12 view .LVU185
+ 670 0014 7047     		bx	lr
+ 671              	.LVL74:
+ 672              	.L35:
+ 115:Core/Src/servo_iq18.c **** 		return -1 * servo->reverseFlag;
+ 673              		.loc 1 115 3 is_stmt 1 view .LVU186
+ 115:Core/Src/servo_iq18.c **** 		return -1 * servo->reverseFlag;
+ 674              		.loc 1 115 20 is_stmt 0 view .LVU187
+ 675 0016 90F9F800 		ldrsb	r0, [r0, #248]
+ 676              	.LVL75:
+ 115:Core/Src/servo_iq18.c **** 		return -1 * servo->reverseFlag;
+ 677              		.loc 1 115 13 view .LVU188
+ 678 001a 4042     		rsbs	r0, r0, #0
+ 679 001c 7047     		bx	lr
+ 680              		.cfi_endproc
+ 681              	.LFE73:
+ 683              		.section	.text.servo_iq18_getCurrentDirection,"ax",%progbits
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 15
+
+
+ 684              		.align	1
+ 685              		.global	servo_iq18_getCurrentDirection
+ 686              		.syntax unified
+ 687              		.thumb
+ 688              		.thumb_func
+ 690              	servo_iq18_getCurrentDirection:
+ 691              	.LVL76:
+ 692              	.LFB74:
+ 119:Core/Src/servo_iq18.c **** 
+ 120:Core/Src/servo_iq18.c **** int servo_iq18_getCurrentDirection(servo_iq18_t *servo) {
+ 693              		.loc 1 120 57 is_stmt 1 view -0
+ 694              		.cfi_startproc
+ 695              		@ args = 0, pretend = 0, frame = 0
+ 696              		@ frame_needed = 0, uses_anonymous_args = 0
+ 697              		@ link register save eliminated.
+ 121:Core/Src/servo_iq18.c **** 	return servo->driver.dir;
+ 698              		.loc 1 121 2 view .LVU190
+ 122:Core/Src/servo_iq18.c **** }
+ 699              		.loc 1 122 1 is_stmt 0 view .LVU191
+ 700 0000 90F9F500 		ldrsb	r0, [r0, #245]
+ 701              	.LVL77:
+ 702              		.loc 1 122 1 view .LVU192
+ 703 0004 7047     		bx	lr
+ 704              		.cfi_endproc
+ 705              	.LFE74:
+ 707              		.section	.text.servo_iq18_positionLoop,"ax",%progbits
+ 708              		.align	1
+ 709              		.global	servo_iq18_positionLoop
+ 710              		.syntax unified
+ 711              		.thumb
+ 712              		.thumb_func
+ 714              	servo_iq18_positionLoop:
+ 715              	.LVL78:
+ 716              	.LFB75:
+ 123:Core/Src/servo_iq18.c **** 
+ 124:Core/Src/servo_iq18.c **** void servo_iq18_positionLoop(servo_iq18_t *servo) {
+ 717              		.loc 1 124 51 is_stmt 1 view -0
+ 718              		.cfi_startproc
+ 719              		@ args = 0, pretend = 0, frame = 0
+ 720              		@ frame_needed = 0, uses_anonymous_args = 0
+ 721              		.loc 1 124 51 is_stmt 0 view .LVU194
+ 722 0000 70B5     		push	{r4, r5, r6, lr}
+ 723              		.cfi_def_cfa_offset 16
+ 724              		.cfi_offset 4, -16
+ 725              		.cfi_offset 5, -12
+ 726              		.cfi_offset 6, -8
+ 727              		.cfi_offset 14, -4
+ 728 0002 0446     		mov	r4, r0
+ 125:Core/Src/servo_iq18.c **** //	encoder_updatePosition_iq18(&servo->encoder);
+ 126:Core/Src/servo_iq18.c **** 
+ 127:Core/Src/servo_iq18.c **** 	switch (servo->currentMode) {
+ 729              		.loc 1 127 2 is_stmt 1 view .LVU195
+ 730              		.loc 1 127 15 is_stmt 0 view .LVU196
+ 731 0004 90F80931 		ldrb	r3, [r0, #265]	@ zero_extendqisi2
+ 732              		.loc 1 127 2 view .LVU197
+ 733 0008 012B     		cmp	r3, #1
+ 734 000a 0CD0     		beq	.L42
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 16
+
+
+ 128:Core/Src/servo_iq18.c **** 	case Position: {
+ 129:Core/Src/servo_iq18.c **** 		pid_iq18_calculate(&servo->pid_position, servo->positionSetpoint,
+ 130:Core/Src/servo_iq18.c **** 				encoder_getAngle_iq18(&servo->encoder));
+ 131:Core/Src/servo_iq18.c **** 		if (servo->controllerLoops == Single) {
+ 132:Core/Src/servo_iq18.c **** 			int32_t duty = (int32_t) (((int64_t) pid_iq18_getOutput(
+ 133:Core/Src/servo_iq18.c **** 					&servo->pid_position) * servo->driver.maxDuty) >> 18);
+ 134:Core/Src/servo_iq18.c **** 			pwm_setSpeed(&servo->driver, duty);
+ 135:Core/Src/servo_iq18.c **** 		} else {
+ 136:Core/Src/servo_iq18.c **** 			servo->velocitySetpoint = pid_iq18_getOutput(&servo->pid_position);
+ 137:Core/Src/servo_iq18.c **** 		}
+ 138:Core/Src/servo_iq18.c **** 		break;
+ 139:Core/Src/servo_iq18.c **** 	}
+ 140:Core/Src/servo_iq18.c **** 	default: {
+ 141:Core/Src/servo_iq18.c **** 		pid_iq18_reset(&servo->pid_position);
+ 735              		.loc 1 141 3 is_stmt 1 view .LVU198
+ 736 000c 2C30     		adds	r0, r0, #44
+ 737              	.LVL79:
+ 738              		.loc 1 141 3 is_stmt 0 view .LVU199
+ 739 000e FFF7FEFF 		bl	pid_iq18_reset
+ 740              	.LVL80:
+ 142:Core/Src/servo_iq18.c **** 		servo->positionSetpoint = 0;
+ 741              		.loc 1 142 3 is_stmt 1 view .LVU200
+ 742              		.loc 1 142 27 is_stmt 0 view .LVU201
+ 743 0012 0023     		movs	r3, #0
+ 744 0014 84F8FB30 		strb	r3, [r4, #251]
+ 745 0018 84F8FC30 		strb	r3, [r4, #252]
+ 746 001c 84F8FD30 		strb	r3, [r4, #253]
+ 747 0020 84F8FE30 		strb	r3, [r4, #254]
+ 143:Core/Src/servo_iq18.c **** 		break;
+ 748              		.loc 1 143 3 is_stmt 1 view .LVU202
+ 749              	.L37:
+ 144:Core/Src/servo_iq18.c **** 	}
+ 145:Core/Src/servo_iq18.c **** 	}
+ 146:Core/Src/servo_iq18.c **** }
+ 750              		.loc 1 146 1 is_stmt 0 view .LVU203
+ 751 0024 70BD     		pop	{r4, r5, r6, pc}
+ 752              	.LVL81:
+ 753              	.L42:
+ 129:Core/Src/servo_iq18.c **** 				encoder_getAngle_iq18(&servo->encoder));
+ 754              		.loc 1 129 3 is_stmt 1 view .LVU204
+ 755 0026 00F12C05 		add	r5, r0, #44
+ 756 002a D0F8FB60 		ldr	r6, [r0, #251]	@ unaligned
+ 757 002e FFF7FEFF 		bl	encoder_getAngle_iq18
+ 758              	.LVL82:
+ 129:Core/Src/servo_iq18.c **** 				encoder_getAngle_iq18(&servo->encoder));
+ 759              		.loc 1 129 3 is_stmt 0 view .LVU205
+ 760 0032 0246     		mov	r2, r0
+ 129:Core/Src/servo_iq18.c **** 				encoder_getAngle_iq18(&servo->encoder));
+ 761              		.loc 1 129 3 discriminator 1 view .LVU206
+ 762 0034 3146     		mov	r1, r6
+ 763 0036 2846     		mov	r0, r5
+ 764 0038 FFF7FEFF 		bl	pid_iq18_calculate
+ 765              	.LVL83:
+ 131:Core/Src/servo_iq18.c **** 			int32_t duty = (int32_t) (((int64_t) pid_iq18_getOutput(
+ 766              		.loc 1 131 3 is_stmt 1 view .LVU207
+ 131:Core/Src/servo_iq18.c **** 			int32_t duty = (int32_t) (((int64_t) pid_iq18_getOutput(
+ 767              		.loc 1 131 12 is_stmt 0 view .LVU208
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 17
+
+
+ 768 003c 94F80831 		ldrb	r3, [r4, #264]	@ zero_extendqisi2
+ 131:Core/Src/servo_iq18.c **** 			int32_t duty = (int32_t) (((int64_t) pid_iq18_getOutput(
+ 769              		.loc 1 131 6 view .LVU209
+ 770 0040 8BB9     		cbnz	r3, .L39
+ 771              	.LBB2:
+ 132:Core/Src/servo_iq18.c **** 					&servo->pid_position) * servo->driver.maxDuty) >> 18);
+ 772              		.loc 1 132 4 is_stmt 1 view .LVU210
+ 132:Core/Src/servo_iq18.c **** 					&servo->pid_position) * servo->driver.maxDuty) >> 18);
+ 773              		.loc 1 132 41 is_stmt 0 view .LVU211
+ 774 0042 2846     		mov	r0, r5
+ 775 0044 FFF7FEFF 		bl	pid_iq18_getOutput
+ 776              	.LVL84:
+ 132:Core/Src/servo_iq18.c **** 					&servo->pid_position) * servo->driver.maxDuty) >> 18);
+ 777              		.loc 1 132 31 discriminator 1 view .LVU212
+ 778 0048 C217     		asrs	r2, r0, #31
+ 133:Core/Src/servo_iq18.c **** 			pwm_setSpeed(&servo->driver, duty);
+ 779              		.loc 1 133 43 view .LVU213
+ 780 004a B4F8ED30 		ldrh	r3, [r4, #237]	@ unaligned
+ 133:Core/Src/servo_iq18.c **** 			pwm_setSpeed(&servo->driver, duty);
+ 781              		.loc 1 133 28 view .LVU214
+ 782 004e A0FB0301 		umull	r0, r1, r0, r3
+ 783 0052 03FB0211 		mla	r1, r3, r2, r1
+ 133:Core/Src/servo_iq18.c **** 			pwm_setSpeed(&servo->driver, duty);
+ 784              		.loc 1 133 53 view .LVU215
+ 785 0056 800C     		lsrs	r0, r0, #18
+ 786              	.LVL85:
+ 134:Core/Src/servo_iq18.c **** 		} else {
+ 787              		.loc 1 134 4 is_stmt 1 view .LVU216
+ 788 0058 40EA8131 		orr	r1, r0, r1, lsl #14
+ 789              	.LVL86:
+ 134:Core/Src/servo_iq18.c **** 		} else {
+ 790              		.loc 1 134 4 is_stmt 0 view .LVU217
+ 791 005c 04F1E000 		add	r0, r4, #224
+ 792 0060 FFF7FEFF 		bl	pwm_setSpeed
+ 793              	.LVL87:
+ 134:Core/Src/servo_iq18.c **** 		} else {
+ 794              		.loc 1 134 4 view .LVU218
+ 795              	.LBE2:
+ 796 0064 DEE7     		b	.L37
+ 797              	.LVL88:
+ 798              	.L39:
+ 136:Core/Src/servo_iq18.c **** 		}
+ 799              		.loc 1 136 4 is_stmt 1 view .LVU219
+ 136:Core/Src/servo_iq18.c **** 		}
+ 800              		.loc 1 136 30 is_stmt 0 view .LVU220
+ 801 0066 2846     		mov	r0, r5
+ 802 0068 FFF7FEFF 		bl	pid_iq18_getOutput
+ 803              	.LVL89:
+ 136:Core/Src/servo_iq18.c **** 		}
+ 804              		.loc 1 136 28 discriminator 1 view .LVU221
+ 805 006c C4F8FF00 		str	r0, [r4, #255]	@ unaligned
+ 806 0070 D8E7     		b	.L37
+ 807              		.cfi_endproc
+ 808              	.LFE75:
+ 810              		.section	.text.servo_iq18_velocityLoop,"ax",%progbits
+ 811              		.align	1
+ 812              		.global	servo_iq18_velocityLoop
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 18
+
+
+ 813              		.syntax unified
+ 814              		.thumb
+ 815              		.thumb_func
+ 817              	servo_iq18_velocityLoop:
+ 818              	.LVL90:
+ 819              	.LFB76:
+ 147:Core/Src/servo_iq18.c **** 
+ 148:Core/Src/servo_iq18.c **** void servo_iq18_velocityLoop(servo_iq18_t *servo) {
+ 820              		.loc 1 148 51 is_stmt 1 view -0
+ 821              		.cfi_startproc
+ 822              		@ args = 0, pretend = 0, frame = 0
+ 823              		@ frame_needed = 0, uses_anonymous_args = 0
+ 824              		.loc 1 148 51 is_stmt 0 view .LVU223
+ 825 0000 38B5     		push	{r3, r4, r5, lr}
+ 826              		.cfi_def_cfa_offset 16
+ 827              		.cfi_offset 3, -16
+ 828              		.cfi_offset 4, -12
+ 829              		.cfi_offset 5, -8
+ 830              		.cfi_offset 14, -4
+ 831 0002 0446     		mov	r4, r0
+ 149:Core/Src/servo_iq18.c **** 	encoder_updatePosition_iq18(&servo->encoder);
+ 832              		.loc 1 149 2 is_stmt 1 view .LVU224
+ 833 0004 FFF7FEFF 		bl	encoder_updatePosition_iq18
+ 834              	.LVL91:
+ 150:Core/Src/servo_iq18.c **** 	encoder_updateVelocity_qep_iq18(&servo->encoder);
+ 835              		.loc 1 150 2 view .LVU225
+ 836 0008 2046     		mov	r0, r4
+ 837 000a FFF7FEFF 		bl	encoder_updateVelocity_qep_iq18
+ 838              	.LVL92:
+ 151:Core/Src/servo_iq18.c **** 	if (servo->currentMode != Current) {
+ 839              		.loc 1 151 2 view .LVU226
+ 840              		.loc 1 151 11 is_stmt 0 view .LVU227
+ 841 000e 94F80931 		ldrb	r3, [r4, #265]	@ zero_extendqisi2
+ 842              		.loc 1 151 5 view .LVU228
+ 843 0012 032B     		cmp	r3, #3
+ 844 0014 14D1     		bne	.L50
+ 845              	.L44:
+ 152:Core/Src/servo_iq18.c **** 		pid_iq18_calculate(&servo->pid_velocity, servo->velocitySetpoint,
+ 153:Core/Src/servo_iq18.c **** 				encoder_getVelocity_iq18(&servo->encoder));
+ 154:Core/Src/servo_iq18.c **** 	}
+ 155:Core/Src/servo_iq18.c **** 
+ 156:Core/Src/servo_iq18.c **** 	switch (servo->controllerLoops) {
+ 846              		.loc 1 156 2 is_stmt 1 view .LVU229
+ 847              		.loc 1 156 15 is_stmt 0 view .LVU230
+ 848 0016 94F80831 		ldrb	r3, [r4, #264]	@ zero_extendqisi2
+ 849              		.loc 1 156 2 view .LVU231
+ 850 001a 012B     		cmp	r3, #1
+ 851 001c 1CD0     		beq	.L45
+ 852 001e 022B     		cmp	r3, #2
+ 853 0020 2DD0     		beq	.L46
+ 854 0022 63B9     		cbnz	r3, .L43
+ 855              	.LBB3:
+ 157:Core/Src/servo_iq18.c **** 	case Single:
+ 158:Core/Src/servo_iq18.c **** 		pid_iq18_reset(&servo->pid_velocity);
+ 856              		.loc 1 158 3 is_stmt 1 view .LVU232
+ 857 0024 04F16800 		add	r0, r4, #104
+ 858 0028 FFF7FEFF 		bl	pid_iq18_reset
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 19
+
+
+ 859              	.LVL93:
+ 159:Core/Src/servo_iq18.c **** 		servo->velocitySetpoint = 0;
+ 860              		.loc 1 159 3 view .LVU233
+ 861              		.loc 1 159 27 is_stmt 0 view .LVU234
+ 862 002c 0023     		movs	r3, #0
+ 863 002e 84F8FF30 		strb	r3, [r4, #255]
+ 864 0032 84F80031 		strb	r3, [r4, #256]
+ 865 0036 84F80131 		strb	r3, [r4, #257]
+ 866 003a 84F80231 		strb	r3, [r4, #258]
+ 160:Core/Src/servo_iq18.c **** 		break;
+ 867              		.loc 1 160 3 is_stmt 1 view .LVU235
+ 868              	.L43:
+ 869              	.LBE3:
+ 161:Core/Src/servo_iq18.c **** 	case Double:
+ 162:Core/Src/servo_iq18.c **** 		int32_t duty = (int32_t) (((int64_t) pid_iq18_getOutput(
+ 163:Core/Src/servo_iq18.c **** 				&servo->pid_velocity) * servo->driver.maxDuty) >> 18);
+ 164:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 165:Core/Src/servo_iq18.c **** 		break;
+ 166:Core/Src/servo_iq18.c **** 	case Triple:
+ 167:Core/Src/servo_iq18.c **** 		if (servo->currentMode != Current) {
+ 168:Core/Src/servo_iq18.c **** 			servo->currentSetpoint = pid_iq18_getOutput(&servo->pid_velocity);
+ 169:Core/Src/servo_iq18.c **** 		} else {
+ 170:Core/Src/servo_iq18.c **** 			pid_iq18_reset(&servo->pid_velocity);
+ 171:Core/Src/servo_iq18.c **** 			servo->velocitySetpoint = 0;
+ 172:Core/Src/servo_iq18.c **** 		}
+ 173:Core/Src/servo_iq18.c **** 		break;
+ 174:Core/Src/servo_iq18.c **** 	}
+ 175:Core/Src/servo_iq18.c **** }
+ 870              		.loc 1 175 1 is_stmt 0 view .LVU236
+ 871 003e 38BD     		pop	{r3, r4, r5, pc}
+ 872              	.LVL94:
+ 873              	.L50:
+ 152:Core/Src/servo_iq18.c **** 				encoder_getVelocity_iq18(&servo->encoder));
+ 874              		.loc 1 152 3 is_stmt 1 view .LVU237
+ 875 0040 D4F8FF50 		ldr	r5, [r4, #255]	@ unaligned
+ 876 0044 2046     		mov	r0, r4
+ 877 0046 FFF7FEFF 		bl	encoder_getVelocity_iq18
+ 878              	.LVL95:
+ 879 004a 0246     		mov	r2, r0
+ 152:Core/Src/servo_iq18.c **** 				encoder_getVelocity_iq18(&servo->encoder));
+ 880              		.loc 1 152 3 is_stmt 0 discriminator 1 view .LVU238
+ 881 004c 2946     		mov	r1, r5
+ 882 004e 04F16800 		add	r0, r4, #104
+ 883 0052 FFF7FEFF 		bl	pid_iq18_calculate
+ 884              	.LVL96:
+ 885 0056 DEE7     		b	.L44
+ 886              	.L45:
+ 887              	.LBB4:
+ 162:Core/Src/servo_iq18.c **** 				&servo->pid_velocity) * servo->driver.maxDuty) >> 18);
+ 888              		.loc 1 162 3 is_stmt 1 view .LVU239
+ 162:Core/Src/servo_iq18.c **** 				&servo->pid_velocity) * servo->driver.maxDuty) >> 18);
+ 889              		.loc 1 162 40 is_stmt 0 view .LVU240
+ 890 0058 04F16800 		add	r0, r4, #104
+ 891 005c FFF7FEFF 		bl	pid_iq18_getOutput
+ 892              	.LVL97:
+ 162:Core/Src/servo_iq18.c **** 				&servo->pid_velocity) * servo->driver.maxDuty) >> 18);
+ 893              		.loc 1 162 30 discriminator 1 view .LVU241
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 20
+
+
+ 894 0060 C217     		asrs	r2, r0, #31
+ 163:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 895              		.loc 1 163 42 view .LVU242
+ 896 0062 B4F8ED30 		ldrh	r3, [r4, #237]	@ unaligned
+ 163:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 897              		.loc 1 163 27 view .LVU243
+ 898 0066 A0FB0301 		umull	r0, r1, r0, r3
+ 899 006a 03FB0211 		mla	r1, r3, r2, r1
+ 163:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 900              		.loc 1 163 52 view .LVU244
+ 901 006e 800C     		lsrs	r0, r0, #18
+ 902              	.LVL98:
+ 164:Core/Src/servo_iq18.c **** 		break;
+ 903              		.loc 1 164 3 is_stmt 1 view .LVU245
+ 904 0070 40EA8131 		orr	r1, r0, r1, lsl #14
+ 905              	.LVL99:
+ 164:Core/Src/servo_iq18.c **** 		break;
+ 906              		.loc 1 164 3 is_stmt 0 view .LVU246
+ 907 0074 04F1E000 		add	r0, r4, #224
+ 908 0078 FFF7FEFF 		bl	pwm_setSpeed
+ 909              	.LVL100:
+ 165:Core/Src/servo_iq18.c **** 	case Triple:
+ 910              		.loc 1 165 3 is_stmt 1 view .LVU247
+ 911 007c DFE7     		b	.L43
+ 912              	.LVL101:
+ 913              	.L46:
+ 167:Core/Src/servo_iq18.c **** 			servo->currentSetpoint = pid_iq18_getOutput(&servo->pid_velocity);
+ 914              		.loc 1 167 3 view .LVU248
+ 167:Core/Src/servo_iq18.c **** 			servo->currentSetpoint = pid_iq18_getOutput(&servo->pid_velocity);
+ 915              		.loc 1 167 12 is_stmt 0 view .LVU249
+ 916 007e 94F80931 		ldrb	r3, [r4, #265]	@ zero_extendqisi2
+ 167:Core/Src/servo_iq18.c **** 			servo->currentSetpoint = pid_iq18_getOutput(&servo->pid_velocity);
+ 917              		.loc 1 167 6 view .LVU250
+ 918 0082 032B     		cmp	r3, #3
+ 919 0084 06D0     		beq	.L48
+ 168:Core/Src/servo_iq18.c **** 		} else {
+ 920              		.loc 1 168 4 is_stmt 1 view .LVU251
+ 168:Core/Src/servo_iq18.c **** 		} else {
+ 921              		.loc 1 168 29 is_stmt 0 view .LVU252
+ 922 0086 04F16800 		add	r0, r4, #104
+ 923 008a FFF7FEFF 		bl	pid_iq18_getOutput
+ 924              	.LVL102:
+ 168:Core/Src/servo_iq18.c **** 		} else {
+ 925              		.loc 1 168 27 discriminator 1 view .LVU253
+ 926 008e C4F80301 		str	r0, [r4, #259]	@ unaligned
+ 927 0092 D4E7     		b	.L43
+ 928              	.L48:
+ 170:Core/Src/servo_iq18.c **** 			servo->velocitySetpoint = 0;
+ 929              		.loc 1 170 4 is_stmt 1 view .LVU254
+ 930 0094 04F16800 		add	r0, r4, #104
+ 931 0098 FFF7FEFF 		bl	pid_iq18_reset
+ 932              	.LVL103:
+ 171:Core/Src/servo_iq18.c **** 		}
+ 933              		.loc 1 171 4 view .LVU255
+ 171:Core/Src/servo_iq18.c **** 		}
+ 934              		.loc 1 171 28 is_stmt 0 view .LVU256
+ 935 009c 0023     		movs	r3, #0
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 21
+
+
+ 936 009e 84F8FF30 		strb	r3, [r4, #255]
+ 937 00a2 84F80031 		strb	r3, [r4, #256]
+ 938 00a6 84F80131 		strb	r3, [r4, #257]
+ 939 00aa 84F80231 		strb	r3, [r4, #258]
+ 940              	.LBE4:
+ 941              		.loc 1 175 1 view .LVU257
+ 942 00ae C6E7     		b	.L43
+ 943              		.cfi_endproc
+ 944              	.LFE76:
+ 946              		.section	.text.servo_iq18_currentLoop,"ax",%progbits
+ 947              		.align	1
+ 948              		.global	servo_iq18_currentLoop
+ 949              		.syntax unified
+ 950              		.thumb
+ 951              		.thumb_func
+ 953              	servo_iq18_currentLoop:
+ 954              	.LVL104:
+ 955              	.LFB77:
+ 176:Core/Src/servo_iq18.c **** 
+ 177:Core/Src/servo_iq18.c **** void servo_iq18_currentLoop(servo_iq18_t *servo, _iq18 currentFeedback) {
+ 956              		.loc 1 177 73 is_stmt 1 view -0
+ 957              		.cfi_startproc
+ 958              		@ args = 0, pretend = 0, frame = 0
+ 959              		@ frame_needed = 0, uses_anonymous_args = 0
+ 960              		.loc 1 177 73 is_stmt 0 view .LVU259
+ 961 0000 38B5     		push	{r3, r4, r5, lr}
+ 962              		.cfi_def_cfa_offset 16
+ 963              		.cfi_offset 3, -16
+ 964              		.cfi_offset 4, -12
+ 965              		.cfi_offset 5, -8
+ 966              		.cfi_offset 14, -4
+ 967 0002 0446     		mov	r4, r0
+ 178:Core/Src/servo_iq18.c **** 	if (servo->controllerLoops == Triple) {
+ 968              		.loc 1 178 2 is_stmt 1 view .LVU260
+ 969              		.loc 1 178 11 is_stmt 0 view .LVU261
+ 970 0004 90F80831 		ldrb	r3, [r0, #264]	@ zero_extendqisi2
+ 971              		.loc 1 178 5 view .LVU262
+ 972 0008 022B     		cmp	r3, #2
+ 973 000a 0CD0     		beq	.L55
+ 179:Core/Src/servo_iq18.c **** 		pid_iq18_calculate(&servo->pid_current, servo->currentSetpoint,
+ 180:Core/Src/servo_iq18.c **** 				currentFeedback);
+ 181:Core/Src/servo_iq18.c **** 		int32_t duty = (int32_t) (((int64_t) pid_iq18_getOutput(
+ 182:Core/Src/servo_iq18.c **** 				&servo->pid_current) * servo->driver.maxDuty) >> 18);
+ 183:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 184:Core/Src/servo_iq18.c **** 	} else {
+ 185:Core/Src/servo_iq18.c **** 		pid_iq18_reset(&servo->pid_current);
+ 974              		.loc 1 185 3 is_stmt 1 view .LVU263
+ 975 000c A430     		adds	r0, r0, #164
+ 976              	.LVL105:
+ 977              		.loc 1 185 3 is_stmt 0 view .LVU264
+ 978 000e FFF7FEFF 		bl	pid_iq18_reset
+ 979              	.LVL106:
+ 186:Core/Src/servo_iq18.c **** 		servo->currentSetpoint = 0;
+ 980              		.loc 1 186 3 is_stmt 1 view .LVU265
+ 981              		.loc 1 186 26 is_stmt 0 view .LVU266
+ 982 0012 0023     		movs	r3, #0
+ 983 0014 84F80331 		strb	r3, [r4, #259]
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 22
+
+
+ 984 0018 84F80431 		strb	r3, [r4, #260]
+ 985 001c 84F80531 		strb	r3, [r4, #261]
+ 986 0020 84F80631 		strb	r3, [r4, #262]
+ 987              	.L51:
+ 187:Core/Src/servo_iq18.c **** 	}
+ 188:Core/Src/servo_iq18.c **** }
+ 988              		.loc 1 188 1 view .LVU267
+ 989 0024 38BD     		pop	{r3, r4, r5, pc}
+ 990              	.LVL107:
+ 991              	.L55:
+ 992              	.LBB5:
+ 179:Core/Src/servo_iq18.c **** 				currentFeedback);
+ 993              		.loc 1 179 3 is_stmt 1 view .LVU268
+ 994 0026 00F1A405 		add	r5, r0, #164
+ 995 002a 0A46     		mov	r2, r1
+ 996 002c D0F80311 		ldr	r1, [r0, #259]	@ unaligned
+ 997              	.LVL108:
+ 179:Core/Src/servo_iq18.c **** 				currentFeedback);
+ 998              		.loc 1 179 3 is_stmt 0 view .LVU269
+ 999 0030 2846     		mov	r0, r5
+ 1000              	.LVL109:
+ 179:Core/Src/servo_iq18.c **** 				currentFeedback);
+ 1001              		.loc 1 179 3 view .LVU270
+ 1002 0032 FFF7FEFF 		bl	pid_iq18_calculate
+ 1003              	.LVL110:
+ 181:Core/Src/servo_iq18.c **** 				&servo->pid_current) * servo->driver.maxDuty) >> 18);
+ 1004              		.loc 1 181 3 is_stmt 1 view .LVU271
+ 181:Core/Src/servo_iq18.c **** 				&servo->pid_current) * servo->driver.maxDuty) >> 18);
+ 1005              		.loc 1 181 40 is_stmt 0 view .LVU272
+ 1006 0036 2846     		mov	r0, r5
+ 1007 0038 FFF7FEFF 		bl	pid_iq18_getOutput
+ 1008              	.LVL111:
+ 181:Core/Src/servo_iq18.c **** 				&servo->pid_current) * servo->driver.maxDuty) >> 18);
+ 1009              		.loc 1 181 30 discriminator 1 view .LVU273
+ 1010 003c C217     		asrs	r2, r0, #31
+ 182:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 1011              		.loc 1 182 41 view .LVU274
+ 1012 003e B4F8ED30 		ldrh	r3, [r4, #237]	@ unaligned
+ 182:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 1013              		.loc 1 182 26 view .LVU275
+ 1014 0042 A0FB0301 		umull	r0, r1, r0, r3
+ 1015 0046 03FB0211 		mla	r1, r3, r2, r1
+ 182:Core/Src/servo_iq18.c **** 		pwm_setSpeed(&servo->driver, duty);
+ 1016              		.loc 1 182 51 view .LVU276
+ 1017 004a 800C     		lsrs	r0, r0, #18
+ 1018              	.LVL112:
+ 183:Core/Src/servo_iq18.c **** 	} else {
+ 1019              		.loc 1 183 3 is_stmt 1 view .LVU277
+ 1020 004c 40EA8131 		orr	r1, r0, r1, lsl #14
+ 1021              	.LVL113:
+ 183:Core/Src/servo_iq18.c **** 	} else {
+ 1022              		.loc 1 183 3 is_stmt 0 view .LVU278
+ 1023 0050 04F1E000 		add	r0, r4, #224
+ 1024 0054 FFF7FEFF 		bl	pwm_setSpeed
+ 1025              	.LVL114:
+ 183:Core/Src/servo_iq18.c **** 	} else {
+ 1026              		.loc 1 183 3 view .LVU279
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 23
+
+
+ 1027              	.LBE5:
+ 1028 0058 E4E7     		b	.L51
+ 1029              		.cfi_endproc
+ 1030              	.LFE77:
+ 1032              		.section	.text.servo_iq18_controlPosition,"ax",%progbits
+ 1033              		.align	1
+ 1034              		.global	servo_iq18_controlPosition
+ 1035              		.syntax unified
+ 1036              		.thumb
+ 1037              		.thumb_func
+ 1039              	servo_iq18_controlPosition:
+ 1040              	.LVL115:
+ 1041              	.LFB78:
+ 189:Core/Src/servo_iq18.c **** 
+ 190:Core/Src/servo_iq18.c **** void servo_iq18_controlPosition(servo_iq18_t *servo, float setpoint) {
+ 1042              		.loc 1 190 70 is_stmt 1 view -0
+ 1043              		.cfi_startproc
+ 1044              		@ args = 0, pretend = 0, frame = 0
+ 1045              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1046              		.loc 1 190 70 is_stmt 0 view .LVU281
+ 1047 0000 10B5     		push	{r4, lr}
+ 1048              		.cfi_def_cfa_offset 8
+ 1049              		.cfi_offset 4, -8
+ 1050              		.cfi_offset 14, -4
+ 1051 0002 0446     		mov	r4, r0
+ 1052 0004 0846     		mov	r0, r1
+ 1053              	.LVL116:
+ 191:Core/Src/servo_iq18.c **** 	servo->currentMode = Position;
+ 1054              		.loc 1 191 2 is_stmt 1 view .LVU282
+ 1055              		.loc 1 191 21 is_stmt 0 view .LVU283
+ 1056 0006 0123     		movs	r3, #1
+ 1057 0008 84F80931 		strb	r3, [r4, #265]
+ 192:Core/Src/servo_iq18.c **** 	servo->positionSetpoint = _IQ18(setpoint) * servo->reverseFlag;
+ 1058              		.loc 1 192 2 is_stmt 1 view .LVU284
+ 1059              		.loc 1 192 28 is_stmt 0 view .LVU285
+ 1060 000c 4FF09141 		mov	r1, #1216348160
+ 1061              	.LVL117:
+ 1062              		.loc 1 192 28 view .LVU286
+ 1063 0010 FFF7FEFF 		bl	__aeabi_fmul
+ 1064              	.LVL118:
+ 1065              		.loc 1 192 28 view .LVU287
+ 1066 0014 FFF7FEFF 		bl	__aeabi_f2iz
+ 1067              	.LVL119:
+ 1068              		.loc 1 192 51 view .LVU288
+ 1069 0018 94F9F830 		ldrsb	r3, [r4, #248]
+ 1070              		.loc 1 192 44 view .LVU289
+ 1071 001c 03FB00F0 		mul	r0, r3, r0
+ 1072              		.loc 1 192 26 view .LVU290
+ 1073 0020 C4F8FB00 		str	r0, [r4, #251]	@ unaligned
+ 193:Core/Src/servo_iq18.c **** }
+ 1074              		.loc 1 193 1 view .LVU291
+ 1075 0024 10BD     		pop	{r4, pc}
+ 1076              		.loc 1 193 1 view .LVU292
+ 1077              		.cfi_endproc
+ 1078              	.LFE78:
+ 1080              		.section	.text.servo_iq18_controlVelocity,"ax",%progbits
+ 1081              		.align	1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 24
+
+
+ 1082              		.global	servo_iq18_controlVelocity
+ 1083              		.syntax unified
+ 1084              		.thumb
+ 1085              		.thumb_func
+ 1087              	servo_iq18_controlVelocity:
+ 1088              	.LVL120:
+ 1089              	.LFB79:
+ 194:Core/Src/servo_iq18.c **** 
+ 195:Core/Src/servo_iq18.c **** void servo_iq18_controlVelocity(servo_iq18_t *servo, _iq18 setpoint) {
+ 1090              		.loc 1 195 70 is_stmt 1 view -0
+ 1091              		.cfi_startproc
+ 1092              		@ args = 0, pretend = 0, frame = 0
+ 1093              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1094              		@ link register save eliminated.
+ 196:Core/Src/servo_iq18.c **** 	if (servo->controllerLoops != Single) {
+ 1095              		.loc 1 196 2 view .LVU294
+ 1096              		.loc 1 196 11 is_stmt 0 view .LVU295
+ 1097 0000 90F80831 		ldrb	r3, [r0, #264]	@ zero_extendqisi2
+ 1098              		.loc 1 196 5 view .LVU296
+ 1099 0004 83B1     		cbz	r3, .L58
+ 197:Core/Src/servo_iq18.c **** 		servo->currentMode = Velocity;
+ 1100              		.loc 1 197 3 is_stmt 1 view .LVU297
+ 1101              		.loc 1 197 22 is_stmt 0 view .LVU298
+ 1102 0006 0223     		movs	r3, #2
+ 1103 0008 80F80931 		strb	r3, [r0, #265]
+ 198:Core/Src/servo_iq18.c **** 		// _iq18 vel_setp_iq18 = (_iq18)setpoint_q9 << 9;
+ 199:Core/Src/servo_iq18.c **** 		servo->velocitySetpoint = _IQsat(setpoint * servo->reverseFlag,
+ 1104              		.loc 1 199 3 is_stmt 1 view .LVU299
+ 1105              		.loc 1 199 29 is_stmt 0 view .LVU300
+ 1106 000c 90F9F820 		ldrsb	r2, [r0, #248]
+ 1107 0010 01FB02F2 		mul	r2, r1, r2
+ 1108 0014 D0F80A31 		ldr	r3, [r0, #266]	@ unaligned
+ 1109 0018 9A42     		cmp	r2, r3
+ 1110 001a 03DC     		bgt	.L60
+ 1111              		.loc 1 199 29 discriminator 2 view .LVU301
+ 1112 001c 5B42     		rsbs	r3, r3, #0
+ 1113 001e 9342     		cmp	r3, r2
+ 1114 0020 B8BF     		it	lt
+ 1115 0022 1346     		movlt	r3, r2
+ 1116              	.L60:
+ 1117              		.loc 1 199 27 discriminator 4 view .LVU302
+ 1118 0024 C0F8FF30 		str	r3, [r0, #255]	@ unaligned
+ 1119              	.L58:
+ 200:Core/Src/servo_iq18.c **** 				servo->maxShaftSpeed, -servo->maxShaftSpeed);
+ 201:Core/Src/servo_iq18.c **** 	}
+ 202:Core/Src/servo_iq18.c **** }
+ 1120              		.loc 1 202 1 view .LVU303
+ 1121 0028 7047     		bx	lr
+ 1122              		.cfi_endproc
+ 1123              	.LFE79:
+ 1125              		.global	__aeabi_i2f
+ 1126              		.section	.text.servo_iq18_controlCurrent,"ax",%progbits
+ 1127              		.align	1
+ 1128              		.global	servo_iq18_controlCurrent
+ 1129              		.syntax unified
+ 1130              		.thumb
+ 1131              		.thumb_func
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 25
+
+
+ 1133              	servo_iq18_controlCurrent:
+ 1134              	.LVL121:
+ 1135              	.LFB80:
+ 203:Core/Src/servo_iq18.c **** 
+ 204:Core/Src/servo_iq18.c **** void servo_iq18_controlCurrent(servo_iq18_t *servo, float setpoint) {
+ 1136              		.loc 1 204 69 is_stmt 1 view -0
+ 1137              		.cfi_startproc
+ 1138              		@ args = 0, pretend = 0, frame = 0
+ 1139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1140              		.loc 1 204 69 is_stmt 0 view .LVU305
+ 1141 0000 38B5     		push	{r3, r4, r5, lr}
+ 1142              		.cfi_def_cfa_offset 16
+ 1143              		.cfi_offset 3, -16
+ 1144              		.cfi_offset 4, -12
+ 1145              		.cfi_offset 5, -8
+ 1146              		.cfi_offset 14, -4
+ 205:Core/Src/servo_iq18.c **** 	if (servo->controllerLoops == Triple) {
+ 1147              		.loc 1 205 2 is_stmt 1 view .LVU306
+ 1148              		.loc 1 205 11 is_stmt 0 view .LVU307
+ 1149 0002 90F80831 		ldrb	r3, [r0, #264]	@ zero_extendqisi2
+ 1150              		.loc 1 205 5 view .LVU308
+ 1151 0006 022B     		cmp	r3, #2
+ 1152 0008 00D0     		beq	.L65
+ 1153              	.LVL122:
+ 1154              	.L61:
+ 206:Core/Src/servo_iq18.c **** 		servo->currentMode = Current;
+ 207:Core/Src/servo_iq18.c **** 		servo->currentSetpoint = _IQsat(_IQ18(setpoint * servo->reverseFlag),
+ 208:Core/Src/servo_iq18.c **** 				servo->maxCurrent, -servo->maxCurrent);
+ 209:Core/Src/servo_iq18.c **** 		// servo->currentSetpoint = _IQ18(setpoint);
+ 210:Core/Src/servo_iq18.c **** 	}
+ 211:Core/Src/servo_iq18.c **** }
+ 1155              		.loc 1 211 1 view .LVU309
+ 1156 000a 38BD     		pop	{r3, r4, r5, pc}
+ 1157              	.LVL123:
+ 1158              	.L65:
+ 1159              		.loc 1 211 1 view .LVU310
+ 1160 000c 0446     		mov	r4, r0
+ 1161 000e 0D46     		mov	r5, r1
+ 206:Core/Src/servo_iq18.c **** 		servo->currentMode = Current;
+ 1162              		.loc 1 206 3 is_stmt 1 view .LVU311
+ 206:Core/Src/servo_iq18.c **** 		servo->currentMode = Current;
+ 1163              		.loc 1 206 22 is_stmt 0 view .LVU312
+ 1164 0010 0323     		movs	r3, #3
+ 1165 0012 80F80931 		strb	r3, [r0, #265]
+ 207:Core/Src/servo_iq18.c **** 				servo->maxCurrent, -servo->maxCurrent);
+ 1166              		.loc 1 207 3 is_stmt 1 view .LVU313
+ 207:Core/Src/servo_iq18.c **** 				servo->maxCurrent, -servo->maxCurrent);
+ 1167              		.loc 1 207 28 is_stmt 0 view .LVU314
+ 1168 0016 90F9F800 		ldrsb	r0, [r0, #248]
+ 1169              	.LVL124:
+ 207:Core/Src/servo_iq18.c **** 				servo->maxCurrent, -servo->maxCurrent);
+ 1170              		.loc 1 207 28 view .LVU315
+ 1171 001a FFF7FEFF 		bl	__aeabi_i2f
+ 1172              	.LVL125:
+ 207:Core/Src/servo_iq18.c **** 				servo->maxCurrent, -servo->maxCurrent);
+ 1173              		.loc 1 207 28 view .LVU316
+ 1174 001e 2946     		mov	r1, r5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 26
+
+
+ 1175 0020 FFF7FEFF 		bl	__aeabi_fmul
+ 1176              	.LVL126:
+ 1177 0024 4FF09141 		mov	r1, #1216348160
+ 1178 0028 FFF7FEFF 		bl	__aeabi_fmul
+ 1179              	.LVL127:
+ 1180 002c FFF7FEFF 		bl	__aeabi_f2iz
+ 1181              	.LVL128:
+ 1182 0030 D4F80E31 		ldr	r3, [r4, #270]	@ unaligned
+ 1183 0034 9842     		cmp	r0, r3
+ 1184 0036 03DC     		bgt	.L63
+ 207:Core/Src/servo_iq18.c **** 				servo->maxCurrent, -servo->maxCurrent);
+ 1185              		.loc 1 207 28 discriminator 2 view .LVU317
+ 1186 0038 5B42     		rsbs	r3, r3, #0
+ 1187 003a 8342     		cmp	r3, r0
+ 1188 003c B8BF     		it	lt
+ 1189 003e 0346     		movlt	r3, r0
+ 1190              	.L63:
+ 207:Core/Src/servo_iq18.c **** 				servo->maxCurrent, -servo->maxCurrent);
+ 1191              		.loc 1 207 26 discriminator 4 view .LVU318
+ 1192 0040 C4F80331 		str	r3, [r4, #259]	@ unaligned
+ 1193              		.loc 1 211 1 view .LVU319
+ 1194 0044 E1E7     		b	.L61
+ 1195              		.cfi_endproc
+ 1196              	.LFE80:
+ 1198              		.section	.text.servo_iq18_reset,"ax",%progbits
+ 1199              		.align	1
+ 1200              		.global	servo_iq18_reset
+ 1201              		.syntax unified
+ 1202              		.thumb
+ 1203              		.thumb_func
+ 1205              	servo_iq18_reset:
+ 1206              	.LVL129:
+ 1207              	.LFB81:
+ 212:Core/Src/servo_iq18.c **** 
+ 213:Core/Src/servo_iq18.c **** void servo_iq18_reset(servo_iq18_t *servo){
+ 1208              		.loc 1 213 43 is_stmt 1 view -0
+ 1209              		.cfi_startproc
+ 1210              		@ args = 0, pretend = 0, frame = 0
+ 1211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1212              		.loc 1 213 43 is_stmt 0 view .LVU321
+ 1213 0000 10B5     		push	{r4, lr}
+ 1214              		.cfi_def_cfa_offset 8
+ 1215              		.cfi_offset 4, -8
+ 1216              		.cfi_offset 14, -4
+ 1217 0002 0446     		mov	r4, r0
+ 214:Core/Src/servo_iq18.c **** 	encoder_reset_iq18(&servo->encoder);
+ 1218              		.loc 1 214 2 is_stmt 1 view .LVU322
+ 1219 0004 FFF7FEFF 		bl	encoder_reset_iq18
+ 1220              	.LVL130:
+ 215:Core/Src/servo_iq18.c **** 	pid_iq18_reset(&servo->pid_current);
+ 1221              		.loc 1 215 2 view .LVU323
+ 1222 0008 04F1A400 		add	r0, r4, #164
+ 1223 000c FFF7FEFF 		bl	pid_iq18_reset
+ 1224              	.LVL131:
+ 216:Core/Src/servo_iq18.c **** 	pid_iq18_reset(&servo->pid_velocity);
+ 1225              		.loc 1 216 2 view .LVU324
+ 1226 0010 04F16800 		add	r0, r4, #104
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 27
+
+
+ 1227 0014 FFF7FEFF 		bl	pid_iq18_reset
+ 1228              	.LVL132:
+ 217:Core/Src/servo_iq18.c **** 	pid_iq18_reset(&servo->pid_position);
+ 1229              		.loc 1 217 2 view .LVU325
+ 1230 0018 04F12C00 		add	r0, r4, #44
+ 1231 001c FFF7FEFF 		bl	pid_iq18_reset
+ 1232              	.LVL133:
+ 218:Core/Src/servo_iq18.c **** }...
+ 1233              		.loc 1 218 1 is_stmt 0 view .LVU326
+ 1234 0020 10BD     		pop	{r4, pc}
+ 1235              		.loc 1 218 1 view .LVU327
+ 1236              		.cfi_endproc
+ 1237              	.LFE81:
+ 1239              		.text
+ 1240              	.Letext0:
+ 1241              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 1242              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 1243              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 1244              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1245              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1246              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 1247              		.file 8 "Core/Inc/IQmathLib.h"
+ 1248              		.file 9 "Core/Inc/ema_iq18.h"
+ 1249              		.file 10 "Core/Inc/encoder_iq18.h"
+ 1250              		.file 11 "Core/Inc/pid_iq18.h"
+ 1251              		.file 12 "Core/Inc/pwm.h"
+ 1252              		.file 13 "Core/Inc/servo_iq18.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s 			page 28
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 servo_iq18.c
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:22     .text.servo_iq18_base_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:28     .text.servo_iq18_base_init:00000000 servo_iq18_base_init
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:114    .text.servo_iq18_encoder_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:120    .text.servo_iq18_encoder_init:00000000 servo_iq18_encoder_init
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:175    .text.servo_iq18_encoder_init:00000028 $d
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:180    .text.servo_iq18_driver_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:186    .text.servo_iq18_driver_init:00000000 servo_iq18_driver_init
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:263    .text.servo_iq18_driver_init:00000060 $d
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:268    .text.servo_iq18_position_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:274    .text.servo_iq18_position_init:00000000 servo_iq18_position_init
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:353    .text.servo_iq18_velocity_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:359    .text.servo_iq18_velocity_init:00000000 servo_iq18_velocity_init
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:443    .text.servo_iq18_current_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:449    .text.servo_iq18_current_init:00000000 servo_iq18_current_init
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:565    .text.servo_iq18_setPositionTolerance:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:571    .text.servo_iq18_setPositionTolerance:00000000 servo_iq18_setPositionTolerance
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:605    .text.servo_iq18_getState:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:611    .text.servo_iq18_getState:00000000 servo_iq18_getState
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:634    .text.servo_iq18_getDirection:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:640    .text.servo_iq18_getDirection:00000000 servo_iq18_getDirection
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:684    .text.servo_iq18_getCurrentDirection:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:690    .text.servo_iq18_getCurrentDirection:00000000 servo_iq18_getCurrentDirection
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:708    .text.servo_iq18_positionLoop:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:714    .text.servo_iq18_positionLoop:00000000 servo_iq18_positionLoop
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:811    .text.servo_iq18_velocityLoop:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:817    .text.servo_iq18_velocityLoop:00000000 servo_iq18_velocityLoop
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:947    .text.servo_iq18_currentLoop:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:953    .text.servo_iq18_currentLoop:00000000 servo_iq18_currentLoop
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1033   .text.servo_iq18_controlPosition:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1039   .text.servo_iq18_controlPosition:00000000 servo_iq18_controlPosition
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1081   .text.servo_iq18_controlVelocity:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1087   .text.servo_iq18_controlVelocity:00000000 servo_iq18_controlVelocity
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1127   .text.servo_iq18_controlCurrent:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1133   .text.servo_iq18_controlCurrent:00000000 servo_iq18_controlCurrent
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1199   .text.servo_iq18_reset:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccZ2X6Fv.s:1205   .text.servo_iq18_reset:00000000 servo_iq18_reset
+
+UNDEFINED SYMBOLS
+__aeabi_fmul
+__aeabi_f2iz
+__aeabi_fdiv
+initEMA_iq18
+pid_iq18_reset
+encoder_getAngle_iq18
+pid_iq18_calculate
+pid_iq18_getOutput
+pwm_setSpeed
+encoder_updatePosition_iq18
+encoder_updateVelocity_qep_iq18
+encoder_getVelocity_iq18
+__aeabi_i2f
+encoder_reset_iq18

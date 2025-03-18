@@ -21,13 +21,17 @@ build/debug/Core/Src/stm32f1xx_it.o: Core/Src/stm32f1xx_it.c \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- Core/Inc/stm32f1xx_it.h
+ Core/Inc/stm32f1xx_it.h Core/Inc/loops_handler.h Core/Inc/tim.h \
+ Core/Inc/main.h Core/Inc/IQmathLib.h Core/Inc/main_init.h \
+ Core/Inc/pins_init.h Core/Inc/gpio.h Core/Inc/dma.h \
+ Core/Inc/servo_init.h Core/Inc/adc.h Core/Inc/servo_iq18.h \
+ Core/Inc/encoder_iq18.h Core/Inc/ema_iq18.h Core/Inc/pid_iq18.h \
+ Core/Inc/pwm.h Core/Inc/settings.h Core/Inc/adc_current.h \
+ Core/Inc/global_flags.h
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Core/Inc/stm32f1xx_hal_conf.h:
@@ -53,10 +57,26 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
-Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h:
-Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 Core/Inc/stm32f1xx_it.h:
+Core/Inc/loops_handler.h:
+Core/Inc/tim.h:
+Core/Inc/main.h:
+Core/Inc/IQmathLib.h:
+Core/Inc/main_init.h:
+Core/Inc/pins_init.h:
+Core/Inc/gpio.h:
+Core/Inc/dma.h:
+Core/Inc/servo_init.h:
+Core/Inc/adc.h:
+Core/Inc/servo_iq18.h:
+Core/Inc/encoder_iq18.h:
+Core/Inc/ema_iq18.h:
+Core/Inc/pid_iq18.h:
+Core/Inc/pwm.h:
+Core/Inc/settings.h:
+Core/Inc/adc_current.h:
+Core/Inc/global_flags.h:

@@ -1,0 +1,70 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc388mcl.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"pins_init.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/pins_init.c"
+  18              		.section	.text.pin_init_mtcrl,"ax",%progbits
+  19              		.align	1
+  20              		.global	pin_init_mtcrl
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	pin_init_mtcrl:
+  26              	.LFB65:
+   1:Core/Src/pins_init.c **** #include "pins_init.h"
+   2:Core/Src/pins_init.c **** 
+   3:Core/Src/pins_init.c **** void pin_init_mtcrl()
+   4:Core/Src/pins_init.c **** {
+  27              		.loc 1 4 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+   5:Core/Src/pins_init.c ****     // Init DMA
+   6:Core/Src/pins_init.c ****     MX_DMA_Init();
+  35              		.loc 1 6 5 view .LVU1
+  36 0002 FFF7FEFF 		bl	MX_DMA_Init
+  37              	.LVL0:
+   7:Core/Src/pins_init.c ****     // Initialize gpio; dma for adc
+   8:Core/Src/pins_init.c ****     MX_GPIO_Init();
+  38              		.loc 1 8 5 view .LVU2
+  39 0006 FFF7FEFF 		bl	MX_GPIO_Init
+  40              	.LVL1:
+   9:Core/Src/pins_init.c **** }...
+  41              		.loc 1 9 1 is_stmt 0 view .LVU3
+  42 000a 08BD     		pop	{r3, pc}
+  43              		.cfi_endproc
+  44              	.LFE65:
+  46              		.text
+  47              	.Letext0:
+  48              		.file 2 "Core/Inc/gpio.h"
+  49              		.file 3 "Core/Inc/dma.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc388mcl.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 pins_init.c
+C:\Users\zhmis\AppData\Local\Temp\cc388mcl.s:19     .text.pin_init_mtcrl:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc388mcl.s:25     .text.pin_init_mtcrl:00000000 pin_init_mtcrl
+
+UNDEFINED SYMBOLS
+MX_DMA_Init
+MX_GPIO_Init

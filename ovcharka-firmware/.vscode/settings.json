@@ -5,7 +5,15 @@
         "dma.h": "c",
         "adc.h": "c",
         "main.h": "c",
-        "stm32f1xx_hal.h": "c"
+        "stm32f1xx_hal.h": "c",
+        "main_init.h": "c",
+        "servo_init.h": "c",
+        "servo_iq18.h": "c",
+        "global_flags.h": "c",
+        "adc_current.h": "c",
+        "pins_init.h": "c",
+        "loops_handler.h": "c",
+        "encoder_iq18.h": "c"
     },
-    "cortex-debug.variableUseNaturalFormat": false
+    "cortex-debug.variableUseNaturalFormat": true
 }
