@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
   41              		.loc 1 15 50 is_stmt 0 view .LVU3
   42 0006 41F04001 		orr	r1, r1, #64
   43              	.LVL1:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 2
 
 
   44              		.loc 1 15 50 view .LVU4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
   92              		.loc 1 23 85 is_stmt 1 view -0
   93              		.cfi_startproc
   94              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 3
 
 
   95              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  141              		@ sp needed
  142 003a 10BD     		pop	{r4, pc}
  143              		.loc 1 31 1 view .LVU28
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 4
 
 
  144              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  189 001e FFF7FEFF 		bl	drv8106_read_reg_blocking
  190              	.LVL16:
   43:Core/Src/drv8106.c ****     drv_inst->register_map.IC_STAT_2 = (uint8_t)(drv_inst->rxbuff & 0xFF);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 5
 
 
  191              		.loc 1 43 5 view .LVU40
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  233 0052 A37A     		ldrb	r3, [r4, #10]	@ zero_extendqisi2
  234              		.loc 1 55 39 view .LVU58
  235 0054 6375     		strb	r3, [r4, #21]
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 6
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 6
 
 
   56:Core/Src/drv8106.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  276              		.loc 1 69 5 is_stmt 1 view .LVU75
  277 0086 0C21     		movs	r1, #12
  278 0088 2046     		mov	r0, r4
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 7
 
 
  279 008a FFF7FEFF 		bl	drv8106_read_reg_blocking
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
   78:Core/Src/drv8106.c ****     drv8106_write_reg_blocking(drv_inst, DRV8106_BRG_CTRL, DRV8106_BRG_CTRL_DEFAULT);
  327              		.loc 1 78 5 view .LVU88
  328 000c 0022     		movs	r2, #0
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 8
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 8
 
 
  329 000e 0521     		movs	r1, #5
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  375              		.loc 1 86 5 view .LVU96
  376 005c 0122     		movs	r2, #1
  377 005e 0D21     		movs	r1, #13
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 9
 
 
  378 0060 2046     		mov	r0, r4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  427              		.loc 1 93 5 is_stmt 1 view .LVU109
  428              		.loc 1 93 17 is_stmt 0 view .LVU110
  429 001a 0A4B     		ldr	r3, .L11+8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 10
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 10
 
 
  430              		.loc 1 93 17 view .LVU111
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  480 0000 10B5     		push	{r4, lr}
  481              		.cfi_def_cfa_offset 8
  482              		.cfi_offset 4, -8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 11
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 11
 
 
  483              		.cfi_offset 14, -4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  530              		.loc 1 106 1 view .LVU136
  531 0036 00BF     		.align	2
  532              	.L15:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 12
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 12
 
 
  533 0038 00000000 		.word	drv8106_read_flag
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  121:Core/Src/drv8106.c **** 
  122:Core/Src/drv8106.c **** void drv8106_Disable_blocking(drv8106_t* drv_inst){
  577              		.loc 1 122 51 is_stmt 1 view -0
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 13
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 13
 
 
  578              		.cfi_startproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  629              		.thumb
  630              		.thumb_func
  632              	drv8106_check_faults:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 14
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 14
 
 
  633              	.LVL58:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  677              		.loc 1 138 5 is_stmt 1 view .LVU172
  678              		.loc 1 138 78 is_stmt 0 view .LVU173
  679 0032 03F00103 		and	r3, r3, #1
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 15
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 15
 
 
  680              		.loc 1 138 43 view .LVU174
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  731 0000 08B5     		push	{r3, lr}
  732              		.cfi_def_cfa_offset 8
  733              		.cfi_offset 3, -8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 16
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 16
 
 
  734              		.cfi_offset 14, -4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  162:Core/Src/drv8106.c ****             }
  163:Core/Src/drv8106.c ****         } else{
  164:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 17
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 17
 
 
  165:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  811              	.LBB2:
  164:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
  812              		.loc 1 164 13 view .LVU202
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 18
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 18
 
 
  164:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  868 0000 00000000 		.word	hspi1
  869 0004 000C0140 		.word	1073810432
  870 0008 0100     		.short	1
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 19
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 19
 
 
  871 000a 0000     		.short	0
@@ -1137,54 +1137,54 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 1
  914              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
  915              		.file 9 "Core/Inc/drv8106.h"
  916              		.file 10 "Core/Inc/spi.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s 			page 20
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 drv8106.c
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:19     .text.drv8106_read_reg_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:25     .text.drv8106_read_reg_blocking:00000000 drv8106_read_reg_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:83     .text.drv8106_write_reg_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:89     .text.drv8106_write_reg_blocking:00000000 drv8106_write_reg_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:148    .text.drv8106_read_all_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:154    .text.drv8106_read_all_blocking:00000000 drv8106_read_all_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:303    .text.drv8106_reset_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:309    .text.drv8106_reset_blocking:00000000 drv8106_reset_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:388    .text.drv8106_read_reg_dma:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:394    .text.drv8106_read_reg_dma:00000000 drv8106_read_reg_dma
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:459    .text.drv8106_read_reg_dma:0000003c $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:847    .bss.drv8106_read_flag:00000000 drv8106_read_flag
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:853    .bss.drv8106_cur_read_addr:00000000 drv8106_cur_read_addr
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:860    .bss.drv_cur_ptr:00000000 drv_cur_ptr
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:466    .text.drv8106_write_reg_dma:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:472    .text.drv8106_write_reg_dma:00000000 drv8106_write_reg_dma
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:533    .text.drv8106_write_reg_dma:00000038 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:539    .text.drv8106_Enable_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:545    .text.drv8106_Enable_blocking:00000000 drv8106_Enable_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:568    .text.drv8106_Disable_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:574    .text.drv8106_Disable_blocking:00000000 drv8106_Disable_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:597    .text.drv8106_CSA_enable_g10_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:603    .text.drv8106_CSA_enable_g10_blocking:00000000 drv8106_CSA_enable_g10_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:626    .text.drv8106_check_faults:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:632    .text.drv8106_check_faults:00000000 drv8106_check_faults
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:688    .text.drv8106_clear_fault_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:694    .text.drv8106_clear_fault_blocking:00000000 drv8106_clear_fault_blocking
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:717    .text.drv8106_clear_fault_dma:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:723    .text.drv8106_clear_fault_dma:00000000 drv8106_clear_fault_dma
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:746    .text.HAL_SPI_TxRxCpltCallback:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:752    .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:837    .text.HAL_SPI_TxRxCpltCallback:00000048 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:848    .bss.drv8106_read_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:854    .bss.drv8106_cur_read_addr:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:857    .bss.drv_cur_ptr:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:867    .data.drv_r2_dd9:00000000 drv_r2_dd9
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:864    .data.drv_r2_dd9:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:878    .data.drv_l2_dd8:00000000 drv_l2_dd8
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:875    .data.drv_l2_dd8:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:889    .data.drv_r1_dd7:00000000 drv_r1_dd7
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:886    .data.drv_r1_dd7:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:900    .data.drv_l1_dd6:00000000 drv_l1_dd6
-C:\Users\zhmis\AppData\Local\Temp\ccIALgiS.s:897    .data.drv_l1_dd6:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:19     .text.drv8106_read_reg_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:25     .text.drv8106_read_reg_blocking:00000000 drv8106_read_reg_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:83     .text.drv8106_write_reg_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:89     .text.drv8106_write_reg_blocking:00000000 drv8106_write_reg_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:148    .text.drv8106_read_all_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:154    .text.drv8106_read_all_blocking:00000000 drv8106_read_all_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:303    .text.drv8106_reset_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:309    .text.drv8106_reset_blocking:00000000 drv8106_reset_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:388    .text.drv8106_read_reg_dma:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:394    .text.drv8106_read_reg_dma:00000000 drv8106_read_reg_dma
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:459    .text.drv8106_read_reg_dma:0000003c $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:847    .bss.drv8106_read_flag:00000000 drv8106_read_flag
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:853    .bss.drv8106_cur_read_addr:00000000 drv8106_cur_read_addr
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:860    .bss.drv_cur_ptr:00000000 drv_cur_ptr
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:466    .text.drv8106_write_reg_dma:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:472    .text.drv8106_write_reg_dma:00000000 drv8106_write_reg_dma
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:533    .text.drv8106_write_reg_dma:00000038 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:539    .text.drv8106_Enable_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:545    .text.drv8106_Enable_blocking:00000000 drv8106_Enable_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:568    .text.drv8106_Disable_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:574    .text.drv8106_Disable_blocking:00000000 drv8106_Disable_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:597    .text.drv8106_CSA_enable_g10_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:603    .text.drv8106_CSA_enable_g10_blocking:00000000 drv8106_CSA_enable_g10_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:626    .text.drv8106_check_faults:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:632    .text.drv8106_check_faults:00000000 drv8106_check_faults
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:688    .text.drv8106_clear_fault_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:694    .text.drv8106_clear_fault_blocking:00000000 drv8106_clear_fault_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:717    .text.drv8106_clear_fault_dma:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:723    .text.drv8106_clear_fault_dma:00000000 drv8106_clear_fault_dma
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:746    .text.HAL_SPI_TxRxCpltCallback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:752    .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:837    .text.HAL_SPI_TxRxCpltCallback:00000048 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:848    .bss.drv8106_read_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:854    .bss.drv8106_cur_read_addr:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:857    .bss.drv_cur_ptr:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:867    .data.drv_r2_dd9:00000000 drv_r2_dd9
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:864    .data.drv_r2_dd9:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:878    .data.drv_l2_dd8:00000000 drv_l2_dd8
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:875    .data.drv_l2_dd8:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:889    .data.drv_r1_dd7:00000000 drv_r1_dd7
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:886    .data.drv_r1_dd7:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:900    .data.drv_l1_dd6:00000000 drv_l1_dd6
+C:\Users\zhmis\AppData\Local\Temp\ccSggmbV.s:897    .data.drv_l1_dd6:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

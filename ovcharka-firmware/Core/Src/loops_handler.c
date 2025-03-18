@@ -10,16 +10,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (system_enabled)
     {
-        if (!irq_counter9k)
-        {
-            servo_iq18_currentLoop(&servo1_g, current[0]);
-        }
-        else
-        {
-            servo_iq18_currentLoop(&servo2_g, current[1]);
-        }
+        // if (!irq_counter9k)
+        // {
+        //     servo_iq18_currentLoop(&servo1_g, current[0]);
+        // }
+        // else
+        // {
+        //     servo_iq18_currentLoop(&servo2_g, current[1]);
+        // }
 
-        irq_counter9k = !irq_counter9k;
+        // irq_counter9k = !irq_counter9k;
+        
+        servo_iq18_currentLoop(&servo1_g, current[0]);
+        servo_iq18_currentLoop(&servo2_g, current[1]);
 
         irq_counter250++;
 

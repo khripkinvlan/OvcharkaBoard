@@ -27,11 +27,17 @@ For max safety use rated current of a motor.    */
 /* --- PID controllers settings ---*/
 
 /* Current controller */
-#define CUR_KP 4.284
-#define CUR_KI 901.403
+// #define CUR_KP 4.284
+// #define CUR_KI 901.403
+// #define CUR_KD 0
+// #define CUR_KB 901.403 // Back-calc antiwindup gain
+// #define CUR_DT 0.000111111
+
+#define CUR_KP 5.9949
+#define CUR_KI 1802.840
 #define CUR_KD 0
-#define CUR_KB 901.403 // Back-calc antiwindup gain
-#define CUR_DT 0.000111111
+#define CUR_KB 1802.840 // Back-calc antiwindup gain
+#define CUR_DT 0.000055555
 
 /* Velocity controller */
 #define VEL_KP 0.05722

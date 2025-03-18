@@ -17,6 +17,8 @@ void adc_cur_init()
     HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc, 2);
 
     // Initia;lization of filters
+    // filter1 = initEMA_iq18(0.005, _IQ18(CS_ADC_M1_Offset));
+    // filter2 = initEMA_iq18(0.005, _IQ18(CS_ADC_M2_Offset));
     filter1 = initEMA_iq18(0.005, _IQ18(CS_ADC_M1_Offset));
     filter2 = initEMA_iq18(0.005, _IQ18(CS_ADC_M2_Offset));
     adc[0] = CS_ADC_M1_Offset;
