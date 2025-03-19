@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
   30:Core/Src/main.c **** #include "drv8106.h"
   31:Core/Src/main.c **** #include "IQmathLib.h"
   32:Core/Src/main.c **** #include "main_init.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 2
 
 
   33:Core/Src/main.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
   87:Core/Src/main.c **** 
   88:Core/Src/main.c ****   /* USER CODE BEGIN Init */
   89:Core/Src/main.c **** 
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 3
 
 
   90:Core/Src/main.c ****   /* USER CODE END Init */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  144:Core/Src/main.c ****   drv8106_Enable_blocking(&drv_l1_dd6);
  145:Core/Src/main.c ****   drv8106_Enable_blocking(&drv_r1_dd7);
  146:Core/Src/main.c ****   drv8106_Enable_blocking(&drv_l2_dd8);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 4
 
 
  147:Core/Src/main.c ****   drv8106_Enable_blocking(&drv_r2_dd9);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  201:Core/Src/main.c ****     Error_Handler();
  202:Core/Src/main.c ****   }
  203:Core/Src/main.c **** 
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 5
 
 
  204:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  258:Core/Src/main.c **** {
   27              		.loc 1 258 1 view -0
   28              		.cfi_startproc
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 6
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 6
 
 
   29              		@ Volatile: function does not return.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
   44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
   45:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 7
 
 
   47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  102:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
  103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 8
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 8
 
 
  104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  264:Core/Src/main.c ****   }
   50              		.loc 1 264 3 view .LVU5
  262:Core/Src/main.c ****   while (1)
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 9
 
 
   51              		.loc 1 262 9 view .LVU6
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
   98 0026 0A92     		str	r2, [sp, #40]
  193:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   99              		.loc 1 193 3 is_stmt 1 view .LVU16
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 10
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 10
 
 
  193:Core/Src/main.c ****   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  135 004c 0023     		movs	r3, #0
  136 004e 0793     		str	r3, [sp, #28]
  210:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 11
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 11
 
 
  137              		.loc 1 210 3 is_stmt 1 view .LVU36
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  176              	.LVL4:
  177              	.L9:
  215:Core/Src/main.c ****   }
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 12
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 12
 
 
  178              		.loc 1 215 5 view .LVU52
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  225 001a FFF7FEFF 		bl	MX_TIM1_Init
  226              	.LVL13:
  105:Core/Src/main.c ****   MX_TIM3_Init();
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 13
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 13
 
 
  227              		.loc 1 105 3 view .LVU62
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  272 0064 2846     		mov	r0, r5
  273 0066 FFF7FEFF 		bl	HAL_GPIO_WritePin
  274              	.LVL23:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 14
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 14
 
 
  119:Core/Src/main.c ****   HAL_GPIO_WritePin(HIZ1_GPIO_Port, HIZ1_Pin, GPIO_PIN_SET);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  320              	.LVL32:
  130:Core/Src/main.c ****   drv8106_clear_fault_blocking(&drv_l2_dd8);
  321              		.loc 1 130 3 view .LVU81
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 15
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 15
 
 
  322 00b8 3046     		mov	r0, r6
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  365              		.loc 1 144 3 view .LVU92
  366 00fa 3846     		mov	r0, r7
  367 00fc FFF7FEFF 		bl	drv8106_Enable_blocking
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 16
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 16
 
 
  368              	.LVL44:
@@ -958,11 +958,11 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  413              		.global	servo2_g
  414              		.section	.bss.servo2_g,"aw",%nobits
  415              		.align	2
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 17
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 17
 
 
  418              	servo2_g:
- 419 0000 00000000 		.space	276
+ 419 0000 00000000 		.space	280
  419      00000000 
  419      00000000 
  419      00000000 
@@ -971,7 +971,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  421              		.section	.bss.servo1_g,"aw",%nobits
  422              		.align	2
  425              	servo1_g:
- 426 0000 00000000 		.space	276
+ 426 0000 00000000 		.space	280
  426      00000000 
  426      00000000 
  426      00000000 
@@ -1010,24 +1010,24 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 1
  460              		.file 27 "Core/Inc/gpio.h"
  461              		.file 28 "Core/Inc/main_init.h"
  462              		.file 29 "<built-in>"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s 			page 18
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:19     .text.Error_Handler:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:25     .text.Error_Handler:00000000 Error_Handler
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:57     .text.SystemClock_Config:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:63     .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:189    .text.main:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:195    .text.main:00000000 main
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:401    .text.main:00000124 $d
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:432    .bss.test_iq:00000000 test_iq
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:418    .bss.servo2_g:00000000 servo2_g
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:415    .bss.servo2_g:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:425    .bss.servo1_g:00000000 servo1_g
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:422    .bss.servo1_g:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc4cjSfk.s:429    .bss.test_iq:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:19     .text.Error_Handler:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:25     .text.Error_Handler:00000000 Error_Handler
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:57     .text.SystemClock_Config:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:63     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:189    .text.main:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:195    .text.main:00000000 main
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:401    .text.main:00000124 $d
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:432    .bss.test_iq:00000000 test_iq
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:418    .bss.servo2_g:00000000 servo2_g
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:415    .bss.servo2_g:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:425    .bss.servo1_g:00000000 servo1_g
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:422    .bss.servo1_g:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccIAX2YU.s:429    .bss.test_iq:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

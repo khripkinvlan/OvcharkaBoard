@@ -13,7 +13,10 @@
         "adc_current.h": "c",
         "pins_init.h": "c",
         "loops_handler.h": "c",
-        "encoder_iq18.h": "c"
+        "encoder_iq18.h": "c",
+        "current_filter.h": "c",
+        "ema_iq18.h": "c",
+        "iqmathlib.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": true
 }

@@ -1,5 +1,4 @@
 #include "global_flags.h"
 
-
-uint8_t system_enabled;
-uint8_t reset_flag;
+volatile uint8_t system_enabled;
+volatile uint8_t reset_flag;

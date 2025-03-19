@@ -34,9 +34,9 @@ For max safety use rated current of a motor.    */
 // #define CUR_DT 0.000111111
 
 #define CUR_KP 5.9949
-#define CUR_KI 1802.840
+#define CUR_KI 1802.846
 #define CUR_KD 0
-#define CUR_KB 1802.840 // Back-calc antiwindup gain
+#define CUR_KB 1298.224 // Back-calc antiwindup gain
 #define CUR_DT 0.000055555
 
 /* Velocity controller */
@@ -55,14 +55,28 @@ For max safety use rated current of a motor.    */
 #define ANG_TOLERANCE 0.02
 
 
+// Current sense amplifier offset values for different axes
+#ifdef AXIS_FRONT
+#define M1_ADC_OFFSET 2056
+#define M2_ADC_OFFSET 2049
+#endif
+
+#ifdef AXIS_REAR
+#define M1_ADC_OFFSET 2054
+#define M2_ADC_OFFSET 2055
+#endif
+
+
 // Defines for servo directions for different axis (defined in the beginning of file)
+/*  This is done in case of wrong electrical connection 
+    (e.g. inverse motor polarity, encoder channels) and physical direction of motor */
 #ifdef AXIS_FRONT
 
 #define S_NUM 1
 
-#define SERVO1_REVERSE 1
-#define SERVO1_ENC_REVERSE 0
-#define SERVO2_REVERSE 1
+#define SERVO1_REVERSE 0
+#define SERVO1_ENC_REVERSE 1
+#define SERVO2_REVERSE 0
 #define SERVO2_ENC_REVERSE 1
 
 #endif
@@ -72,7 +86,7 @@ For max safety use rated current of a motor.    */
 #define S_NUM 2
 
 #define SERVO1_REVERSE 1
-#define SERVO1_ENC_REVERSE 1
+#define SERVO1_ENC_REVERSE 0
 #define SERVO2_REVERSE 1
 #define SERVO2_ENC_REVERSE 1
 

@@ -15,17 +15,13 @@
 typedef struct {
 	// Timer handler
 	TIM_HandleTypeDef *htim;
-	uint8_t timerChannel;
-
-	// Direction pins and ports
-	uint32_t dir1_Pin;
 	GPIO_TypeDef *dir1_Port;
-
+	int32_t _duty;
+	uint32_t dir1_Pin;
 	uint16_t maxDuty;
 	uint16_t minDuty;
-
-	int32_t _duty;
 	int8_t dir; // Stores current direction
+	uint8_t timerChannel;
 
 // } pwmControl_t;
 }__attribute__((packed, aligned(4))) pwmControl_t;

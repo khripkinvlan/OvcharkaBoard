@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 1
   42 000a FFF7FEFF 		bl	MX_TIM3_Init
   43              	.LVL2:
   15:Core/Src/servo_init.c **** 
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 2
 
 
   16:Core/Src/servo_init.c ****     // Init & calibrate ADC
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 1
   82              	.LVL9:
   32:Core/Src/servo_init.c **** }
   83              		.loc 1 32 1 is_stmt 0 view .LVU13
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 3
 
 
   84 004c 10BD     		pop	{r4, pc}
@@ -166,8 +166,8 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 1
   39:Core/Src/servo_init.c ****         servo_iq18_base_init(&servo1_g, Triple, MT_VELOCITY, MT_GEAR_RATIO, SERVO1_REVERSE);
  122              		.loc 1 39 9 view .LVU16
  123 0006 434D     		ldr	r5, .L7
- 124 0008 4FF00109 		mov	r9, #1
- 125 000c CDF80090 		str	r9, [sp]
+ 124 0008 4FF00008 		mov	r8, #0
+ 125 000c CDF80080 		str	r8, [sp]
  126 0010 414B     		ldr	r3, .L7+4
  127 0012 424A     		ldr	r2, .L7+8
  128 0014 0221     		movs	r1, #2
@@ -176,9 +176,9 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 1
  131              	.LVL10:
   40:Core/Src/servo_init.c ****         servo_iq18_encoder_init(&servo1_g, &htim1, ENC_TPR, SERVO1_ENC_REVERSE);
  132              		.loc 1 40 9 view .LVU17
- 133 001c 0023     		movs	r3, #0
+ 133 001c 0123     		movs	r3, #1
  134 001e 2C22     		movs	r2, #44
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 4
 
 
  135 0020 3F49     		ldr	r1, .L7+12
@@ -190,209 +190,208 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 1
  139              		.loc 1 42 9 view .LVU18
  140 0028 4FF47A73 		mov	r3, #1000
  141 002c 0293     		str	r3, [sp, #8]
- 142 002e 0022     		movs	r2, #0
- 143 0030 0192     		str	r2, [sp, #4]
- 144 0032 4FF00208 		mov	r8, #2
- 145 0036 CDF80080 		str	r8, [sp]
- 146 003a 3A4B     		ldr	r3, .L7+16
- 147 003c 4A46     		mov	r2, r9
- 148 003e 3A49     		ldr	r1, .L7+20
- 149 0040 2846     		mov	r0, r5
- 150 0042 FFF7FEFF 		bl	servo_iq18_driver_init
- 151              	.LVL12:
+ 142 002e CDF80480 		str	r8, [sp, #4]
+ 143 0032 0227     		movs	r7, #2
+ 144 0034 0097     		str	r7, [sp]
+ 145 0036 3B4B     		ldr	r3, .L7+16
+ 146 0038 0122     		movs	r2, #1
+ 147 003a 3B49     		ldr	r1, .L7+20
+ 148 003c 2846     		mov	r0, r5
+ 149 003e FFF7FEFF 		bl	servo_iq18_driver_init
+ 150              	.LVL12:
   43:Core/Src/servo_init.c **** 
   44:Core/Src/servo_init.c ****         servo_iq18_position_init(&servo1_g, ANG_KP, ANG_KI, ANG_KD, ANG_DT, ANG_KB);
- 152              		.loc 1 44 9 view .LVU19
- 153 0046 0024     		movs	r4, #0
- 154 0048 0194     		str	r4, [sp, #4]	@ float
- 155 004a 384F     		ldr	r7, .L7+24
- 156 004c 0097     		str	r7, [sp]	@ float
- 157 004e 2346     		mov	r3, r4
- 158 0050 2246     		mov	r2, r4
- 159 0052 3749     		ldr	r1, .L7+28
- 160 0054 2846     		mov	r0, r5
- 161 0056 FFF7FEFF 		bl	servo_iq18_position_init
- 162              	.LVL13:
+ 151              		.loc 1 44 9 view .LVU19
+ 152 0042 0024     		movs	r4, #0
+ 153 0044 0194     		str	r4, [sp, #4]	@ float
+ 154 0046 394E     		ldr	r6, .L7+24
+ 155 0048 0096     		str	r6, [sp]	@ float
+ 156 004a 2346     		mov	r3, r4
+ 157 004c 2246     		mov	r2, r4
+ 158 004e 3849     		ldr	r1, .L7+28
+ 159 0050 2846     		mov	r0, r5
+ 160 0052 FFF7FEFF 		bl	servo_iq18_position_init
+ 161              	.LVL13:
   45:Core/Src/servo_init.c ****         servo_iq18_velocity_init(&servo1_g, VEL_KP, VEL_KI,
- 163              		.loc 1 45 9 view .LVU20
- 164 005a DFF8D8B0 		ldr	fp, .L7+32
- 165 005e CDF804B0 		str	fp, [sp, #4]	@ float
- 166 0062 0097     		str	r7, [sp]	@ float
- 167 0064 2346     		mov	r3, r4
- 168 0066 344A     		ldr	r2, .L7+36
- 169 0068 3449     		ldr	r1, .L7+40
- 170 006a 2846     		mov	r0, r5
- 171 006c FFF7FEFF 		bl	servo_iq18_velocity_init
- 172              	.LVL14:
+ 162              		.loc 1 45 9 view .LVU20
+ 163 0056 DFF8DCB0 		ldr	fp, .L7+32
+ 164 005a CDF804B0 		str	fp, [sp, #4]	@ float
+ 165 005e 0096     		str	r6, [sp]	@ float
+ 166 0060 2346     		mov	r3, r4
+ 167 0062 354A     		ldr	r2, .L7+36
+ 168 0064 3549     		ldr	r1, .L7+40
+ 169 0066 2846     		mov	r0, r5
+ 170 0068 FFF7FEFF 		bl	servo_iq18_velocity_init
+ 171              	.LVL14:
   46:Core/Src/servo_init.c ****                                  VEL_KD, VEL_DT, VEL_KB);
   47:Core/Src/servo_init.c ****         servo_iq18_current_init(&servo1_g, CUR_LIMIT, CUR_KP, CUR_KI, CUR_KD,
- 173              		.loc 1 47 9 view .LVU21
- 174 0070 334E     		ldr	r6, .L7+44
- 175 0072 0296     		str	r6, [sp, #8]	@ float
- 176 0074 DFF8CCA0 		ldr	r10, .L7+48
- 177 0078 CDF804A0 		str	r10, [sp, #4]	@ float
- 178 007c 0094     		str	r4, [sp]	@ float
- 179 007e 3346     		mov	r3, r6
- 180 0080 314A     		ldr	r2, .L7+52
- 181 0082 4FF07E51 		mov	r1, #1065353216
- 182 0086 2846     		mov	r0, r5
- 183 0088 FFF7FEFF 		bl	servo_iq18_current_init
- 184              	.LVL15:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 5
-
-
+ 172              		.loc 1 47 9 view .LVU21
+ 173 006c DFF8D0A0 		ldr	r10, .L7+44
+ 174 0070 CDF808A0 		str	r10, [sp, #8]	@ float
+ 175 0074 DFF8CC90 		ldr	r9, .L7+48
+ 176 0078 CDF80490 		str	r9, [sp, #4]	@ float
+ 177 007c 0094     		str	r4, [sp]	@ float
+ 178 007e 324B     		ldr	r3, .L7+52
+ 179 0080 324A     		ldr	r2, .L7+56
+ 180 0082 4FF07E51 		mov	r1, #1065353216
+ 181 0086 2846     		mov	r0, r5
+ 182 0088 FFF7FEFF 		bl	servo_iq18_current_init
+ 183              	.LVL15:
   48:Core/Src/servo_init.c ****                                 CUR_DT, CUR_KB);
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 5
+
+
   49:Core/Src/servo_init.c ****         servo_iq18_setPositionTolerance(&servo1_g, ANG_TOLERANCE);
- 185              		.loc 1 49 9 view .LVU22
- 186 008c 2F49     		ldr	r1, .L7+56
- 187 008e 2846     		mov	r0, r5
- 188 0090 FFF7FEFF 		bl	servo_iq18_setPositionTolerance
- 189              	.LVL16:
+ 184              		.loc 1 49 9 view .LVU22
+ 185 008c 3049     		ldr	r1, .L7+60
+ 186 008e 2846     		mov	r0, r5
+ 187 0090 FFF7FEFF 		bl	servo_iq18_setPositionTolerance
+ 188              	.LVL16:
   50:Core/Src/servo_init.c ****     }
   51:Core/Src/servo_init.c **** 
   52:Core/Src/servo_init.c ****     // Init servo2
   53:Core/Src/servo_init.c ****     if (SERVO2_ENABLE)
- 190              		.loc 1 53 5 view .LVU23
+ 189              		.loc 1 53 5 view .LVU23
   54:Core/Src/servo_init.c ****     {
   55:Core/Src/servo_init.c ****         servo_iq18_base_init(&servo2_g, Triple, MT_VELOCITY, MT_GEAR_RATIO, SERVO2_REVERSE);
- 191              		.loc 1 55 9 view .LVU24
- 192 0094 2E4D     		ldr	r5, .L7+60
- 193 0096 CDF80090 		str	r9, [sp]
- 194 009a 1F4B     		ldr	r3, .L7+4
- 195 009c 1F4A     		ldr	r2, .L7+8
- 196 009e 4146     		mov	r1, r8
- 197 00a0 2846     		mov	r0, r5
- 198 00a2 FFF7FEFF 		bl	servo_iq18_base_init
- 199              	.LVL17:
+ 190              		.loc 1 55 9 view .LVU24
+ 191 0094 2F4D     		ldr	r5, .L7+64
+ 192 0096 CDF80080 		str	r8, [sp]
+ 193 009a 1F4B     		ldr	r3, .L7+4
+ 194 009c 1F4A     		ldr	r2, .L7+8
+ 195 009e 3946     		mov	r1, r7
+ 196 00a0 2846     		mov	r0, r5
+ 197 00a2 FFF7FEFF 		bl	servo_iq18_base_init
+ 198              	.LVL17:
   56:Core/Src/servo_init.c ****         servo_iq18_encoder_init(&servo2_g, &htim2, ENC_TPR, SERVO2_ENC_REVERSE);
- 200              		.loc 1 56 9 view .LVU25
- 201 00a6 4B46     		mov	r3, r9
- 202 00a8 2C22     		movs	r2, #44
- 203 00aa 2A49     		ldr	r1, .L7+64
- 204 00ac 2846     		mov	r0, r5
- 205 00ae FFF7FEFF 		bl	servo_iq18_encoder_init
- 206              	.LVL18:
+ 199              		.loc 1 56 9 view .LVU25
+ 200 00a6 0123     		movs	r3, #1
+ 201 00a8 2C22     		movs	r2, #44
+ 202 00aa 2B49     		ldr	r1, .L7+68
+ 203 00ac 2846     		mov	r0, r5
+ 204 00ae FFF7FEFF 		bl	servo_iq18_encoder_init
+ 205              	.LVL18:
   57:Core/Src/servo_init.c **** 
   58:Core/Src/servo_init.c ****         servo_iq18_driver_init(&servo2_g, &htim3, 2, DIR2_1_GPIO_Port, DIR2_1_Pin, 0, 1000);
- 207              		.loc 1 58 9 view .LVU26
- 208 00b2 4FF47A73 		mov	r3, #1000
- 209 00b6 0293     		str	r3, [sp, #8]
- 210 00b8 0022     		movs	r2, #0
- 211 00ba 0192     		str	r2, [sp, #4]
- 212 00bc CDF80080 		str	r8, [sp]
- 213 00c0 254B     		ldr	r3, .L7+68
- 214 00c2 4246     		mov	r2, r8
- 215 00c4 1849     		ldr	r1, .L7+20
- 216 00c6 2846     		mov	r0, r5
- 217 00c8 FFF7FEFF 		bl	servo_iq18_driver_init
- 218              	.LVL19:
+ 206              		.loc 1 58 9 view .LVU26
+ 207 00b2 4FF47A73 		mov	r3, #1000
+ 208 00b6 0293     		str	r3, [sp, #8]
+ 209 00b8 CDF80480 		str	r8, [sp, #4]
+ 210 00bc 0097     		str	r7, [sp]
+ 211 00be 274B     		ldr	r3, .L7+72
+ 212 00c0 3A46     		mov	r2, r7
+ 213 00c2 1949     		ldr	r1, .L7+20
+ 214 00c4 2846     		mov	r0, r5
+ 215 00c6 FFF7FEFF 		bl	servo_iq18_driver_init
+ 216              	.LVL19:
   59:Core/Src/servo_init.c **** 
   60:Core/Src/servo_init.c ****         servo_iq18_position_init(&servo2_g, ANG_KP, ANG_KI, ANG_KD, ANG_DT, ANG_KB);
- 219              		.loc 1 60 9 view .LVU27
- 220 00cc 0194     		str	r4, [sp, #4]	@ float
- 221 00ce 0097     		str	r7, [sp]	@ float
- 222 00d0 2346     		mov	r3, r4
- 223 00d2 2246     		mov	r2, r4
- 224 00d4 1649     		ldr	r1, .L7+28
- 225 00d6 2846     		mov	r0, r5
- 226 00d8 FFF7FEFF 		bl	servo_iq18_position_init
- 227              	.LVL20:
+ 217              		.loc 1 60 9 view .LVU27
+ 218 00ca 0194     		str	r4, [sp, #4]	@ float
+ 219 00cc 0096     		str	r6, [sp]	@ float
+ 220 00ce 2346     		mov	r3, r4
+ 221 00d0 2246     		mov	r2, r4
+ 222 00d2 1749     		ldr	r1, .L7+28
+ 223 00d4 2846     		mov	r0, r5
+ 224 00d6 FFF7FEFF 		bl	servo_iq18_position_init
+ 225              	.LVL20:
   61:Core/Src/servo_init.c ****         servo_iq18_velocity_init(&servo2_g, VEL_KP, VEL_KI,
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 6
+ 226              		.loc 1 61 9 view .LVU28
+ 227 00da CDF804B0 		str	fp, [sp, #4]	@ float
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 6
 
 
- 228              		.loc 1 61 9 view .LVU28
- 229 00dc CDF804B0 		str	fp, [sp, #4]	@ float
- 230 00e0 0097     		str	r7, [sp]	@ float
- 231 00e2 2346     		mov	r3, r4
- 232 00e4 144A     		ldr	r2, .L7+36
- 233 00e6 1549     		ldr	r1, .L7+40
- 234 00e8 2846     		mov	r0, r5
- 235 00ea FFF7FEFF 		bl	servo_iq18_velocity_init
- 236              	.LVL21:
+ 228 00de 0096     		str	r6, [sp]	@ float
+ 229 00e0 2346     		mov	r3, r4
+ 230 00e2 154A     		ldr	r2, .L7+36
+ 231 00e4 1549     		ldr	r1, .L7+40
+ 232 00e6 2846     		mov	r0, r5
+ 233 00e8 FFF7FEFF 		bl	servo_iq18_velocity_init
+ 234              	.LVL21:
   62:Core/Src/servo_init.c ****                                  VEL_KD, VEL_DT, VEL_KB);
   63:Core/Src/servo_init.c ****         servo_iq18_current_init(&servo2_g, CUR_LIMIT, CUR_KP, CUR_KI, CUR_KD,
- 237              		.loc 1 63 9 view .LVU29
- 238 00ee 0296     		str	r6, [sp, #8]	@ float
- 239 00f0 CDF804A0 		str	r10, [sp, #4]	@ float
- 240 00f4 0094     		str	r4, [sp]	@ float
- 241 00f6 3346     		mov	r3, r6
- 242 00f8 134A     		ldr	r2, .L7+52
- 243 00fa 4FF07E51 		mov	r1, #1065353216
- 244 00fe 2846     		mov	r0, r5
- 245 0100 FFF7FEFF 		bl	servo_iq18_current_init
- 246              	.LVL22:
+ 235              		.loc 1 63 9 view .LVU29
+ 236 00ec CDF808A0 		str	r10, [sp, #8]	@ float
+ 237 00f0 CDF80490 		str	r9, [sp, #4]	@ float
+ 238 00f4 0094     		str	r4, [sp]	@ float
+ 239 00f6 144B     		ldr	r3, .L7+52
+ 240 00f8 144A     		ldr	r2, .L7+56
+ 241 00fa 4FF07E51 		mov	r1, #1065353216
+ 242 00fe 2846     		mov	r0, r5
+ 243 0100 FFF7FEFF 		bl	servo_iq18_current_init
+ 244              	.LVL22:
   64:Core/Src/servo_init.c ****                                 CUR_DT, CUR_KB);
   65:Core/Src/servo_init.c ****         servo_iq18_setPositionTolerance(&servo2_g, ANG_TOLERANCE);
- 247              		.loc 1 65 9 view .LVU30
- 248 0104 1149     		ldr	r1, .L7+56
- 249 0106 2846     		mov	r0, r5
- 250 0108 FFF7FEFF 		bl	servo_iq18_setPositionTolerance
- 251              	.LVL23:
+ 245              		.loc 1 65 9 view .LVU30
+ 246 0104 1249     		ldr	r1, .L7+60
+ 247 0106 2846     		mov	r0, r5
+ 248 0108 FFF7FEFF 		bl	servo_iq18_setPositionTolerance
+ 249              	.LVL23:
   66:Core/Src/servo_init.c ****     }
   67:Core/Src/servo_init.c **** }...
- 252              		.loc 1 67 1 is_stmt 0 view .LVU31
- 253 010c 05B0     		add	sp, sp, #20
- 254              		.cfi_def_cfa_offset 36
- 255              		@ sp needed
- 256 010e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 257              	.L8:
- 258 0112 00BF     		.align	2
- 259              	.L7:
- 260 0114 00000000 		.word	servo1_g
- 261 0118 6666AA41 		.word	1101686374
- 262 011c 00208544 		.word	1149575168
- 263 0120 00000000 		.word	htim1
- 264 0124 000C0140 		.word	1073810432
- 265 0128 00000000 		.word	htim3
- 266 012c 6F12833B 		.word	998445679
- 267 0130 2FDD6440 		.word	1080352047
- 268 0134 986E123F 		.word	1058172568
- 269 0138 5C8F423E 		.word	1044549468
- 270 013c 855F6A3D 		.word	1030381445
- 271 0140 E15AE144 		.word	1155619553
- 272 0144 BA036938 		.word	946406330
- 273 0148 39D6BF40 		.word	1086314041
- 274 014c 0AD7A33C 		.word	1017370378
- 275 0150 00000000 		.word	servo2_g
- 276 0154 00000000 		.word	htim2
- 277 0158 00080140 		.word	1073809408
- 278              		.cfi_endproc
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 7
+ 250              		.loc 1 67 1 is_stmt 0 view .LVU31
+ 251 010c 05B0     		add	sp, sp, #20
+ 252              		.cfi_def_cfa_offset 36
+ 253              		@ sp needed
+ 254 010e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 255              	.L8:
+ 256 0112 00BF     		.align	2
+ 257              	.L7:
+ 258 0114 00000000 		.word	servo1_g
+ 259 0118 6666AA41 		.word	1101686374
+ 260 011c 00208544 		.word	1149575168
+ 261 0120 00000000 		.word	htim1
+ 262 0124 000C0140 		.word	1073810432
+ 263 0128 00000000 		.word	htim3
+ 264 012c 6F12833B 		.word	998445679
+ 265 0130 2FDD6440 		.word	1080352047
+ 266 0134 986E123F 		.word	1058172568
+ 267 0138 5C8F423E 		.word	1044549468
+ 268 013c 855F6A3D 		.word	1030381445
+ 269 0140 2B47A244 		.word	1151485739
+ 270 0144 BA036938 		.word	946406330
+ 271 0148 125BE144 		.word	1155619602
+ 272 014c 39D6BF40 		.word	1086314041
+ 273 0150 0AD7A33C 		.word	1017370378
+ 274 0154 00000000 		.word	servo2_g
+ 275 0158 00000000 		.word	htim2
+ 276 015c 00080140 		.word	1073809408
+ 277              		.cfi_endproc
+ 278              	.LFE66:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 7
 
 
- 279              	.LFE66:
- 281              		.text
- 282              	.Letext0:
- 283              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 284              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 285              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 286              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
- 287              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 288              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 289              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h"
- 290              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 291              		.file 10 "Core/Inc/tim.h"
- 292              		.file 11 "Core/Inc/adc.h"
- 293              		.file 12 "Core/Inc/IQmathLib.h"
- 294              		.file 13 "Core/Inc/ema_iq18.h"
- 295              		.file 14 "Core/Inc/encoder_iq18.h"
- 296              		.file 15 "Core/Inc/pid_iq18.h"
- 297              		.file 16 "Core/Inc/pwm.h"
- 298              		.file 17 "Core/Inc/servo_iq18.h"
- 299              		.file 18 "Core/Inc/servo_init.h"
- 300              		.file 19 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s 			page 8
+ 280              		.text
+ 281              	.Letext0:
+ 282              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 283              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 284              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 285              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 286              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 287              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 288              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h"
+ 289              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 290              		.file 10 "Core/Inc/tim.h"
+ 291              		.file 11 "Core/Inc/adc.h"
+ 292              		.file 12 "Core/Inc/IQmathLib.h"
+ 293              		.file 13 "Core/Inc/ema_iq18.h"
+ 294              		.file 14 "Core/Inc/encoder_iq18.h"
+ 295              		.file 15 "Core/Inc/pid_iq18.h"
+ 296              		.file 16 "Core/Inc/pwm.h"
+ 297              		.file 17 "Core/Inc/servo_iq18.h"
+ 298              		.file 18 "Core/Inc/servo_init.h"
+ 299              		.file 19 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 servo_init.c
-C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s:19     .text.servo_periph_init:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s:25     .text.servo_periph_init:00000000 servo_periph_init
-C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s:88     .text.servo_periph_init:00000050 $d
-C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s:96     .text.servo_init:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s:102    .text.servo_init:00000000 servo_init
-C:\Users\zhmis\AppData\Local\Temp\ccNx1vIl.s:260    .text.servo_init:00000114 $d
+C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s:19     .text.servo_periph_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s:25     .text.servo_periph_init:00000000 servo_periph_init
+C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s:88     .text.servo_periph_init:00000050 $d
+C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s:96     .text.servo_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s:102    .text.servo_init:00000000 servo_init
+C:\Users\zhmis\AppData\Local\Temp\cc0x1qF5.s:258    .text.servo_init:00000114 $d
 
 UNDEFINED SYMBOLS
 MX_TIM1_Init

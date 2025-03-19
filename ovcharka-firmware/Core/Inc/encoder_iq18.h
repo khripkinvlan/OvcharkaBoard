@@ -18,8 +18,8 @@ typedef struct {
 	// Handler of timer in encoder mode
 	TIM_HandleTypeDef *htim;
 
-	// Value by which counter register increments each revolution of shaft
-	uint16_t countsPerRevolution;
+	// Velocity filter
+	EMA_iq18 filter;
 
 	// Current angle in rads
 	_iq18 angle;
@@ -33,10 +33,9 @@ typedef struct {
 	_iq18 previousAngle;
 	int16_t currentTicks;
 
+	// Value by which counter register increments each revolution of shaft
+	uint16_t countsPerRevolution;
 	int8_t reverse_flag;
-
-	// Velocity filter
-	EMA_iq18 *filter;
 // } encoder_iq18_t;
 }__attribute__((packed, aligned(4))) encoder_iq18_t;
 

@@ -3,7 +3,7 @@
 
 #include "main.h"
 
-extern uint8_t system_enabled;
-extern uint8_t reset_flag;
+extern volatile uint8_t system_enabled;
+extern volatile uint8_t reset_flag;
 
 #endif /* INC_GLOBAL_FLAGS_H_ */

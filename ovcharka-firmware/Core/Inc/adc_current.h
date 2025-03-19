@@ -12,7 +12,7 @@
 
 extern volatile uint16_t adc[2];
 extern _iq18 current[2];
-extern EMA_iq18 *filter1, *filter2;
+extern EMA_iq18 filter1, filter2;
 
 void adc_cur_init();
 void adc_callback_handler();

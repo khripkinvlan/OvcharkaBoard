@@ -13,7 +13,7 @@ void encoder_init_iq18(encoder_iq18_t *encoder, TIM_HandleTypeDef *timerHandle,
 	encoder->htim = timerHandle;
 	encoder->countsPerRevolution = CPR;
 	encoder->dt = _IQ18(dt);
-	encoder->filter = initEMA_iq18(vel_filter_k, 0);
+	initEMA_iq18(&encoder->filter, vel_filter_k, 0);
 	if (gearRatio) {
 		encoder->gearRatio = _IQ18(gearRatio);
 	} else {
@@ -49,7 +49,7 @@ void encoder_updateVelocity_qep_iq18(encoder_iq18_t *encoder) {
 	_iq18 velocity = _IQ18div((encoder->angle - encoder->previousAngle),
 			encoder->dt);
 //	encoder->angularVelocity = velocity;
-	encoder->angularVelocity = updateEMA_iq18(encoder->filter, velocity);
+	encoder->angularVelocity = updateEMA_iq18(&encoder->filter, velocity);
 	encoder->previousAngle = encoder->angle;
 }
 void encoder_reset_iq18(encoder_iq18_t *encoder) {
@@ -59,6 +59,7 @@ void encoder_reset_iq18(encoder_iq18_t *encoder) {
 	encoder->angle = 0;
 	encoder->fullRevolutions = 0;
 	encoder->currentTicks = 0;
+	encoder->filter.previous = 0;
 }
 
 _iq18 encoder_getAngle_iq18(encoder_iq18_t *encoder) {
