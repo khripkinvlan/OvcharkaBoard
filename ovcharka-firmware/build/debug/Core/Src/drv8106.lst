@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
   41              		.loc 1 15 50 is_stmt 0 view .LVU3
   42 0006 41F04001 		orr	r1, r1, #64
   43              	.LVL1:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 2
 
 
   44              		.loc 1 15 50 view .LVU4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
   92              		.loc 1 23 85 is_stmt 1 view -0
   93              		.cfi_startproc
   94              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 3
 
 
   95              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  141              		@ sp needed
  142 003a 10BD     		pop	{r4, pc}
  143              		.loc 1 31 1 view .LVU28
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 4
 
 
  144              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  189 001e FFF7FEFF 		bl	drv8106_read_reg_blocking
  190              	.LVL16:
   43:Core/Src/drv8106.c ****     drv_inst->register_map.IC_STAT_2 = (uint8_t)(drv_inst->rxbuff & 0xFF);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 5
 
 
  191              		.loc 1 43 5 view .LVU40
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  233 0052 A37A     		ldrb	r3, [r4, #10]	@ zero_extendqisi2
  234              		.loc 1 55 39 view .LVU58
  235 0054 6375     		strb	r3, [r4, #21]
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 6
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 6
 
 
   56:Core/Src/drv8106.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  276              		.loc 1 69 5 is_stmt 1 view .LVU75
  277 0086 0C21     		movs	r1, #12
  278 0088 2046     		mov	r0, r4
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 7
 
 
  279 008a FFF7FEFF 		bl	drv8106_read_reg_blocking
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
   78:Core/Src/drv8106.c ****     drv8106_write_reg_blocking(drv_inst, DRV8106_BRG_CTRL, DRV8106_BRG_CTRL_DEFAULT);
  327              		.loc 1 78 5 view .LVU88
  328 000c 0022     		movs	r2, #0
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 8
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 8
 
 
  329 000e 0521     		movs	r1, #5
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  375              		.loc 1 86 5 view .LVU96
  376 005c 0122     		movs	r2, #1
  377 005e 0D21     		movs	r1, #13
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 9
 
 
  378 0060 2046     		mov	r0, r4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  427              		.loc 1 93 5 is_stmt 1 view .LVU109
  428              		.loc 1 93 17 is_stmt 0 view .LVU110
  429 001a 0A4B     		ldr	r3, .L11+8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 10
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 10
 
 
  430              		.loc 1 93 17 view .LVU111
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  480 0000 10B5     		push	{r4, lr}
  481              		.cfi_def_cfa_offset 8
  482              		.cfi_offset 4, -8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 11
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 11
 
 
  483              		.cfi_offset 14, -4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  530              		.loc 1 106 1 view .LVU136
  531 0036 00BF     		.align	2
  532              	.L15:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 12
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 12
 
 
  533 0038 00000000 		.word	drv8106_read_flag
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  121:Core/Src/drv8106.c **** 
  122:Core/Src/drv8106.c **** void drv8106_Disable_blocking(drv8106_t* drv_inst){
  577              		.loc 1 122 51 is_stmt 1 view -0
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 13
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 13
 
 
  578              		.cfi_startproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  629              		.thumb
  630              		.thumb_func
  632              	drv8106_check_faults:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 14
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 14
 
 
  633              	.LVL58:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  677              		.loc 1 138 5 is_stmt 1 view .LVU172
  678              		.loc 1 138 78 is_stmt 0 view .LVU173
  679 0032 03F00103 		and	r3, r3, #1
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 15
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 15
 
 
  680              		.loc 1 138 43 view .LVU174
@@ -879,312 +879,351 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 1
  712 000a 08BD     		pop	{r3, pc}
  713              		.cfi_endproc
  714              	.LFE75:
- 716              		.section	.text.drv8106_clear_fault_dma,"ax",%progbits
+ 716              		.section	.text.drv8106_set_fault_autorecovery_blocking,"ax",%progbits
  717              		.align	1
- 718              		.global	drv8106_clear_fault_dma
+ 718              		.global	drv8106_set_fault_autorecovery_blocking
  719              		.syntax unified
  720              		.thumb
  721              		.thumb_func
- 723              	drv8106_clear_fault_dma:
+ 723              	drv8106_set_fault_autorecovery_blocking:
  724              	.LVL61:
  725              	.LFB76:
  144:Core/Src/drv8106.c **** 
- 145:Core/Src/drv8106.c **** void drv8106_clear_fault_dma(drv8106_t* drv_inst){
- 726              		.loc 1 145 50 is_stmt 1 view -0
+ 145:Core/Src/drv8106.c **** void drv8106_set_fault_autorecovery_blocking(drv8106_t* drv_inst){
+ 726              		.loc 1 145 66 is_stmt 1 view -0
  727              		.cfi_startproc
  728              		@ args = 0, pretend = 0, frame = 0
  729              		@ frame_needed = 0, uses_anonymous_args = 0
- 730              		.loc 1 145 50 is_stmt 0 view .LVU181
+ 730              		.loc 1 145 66 is_stmt 0 view .LVU181
  731 0000 08B5     		push	{r3, lr}
  732              		.cfi_def_cfa_offset 8
  733              		.cfi_offset 3, -8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 16
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 16
 
 
  734              		.cfi_offset 14, -4
- 146:Core/Src/drv8106.c ****     drv8106_write_reg_dma(drv_inst, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
+ 146:Core/Src/drv8106.c ****     uint8_t data = DRV8106_UV_MODE | DRV8106_OV_MODE_AUTO | DRV8106_OV_DG_4us | DRV8106_OV_LVL;
  735              		.loc 1 146 5 is_stmt 1 view .LVU182
- 736 0002 0122     		movs	r2, #1
- 737 0004 0421     		movs	r1, #4
- 738 0006 FFF7FEFF 		bl	drv8106_write_reg_dma
- 739              	.LVL62:
- 147:Core/Src/drv8106.c **** }
- 740              		.loc 1 147 1 is_stmt 0 view .LVU183
- 741 000a 08BD     		pop	{r3, pc}
- 742              		.cfi_endproc
- 743              	.LFE76:
- 745              		.section	.text.HAL_SPI_TxRxCpltCallback,"ax",%progbits
- 746              		.align	1
- 747              		.global	HAL_SPI_TxRxCpltCallback
- 748              		.syntax unified
- 749              		.thumb
- 750              		.thumb_func
- 752              	HAL_SPI_TxRxCpltCallback:
- 753              	.LVL63:
- 754              	.LFB77:
- 148:Core/Src/drv8106.c **** 
- 149:Core/Src/drv8106.c **** void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi){
- 755              		.loc 1 149 55 is_stmt 1 view -0
- 756              		.cfi_startproc
- 757              		@ args = 0, pretend = 0, frame = 0
- 758              		@ frame_needed = 0, uses_anonymous_args = 0
- 759              		.loc 1 149 55 is_stmt 0 view .LVU185
- 760 0000 08B5     		push	{r3, lr}
- 761              		.cfi_def_cfa_offset 8
- 762              		.cfi_offset 3, -8
- 763              		.cfi_offset 14, -4
- 150:Core/Src/drv8106.c ****     if (hspi == drv_cur_ptr->spi_handler_ptr){
- 764              		.loc 1 150 5 is_stmt 1 view .LVU186
- 765              		.loc 1 150 28 is_stmt 0 view .LVU187
- 766 0002 114B     		ldr	r3, .L33
- 767 0004 1B68     		ldr	r3, [r3]
- 768 0006 1A68     		ldr	r2, [r3]
- 769              		.loc 1 150 8 view .LVU188
- 770 0008 8242     		cmp	r2, r0
- 771 000a 00D0     		beq	.L32
- 772              	.LVL64:
- 773              	.L28:
- 151:Core/Src/drv8106.c ****         HAL_GPIO_WritePin(drv_cur_ptr->CS_PORT, drv_cur_ptr->CS_PIN, GPIO_PIN_SET);
- 152:Core/Src/drv8106.c ****         if(drv8106_read_flag){
- 153:Core/Src/drv8106.c ****             switch (drv8106_cur_read_addr)
- 154:Core/Src/drv8106.c ****             {
- 155:Core/Src/drv8106.c ****             case DRV8106_IC_STAT_1:
- 156:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 157:Core/Src/drv8106.c ****                 drv8106_check_faults(drv_cur_ptr);
- 158:Core/Src/drv8106.c ****                 break;
- 159:Core/Src/drv8106.c ****             // TODO: rest cases
- 160:Core/Src/drv8106.c ****             default:
- 161:Core/Src/drv8106.c ****                 break;
- 162:Core/Src/drv8106.c ****             }
- 163:Core/Src/drv8106.c ****         } else{
- 164:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 17
+ 736              	.LVL62:
+ 147:Core/Src/drv8106.c ****     drv8106_write_reg_blocking(drv_inst, DRV8106_UVOV_CTRL, data);
+ 737              		.loc 1 147 5 view .LVU183
+ 738 0002 B422     		movs	r2, #180
+ 739 0004 0C21     		movs	r1, #12
+ 740 0006 FFF7FEFF 		bl	drv8106_write_reg_blocking
+ 741              	.LVL63:
+ 148:Core/Src/drv8106.c **** }
+ 742              		.loc 1 148 1 is_stmt 0 view .LVU184
+ 743 000a 08BD     		pop	{r3, pc}
+ 744              		.cfi_endproc
+ 745              	.LFE76:
+ 747              		.section	.text.drv8106_clear_fault_dma,"ax",%progbits
+ 748              		.align	1
+ 749              		.global	drv8106_clear_fault_dma
+ 750              		.syntax unified
+ 751              		.thumb
+ 752              		.thumb_func
+ 754              	drv8106_clear_fault_dma:
+ 755              	.LVL64:
+ 756              	.LFB77:
+ 149:Core/Src/drv8106.c **** 
+ 150:Core/Src/drv8106.c **** void drv8106_clear_fault_dma(drv8106_t* drv_inst){
+ 757              		.loc 1 150 50 is_stmt 1 view -0
+ 758              		.cfi_startproc
+ 759              		@ args = 0, pretend = 0, frame = 0
+ 760              		@ frame_needed = 0, uses_anonymous_args = 0
+ 761              		.loc 1 150 50 is_stmt 0 view .LVU186
+ 762 0000 08B5     		push	{r3, lr}
+ 763              		.cfi_def_cfa_offset 8
+ 764              		.cfi_offset 3, -8
+ 765              		.cfi_offset 14, -4
+ 151:Core/Src/drv8106.c ****     drv8106_write_reg_dma(drv_inst, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
+ 766              		.loc 1 151 5 is_stmt 1 view .LVU187
+ 767 0002 0122     		movs	r2, #1
+ 768 0004 0421     		movs	r1, #4
+ 769 0006 FFF7FEFF 		bl	drv8106_write_reg_dma
+ 770              	.LVL65:
+ 152:Core/Src/drv8106.c **** }
+ 771              		.loc 1 152 1 is_stmt 0 view .LVU188
+ 772 000a 08BD     		pop	{r3, pc}
+ 773              		.cfi_endproc
+ 774              	.LFE77:
+ 776              		.section	.text.HAL_SPI_TxRxCpltCallback,"ax",%progbits
+ 777              		.align	1
+ 778              		.global	HAL_SPI_TxRxCpltCallback
+ 779              		.syntax unified
+ 780              		.thumb
+ 781              		.thumb_func
+ 783              	HAL_SPI_TxRxCpltCallback:
+ 784              	.LVL66:
+ 785              	.LFB78:
+ 153:Core/Src/drv8106.c **** 
+ 154:Core/Src/drv8106.c **** void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi){
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 17
 
 
- 165:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
- 166:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
- 167:Core/Src/drv8106.c ****         }
- 168:Core/Src/drv8106.c ****     }
- 169:Core/Src/drv8106.c **** }...
- 774              		.loc 1 169 1 view .LVU189
- 775 000c 08BD     		pop	{r3, pc}
- 776              	.LVL65:
- 777              	.L32:
- 151:Core/Src/drv8106.c ****         HAL_GPIO_WritePin(drv_cur_ptr->CS_PORT, drv_cur_ptr->CS_PIN, GPIO_PIN_SET);
- 778              		.loc 1 151 9 is_stmt 1 view .LVU190
- 779 000e 0122     		movs	r2, #1
- 780 0010 1989     		ldrh	r1, [r3, #8]
- 781 0012 5868     		ldr	r0, [r3, #4]
- 782              	.LVL66:
- 151:Core/Src/drv8106.c ****         HAL_GPIO_WritePin(drv_cur_ptr->CS_PORT, drv_cur_ptr->CS_PIN, GPIO_PIN_SET);
- 783              		.loc 1 151 9 is_stmt 0 view .LVU191
- 784 0014 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 785              	.LVL67:
- 152:Core/Src/drv8106.c ****         if(drv8106_read_flag){
- 786              		.loc 1 152 9 is_stmt 1 view .LVU192
- 152:Core/Src/drv8106.c ****         if(drv8106_read_flag){
- 787              		.loc 1 152 12 is_stmt 0 view .LVU193
- 788 0018 0C4B     		ldr	r3, .L33+4
- 789 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 152:Core/Src/drv8106.c ****         if(drv8106_read_flag){
- 790              		.loc 1 152 11 view .LVU194
- 791 001c 53B1     		cbz	r3, .L30
- 153:Core/Src/drv8106.c ****             switch (drv8106_cur_read_addr)
- 792              		.loc 1 153 13 is_stmt 1 view .LVU195
- 793 001e 0C4B     		ldr	r3, .L33+8
- 794 0020 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 795 0022 002B     		cmp	r3, #0
- 796 0024 F2D1     		bne	.L28
- 156:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 797              		.loc 1 156 17 view .LVU196
- 156:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 798              		.loc 1 156 76 is_stmt 0 view .LVU197
- 799 0026 084B     		ldr	r3, .L33
- 800 0028 1868     		ldr	r0, [r3]
- 156:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 801              		.loc 1 156 55 view .LVU198
- 802 002a 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
- 156:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 803              		.loc 1 156 53 view .LVU199
- 804 002c 8373     		strb	r3, [r0, #14]
- 157:Core/Src/drv8106.c ****                 drv8106_check_faults(drv_cur_ptr);
- 805              		.loc 1 157 17 is_stmt 1 view .LVU200
- 806 002e FFF7FEFF 		bl	drv8106_check_faults
+ 786              		.loc 1 154 55 is_stmt 1 view -0
+ 787              		.cfi_startproc
+ 788              		@ args = 0, pretend = 0, frame = 0
+ 789              		@ frame_needed = 0, uses_anonymous_args = 0
+ 790              		.loc 1 154 55 is_stmt 0 view .LVU190
+ 791 0000 08B5     		push	{r3, lr}
+ 792              		.cfi_def_cfa_offset 8
+ 793              		.cfi_offset 3, -8
+ 794              		.cfi_offset 14, -4
+ 155:Core/Src/drv8106.c ****     if (hspi == drv_cur_ptr->spi_handler_ptr){
+ 795              		.loc 1 155 5 is_stmt 1 view .LVU191
+ 796              		.loc 1 155 28 is_stmt 0 view .LVU192
+ 797 0002 114B     		ldr	r3, .L35
+ 798 0004 1B68     		ldr	r3, [r3]
+ 799 0006 1A68     		ldr	r2, [r3]
+ 800              		.loc 1 155 8 view .LVU193
+ 801 0008 8242     		cmp	r2, r0
+ 802 000a 00D0     		beq	.L34
+ 803              	.LVL67:
+ 804              	.L30:
+ 156:Core/Src/drv8106.c ****         HAL_GPIO_WritePin(drv_cur_ptr->CS_PORT, drv_cur_ptr->CS_PIN, GPIO_PIN_SET);
+ 157:Core/Src/drv8106.c ****         if(drv8106_read_flag){
+ 158:Core/Src/drv8106.c ****             switch (drv8106_cur_read_addr)
+ 159:Core/Src/drv8106.c ****             {
+ 160:Core/Src/drv8106.c ****             case DRV8106_IC_STAT_1:
+ 161:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 162:Core/Src/drv8106.c ****                 drv8106_check_faults(drv_cur_ptr);
+ 163:Core/Src/drv8106.c ****                 break;
+ 164:Core/Src/drv8106.c ****             // TODO: rest cases
+ 165:Core/Src/drv8106.c ****             default:
+ 166:Core/Src/drv8106.c ****                 break;
+ 167:Core/Src/drv8106.c ****             }
+ 168:Core/Src/drv8106.c ****         } else{
+ 169:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 170:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
+ 171:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
+ 172:Core/Src/drv8106.c ****         }
+ 173:Core/Src/drv8106.c ****     }
+ 174:Core/Src/drv8106.c **** }...
+ 805              		.loc 1 174 1 view .LVU194
+ 806 000c 08BD     		pop	{r3, pc}
  807              	.LVL68:
- 158:Core/Src/drv8106.c ****                 break;
- 808              		.loc 1 158 17 view .LVU201
- 809 0032 EBE7     		b	.L28
- 810              	.L30:
- 811              	.LBB2:
- 164:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 812              		.loc 1 164 13 view .LVU202
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 18
+ 808              	.L34:
+ 156:Core/Src/drv8106.c ****         HAL_GPIO_WritePin(drv_cur_ptr->CS_PORT, drv_cur_ptr->CS_PIN, GPIO_PIN_SET);
+ 809              		.loc 1 156 9 is_stmt 1 view .LVU195
+ 810 000e 0122     		movs	r2, #1
+ 811 0010 1989     		ldrh	r1, [r3, #8]
+ 812 0012 5868     		ldr	r0, [r3, #4]
+ 813              	.LVL69:
+ 156:Core/Src/drv8106.c ****         HAL_GPIO_WritePin(drv_cur_ptr->CS_PORT, drv_cur_ptr->CS_PIN, GPIO_PIN_SET);
+ 814              		.loc 1 156 9 is_stmt 0 view .LVU196
+ 815 0014 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 816              	.LVL70:
+ 157:Core/Src/drv8106.c ****         if(drv8106_read_flag){
+ 817              		.loc 1 157 9 is_stmt 1 view .LVU197
+ 157:Core/Src/drv8106.c ****         if(drv8106_read_flag){
+ 818              		.loc 1 157 12 is_stmt 0 view .LVU198
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 18
 
 
- 164:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 813              		.loc 1 164 56 is_stmt 0 view .LVU203
- 814 0034 044B     		ldr	r3, .L33
- 815 0036 1B68     		ldr	r3, [r3]
- 164:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
- 816              		.loc 1 164 21 view .LVU204
- 817 0038 9A7A     		ldrb	r2, [r3, #10]	@ zero_extendqisi2
- 818              	.LVL69:
- 165:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
- 819              		.loc 1 165 13 is_stmt 1 view .LVU205
- 165:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
- 820              		.loc 1 165 66 is_stmt 0 view .LVU206
- 821 003a 997B     		ldrb	r1, [r3, #14]	@ zero_extendqisi2
- 165:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
- 822              		.loc 1 165 21 view .LVU207
- 823 003c 41F03F01 		orr	r1, r1, #63
- 824              	.LVL70:
- 166:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
- 825              		.loc 1 166 13 is_stmt 1 view .LVU208
- 166:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
- 826              		.loc 1 166 49 is_stmt 0 view .LVU209
- 827 0040 0A40     		ands	r2, r2, r1
- 828              	.LVL71:
- 166:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
- 829              		.loc 1 166 49 view .LVU210
- 830 0042 9A73     		strb	r2, [r3, #14]
- 831              	.LBE2:
- 832              		.loc 1 169 1 view .LVU211
- 833 0044 E2E7     		b	.L28
- 834              	.L34:
- 835 0046 00BF     		.align	2
- 836              	.L33:
- 837 0048 00000000 		.word	drv_cur_ptr
- 838 004c 00000000 		.word	drv8106_read_flag
- 839 0050 00000000 		.word	drv8106_cur_read_addr
- 840              		.cfi_endproc
- 841              	.LFE77:
- 843              		.global	drv8106_read_flag
- 844              		.section	.bss.drv8106_read_flag,"aw",%nobits
- 847              	drv8106_read_flag:
- 848 0000 00       		.space	1
- 849              		.global	drv8106_cur_read_addr
- 850              		.section	.bss.drv8106_cur_read_addr,"aw",%nobits
- 853              	drv8106_cur_read_addr:
- 854 0000 00       		.space	1
- 855              		.global	drv_cur_ptr
- 856              		.section	.bss.drv_cur_ptr,"aw",%nobits
- 857              		.align	2
- 860              	drv_cur_ptr:
- 861 0000 00000000 		.space	4
- 862              		.global	drv_r2_dd9
- 863              		.section	.data.drv_r2_dd9,"aw"
- 864              		.align	2
- 867              	drv_r2_dd9:
- 868 0000 00000000 		.word	hspi1
- 869 0004 000C0140 		.word	1073810432
- 870 0008 0100     		.short	1
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 19
+ 819 0018 0C4B     		ldr	r3, .L35+4
+ 820 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 157:Core/Src/drv8106.c ****         if(drv8106_read_flag){
+ 821              		.loc 1 157 11 view .LVU199
+ 822 001c 53B1     		cbz	r3, .L32
+ 158:Core/Src/drv8106.c ****             switch (drv8106_cur_read_addr)
+ 823              		.loc 1 158 13 is_stmt 1 view .LVU200
+ 824 001e 0C4B     		ldr	r3, .L35+8
+ 825 0020 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 826 0022 002B     		cmp	r3, #0
+ 827 0024 F2D1     		bne	.L30
+ 161:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 828              		.loc 1 161 17 view .LVU201
+ 161:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 829              		.loc 1 161 76 is_stmt 0 view .LVU202
+ 830 0026 084B     		ldr	r3, .L35
+ 831 0028 1868     		ldr	r0, [r3]
+ 161:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 832              		.loc 1 161 55 view .LVU203
+ 833 002a 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
+ 161:Core/Src/drv8106.c ****                 drv_cur_ptr->register_map.IC_STAT_1 = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 834              		.loc 1 161 53 view .LVU204
+ 835 002c 8373     		strb	r3, [r0, #14]
+ 162:Core/Src/drv8106.c ****                 drv8106_check_faults(drv_cur_ptr);
+ 836              		.loc 1 162 17 is_stmt 1 view .LVU205
+ 837 002e FFF7FEFF 		bl	drv8106_check_faults
+ 838              	.LVL71:
+ 163:Core/Src/drv8106.c ****                 break;
+ 839              		.loc 1 163 17 view .LVU206
+ 840 0032 EBE7     		b	.L30
+ 841              	.L32:
+ 842              	.LBB2:
+ 169:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 843              		.loc 1 169 13 view .LVU207
+ 169:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 844              		.loc 1 169 56 is_stmt 0 view .LVU208
+ 845 0034 044B     		ldr	r3, .L35
+ 846 0036 1B68     		ldr	r3, [r3]
+ 169:Core/Src/drv8106.c ****             uint8_t header_stat = (uint8_t)(drv_cur_ptr->rxbuff & 0xFF);
+ 847              		.loc 1 169 21 view .LVU209
+ 848 0038 9A7A     		ldrb	r2, [r3, #10]	@ zero_extendqisi2
+ 849              	.LVL72:
+ 170:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
+ 850              		.loc 1 170 13 is_stmt 1 view .LVU210
+ 170:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
+ 851              		.loc 1 170 66 is_stmt 0 view .LVU211
+ 852 003a 997B     		ldrb	r1, [r3, #14]	@ zero_extendqisi2
+ 170:Core/Src/drv8106.c ****             uint8_t saved_stat_masked = drv_cur_ptr->register_map.IC_STAT_1 | 0x3F;
+ 853              		.loc 1 170 21 view .LVU212
+ 854 003c 41F03F01 		orr	r1, r1, #63
+ 855              	.LVL73:
+ 171:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
+ 856              		.loc 1 171 13 is_stmt 1 view .LVU213
+ 171:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
+ 857              		.loc 1 171 49 is_stmt 0 view .LVU214
+ 858 0040 0A40     		ands	r2, r2, r1
+ 859              	.LVL74:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 19
 
 
- 871 000a 0000     		.short	0
- 872 000c 00000000 		.space	24
- 872      00000000 
- 872      00000000 
- 872      00000000 
- 872      00000000 
- 873              		.global	drv_l2_dd8
- 874              		.section	.data.drv_l2_dd8,"aw"
- 875              		.align	2
- 878              	drv_l2_dd8:
- 879 0000 00000000 		.word	hspi1
- 880 0004 00100140 		.word	1073811456
- 881 0008 2000     		.short	32
- 882 000a 0000     		.short	0
- 883 000c 00000000 		.space	24
- 883      00000000 
- 883      00000000 
- 883      00000000 
- 883      00000000 
- 884              		.global	drv_r1_dd7
- 885              		.section	.data.drv_r1_dd7,"aw"
- 886              		.align	2
- 889              	drv_r1_dd7:
- 890 0000 00000000 		.word	hspi1
- 891 0004 00100140 		.word	1073811456
- 892 0008 1000     		.short	16
- 893 000a 0000     		.short	0
- 894 000c 00000000 		.space	24
- 894      00000000 
- 894      00000000 
- 894      00000000 
- 894      00000000 
- 895              		.global	drv_l1_dd6
- 896              		.section	.data.drv_l1_dd6,"aw"
- 897              		.align	2
- 900              	drv_l1_dd6:
- 901 0000 00000000 		.word	hspi1
- 902 0004 00080140 		.word	1073809408
- 903 0008 1000     		.short	16
- 904 000a 0000     		.short	0
- 905 000c 00000000 		.space	24
- 905      00000000 
- 905      00000000 
- 905      00000000 
- 905      00000000 
- 906              		.text
- 907              	.Letext0:
- 908              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 909              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 910              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 911              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 912              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 913              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 914              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
- 915              		.file 9 "Core/Inc/drv8106.h"
- 916              		.file 10 "Core/Inc/spi.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s 			page 20
+ 171:Core/Src/drv8106.c ****             drv_cur_ptr->register_map.IC_STAT_1 = header_stat & saved_stat_masked;
+ 860              		.loc 1 171 49 view .LVU215
+ 861 0042 9A73     		strb	r2, [r3, #14]
+ 862              	.LBE2:
+ 863              		.loc 1 174 1 view .LVU216
+ 864 0044 E2E7     		b	.L30
+ 865              	.L36:
+ 866 0046 00BF     		.align	2
+ 867              	.L35:
+ 868 0048 00000000 		.word	drv_cur_ptr
+ 869 004c 00000000 		.word	drv8106_read_flag
+ 870 0050 00000000 		.word	drv8106_cur_read_addr
+ 871              		.cfi_endproc
+ 872              	.LFE78:
+ 874              		.global	drv8106_read_flag
+ 875              		.section	.bss.drv8106_read_flag,"aw",%nobits
+ 878              	drv8106_read_flag:
+ 879 0000 00       		.space	1
+ 880              		.global	drv8106_cur_read_addr
+ 881              		.section	.bss.drv8106_cur_read_addr,"aw",%nobits
+ 884              	drv8106_cur_read_addr:
+ 885 0000 00       		.space	1
+ 886              		.global	drv_cur_ptr
+ 887              		.section	.bss.drv_cur_ptr,"aw",%nobits
+ 888              		.align	2
+ 891              	drv_cur_ptr:
+ 892 0000 00000000 		.space	4
+ 893              		.global	drv_r2_dd9
+ 894              		.section	.data.drv_r2_dd9,"aw"
+ 895              		.align	2
+ 898              	drv_r2_dd9:
+ 899 0000 00000000 		.word	hspi1
+ 900 0004 000C0140 		.word	1073810432
+ 901 0008 0100     		.short	1
+ 902 000a 0000     		.short	0
+ 903 000c 00000000 		.space	24
+ 903      00000000 
+ 903      00000000 
+ 903      00000000 
+ 903      00000000 
+ 904              		.global	drv_l2_dd8
+ 905              		.section	.data.drv_l2_dd8,"aw"
+ 906              		.align	2
+ 909              	drv_l2_dd8:
+ 910 0000 00000000 		.word	hspi1
+ 911 0004 00100140 		.word	1073811456
+ 912 0008 2000     		.short	32
+ 913 000a 0000     		.short	0
+ 914 000c 00000000 		.space	24
+ 914      00000000 
+ 914      00000000 
+ 914      00000000 
+ 914      00000000 
+ 915              		.global	drv_r1_dd7
+ 916              		.section	.data.drv_r1_dd7,"aw"
+ 917              		.align	2
+ 920              	drv_r1_dd7:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 20
+
+
+ 921 0000 00000000 		.word	hspi1
+ 922 0004 00100140 		.word	1073811456
+ 923 0008 1000     		.short	16
+ 924 000a 0000     		.short	0
+ 925 000c 00000000 		.space	24
+ 925      00000000 
+ 925      00000000 
+ 925      00000000 
+ 925      00000000 
+ 926              		.global	drv_l1_dd6
+ 927              		.section	.data.drv_l1_dd6,"aw"
+ 928              		.align	2
+ 931              	drv_l1_dd6:
+ 932 0000 00000000 		.word	hspi1
+ 933 0004 00080140 		.word	1073809408
+ 934 0008 1000     		.short	16
+ 935 000a 0000     		.short	0
+ 936 000c 00000000 		.space	24
+ 936      00000000 
+ 936      00000000 
+ 936      00000000 
+ 936      00000000 
+ 937              		.text
+ 938              	.Letext0:
+ 939              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 940              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 941              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 942              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 943              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 944              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 945              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
+ 946              		.file 9 "Core/Inc/drv8106.h"
+ 947              		.file 10 "Core/Inc/spi.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 drv8106.c
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:19     .text.drv8106_read_reg_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:25     .text.drv8106_read_reg_blocking:00000000 drv8106_read_reg_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:83     .text.drv8106_write_reg_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:89     .text.drv8106_write_reg_blocking:00000000 drv8106_write_reg_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:148    .text.drv8106_read_all_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:154    .text.drv8106_read_all_blocking:00000000 drv8106_read_all_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:303    .text.drv8106_reset_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:309    .text.drv8106_reset_blocking:00000000 drv8106_reset_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:388    .text.drv8106_read_reg_dma:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:394    .text.drv8106_read_reg_dma:00000000 drv8106_read_reg_dma
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:459    .text.drv8106_read_reg_dma:0000003c $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:847    .bss.drv8106_read_flag:00000000 drv8106_read_flag
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:853    .bss.drv8106_cur_read_addr:00000000 drv8106_cur_read_addr
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:860    .bss.drv_cur_ptr:00000000 drv_cur_ptr
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:466    .text.drv8106_write_reg_dma:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:472    .text.drv8106_write_reg_dma:00000000 drv8106_write_reg_dma
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:533    .text.drv8106_write_reg_dma:00000038 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:539    .text.drv8106_Enable_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:545    .text.drv8106_Enable_blocking:00000000 drv8106_Enable_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:568    .text.drv8106_Disable_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:574    .text.drv8106_Disable_blocking:00000000 drv8106_Disable_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:597    .text.drv8106_CSA_enable_g10_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:603    .text.drv8106_CSA_enable_g10_blocking:00000000 drv8106_CSA_enable_g10_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:626    .text.drv8106_check_faults:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:632    .text.drv8106_check_faults:00000000 drv8106_check_faults
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:688    .text.drv8106_clear_fault_blocking:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:694    .text.drv8106_clear_fault_blocking:00000000 drv8106_clear_fault_blocking
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:717    .text.drv8106_clear_fault_dma:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:723    .text.drv8106_clear_fault_dma:00000000 drv8106_clear_fault_dma
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:746    .text.HAL_SPI_TxRxCpltCallback:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:752    .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:837    .text.HAL_SPI_TxRxCpltCallback:00000048 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:848    .bss.drv8106_read_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:854    .bss.drv8106_cur_read_addr:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:857    .bss.drv_cur_ptr:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:867    .data.drv_r2_dd9:00000000 drv_r2_dd9
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:864    .data.drv_r2_dd9:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:878    .data.drv_l2_dd8:00000000 drv_l2_dd8
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:875    .data.drv_l2_dd8:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:889    .data.drv_r1_dd7:00000000 drv_r1_dd7
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:886    .data.drv_r1_dd7:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:900    .data.drv_l1_dd6:00000000 drv_l1_dd6
-C:\Users\zhmis\AppData\Local\Temp\cc6Io9mw.s:897    .data.drv_l1_dd6:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:19     .text.drv8106_read_reg_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:25     .text.drv8106_read_reg_blocking:00000000 drv8106_read_reg_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:83     .text.drv8106_write_reg_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:89     .text.drv8106_write_reg_blocking:00000000 drv8106_write_reg_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:148    .text.drv8106_read_all_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:154    .text.drv8106_read_all_blocking:00000000 drv8106_read_all_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:303    .text.drv8106_reset_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:309    .text.drv8106_reset_blocking:00000000 drv8106_reset_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:388    .text.drv8106_read_reg_dma:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:394    .text.drv8106_read_reg_dma:00000000 drv8106_read_reg_dma
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:459    .text.drv8106_read_reg_dma:0000003c $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:878    .bss.drv8106_read_flag:00000000 drv8106_read_flag
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:884    .bss.drv8106_cur_read_addr:00000000 drv8106_cur_read_addr
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:891    .bss.drv_cur_ptr:00000000 drv_cur_ptr
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:466    .text.drv8106_write_reg_dma:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:472    .text.drv8106_write_reg_dma:00000000 drv8106_write_reg_dma
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:533    .text.drv8106_write_reg_dma:00000038 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:539    .text.drv8106_Enable_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:545    .text.drv8106_Enable_blocking:00000000 drv8106_Enable_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:568    .text.drv8106_Disable_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:574    .text.drv8106_Disable_blocking:00000000 drv8106_Disable_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:597    .text.drv8106_CSA_enable_g10_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:603    .text.drv8106_CSA_enable_g10_blocking:00000000 drv8106_CSA_enable_g10_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:626    .text.drv8106_check_faults:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:632    .text.drv8106_check_faults:00000000 drv8106_check_faults
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:688    .text.drv8106_clear_fault_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:694    .text.drv8106_clear_fault_blocking:00000000 drv8106_clear_fault_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:717    .text.drv8106_set_fault_autorecovery_blocking:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:723    .text.drv8106_set_fault_autorecovery_blocking:00000000 drv8106_set_fault_autorecovery_blocking
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:748    .text.drv8106_clear_fault_dma:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:754    .text.drv8106_clear_fault_dma:00000000 drv8106_clear_fault_dma
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:777    .text.HAL_SPI_TxRxCpltCallback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:783    .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:868    .text.HAL_SPI_TxRxCpltCallback:00000048 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:879    .bss.drv8106_read_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:885    .bss.drv8106_cur_read_addr:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:888    .bss.drv_cur_ptr:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:898    .data.drv_r2_dd9:00000000 drv_r2_dd9
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:895    .data.drv_r2_dd9:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:909    .data.drv_l2_dd8:00000000 drv_l2_dd8
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:906    .data.drv_l2_dd8:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:920    .data.drv_r1_dd7:00000000 drv_r1_dd7
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:917    .data.drv_r1_dd7:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:931    .data.drv_l1_dd6:00000000 drv_l1_dd6
+C:\Users\zhmis\AppData\Local\Temp\ccharJ7l.s:928    .data.drv_l1_dd6:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

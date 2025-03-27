@@ -30,7 +30,8 @@ build/debug/Core/Src/main_init.o: Core/Src/main_init.c \
  Core/Inc/servo_iq18.h Core/Inc/main.h Core/Inc/IQmathLib.h \
  Core/Inc/encoder_iq18.h Core/Inc/ema_iq18.h Core/Inc/pid_iq18.h \
  Core/Inc/pwm.h Core/Inc/settings.h Core/Inc/adc_current.h \
- Core/Inc/global_flags.h
+ Core/Inc/global_flags.h Core/Inc/potamon_bus_lowlvl_handle.h \
+ Core/Inc/usart.h Core/Inc/potamon_bus_protocol.h Core/Inc/crc_8_16.h
 Core/Inc/main_init.h:
 Core/Inc/pins_init.h:
 Core/Inc/gpio.h:
@@ -77,3 +78,7 @@ Core/Inc/pwm.h:
 Core/Inc/settings.h:
 Core/Inc/adc_current.h:
 Core/Inc/global_flags.h:
+Core/Inc/potamon_bus_lowlvl_handle.h:
+Core/Inc/usart.h:
+Core/Inc/potamon_bus_protocol.h:
+Core/Inc/crc_8_16.h:

@@ -187,9 +187,9 @@ void servo_iq18_currentLoop(servo_iq18_t *servo, _iq18 currentFeedback) {
 	}
 }
 
-void servo_iq18_controlPosition(servo_iq18_t *servo, float setpoint) {
+void servo_iq18_controlPosition(servo_iq18_t *servo, _iq18 setpoint) {
 	servo->currentMode = Position;
-	servo->positionSetpoint = _IQ18(setpoint) * servo->reverseFlag;
+	servo->positionSetpoint = setpoint * servo->reverseFlag;
 }
 
 void servo_iq18_controlVelocity(servo_iq18_t *servo, _iq18 setpoint) {
@@ -201,10 +201,10 @@ void servo_iq18_controlVelocity(servo_iq18_t *servo, _iq18 setpoint) {
 	}
 }
 
-void servo_iq18_controlCurrent(servo_iq18_t *servo, float setpoint) {
+void servo_iq18_controlCurrent(servo_iq18_t *servo, _iq18 setpoint) {
 	if (servo->controllerLoops == Triple) {
 		servo->currentMode = Current;
-		servo->currentSetpoint = _IQsat(_IQ18(setpoint * servo->reverseFlag),
+		servo->currentSetpoint = _IQsat(setpoint * servo->reverseFlag,
 				servo->maxCurrent, -servo->maxCurrent);
 		// servo->currentSetpoint = _IQ18(setpoint);
 	}

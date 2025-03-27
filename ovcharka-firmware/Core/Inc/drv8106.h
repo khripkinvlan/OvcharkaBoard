@@ -276,9 +276,9 @@ extern "C" {
 
 // PVDD supply overvoltage monitor mode.
 #define DRV8106_OV_MODE_LATCHED      (0b00 << 5)
-#define DRV8106_OV_MODE_AUTO         (0b00 << 5)
-#define DRV8106_OV_MODE_WARN         (0b00 << 5)
-#define DRV8106_OV_MODE_OFF          (0b00 << 5)
+#define DRV8106_OV_MODE_AUTO         (0b01 << 5)
+#define DRV8106_OV_MODE_WARN         (0b10 << 5)
+#define DRV8106_OV_MODE_OFF          (0b11 << 5)
 
 // PVDD supply overvoltage monitor deglitch time.
 #define DRV8106_OV_DG_1us            (0b00 << 3)
@@ -290,7 +290,7 @@ extern "C" {
 #define DRV8106_OV_LVL               (1 << 2) // default is 1; 0b=21.5V; 1b=28.5V
 
 // VCP charge pump undervoltage monitor mode.
-#define DRV8106_UV_MODE              (1 << 1) // default is 0; 0b=Latched; 1b=Automatic recovery
+#define DRV8106_UV_MODE              (1 << 7) // default is 0; 0b=Latched; 1b=Automatic recovery
 #define VCP_UV_LVL                   (1) // default is 0; 0b=2.5V; 1b=5V
 
 
@@ -367,6 +367,7 @@ void drv8106_Disable_blocking(drv8106_t* drv_inst);
 
 void drv8106_check_faults(drv8106_t* drv_inst);
 void drv8106_clear_fault_blocking(drv8106_t* drv_inst);
+void drv8106_set_fault_autorecovery_blocking(drv8106_t* drv_inst);
 void drv8106_clear_fault_dma(drv8106_t* drv_inst);
 
 void drv8106_CSA_enable_g10_blocking(drv8106_t* drv_inst);

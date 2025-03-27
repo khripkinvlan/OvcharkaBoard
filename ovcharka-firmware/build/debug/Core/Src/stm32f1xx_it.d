@@ -31,7 +31,9 @@ build/debug/Core/Src/stm32f1xx_it.o: Core/Src/stm32f1xx_it.c \
  Core/Inc/servo_init.h Core/Inc/adc.h Core/Inc/servo_iq18.h \
  Core/Inc/encoder_iq18.h Core/Inc/ema_iq18.h Core/Inc/pid_iq18.h \
  Core/Inc/pwm.h Core/Inc/settings.h Core/Inc/adc_current.h \
- Core/Inc/global_flags.h
+ Core/Inc/global_flags.h Core/Inc/potamon_bus_lowlvl_handle.h \
+ Core/Inc/usart.h Core/Inc/potamon_bus_protocol.h Core/Inc/crc_8_16.h \
+ Core/Inc/ind_led.h
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Core/Inc/stm32f1xx_hal_conf.h:
@@ -80,3 +82,8 @@ Core/Inc/pwm.h:
 Core/Inc/settings.h:
 Core/Inc/adc_current.h:
 Core/Inc/global_flags.h:
+Core/Inc/potamon_bus_lowlvl_handle.h:
+Core/Inc/usart.h:
+Core/Inc/potamon_bus_protocol.h:
+Core/Inc/crc_8_16.h:
+Core/Inc/ind_led.h:

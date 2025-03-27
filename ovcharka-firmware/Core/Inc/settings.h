@@ -8,13 +8,12 @@
 /* --- Directions ---*/
 
 // Choose whether it's front or rear axis controller (uncomment needed)
-#define AXIS_FRONT
-// #define AXIS_REAR
+// #define AXIS_FRONT
+#define AXIS_REAR
 
 /* --- Spec of servo (assuming they are the same) ---*/
 
 #define MT_VELOCITY 1065 // Velocity before gearbox (rad/s)
-#define MT_GEAR_RATIO 21.3
 
 #define ENC_TPR 44 // Ticks of timer per revolution (no gearbox) TODO: CHECK
 
@@ -27,12 +26,6 @@ For max safety use rated current of a motor.    */
 /* --- PID controllers settings ---*/
 
 /* Current controller */
-// #define CUR_KP 4.284
-// #define CUR_KI 901.403
-// #define CUR_KD 0
-// #define CUR_KB 901.403 // Back-calc antiwindup gain
-// #define CUR_DT 0.000111111
-
 #define CUR_KP 5.9949
 #define CUR_KI 1802.846
 #define CUR_KD 0

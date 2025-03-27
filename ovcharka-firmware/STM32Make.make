@@ -77,17 +77,20 @@ endif
 C_SOURCES =  \
 Core/Src/adc.c \
 Core/Src/adc_current.c \
+Core/Src/crc_8_16.c \
 Core/Src/dma.c \
 Core/Src/drv8106.c \
 Core/Src/ema_iq18.c \
 Core/Src/encoder_iq18.c \
 Core/Src/global_flags.c \
 Core/Src/gpio.c \
+Core/Src/ind_led.c \
 Core/Src/loops_handler.c \
 Core/Src/main.c \
 Core/Src/main_init.c \
 Core/Src/pid_iq18.c \
 Core/Src/pins_init.c \
+Core/Src/potamon_bus_lowlvl_handle.c \
 Core/Src/pwm.c \
 Core/Src/servo_init.c \
 Core/Src/servo_iq18.c \

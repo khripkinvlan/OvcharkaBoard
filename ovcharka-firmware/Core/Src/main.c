@@ -30,7 +30,7 @@
 #include "drv8106.h"
 #include "IQmathLib.h"
 #include "main_init.h"
-
+#include "ind_led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -141,6 +141,11 @@ int main(void)
   drv8106_CSA_enable_g10_blocking(&drv_l2_dd8);
   drv8106_CSA_enable_g10_blocking(&drv_r2_dd9);
 
+  drv8106_set_fault_autorecovery_blocking(&drv_l1_dd6);
+  drv8106_set_fault_autorecovery_blocking(&drv_r1_dd7);
+  drv8106_set_fault_autorecovery_blocking(&drv_l2_dd8);
+  drv8106_set_fault_autorecovery_blocking(&drv_r2_dd9);
+
   drv8106_Enable_blocking(&drv_l1_dd6);
   drv8106_Enable_blocking(&drv_r1_dd7);
   drv8106_Enable_blocking(&drv_l2_dd8);
@@ -148,20 +153,9 @@ int main(void)
 
   HAL_Delay(1);
 
-  test_iq = _IQ18(0.2 * (int8_t)(-1));
+  ind_led_init(&ind_led_red, IND_LED_GPIO_Port, IND_LED_Pin, 250, 0);
 
   init_mtr_ctrl();
-
-  // // __HAL_TIM_CLEAR_IT(&htim3, TIM_IT_UPDATE);
-  // HAL_TIM_Base_Start_IT(&htim3);
-  // // __HAL_TIM_ENABLE_IT(&htim3, TIM_IT_UPDATE);
-  // // __HAL_TIM_ENABLE(&htim3);
-
-  // HAL_Delay(1);
-  // HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  // HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
-  
-  // HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc, 2);
 
   /* USER CODE END 2 */
 

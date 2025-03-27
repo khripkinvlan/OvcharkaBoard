@@ -142,6 +142,11 @@ void drv8106_clear_fault_blocking(drv8106_t* drv_inst){
     drv8106_write_reg_blocking(drv_inst, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
 }
 
+void drv8106_set_fault_autorecovery_blocking(drv8106_t* drv_inst){
+    uint8_t data = DRV8106_UV_MODE | DRV8106_OV_MODE_AUTO | DRV8106_OV_DG_4us | DRV8106_OV_LVL;
+    drv8106_write_reg_blocking(drv_inst, DRV8106_UVOV_CTRL, data);
+}
+
 void drv8106_clear_fault_dma(drv8106_t* drv_inst){
     drv8106_write_reg_dma(drv_inst, DRV8106_IC_CTRL, DRV8106_CLR_FLT);
 }

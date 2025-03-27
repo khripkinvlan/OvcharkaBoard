@@ -45,6 +45,7 @@ void encoder_updatePosition_iq18(encoder_iq18_t *encoder) {
 							encoder->gearRatio)) << 1,
 			PI_IQ18) * encoder->reverse_flag;
 }
+
 void encoder_updateVelocity_qep_iq18(encoder_iq18_t *encoder) {
 	_iq18 velocity = _IQ18div((encoder->angle - encoder->previousAngle),
 			encoder->dt);

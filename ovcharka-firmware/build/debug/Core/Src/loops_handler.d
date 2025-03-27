@@ -30,7 +30,9 @@ build/debug/Core/Src/loops_handler.o: Core/Src/loops_handler.c \
  Core/Inc/gpio.h Core/Inc/dma.h Core/Inc/servo_init.h Core/Inc/adc.h \
  Core/Inc/servo_iq18.h Core/Inc/main.h Core/Inc/encoder_iq18.h \
  Core/Inc/ema_iq18.h Core/Inc/pid_iq18.h Core/Inc/pwm.h \
- Core/Inc/settings.h Core/Inc/adc_current.h Core/Inc/global_flags.h
+ Core/Inc/settings.h Core/Inc/adc_current.h Core/Inc/global_flags.h \
+ Core/Inc/potamon_bus_lowlvl_handle.h Core/Inc/usart.h \
+ Core/Inc/potamon_bus_protocol.h Core/Inc/crc_8_16.h Core/Inc/ind_led.h
 Core/Inc/loops_handler.h:
 Core/Inc/tim.h:
 Core/Inc/main.h:
@@ -78,3 +80,8 @@ Core/Inc/pwm.h:
 Core/Inc/settings.h:
 Core/Inc/adc_current.h:
 Core/Inc/global_flags.h:
+Core/Inc/potamon_bus_lowlvl_handle.h:
+Core/Inc/usart.h:
+Core/Inc/potamon_bus_protocol.h:
+Core/Inc/crc_8_16.h:
+Core/Inc/ind_led.h:
