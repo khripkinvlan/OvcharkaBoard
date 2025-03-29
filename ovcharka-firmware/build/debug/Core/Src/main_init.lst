@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 1
   45 000e FFF7FEFF 		bl	servo_iq18_reset
   46              	.LVL1:
   12:Core/Src/main_init.c ****     servo_iq18_reset(&servo2_g);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s 			page 2
 
 
   47              		.loc 1 12 5 view .LVU5
@@ -90,12 +90,12 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 1
   66 002e 0948     		ldr	r0, .L3+20
   67 0030 FFF7FEFF 		bl	HAL_GPIO_WritePin
   68              	.LVL6:
-  20:Core/Src/main_init.c ****     HAL_UART_Receive_IT(&huart1, (uint8_t*)&packet_sync, S_SYNC);
+  20:Core/Src/main_init.c ****     HAL_UART_Receive_DMA(&huart1, (uint8_t*)&packet_sync, S_SYNC);
   69              		.loc 1 20 5 view .LVU10
   70 0034 0222     		movs	r2, #2
   71 0036 0849     		ldr	r1, .L3+24
   72 0038 0848     		ldr	r0, .L3+28
-  73 003a FFF7FEFF 		bl	HAL_UART_Receive_IT
+  73 003a FFF7FEFF 		bl	HAL_UART_Receive_DMA
   74              	.LVL7:
   21:Core/Src/main_init.c ****     
   22:Core/Src/main_init.c **** }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 1
   92              		.section	.bss.IC_filter,"aw",%nobits
   93              		.align	2
   96              	IC_filter:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s 			page 3
 
 
   97 0000 00000000 		.space	8
@@ -146,16 +146,16 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 1
  118              		.file 20 "Core/Inc/potamon_bus_lowlvl_handle.h"
  119              		.file 21 "Core/Inc/main_init.h"
  120              		.file 22 "Core/Inc/adc_current.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main_init.c
-C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s:19     .text.init_mtr_ctrl:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s:25     .text.init_mtr_ctrl:00000000 init_mtr_ctrl
-C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s:80     .text.init_mtr_ctrl:00000040 $d
-C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s:96     .bss.IC_filter:00000000 IC_filter
-C:\Users\zhmis\AppData\Local\Temp\ccrDTl6J.s:93     .bss.IC_filter:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s:19     .text.init_mtr_ctrl:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s:25     .text.init_mtr_ctrl:00000000 init_mtr_ctrl
+C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s:80     .text.init_mtr_ctrl:00000040 $d
+C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s:96     .bss.IC_filter:00000000 IC_filter
+C:\Users\zhmis\AppData\Local\Temp\ccQFMrH6.s:93     .bss.IC_filter:00000000 $d
 
 UNDEFINED SYMBOLS
 servo_init
@@ -164,7 +164,7 @@ servo_periph_init
 adc_cur_init
 initEMA_iq18
 HAL_GPIO_WritePin
-HAL_UART_Receive_IT
+HAL_UART_Receive_DMA
 system_enabled
 servo1_g
 servo2_g

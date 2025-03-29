@@ -17,7 +17,7 @@ void init_mtr_ctrl()
     initEMA_iq18(&IC_filter, VEL_EMA, 0);
 
     TXOFF;
-    HAL_UART_Receive_IT(&huart1, (uint8_t*)&packet_sync, S_SYNC);
+    HAL_UART_Receive_DMA(&huart1, (uint8_t*)&packet_sync, S_SYNC);
     
 }
 
