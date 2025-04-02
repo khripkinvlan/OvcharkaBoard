@@ -58,7 +58,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, SPI1_SS4_Pin|DIR1_1_Pin|HIZ1_Pin|HIZ2_Pin
-                          |DRVOFF1_Pin|BRIDGESLEEP2_Pin|IND_LED_Pin, GPIO_PIN_RESET);
+                          |DRVOFF1_Pin|BRIDGESLEEP2_Pin|IND_LED_Pin|RS485_CTRL_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : nFAULT_L2_Pin nFAULT_R2_Pin ENC1_Z_Pin ENC2_Z_Pin */
   GPIO_InitStruct.Pin = nFAULT_L2_Pin|nFAULT_R2_Pin|ENC1_Z_Pin|ENC2_Z_Pin;
@@ -94,12 +94,12 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : SPI1_SS4_Pin */
-  GPIO_InitStruct.Pin = SPI1_SS4_Pin;
+  /*Configure GPIO pins : SPI1_SS4_Pin RS485_CTRL_Pin */
+  GPIO_InitStruct.Pin = SPI1_SS4_Pin|RS485_CTRL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(SPI1_SS4_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : DIR1_1_Pin HIZ1_Pin HIZ2_Pin DRVOFF1_Pin
                            BRIDGESLEEP2_Pin IND_LED_Pin */
@@ -110,8 +110,8 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : nFAULT_R1_Pin nFAULT_L1_Pin RS485_CTRL_Pin */
-  GPIO_InitStruct.Pin = nFAULT_R1_Pin|nFAULT_L1_Pin|RS485_CTRL_Pin;
+  /*Configure GPIO pins : nFAULT_R1_Pin nFAULT_L1_Pin */
+  GPIO_InitStruct.Pin = nFAULT_R1_Pin|nFAULT_L1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);

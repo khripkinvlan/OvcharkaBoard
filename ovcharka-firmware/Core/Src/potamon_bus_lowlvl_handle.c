@@ -1,7 +1,7 @@
 #include "potamon_bus_lowlvl_handle.h"
 
 // Buffer to dump packets not intended to use on this level of control
-uint8_t uart_rx_dump_buffer[67];
+uint8_t uart_rx_dump_buffer[20];
 
 // Struct to recieve SYNC packets
 pack_sync_t packet_sync;
@@ -9,19 +9,13 @@ pack_sync_t packet_sync;
 // Struct to recieve CTRL packets
 pack_data_ctrl_servo_t data_ctrl_unchecked, data_ctrl;
 
-// Struct to recieve n of trajectory chunks
-pack_data_traj_n_t data_traj_n_unchecked, data_traj_n;
-
 // Struct to pack feedback data
 pack_data_encoder_t data_encoder;
 pack_data_current_t data_current;
 
 next_packet_t expected_packet; // Packet that is expected next
-uint8_t chunk_counter;         // Counter of skipped chunks
 
-uint16_t crc_check_debug;
-
-uint32_t bus_crc_history = 0xFFFFFFFF;
+uint32_t bus_crc_history = 0xFFFFFFFF; // Here comes history of crc checks, 1 is ok 0 is fail. Last is LSB
 
 // Counters for packets that failed crc check
 uint32_t failed_sync_packets_count, failed_data_packets_count;
@@ -41,14 +35,14 @@ void pack_encoder_feedback(pack_data_encoder_t *packet) // Pack and crc encoder 
     packet->angle_1 = encoder_getAngle_iq18(&servo2_g.encoder) >> 9;
     packet->velocity_1 = (int16_t)(encoder_getVelocity_iq18(&servo1_g.encoder) >> 9);
     packet->velocity_2 = (int16_t)(encoder_getVelocity_iq18(&servo2_g.encoder) >> 9);
-    packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_ENC_S1-2);
+    packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_ENC_S1-2); // Using S1 size since they are same
 }
 
 void pack_current_feedback(pack_data_current_t *packet) // Pack and crc encoder data
 {
     packet->current1 = (int16_t)(current[0] >> 9);
     packet->current2 = (int16_t)(current[1] >> 9);
-    packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_CUR_S1-2);
+    packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_CUR_S1-2); // Using S1 size since they are same
 }
 
 void sync_packet_handler(pack_sync_t *packet)
@@ -77,7 +71,7 @@ void sync_packet_handler(pack_sync_t *packet)
 
     case ID_SYNC_CTRL_S1: // SYNC_CTRL_S1
         expected_packet = DATA_CTRL_S1;
-        if (S_NUM == 1)
+        if (axis_define == 1)
         {
             HAL_UART_Receive_DMA(&huart1, (uint8_t *)&data_ctrl_unchecked, S_DATA_CTRL_S1);
         }
@@ -88,7 +82,7 @@ void sync_packet_handler(pack_sync_t *packet)
         break;
     case ID_SYNC_CTRL_S2: // SYNC_CTRL_S2
         expected_packet = DATA_CTRL_S2;
-        if (S_NUM == 2)
+        if (axis_define == 2)
         {
             HAL_UART_Receive_DMA(&huart1, (uint8_t *)&data_ctrl_unchecked, S_DATA_CTRL_S2);
         }
@@ -98,9 +92,9 @@ void sync_packet_handler(pack_sync_t *packet)
         }
         break;
 
-    case 0x09: // SYNC_ENC_S1
+    case ID_SYNC_ENC_S1: // SYNC_ENC_S1
         expected_packet = DATA_ENC_S1;
-        if (S_NUM == 1)
+        if (axis_define == 1)
         {
             pack_encoder_feedback(&data_encoder);
             TXON; // Turn on transmission on Transceiver
@@ -111,9 +105,9 @@ void sync_packet_handler(pack_sync_t *packet)
             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_ENC_S1);
         }
         break;
-    case 0x0A: // SYNC_ENC_S2
+    case ID_SYNC_ENC_S2: // SYNC_ENC_S2
         expected_packet = DATA_ENC_S2;
-        if (S_NUM == 2)
+        if (axis_define == 2)
         {
             pack_encoder_feedback(&data_encoder);
             TXON; // Turn on transmission on Transceiver
@@ -124,9 +118,9 @@ void sync_packet_handler(pack_sync_t *packet)
             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_ENC_S2);
         }
         break;
-    case 0x0B: // SYNC_CUR_S1
+    case ID_SYNC_CUR_S1: // SYNC_CUR_S1
         expected_packet = DATA_CUR_S1;
-        if (S_NUM == 1)
+        if (axis_define == 1)
         {
             pack_current_feedback(&data_current);
             TXON; // Turn on transmission on Transceiver
@@ -137,9 +131,9 @@ void sync_packet_handler(pack_sync_t *packet)
             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_CUR_S1);
         }
         break;
-    case 0x0C: // SYNC_CUR_S2
+    case ID_SYNC_CUR_S2: // SYNC_CUR_S2
         expected_packet = DATA_CUR_S2;
-        if (S_NUM == 2)
+        if (axis_define == 2)
         {
             pack_current_feedback(&data_current);
             TXON; // Turn on transmission on Transceiver
@@ -149,22 +143,6 @@ void sync_packet_handler(pack_sync_t *packet)
         {
             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_CUR_S2);
         }
-        break;
-    case 0x0D: // SYNC_ODO
-        expected_packet = DATA_ODO;
-        HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_ODO);
-        break;
-    case 0x0E: // SYNC_IMU
-        expected_packet = DATA_IMU;
-        HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_IMU);
-        break;
-    case 0x0F: // SYNC_TRAJ_N
-        expected_packet = DATA_TRAJ_N;
-        HAL_UART_Receive_DMA(&huart1, (uint8_t *)&data_traj_n_unchecked, S_DATA_IMU);
-        break;
-    case 0x10: // SYNC_RESET_ODO
-        expected_packet = SYNC;
-        HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
         break;
     default:
         break;
@@ -184,33 +162,21 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
         else
         {
             update_crc_history(0);
-            // // LED_ON;
-            // failed_sync_packets_count++;
-            // system_enabled = 0;
-            // data_ctrl.velocity_1 = 0;
-            // data_ctrl.velocity_2 = 0;
             expected_packet = SYNC;
             HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
         }
         break;
     case DATA_CTRL_S1:
-        if (S_NUM == 1)
+        if (axis_define == 1)
         {
-            crc_check_debug = crc16_ccitt((uint8_t *)&data_ctrl_unchecked, S_DATA_CTRL_S1 - 2);
             if (data_ctrl_unchecked.crc16 == crc16_ccitt((uint8_t *)&data_ctrl_unchecked, S_DATA_CTRL_S1 - 2))
             {
                 update_crc_history(1);
                 memcpy(&data_ctrl, &data_ctrl_unchecked, S_DATA_CTRL_S1);
-                // LED_OFF;
             }
             else
             {
                 update_crc_history(0);
-                // LED_ON;
-                // system_enabled = 0;
-                // data_ctrl.velocity_1 = 0;
-                // data_ctrl.velocity_2 = 0;
-                // failed_data_packets_count++;
                 expected_packet = SYNC;
                 HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
             }
@@ -219,7 +185,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
         break;
     case DATA_CTRL_S2:
-        if (S_NUM == 2)
+        if (axis_define == 2)
         {
             if (data_ctrl_unchecked.crc16 == crc16_ccitt((uint8_t *)&data_ctrl_unchecked, S_DATA_CTRL_S2 - 2))
             {
@@ -229,46 +195,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             else
             {
                 update_crc_history(0);
-                // LED_ON;
-                system_enabled = 0;
-                failed_data_packets_count++;
+                expected_packet = SYNC;
+                HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
             }
         }
         expected_packet = SYNC;
         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
-        break;
-    case DATA_TRAJ_N:
-        if (data_traj_n_unchecked.crc16 == crc16_ccitt((uint8_t *)&data_traj_n_unchecked, S_DATA_TRAJ_N - 2))
-        {
-            update_crc_history(1);
-            memcpy(&data_traj_n, &data_traj_n_unchecked, S_DATA_TRAJ_N);
-            // LED_OFF;
-            expected_packet = DATA_TRAJ_CHUNK;
-            HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_TRAJ_CHUNK);
-        }
-        else
-        {
-            update_crc_history(0);
-            // system_enabled = 0;
-            // data_ctrl.velocity_1 = 0;
-            // data_ctrl.velocity_2 = 0;
-            // failed_data_packets_count++;
-            expected_packet = SYNC;
-            HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
-        }
-        break;
-    case DATA_TRAJ_CHUNK:
-        chunk_counter++;
-        if (chunk_counter < data_traj_n.no_of_chunks)
-        {
-            expected_packet = DATA_TRAJ_CHUNK;
-            HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_TRAJ_CHUNK);
-        }
-        else
-        {
-            expected_packet = SYNC;
-            HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
-        }
         break;
     default:
         expected_packet = SYNC;

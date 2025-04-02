@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -18,51 +18,57 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              		.file 1 "Core/Src/global_flags.c"
-  18              		.global	overcurrent_flag
-  19              		.section	.bss.overcurrent_flag,"aw",%nobits
-  22              	overcurrent_flag:
+  18              		.global	axis_define
+  19              		.section	.bss.axis_define,"aw",%nobits
+  22              	axis_define:
   23 0000 00       		.space	1
-  24              		.global	comms_fault_flag
-  25              		.section	.bss.comms_fault_flag,"aw",%nobits
-  28              	comms_fault_flag:
+  24              		.global	overcurrent_flag
+  25              		.section	.bss.overcurrent_flag,"aw",%nobits
+  28              	overcurrent_flag:
   29 0000 00       		.space	1
-  30              		.global	brg_fault_flag
-  31              		.section	.bss.brg_fault_flag,"aw",%nobits
-  34              	brg_fault_flag:
+  30              		.global	comms_fault_flag
+  31              		.section	.bss.comms_fault_flag,"aw",%nobits
+  34              	comms_fault_flag:
   35 0000 00       		.space	1
-  36              		.global	reset_flag
-  37              		.section	.bss.reset_flag,"aw",%nobits
-  40              	reset_flag:
+  36              		.global	brg_fault_flag
+  37              		.section	.bss.brg_fault_flag,"aw",%nobits
+  40              	brg_fault_flag:
   41 0000 00       		.space	1
-  42              		.global	control_mode
-  43              		.section	.bss.control_mode,"aw",%nobits
-  46              	control_mode:
+  42              		.global	reset_flag
+  43              		.section	.bss.reset_flag,"aw",%nobits
+  46              	reset_flag:
   47 0000 00       		.space	1
-  48              		.global	system_enabled
-  49              		.section	.bss.system_enabled,"aw",%nobits
-  52              	system_enabled:
+  48              		.global	control_mode
+  49              		.section	.bss.control_mode,"aw",%nobits
+  52              	control_mode:
   53 0000 00       		.space	1
-  54              		.text
-  55              	.Letext0:
-  56              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-  57              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-  58              		.file 4 "Core/Inc/global_flags.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s 			page 2
+  54              		.global	system_enabled
+  55              		.section	.bss.system_enabled,"aw",%nobits
+  58              	system_enabled:
+  59 0000 00       		.space	1
+  60              		.text
+  61              	.Letext0:
+  62              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+  63              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+  64              		.file 4 "Core/Inc/global_flags.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 global_flags.c
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:22     .bss.overcurrent_flag:00000000 overcurrent_flag
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:23     .bss.overcurrent_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:28     .bss.comms_fault_flag:00000000 comms_fault_flag
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:29     .bss.comms_fault_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:34     .bss.brg_fault_flag:00000000 brg_fault_flag
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:35     .bss.brg_fault_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:40     .bss.reset_flag:00000000 reset_flag
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:41     .bss.reset_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:46     .bss.control_mode:00000000 control_mode
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:47     .bss.control_mode:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:52     .bss.system_enabled:00000000 system_enabled
-C:\Users\zhmis\AppData\Local\Temp\cc5LJuly.s:53     .bss.system_enabled:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:22     .bss.axis_define:00000000 axis_define
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:23     .bss.axis_define:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:28     .bss.overcurrent_flag:00000000 overcurrent_flag
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:29     .bss.overcurrent_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:34     .bss.comms_fault_flag:00000000 comms_fault_flag
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:35     .bss.comms_fault_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:40     .bss.brg_fault_flag:00000000 brg_fault_flag
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:41     .bss.brg_fault_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:46     .bss.reset_flag:00000000 reset_flag
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:47     .bss.reset_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:52     .bss.control_mode:00000000 control_mode
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:53     .bss.control_mode:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:58     .bss.system_enabled:00000000 system_enabled
+C:\Users\zhmis\AppData\Local\Temp\ccAmSYgN.s:59     .bss.system_enabled:00000000 $d
 
 NO UNDEFINED SYMBOLS

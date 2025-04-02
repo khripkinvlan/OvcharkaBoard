@@ -108,53 +108,65 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  // Pull down all CS pins of drivers
+  TXOFF; // Turn off transceiver during init
 
+  // Pull down all CS pins of drivers
   HAL_GPIO_WritePin(SPI1_SS1_GPIO_Port, SPI1_SS1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SPI1_SS2_GPIO_Port, SPI1_SS2_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SPI1_SS3_GPIO_Port, SPI1_SS3_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(SPI1_SS4_GPIO_Port, SPI1_SS4_Pin, GPIO_PIN_SET);
   HAL_Delay(1);
+
+  // Wake up drivers
   HAL_GPIO_WritePin(BRIDGESLEEP1_GPIO_Port, BRIDGESLEEP1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(BRIDGESLEEP2_GPIO_Port, BRIDGESLEEP2_Pin, GPIO_PIN_SET);
+
+  // Turn high nHIZ pins, allowing the driver to switch on pwm command
   HAL_GPIO_WritePin(HIZ1_GPIO_Port, HIZ1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(HIZ2_GPIO_Port, HIZ2_Pin, GPIO_PIN_SET);
   HAL_Delay(1);
 
+  // Write defaults to all bridges in case MCU was reset
   drv8106_reset_blocking(&drv_l1_dd6);
   drv8106_reset_blocking(&drv_r1_dd7);
   drv8106_reset_blocking(&drv_l2_dd8);
   drv8106_reset_blocking(&drv_r2_dd9);
 
+  // Clear faults (since there is power-on-reset fault at start)
   drv8106_clear_fault_blocking(&drv_l1_dd6);
   drv8106_clear_fault_blocking(&drv_r1_dd7);
   drv8106_clear_fault_blocking(&drv_l2_dd8);
   drv8106_clear_fault_blocking(&drv_r2_dd9);
 
+  // read all registers of a driver
   drv8106_read_all_blocking(&drv_l1_dd6);
   drv8106_read_all_blocking(&drv_r1_dd7);
   drv8106_read_all_blocking(&drv_l2_dd8);
   drv8106_read_all_blocking(&drv_r2_dd9);
 
+  // Enable current sensor with gain 10
   drv8106_CSA_enable_g10_blocking(&drv_l1_dd6);
   drv8106_CSA_enable_g10_blocking(&drv_r1_dd7);
   drv8106_CSA_enable_g10_blocking(&drv_l2_dd8);
   drv8106_CSA_enable_g10_blocking(&drv_r2_dd9);
 
+  // Enable bridge to autorecover from most faults
   drv8106_set_fault_autorecovery_blocking(&drv_l1_dd6);
   drv8106_set_fault_autorecovery_blocking(&drv_r1_dd7);
   drv8106_set_fault_autorecovery_blocking(&drv_l2_dd8);
   drv8106_set_fault_autorecovery_blocking(&drv_r2_dd9);
 
+  // Enable drivers via SPI bit
   drv8106_Enable_blocking(&drv_l1_dd6);
   drv8106_Enable_blocking(&drv_r1_dd7);
   drv8106_Enable_blocking(&drv_l2_dd8);
   drv8106_Enable_blocking(&drv_r2_dd9);
-
   HAL_Delay(1);
 
+  // Init led indication module
   ind_led_init(&ind_led_red, IND_LED_GPIO_Port, IND_LED_Pin, 250, 0);
 
+  // Init stuff for motor control
   init_mtr_ctrl();
 
   /* USER CODE END 2 */

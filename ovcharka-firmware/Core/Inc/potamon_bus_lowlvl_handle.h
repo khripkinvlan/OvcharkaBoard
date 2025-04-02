@@ -19,5 +19,8 @@ uint8_t  get_crc_success_rate();
 extern pack_data_ctrl_servo_t data_ctrl;
 extern pack_sync_t packet_sync;
 extern uint32_t bus_crc_history;
+extern pack_data_encoder_t data_encoder;
+extern pack_data_current_t data_current;
+extern next_packet_t expected_packet; // Packet that is expected next
 
 #endif

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
   45 0004 A34B     		ldr	r3, .L36
   46 0006 9A42     		cmp	r2, r3
   47 0008 00D0     		beq	.L26
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 2
 
 
   48              	.LVL1:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
   64:Core/Src/loops_handler.c ****                 servo_iq18_velocityLoop(&servo2_g);
   65:Core/Src/loops_handler.c ****             }
   66:Core/Src/loops_handler.c ****             
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 3
 
 
   67:Core/Src/loops_handler.c ****             irq_counter250 = 0;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  121:Core/Src/loops_handler.c ****         if (reset_flag)
  122:Core/Src/loops_handler.c ****         {
  123:Core/Src/loops_handler.c ****             encoder_reset_iq18(&servo1_g.encoder);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 4
 
 
  124:Core/Src/loops_handler.c ****             encoder_reset_iq18(&servo2_g.encoder);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
   86 002e 9D4B     		ldr	r3, .L36+16
   87 0030 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
   88 0032 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 5
 
 
   89 0034 9C4A     		ldr	r2, .L36+20
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  129 0060 00F0FF80 		beq	.L31
  130              	.L21:
  113:Core/Src/loops_handler.c ****         if (brg_fault_flag){
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 6
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 6
 
 
  131              		.loc 1 113 9 is_stmt 1 view .LVU33
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  171              		.loc 1 22 24 is_stmt 0 view .LVU48
  172 0094 7F4B     		ldr	r3, .L36
  173 0096 0022     		movs	r2, #0
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 7
 
 
  174 0098 5A63     		str	r2, [r3, #52]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
   40:Core/Src/loops_handler.c ****             if (system_enabled){
  217              		.loc 1 40 17 is_stmt 0 view .LVU60
  218 00d4 714B     		ldr	r3, .L36+8
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 8
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 8
 
 
  219 00d6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  260 0112 1870     		strb	r0, [r3]
   50:Core/Src/loops_handler.c ****             if(!(fault1 && fault2 && fault3 && fault4)){
  261              		.loc 1 50 13 is_stmt 1 view .LVU74
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 9
 
 
   50:Core/Src/loops_handler.c ****             if(!(fault1 && fault2 && fault3 && fault4)){
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  304              	.L10:
   54:Core/Src/loops_handler.c ****                 brg_fault_flag = 0;
  305              		.loc 1 54 17 view .LVU87
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 10
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 10
 
 
   54:Core/Src/loops_handler.c ****                 brg_fault_flag = 0;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  350 0182 F0E7     		b	.L13
  351              	.L19:
   74:Core/Src/loops_handler.c ****                 if(!control_mode){
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 11
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 11
 
 
  352              		.loc 1 74 17 view .LVU98
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
   81:Core/Src/loops_handler.c ****                     _iq18 comms_ang2 = (_iq18)data_ctrl.angle_2 << 8;
  393              		.loc 1 81 56 is_stmt 0 view .LVU112
  394 01ae D3F80740 		ldr	r4, [r3, #7]	@ unaligned
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 12
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 12
 
 
   81:Core/Src/loops_handler.c ****                     _iq18 comms_ang2 = (_iq18)data_ctrl.angle_2 << 8;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  438              	.LVL38:
  439 01ee 0146     		mov	r1, r0
  440 01f0 3248     		ldr	r0, .L36+40
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 13
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 13
 
 
  441 01f2 FFF7FEFF 		bl	servo_iq18_controlCurrent
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  484              		.loc 1 96 17 view .LVU134
  485 0236 FFF7FEFF 		bl	__aeabi_f2iz
  486              	.LVL47:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 14
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 14
 
 
  487 023a 0146     		mov	r1, r0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  529              	.LVL53:
  110:Core/Src/loops_handler.c ****             ind_led_set_opmode(&ind_led_red, BLINK_05HZ);
  530              		.loc 1 110 13 view .LVU147
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 15
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 15
 
 
  531 0276 0221     		movs	r1, #2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  586              	ang_debug_set_2:
  587 0000 00000000 		.space	4
  588              		.global	ang_debug_set_1
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 16
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 16
 
 
  589              		.section	.bss.ang_debug_set_1,"aw",%nobits
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  667              	.Letext0:
  668              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
  669              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 17
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 17
 
 
  670              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
@@ -978,42 +978,42 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 1
  684              		.file 18 "Core/Inc/potamon_bus_protocol.h"
  685              		.file 19 "Core/Inc/potamon_bus_lowlvl_handle.h"
  686              		.file 20 "Core/Inc/ind_led.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 18
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 loops_handler.c
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:21     .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:27     .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:340    .text.HAL_TIM_PeriodElapsedCallback:00000178 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:344    .text.HAL_TIM_PeriodElapsedCallback:0000017c $t
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:553    .text.HAL_TIM_PeriodElapsedCallback:00000294 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:633    .bss.loops_op_mode:00000000 loops_op_mode
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:627    .bss.prev_control_mode:00000000 prev_control_mode
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:664    .bss.irq_counter250:00000000 irq_counter250
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:657    .bss.fault1:00000000 fault1
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:651    .bss.fault2:00000000 fault2
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:645    .bss.fault3:00000000 fault3
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:639    .bss.fault4:00000000 fault4
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:621    .bss.cur_debug_set_1:00000000 cur_debug_set_1
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:614    .bss.cur_debug_set_2:00000000 cur_debug_set_2
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:607    .bss.vel_debug_set_1:00000000 vel_debug_set_1
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:600    .bss.vel_debug_set_2:00000000 vel_debug_set_2
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:593    .bss.ang_debug_set_1:00000000 ang_debug_set_1
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:586    .bss.ang_debug_set_2:00000000 ang_debug_set_2
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:583    .bss.ang_debug_set_2:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:590    .bss.ang_debug_set_1:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:597    .bss.vel_debug_set_2:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:604    .bss.vel_debug_set_1:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:611    .bss.cur_debug_set_2:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:618    .bss.cur_debug_set_1:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:628    .bss.prev_control_mode:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:634    .bss.loops_op_mode:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:640    .bss.fault4:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:646    .bss.fault3:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:652    .bss.fault2:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:658    .bss.fault1:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s:661    .bss.irq_counter250:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:21     .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:27     .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:340    .text.HAL_TIM_PeriodElapsedCallback:00000178 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:344    .text.HAL_TIM_PeriodElapsedCallback:0000017c $t
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:553    .text.HAL_TIM_PeriodElapsedCallback:00000294 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:633    .bss.loops_op_mode:00000000 loops_op_mode
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:627    .bss.prev_control_mode:00000000 prev_control_mode
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:664    .bss.irq_counter250:00000000 irq_counter250
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:657    .bss.fault1:00000000 fault1
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:651    .bss.fault2:00000000 fault2
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:645    .bss.fault3:00000000 fault3
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:639    .bss.fault4:00000000 fault4
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:621    .bss.cur_debug_set_1:00000000 cur_debug_set_1
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:614    .bss.cur_debug_set_2:00000000 cur_debug_set_2
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:607    .bss.vel_debug_set_1:00000000 vel_debug_set_1
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:600    .bss.vel_debug_set_2:00000000 vel_debug_set_2
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:593    .bss.ang_debug_set_1:00000000 ang_debug_set_1
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:586    .bss.ang_debug_set_2:00000000 ang_debug_set_2
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:583    .bss.ang_debug_set_2:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:590    .bss.ang_debug_set_1:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:597    .bss.vel_debug_set_2:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:604    .bss.vel_debug_set_1:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:611    .bss.cur_debug_set_2:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:618    .bss.cur_debug_set_1:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:628    .bss.prev_control_mode:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:634    .bss.loops_op_mode:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:640    .bss.fault4:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:646    .bss.fault3:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:652    .bss.fault2:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:658    .bss.fault1:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s:661    .bss.irq_counter250:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_fmul
@@ -1038,7 +1038,7 @@ brg_fault_flag
 reset_flag
 servo1_g
 servo2_g
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccnrBPYF.s 			page 19
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccWN411S.s 			page 19
 
 
 current

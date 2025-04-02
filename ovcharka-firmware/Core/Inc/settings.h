@@ -8,14 +8,15 @@
 /* --- Directions ---*/
 
 // Choose whether it's front or rear axis controller (uncomment needed)
-// #define AXIS_FRONT
-#define AXIS_REAR
+#define AXIS_FRONT
+// #define AXIS_REAR
 
 /* --- Spec of servo (assuming they are the same) ---*/
 
 #define MT_VELOCITY 1065 // Velocity before gearbox (rad/s)
 
 #define ENC_TPR 44 // Ticks of timer per revolution (no gearbox) TODO: CHECK
+#define MT_GEAR_RATIO 21.3
 
 /* Motor current limit (Amps).
 For max safety use rated current of a motor.    */

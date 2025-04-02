@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
   44 0006 9DF81860 		ldrb	r6, [sp, #24]	@ zero_extendqisi2
   13:Core/Src/encoder_iq18.c **** 	encoder->htim = timerHandle;
   45              		.loc 1 13 2 is_stmt 1 view .LVU2
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 2
 
 
   46              		.loc 1 13 16 is_stmt 0 view .LVU3
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
   90              		.loc 1 23 2 is_stmt 1 view .LVU18
   91              		.loc 1 23 5 is_stmt 0 view .LVU19
   92 0042 3EB9     		cbnz	r6, .L5
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 3
 
 
   24:Core/Src/encoder_iq18.c **** 		encoder->reverse_flag = 1;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
   30:Core/Src/encoder_iq18.c **** 	encoder->currentTicks = (int16_t) encoder->htim->Instance->CNT;
  139              		.loc 1 30 2 is_stmt 1 view .LVU30
  140              		.loc 1 30 43 is_stmt 0 view .LVU31
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 4
 
 
  141 0004 0368     		ldr	r3, [r0]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
  183 0038 5362     		str	r3, [r2, #36]
   39:Core/Src/encoder_iq18.c **** 
   40:Core/Src/encoder_iq18.c **** 	encoder->angle = _IQ18mpy(
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 5
 
 
  184              		.loc 1 40 2 is_stmt 1 view .LVU51
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
  227              		.syntax unified
  228              		.thumb
  229              		.thumb_func
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 6
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 6
 
 
  231              	encoder_updateVelocity_qep_iq18:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
  278              		.align	1
  279              		.global	encoder_reset_iq18
  280              		.syntax unified
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 7
 
 
  281              		.thumb
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
  328              		.thumb_func
  330              	encoder_getAngle_iq18:
  331              	.LVL24:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 8
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 8
 
 
  332              	.LFB69:
@@ -477,24 +477,24 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 1
  379              		.file 8 "Core/Inc/IQmathLib.h"
  380              		.file 9 "Core/Inc/ema_iq18.h"
  381              		.file 10 "Core/Inc/encoder_iq18.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s 			page 9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 encoder_iq18.c
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:22     .text.encoder_init_iq18:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:28     .text.encoder_init_iq18:00000000 encoder_init_iq18
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:118    .text.encoder_updatePosition_iq18:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:124    .text.encoder_updatePosition_iq18:00000000 encoder_updatePosition_iq18
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:220    .text.encoder_updatePosition_iq18:00000068 $d
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:225    .text.encoder_updateVelocity_qep_iq18:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:231    .text.encoder_updateVelocity_qep_iq18:00000000 encoder_updateVelocity_qep_iq18
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:278    .text.encoder_reset_iq18:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:284    .text.encoder_reset_iq18:00000000 encoder_reset_iq18
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:324    .text.encoder_getAngle_iq18:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:330    .text.encoder_getAngle_iq18:00000000 encoder_getAngle_iq18
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:348    .text.encoder_getVelocity_iq18:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccLvikdw.s:354    .text.encoder_getVelocity_iq18:00000000 encoder_getVelocity_iq18
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:22     .text.encoder_init_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:28     .text.encoder_init_iq18:00000000 encoder_init_iq18
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:118    .text.encoder_updatePosition_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:124    .text.encoder_updatePosition_iq18:00000000 encoder_updatePosition_iq18
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:220    .text.encoder_updatePosition_iq18:00000068 $d
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:225    .text.encoder_updateVelocity_qep_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:231    .text.encoder_updateVelocity_qep_iq18:00000000 encoder_updateVelocity_qep_iq18
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:278    .text.encoder_reset_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:284    .text.encoder_reset_iq18:00000000 encoder_reset_iq18
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:324    .text.encoder_getAngle_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:330    .text.encoder_getAngle_iq18:00000000 encoder_getAngle_iq18
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:348    .text.encoder_getVelocity_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccOtNF4K.s:354    .text.encoder_getVelocity_iq18:00000000 encoder_getVelocity_iq18
 
 UNDEFINED SYMBOLS
 __aeabi_fmul

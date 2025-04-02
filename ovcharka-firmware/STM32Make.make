@@ -56,7 +56,7 @@ BUILD_DIRECTORY ?= build
 DEBUG ?= 1
 
 # debug flags when debug is defined
-OPTIMIZATION ?= -Og
+OPTIMIZATION ?= -O0
 
 RELEASE_DIRECTORY = $(BUILD_DIRECTORY)/debug
 ifeq ($(DEBUG),1)
