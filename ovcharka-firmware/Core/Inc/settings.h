@@ -8,8 +8,8 @@
 /* --- Directions ---*/
 
 // Choose whether it's front or rear axis controller (uncomment needed)
-#define AXIS_FRONT
-// #define AXIS_REAR
+// #define AXIS_FRONT
+#define AXIS_REAR
 
 /* --- Spec of servo (assuming they are the same) ---*/
 
@@ -70,7 +70,7 @@ For max safety use rated current of a motor.    */
 
 #define SERVO1_REVERSE 0
 #define SERVO1_ENC_REVERSE 1
-#define SERVO2_REVERSE 2
+#define SERVO2_REVERSE 1
 #define SERVO2_ENC_REVERSE 1
 
 #endif

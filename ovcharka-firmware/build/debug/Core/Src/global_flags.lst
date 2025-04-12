@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -51,24 +51,24 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s 			page 1
   62              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
   63              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
   64              		.file 4 "Core/Inc/global_flags.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 global_flags.c
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:22     .bss.axis_define:00000000 axis_define
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:23     .bss.axis_define:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:28     .bss.overcurrent_flag:00000000 overcurrent_flag
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:29     .bss.overcurrent_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:34     .bss.comms_fault_flag:00000000 comms_fault_flag
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:35     .bss.comms_fault_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:40     .bss.brg_fault_flag:00000000 brg_fault_flag
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:41     .bss.brg_fault_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:46     .bss.reset_flag:00000000 reset_flag
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:47     .bss.reset_flag:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:52     .bss.control_mode:00000000 control_mode
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:53     .bss.control_mode:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:58     .bss.system_enabled:00000000 system_enabled
-C:\Users\zhmis\AppData\Local\Temp\ccjWO0ji.s:59     .bss.system_enabled:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:22     .bss.axis_define:00000000 axis_define
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:23     .bss.axis_define:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:28     .bss.overcurrent_flag:00000000 overcurrent_flag
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:29     .bss.overcurrent_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:34     .bss.comms_fault_flag:00000000 comms_fault_flag
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:35     .bss.comms_fault_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:40     .bss.brg_fault_flag:00000000 brg_fault_flag
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:41     .bss.brg_fault_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:46     .bss.reset_flag:00000000 reset_flag
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:47     .bss.reset_flag:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:52     .bss.control_mode:00000000 control_mode
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:53     .bss.control_mode:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:58     .bss.system_enabled:00000000 system_enabled
+C:\Users\zhmis\AppData\Local\Temp\ccJrVmPT.s:59     .bss.system_enabled:00000000 $d
 
 NO UNDEFINED SYMBOLS

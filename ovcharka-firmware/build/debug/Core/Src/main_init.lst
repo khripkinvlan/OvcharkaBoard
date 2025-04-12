@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
   14:Core/Src/main_init.c ****     servo_iq18_reset(&servo1_g);
   43              		.loc 1 14 5 view .LVU4
   44 000c 1648     		ldr	r0, .L6+4
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s 			page 2
 
 
   45 000e FFF7FEFF 		bl	servo_iq18_reset
@@ -84,7 +84,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
   57              		.loc 1 22 5 view .LVU8
   58              		.loc 1 22 17 is_stmt 0 view .LVU9
   59 0020 134B     		ldr	r3, .L6+12
-  60 0022 0122     		movs	r2, #1
+  60 0022 0222     		movs	r2, #2
   61 0024 1A70     		strb	r2, [r3]
   23:Core/Src/main_init.c **** 
   24:Core/Src/main_init.c ****     // Fill ID fields of feedback packets accordingly to axis define
@@ -94,7 +94,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
   64 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
   65 0028 DBB2     		uxtb	r3, r3
   66              		.loc 1 25 8 view .LVU12
-  67 002a 9342     		cmp	r3, r2
+  67 002a 012B     		cmp	r3, #1
   68 002c 13D0     		beq	.L5
   26:Core/Src/main_init.c ****         data_encoder.ID = ID_DATA_ENC_S1;
   27:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S1;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
   80              		.loc 1 33 5 is_stmt 1 view .LVU17
   81 003a 0022     		movs	r2, #0
   82 003c 2021     		movs	r1, #32
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s 			page 3
 
 
   83 003e 0F48     		ldr	r0, .L6+24
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
  132              	IC_filter:
  133 0000 00000000 		.space	8
  133      00000000 
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s 			page 4
 
 
  134              		.text
@@ -204,16 +204,16 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
  154              		.file 20 "Core/Inc/potamon_bus_lowlvl_handle.h"
  155              		.file 21 "Core/Inc/main_init.h"
  156              		.file 22 "Core/Inc/adc_current.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main_init.c
-C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:19     .text.init_mtr_ctrl:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:25     .text.init_mtr_ctrl:00000000 init_mtr_ctrl
-C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:114    .text.init_mtr_ctrl:00000064 $d
-C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:132    .bss.IC_filter:00000000 IC_filter
-C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:129    .bss.IC_filter:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s:19     .text.init_mtr_ctrl:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s:25     .text.init_mtr_ctrl:00000000 init_mtr_ctrl
+C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s:114    .text.init_mtr_ctrl:00000064 $d
+C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s:132    .bss.IC_filter:00000000 IC_filter
+C:\Users\zhmis\AppData\Local\Temp\ccv67eo6.s:129    .bss.IC_filter:00000000 $d
 
 UNDEFINED SYMBOLS
 servo_init

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
    8:Core/Src/ind_led.c ****     led->pin = pin;
   49              		.loc 1 8 5 is_stmt 1 view .LVU6
   50              		.loc 1 8 14 is_stmt 0 view .LVU7
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 2
 
 
   51 0010 ACF80410 		strh	r1, [ip, #4]	@ movhi
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
   95              		.section	.text.ind_led_handler,"ax",%progbits
   96              		.align	1
   97              		.global	ind_led_handler
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 3
 
 
   98              		.syntax unified
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
  141              		.loc 1 31 32 view .LVU46
  142 001a 628A     		ldrh	r2, [r4, #18]
  143              		.loc 1 31 12 view .LVU47
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 4
 
 
  144 001c B3EB520F 		cmp	r3, r2, lsr #1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
  187 004a A188     		ldrh	r1, [r4, #4]
  188 004c 2068     		ldr	r0, [r4]
  189              	.LVL10:
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 5
 
 
   27:Core/Src/ind_led.c ****     } else if (led->opmode == STATIC){
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
  237              		@ link register save eliminated.
   44:Core/Src/ind_led.c ****     led->opmode = opmode;
  238              		.loc 1 44 5 view .LVU72
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 6
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 6
 
 
  239              		.loc 1 44 17 is_stmt 0 view .LVU73
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
  280              		.loc 1 57 9 view .LVU88
  281              		.loc 1 57 27 is_stmt 0 view .LVU89
  282 0024 8389     		ldrh	r3, [r0, #12]
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 7
 
 
  283              		.loc 1 57 22 view .LVU90
@@ -399,22 +399,22 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 1
  310              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
  311              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
  312              		.file 6 "Core/Inc/ind_led.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s 			page 8
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ind_led.c
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:19     .text.ind_led_init:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:25     .text.ind_led_init:00000000 ind_led_init
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:96     .text.ind_led_handler:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:102    .text.ind_led_handler:00000000 ind_led_handler
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:224    .text.ind_led_set_opmode:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:230    .text.ind_led_set_opmode:00000000 ind_led_set_opmode
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:249    .text.ind_led_set_opmode:0000000c $d
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:304    .bss.ind_led_red:00000000 ind_led_red
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:301    .bss.ind_led_red:00000000 $d
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:254    .text.ind_led_set_opmode:00000011 $d
-C:\Users\zhmis\AppData\Local\Temp\ccivTGTa.s:254    .text.ind_led_set_opmode:00000012 $t
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:19     .text.ind_led_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:25     .text.ind_led_init:00000000 ind_led_init
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:96     .text.ind_led_handler:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:102    .text.ind_led_handler:00000000 ind_led_handler
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:224    .text.ind_led_set_opmode:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:230    .text.ind_led_set_opmode:00000000 ind_led_set_opmode
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:249    .text.ind_led_set_opmode:0000000c $d
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:304    .bss.ind_led_red:00000000 ind_led_red
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:301    .bss.ind_led_red:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:254    .text.ind_led_set_opmode:00000011 $d
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:254    .text.ind_led_set_opmode:00000012 $t
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

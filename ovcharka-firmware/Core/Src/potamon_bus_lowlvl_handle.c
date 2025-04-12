@@ -31,17 +31,24 @@ uint8_t  get_crc_success_rate(){
 
 void pack_encoder_feedback(pack_data_encoder_t *packet) // Pack and crc encoder data
 {
-    packet->angle_1 = encoder_getAngle_iq18(&servo1_g.encoder) >> 9;
-    packet->angle_1 = encoder_getAngle_iq18(&servo2_g.encoder) >> 9;
-    packet->velocity_1 = (int16_t)(encoder_getVelocity_iq18(&servo1_g.encoder) >> 9);
-    packet->velocity_2 = (int16_t)(encoder_getVelocity_iq18(&servo2_g.encoder) >> 9);
+    int8_t s1_inv = (SERVO1_REVERSE) ? -1 : 1;
+    int8_t s2_inv = (SERVO2_REVERSE) ? -1 : 1;
+
+    packet->angle_1 = (encoder_getAngle_iq18(&servo1_g.encoder) >> 9) * s1_inv;
+    packet->angle_1 = (encoder_getAngle_iq18(&servo2_g.encoder) >> 9) * s2_inv;
+
+    packet->velocity_1 = (int16_t)(encoder_getVelocity_iq18(&servo1_g.encoder) >> 9) * s1_inv;
+    packet->velocity_2 = (int16_t)(encoder_getVelocity_iq18(&servo2_g.encoder) >> 9) * s2_inv;
+
     packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_ENC_S1-2); // Using S1 size since they are same
 }
 
 void pack_current_feedback(pack_data_current_t *packet) // Pack and crc encoder data
 {
-    packet->current1 = (int16_t)(current[0] >> 9);
-    packet->current2 = (int16_t)(current[1] >> 9);
+    int8_t s1_inv = (SERVO1_REVERSE) ? -1 : 1;
+    int8_t s2_inv = (SERVO2_REVERSE) ? -1 : 1;
+    packet->current1 = (int16_t)(current[0] >> 9) * s1_inv;
+    packet->current2 = (int16_t)(current[1] >> 9) * s2_inv;
     packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_CUR_S1-2); // Using S1 size since they are same
 }
 
