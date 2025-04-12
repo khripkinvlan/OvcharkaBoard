@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s 			page 1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -36,194 +36,190 @@ ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s 			page 1
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31 0000 10B5     		push	{r4, lr}
+  31 0000 08B5     		push	{r3, lr}
   32              		.cfi_def_cfa_offset 8
-  33              		.cfi_offset 4, -8
+  33              		.cfi_offset 3, -8
   34              		.cfi_offset 14, -4
-   7:Core/Src/main_init.c ****     system_enabled = 0;
-  35              		.loc 1 7 5 view .LVU1
-  36              		.loc 1 7 20 is_stmt 0 view .LVU2
-  37 0002 0024     		movs	r4, #0
-  38 0004 1A4B     		ldr	r3, .L6
-  39 0006 1C70     		strb	r4, [r3]
-   8:Core/Src/main_init.c ****     servo_init();
-  40              		.loc 1 8 5 is_stmt 1 view .LVU3
+   7:Core/Src/main_init.c ****     // Disable system flag before init
+   8:Core/Src/main_init.c ****     system_enabled = 0;
+  35              		.loc 1 8 5 view .LVU1
+  36              		.loc 1 8 20 is_stmt 0 view .LVU2
+  37 0002 184B     		ldr	r3, .L6
+  38 0004 0022     		movs	r2, #0
+  39 0006 1A70     		strb	r2, [r3]
+   9:Core/Src/main_init.c **** 
+  10:Core/Src/main_init.c ****     // Init servo with parameters from settings.h
+  11:Core/Src/main_init.c ****     servo_init();
+  40              		.loc 1 11 5 is_stmt 1 view .LVU3
   41 0008 FFF7FEFF 		bl	servo_init
   42              	.LVL0:
-   9:Core/Src/main_init.c **** 
-  10:Core/Src/main_init.c ****     // Reset servos
-  11:Core/Src/main_init.c ****     servo_iq18_reset(&servo1_g);
-  43              		.loc 1 11 5 view .LVU4
-  44 000c 1948     		ldr	r0, .L6+4
+  12:Core/Src/main_init.c **** 
+  13:Core/Src/main_init.c ****     // Reset servos
+  14:Core/Src/main_init.c ****     servo_iq18_reset(&servo1_g);
+  43              		.loc 1 14 5 view .LVU4
+  44 000c 1648     		ldr	r0, .L6+4
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 2
+
+
   45 000e FFF7FEFF 		bl	servo_iq18_reset
   46              	.LVL1:
-  12:Core/Src/main_init.c ****     servo_iq18_reset(&servo2_g);
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s 			page 2
-
-
-  47              		.loc 1 12 5 view .LVU5
-  48 0012 1948     		ldr	r0, .L6+8
+  15:Core/Src/main_init.c ****     servo_iq18_reset(&servo2_g);
+  47              		.loc 1 15 5 view .LVU5
+  48 0012 1648     		ldr	r0, .L6+8
   49 0014 FFF7FEFF 		bl	servo_iq18_reset
   50              	.LVL2:
-  13:Core/Src/main_init.c **** 
-  14:Core/Src/main_init.c ****     servo_periph_init();
-  51              		.loc 1 14 5 view .LVU6
+  16:Core/Src/main_init.c **** 
+  17:Core/Src/main_init.c ****     // Init timers etc and adc for current sensing
+  18:Core/Src/main_init.c ****     servo_periph_init();
+  51              		.loc 1 18 5 view .LVU6
   52 0018 FFF7FEFF 		bl	servo_periph_init
   53              	.LVL3:
-  15:Core/Src/main_init.c ****     adc_cur_init();
-  54              		.loc 1 15 5 view .LVU7
+  19:Core/Src/main_init.c ****     adc_cur_init();
+  54              		.loc 1 19 5 view .LVU7
   55 001c FFF7FEFF 		bl	adc_cur_init
   56              	.LVL4:
-  16:Core/Src/main_init.c **** 
-  17:Core/Src/main_init.c ****     initEMA_iq18(&IC_filter, VEL_EMA, 0);
-  57              		.loc 1 17 5 view .LVU8
-  58 0020 2246     		mov	r2, r4
-  59 0022 1649     		ldr	r1, .L6+12
-  60 0024 1648     		ldr	r0, .L6+16
-  61 0026 FFF7FEFF 		bl	initEMA_iq18
-  62              	.LVL5:
-  18:Core/Src/main_init.c ****     axis_define = S_NUM;
-  63              		.loc 1 18 5 view .LVU9
-  64              		.loc 1 18 17 is_stmt 0 view .LVU10
-  65 002a 164B     		ldr	r3, .L6+20
-  66 002c 0122     		movs	r2, #1
-  67 002e 1A70     		strb	r2, [r3]
-  19:Core/Src/main_init.c **** 
-  20:Core/Src/main_init.c ****     if (axis_define == 1){ // if front axis
-  68              		.loc 1 20 5 is_stmt 1 view .LVU11
-  69              		.loc 1 20 21 is_stmt 0 view .LVU12
-  70 0030 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  71 0032 DBB2     		uxtb	r3, r3
-  72              		.loc 1 20 8 view .LVU13
-  73 0034 9342     		cmp	r3, r2
-  74 0036 13D0     		beq	.L5
-  21:Core/Src/main_init.c ****         data_encoder.ID = ID_DATA_ENC_S1;
-  22:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S1;
-  23:Core/Src/main_init.c ****     } else { // if rear axis
-  24:Core/Src/main_init.c ****         data_encoder.ID = ID_DATA_ENC_S2;
-  75              		.loc 1 24 9 is_stmt 1 view .LVU14
-  76              		.loc 1 24 25 is_stmt 0 view .LVU15
-  77 0038 134B     		ldr	r3, .L6+24
-  78 003a 5122     		movs	r2, #81
-  79 003c 1A70     		strb	r2, [r3]
-  25:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S2;
-  80              		.loc 1 25 9 is_stmt 1 view .LVU16
-  81              		.loc 1 25 25 is_stmt 0 view .LVU17
-  82 003e 134B     		ldr	r3, .L6+28
-  83 0040 5322     		movs	r2, #83
-  84 0042 1A70     		strb	r2, [r3]
-  85              	.L3:
-  26:Core/Src/main_init.c ****     }
-  27:Core/Src/main_init.c **** 
-  28:Core/Src/main_init.c ****     TXOFF;
-  86              		.loc 1 28 5 is_stmt 1 view .LVU18
-  87 0044 0022     		movs	r2, #0
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s 			page 3
+  20:Core/Src/main_init.c **** 
+  21:Core/Src/main_init.c ****     // Var that stores which axis servo this is (configured in settings.h)
+  22:Core/Src/main_init.c ****     axis_define = S_NUM;
+  57              		.loc 1 22 5 view .LVU8
+  58              		.loc 1 22 17 is_stmt 0 view .LVU9
+  59 0020 134B     		ldr	r3, .L6+12
+  60 0022 0122     		movs	r2, #1
+  61 0024 1A70     		strb	r2, [r3]
+  23:Core/Src/main_init.c **** 
+  24:Core/Src/main_init.c ****     // Fill ID fields of feedback packets accordingly to axis define
+  25:Core/Src/main_init.c ****     if (axis_define == 1){ // if front axis
+  62              		.loc 1 25 5 is_stmt 1 view .LVU10
+  63              		.loc 1 25 21 is_stmt 0 view .LVU11
+  64 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  65 0028 DBB2     		uxtb	r3, r3
+  66              		.loc 1 25 8 view .LVU12
+  67 002a 9342     		cmp	r3, r2
+  68 002c 13D0     		beq	.L5
+  26:Core/Src/main_init.c ****         data_encoder.ID = ID_DATA_ENC_S1;
+  27:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S1;
+  28:Core/Src/main_init.c ****     } else { // if rear axis
+  29:Core/Src/main_init.c ****         data_encoder.ID = ID_DATA_ENC_S2;
+  69              		.loc 1 29 9 is_stmt 1 view .LVU13
+  70              		.loc 1 29 25 is_stmt 0 view .LVU14
+  71 002e 114B     		ldr	r3, .L6+16
+  72 0030 5122     		movs	r2, #81
+  73 0032 1A70     		strb	r2, [r3]
+  30:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S2;
+  74              		.loc 1 30 9 is_stmt 1 view .LVU15
+  75              		.loc 1 30 25 is_stmt 0 view .LVU16
+  76 0034 104B     		ldr	r3, .L6+20
+  77 0036 5322     		movs	r2, #83
+  78 0038 1A70     		strb	r2, [r3]
+  79              	.L3:
+  31:Core/Src/main_init.c ****     }
+  32:Core/Src/main_init.c **** 
+  33:Core/Src/main_init.c ****     TXOFF; // Turn of transmission just in case
+  80              		.loc 1 33 5 is_stmt 1 view .LVU17
+  81 003a 0022     		movs	r2, #0
+  82 003c 2021     		movs	r1, #32
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 3
 
 
-  88 0046 2021     		movs	r1, #32
-  89 0048 1148     		ldr	r0, .L6+32
-  90 004a FFF7FEFF 		bl	HAL_GPIO_WritePin
-  91              	.LVL6:
-  29:Core/Src/main_init.c ****     expected_packet = SYNC;
-  92              		.loc 1 29 5 view .LVU19
-  93              		.loc 1 29 21 is_stmt 0 view .LVU20
-  94 004e 114B     		ldr	r3, .L6+36
-  95 0050 0022     		movs	r2, #0
-  96 0052 1A70     		strb	r2, [r3]
-  30:Core/Src/main_init.c ****     HAL_UART_Receive_DMA(&huart1, (uint8_t*)&packet_sync, S_SYNC);
-  97              		.loc 1 30 5 is_stmt 1 view .LVU21
-  98 0054 0222     		movs	r2, #2
-  99 0056 1049     		ldr	r1, .L6+40
- 100 0058 1048     		ldr	r0, .L6+44
- 101 005a FFF7FEFF 		bl	HAL_UART_Receive_DMA
- 102              	.LVL7:
-  31:Core/Src/main_init.c ****     
-  32:Core/Src/main_init.c **** }
- 103              		.loc 1 32 1 is_stmt 0 view .LVU22
- 104 005e 10BD     		pop	{r4, pc}
- 105              	.L5:
-  21:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S1;
- 106              		.loc 1 21 9 is_stmt 1 view .LVU23
-  21:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S1;
- 107              		.loc 1 21 25 is_stmt 0 view .LVU24
- 108 0060 094B     		ldr	r3, .L6+24
- 109 0062 5022     		movs	r2, #80
- 110 0064 1A70     		strb	r2, [r3]
-  22:Core/Src/main_init.c ****     } else { // if rear axis
- 111              		.loc 1 22 9 is_stmt 1 view .LVU25
-  22:Core/Src/main_init.c ****     } else { // if rear axis
- 112              		.loc 1 22 25 is_stmt 0 view .LVU26
- 113 0066 094B     		ldr	r3, .L6+28
- 114 0068 5222     		movs	r2, #82
- 115 006a 1A70     		strb	r2, [r3]
- 116 006c EAE7     		b	.L3
- 117              	.L7:
- 118 006e 00BF     		.align	2
- 119              	.L6:
- 120 0070 00000000 		.word	system_enabled
- 121 0074 00000000 		.word	servo1_g
- 122 0078 00000000 		.word	servo2_g
- 123 007c CDCCCC3E 		.word	1053609165
- 124 0080 00000000 		.word	IC_filter
- 125 0084 00000000 		.word	axis_define
- 126 0088 00000000 		.word	data_encoder
- 127 008c 00000000 		.word	data_current
- 128 0090 000C0140 		.word	1073810432
- 129 0094 00000000 		.word	expected_packet
- 130 0098 00000000 		.word	packet_sync
- 131 009c 00000000 		.word	huart1
- 132              		.cfi_endproc
- 133              	.LFE65:
- 135              		.global	IC_filter
- 136              		.section	.bss.IC_filter,"aw",%nobits
- 137              		.align	2
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s 			page 4
+  83 003e 0F48     		ldr	r0, .L6+24
+  84 0040 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  85              	.LVL5:
+  34:Core/Src/main_init.c ****     expected_packet = SYNC; // States that we are waiting for SYNC packet
+  86              		.loc 1 34 5 view .LVU18
+  87              		.loc 1 34 21 is_stmt 0 view .LVU19
+  88 0044 0E4B     		ldr	r3, .L6+28
+  89 0046 0022     		movs	r2, #0
+  90 0048 1A70     		strb	r2, [r3]
+  35:Core/Src/main_init.c ****     HAL_UART_Receive_DMA(&huart1, (uint8_t*)&packet_sync, S_SYNC); // start receiving sync packet (
+  91              		.loc 1 35 5 is_stmt 1 view .LVU20
+  92 004a 0222     		movs	r2, #2
+  93 004c 0D49     		ldr	r1, .L6+32
+  94 004e 0E48     		ldr	r0, .L6+36
+  95 0050 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+  96              	.LVL6:
+  36:Core/Src/main_init.c ****     
+  37:Core/Src/main_init.c **** }
+  97              		.loc 1 37 1 is_stmt 0 view .LVU21
+  98 0054 08BD     		pop	{r3, pc}
+  99              	.L5:
+  26:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S1;
+ 100              		.loc 1 26 9 is_stmt 1 view .LVU22
+  26:Core/Src/main_init.c ****         data_current.ID = ID_DATA_CUR_S1;
+ 101              		.loc 1 26 25 is_stmt 0 view .LVU23
+ 102 0056 074B     		ldr	r3, .L6+16
+ 103 0058 5022     		movs	r2, #80
+ 104 005a 1A70     		strb	r2, [r3]
+  27:Core/Src/main_init.c ****     } else { // if rear axis
+ 105              		.loc 1 27 9 is_stmt 1 view .LVU24
+  27:Core/Src/main_init.c ****     } else { // if rear axis
+ 106              		.loc 1 27 25 is_stmt 0 view .LVU25
+ 107 005c 064B     		ldr	r3, .L6+20
+ 108 005e 5222     		movs	r2, #82
+ 109 0060 1A70     		strb	r2, [r3]
+ 110 0062 EAE7     		b	.L3
+ 111              	.L7:
+ 112              		.align	2
+ 113              	.L6:
+ 114 0064 00000000 		.word	system_enabled
+ 115 0068 00000000 		.word	servo1_g
+ 116 006c 00000000 		.word	servo2_g
+ 117 0070 00000000 		.word	axis_define
+ 118 0074 00000000 		.word	data_encoder
+ 119 0078 00000000 		.word	data_current
+ 120 007c 000C0140 		.word	1073810432
+ 121 0080 00000000 		.word	expected_packet
+ 122 0084 00000000 		.word	packet_sync
+ 123 0088 00000000 		.word	huart1
+ 124              		.cfi_endproc
+ 125              	.LFE65:
+ 127              		.global	IC_filter
+ 128              		.section	.bss.IC_filter,"aw",%nobits
+ 129              		.align	2
+ 132              	IC_filter:
+ 133 0000 00000000 		.space	8
+ 133      00000000 
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 4
 
 
- 140              	IC_filter:
- 141 0000 00000000 		.space	8
- 141      00000000 
- 142              		.text
- 143              	.Letext0:
- 144              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 145              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 146              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 147              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 148              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 149              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 150              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 151              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 152              		.file 10 "Core/Inc/IQmathLib.h"
- 153              		.file 11 "Core/Inc/ema_iq18.h"
- 154              		.file 12 "Core/Inc/encoder_iq18.h"
- 155              		.file 13 "Core/Inc/pid_iq18.h"
- 156              		.file 14 "Core/Inc/pwm.h"
- 157              		.file 15 "Core/Inc/servo_iq18.h"
- 158              		.file 16 "Core/Inc/servo_init.h"
- 159              		.file 17 "Core/Inc/global_flags.h"
- 160              		.file 18 "Core/Inc/usart.h"
- 161              		.file 19 "Core/Inc/potamon_bus_protocol.h"
- 162              		.file 20 "Core/Inc/potamon_bus_lowlvl_handle.h"
- 163              		.file 21 "Core/Inc/main_init.h"
- 164              		.file 22 "Core/Inc/adc_current.h"
-ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s 			page 5
+ 134              		.text
+ 135              	.Letext0:
+ 136              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 137              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 138              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 139              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 140              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 141              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 142              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 143              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 144              		.file 10 "Core/Inc/IQmathLib.h"
+ 145              		.file 11 "Core/Inc/ema_iq18.h"
+ 146              		.file 12 "Core/Inc/encoder_iq18.h"
+ 147              		.file 13 "Core/Inc/pid_iq18.h"
+ 148              		.file 14 "Core/Inc/pwm.h"
+ 149              		.file 15 "Core/Inc/servo_iq18.h"
+ 150              		.file 16 "Core/Inc/servo_init.h"
+ 151              		.file 17 "Core/Inc/global_flags.h"
+ 152              		.file 18 "Core/Inc/usart.h"
+ 153              		.file 19 "Core/Inc/potamon_bus_protocol.h"
+ 154              		.file 20 "Core/Inc/potamon_bus_lowlvl_handle.h"
+ 155              		.file 21 "Core/Inc/main_init.h"
+ 156              		.file 22 "Core/Inc/adc_current.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main_init.c
-C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s:19     .text.init_mtr_ctrl:00000000 $t
-C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s:25     .text.init_mtr_ctrl:00000000 init_mtr_ctrl
-C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s:120    .text.init_mtr_ctrl:00000070 $d
-C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s:140    .bss.IC_filter:00000000 IC_filter
-C:\Users\zhmis\AppData\Local\Temp\ccaLI00Z.s:137    .bss.IC_filter:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:19     .text.init_mtr_ctrl:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:25     .text.init_mtr_ctrl:00000000 init_mtr_ctrl
+C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:114    .text.init_mtr_ctrl:00000064 $d
+C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:132    .bss.IC_filter:00000000 IC_filter
+C:\Users\zhmis\AppData\Local\Temp\ccwkVWGn.s:129    .bss.IC_filter:00000000 $d
 
 UNDEFINED SYMBOLS
 servo_init
 servo_iq18_reset
 servo_periph_init
 adc_cur_init
-initEMA_iq18
 HAL_GPIO_WritePin
 HAL_UART_Receive_DMA
 system_enabled
