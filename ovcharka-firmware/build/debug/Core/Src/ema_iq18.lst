@@ -1,0 +1,163 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"ema_iq18.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/ema_iq18.c"
+  18              		.global	__aeabi_fmul
+  19              		.global	__aeabi_f2iz
+  20              		.section	.text.initEMA_iq18,"ax",%progbits
+  21              		.align	1
+  22              		.global	initEMA_iq18
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	initEMA_iq18:
+  28              	.LVL0:
+  29              	.LFB0:
+   1:Core/Src/ema_iq18.c **** /*
+   2:Core/Src/ema_iq18.c ****  * ema_iq18.c
+   3:Core/Src/ema_iq18.c ****  *
+   4:Core/Src/ema_iq18.c ****  *  Created on: Dec 18, 2023
+   5:Core/Src/ema_iq18.c ****  *      Author: JV4K
+   6:Core/Src/ema_iq18.c ****  */
+   7:Core/Src/ema_iq18.c **** 
+   8:Core/Src/ema_iq18.c **** #include "ema_iq18.h"
+   9:Core/Src/ema_iq18.c **** 
+  10:Core/Src/ema_iq18.c **** // Initialize the EMA filter
+  11:Core/Src/ema_iq18.c **** void initEMA_iq18(EMA_iq18* filter, float alpha, _iq18 initial_value) {
+  30              		.loc 1 11 71 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 11 71 is_stmt 0 view .LVU1
+  35 0000 38B5     		push	{r3, r4, r5, lr}
+  36              		.cfi_def_cfa_offset 16
+  37              		.cfi_offset 3, -16
+  38              		.cfi_offset 4, -12
+  39              		.cfi_offset 5, -8
+  40              		.cfi_offset 14, -4
+  41 0002 0446     		mov	r4, r0
+  42 0004 0846     		mov	r0, r1
+  43              	.LVL1:
+  44              		.loc 1 11 71 view .LVU2
+  45 0006 1546     		mov	r5, r2
+  12:Core/Src/ema_iq18.c **** 	filter->alpha = _IQ18(alpha);
+  46              		.loc 1 12 2 is_stmt 1 view .LVU3
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s 			page 2
+
+
+  47              		.loc 1 12 18 is_stmt 0 view .LVU4
+  48 0008 4FF09141 		mov	r1, #1216348160
+  49              	.LVL2:
+  50              		.loc 1 12 18 view .LVU5
+  51 000c FFF7FEFF 		bl	__aeabi_fmul
+  52              	.LVL3:
+  53              		.loc 1 12 18 view .LVU6
+  54 0010 FFF7FEFF 		bl	__aeabi_f2iz
+  55              	.LVL4:
+  56              		.loc 1 12 16 view .LVU7
+  57 0014 2060     		str	r0, [r4]
+  13:Core/Src/ema_iq18.c **** 	filter->previous = initial_value;
+  58              		.loc 1 13 2 is_stmt 1 view .LVU8
+  59              		.loc 1 13 19 is_stmt 0 view .LVU9
+  60 0016 6560     		str	r5, [r4, #4]
+  14:Core/Src/ema_iq18.c **** }
+  61              		.loc 1 14 1 view .LVU10
+  62 0018 38BD     		pop	{r3, r4, r5, pc}
+  63              		.loc 1 14 1 view .LVU11
+  64              		.cfi_endproc
+  65              	.LFE0:
+  67              		.section	.text.updateEMA_iq18,"ax",%progbits
+  68              		.align	1
+  69              		.global	updateEMA_iq18
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	updateEMA_iq18:
+  75              	.LVL5:
+  76              	.LFB1:
+  15:Core/Src/ema_iq18.c **** 
+  16:Core/Src/ema_iq18.c **** // Update the EMA filter with a new value and return the filtered result
+  17:Core/Src/ema_iq18.c **** _iq18 updateEMA_iq18(EMA_iq18 *filter, _iq18 newValue) {
+  77              		.loc 1 17 56 is_stmt 1 view -0
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		.loc 1 17 56 is_stmt 0 view .LVU13
+  82 0000 38B5     		push	{r3, r4, r5, lr}
+  83              		.cfi_def_cfa_offset 16
+  84              		.cfi_offset 3, -16
+  85              		.cfi_offset 4, -12
+  86              		.cfi_offset 5, -8
+  87              		.cfi_offset 14, -4
+  88 0002 0546     		mov	r5, r0
+  18:Core/Src/ema_iq18.c **** 	_iq18 ema = _IQ18mpy(filter->alpha, newValue)
+  89              		.loc 1 18 2 is_stmt 1 view .LVU14
+  90              		.loc 1 18 14 is_stmt 0 view .LVU15
+  91 0004 0068     		ldr	r0, [r0]
+  92              	.LVL6:
+  93              		.loc 1 18 14 view .LVU16
+  94 0006 FFF7FEFF 		bl	_IQ18mpy
+  95              	.LVL7:
+  96              		.loc 1 18 14 view .LVU17
+  97 000a 0446     		mov	r4, r0
+  19:Core/Src/ema_iq18.c **** 			+ _IQ18mpy((_IQ18(1) - filter->alpha), filter->previous);
+  98              		.loc 1 19 33 view .LVU18
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s 			page 3
+
+
+  99 000c 2868     		ldr	r0, [r5]
+ 100              		.loc 1 19 6 view .LVU19
+ 101 000e 6968     		ldr	r1, [r5, #4]
+ 102 0010 C0F58020 		rsb	r0, r0, #262144
+ 103 0014 FFF7FEFF 		bl	_IQ18mpy
+ 104              	.LVL8:
+  18:Core/Src/ema_iq18.c **** 	_iq18 ema = _IQ18mpy(filter->alpha, newValue)
+ 105              		.loc 1 18 8 view .LVU20
+ 106 0018 2044     		add	r0, r0, r4
+ 107              	.LVL9:
+  20:Core/Src/ema_iq18.c **** 	filter->previous = ema;
+ 108              		.loc 1 20 2 is_stmt 1 view .LVU21
+ 109              		.loc 1 20 19 is_stmt 0 view .LVU22
+ 110 001a 6860     		str	r0, [r5, #4]
+  21:Core/Src/ema_iq18.c **** 	return ema;
+ 111              		.loc 1 21 2 is_stmt 1 view .LVU23
+  22:Core/Src/ema_iq18.c **** }
+ 112              		.loc 1 22 1 is_stmt 0 view .LVU24
+ 113 001c 38BD     		pop	{r3, r4, r5, pc}
+ 114              		.loc 1 22 1 view .LVU25
+ 115              		.cfi_endproc
+ 116              	.LFE1:
+ 118              		.text
+ 119              	.Letext0:
+ 120              		.file 2 "Core/Inc/ema_iq18.h"
+ 121              		.file 3 "Core/Inc/IQmathLib.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ema_iq18.c
+C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s:21     .text.initEMA_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s:27     .text.initEMA_iq18:00000000 initEMA_iq18
+C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s:68     .text.updateEMA_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cchZai6O.s:74     .text.updateEMA_iq18:00000000 updateEMA_iq18
+
+UNDEFINED SYMBOLS
+__aeabi_fmul
+__aeabi_f2iz
+_IQ18mpy

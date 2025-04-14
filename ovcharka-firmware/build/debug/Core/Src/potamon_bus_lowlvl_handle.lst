@@ -1,0 +1,1478 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"potamon_bus_lowlvl_handle.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/potamon_bus_lowlvl_handle.c"
+  18              		.section	.text.update_crc_history,"ax",%progbits
+  19              		.align	1
+  20              		.global	update_crc_history
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	update_crc_history:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/potamon_bus_lowlvl_handle.c **** #include "potamon_bus_lowlvl_handle.h"
+   2:Core/Src/potamon_bus_lowlvl_handle.c **** 
+   3:Core/Src/potamon_bus_lowlvl_handle.c **** // Buffer to dump packets not intended to use on this level of control
+   4:Core/Src/potamon_bus_lowlvl_handle.c **** uint8_t uart_rx_dump_buffer[20];
+   5:Core/Src/potamon_bus_lowlvl_handle.c **** 
+   6:Core/Src/potamon_bus_lowlvl_handle.c **** // Struct to recieve SYNC packets
+   7:Core/Src/potamon_bus_lowlvl_handle.c **** pack_sync_t packet_sync;
+   8:Core/Src/potamon_bus_lowlvl_handle.c **** 
+   9:Core/Src/potamon_bus_lowlvl_handle.c **** // Struct to recieve CTRL packets
+  10:Core/Src/potamon_bus_lowlvl_handle.c **** pack_data_ctrl_servo_t data_ctrl_unchecked, data_ctrl;
+  11:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  12:Core/Src/potamon_bus_lowlvl_handle.c **** // Struct to pack feedback data
+  13:Core/Src/potamon_bus_lowlvl_handle.c **** pack_data_encoder_t data_encoder;
+  14:Core/Src/potamon_bus_lowlvl_handle.c **** pack_data_current_t data_current;
+  15:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  16:Core/Src/potamon_bus_lowlvl_handle.c **** next_packet_t expected_packet; // Packet that is expected next
+  17:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  18:Core/Src/potamon_bus_lowlvl_handle.c **** uint32_t bus_crc_history = 0xFFFFFFFF; // Here comes history of crc checks, 1 is ok 0 is fail. Last
+  19:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  20:Core/Src/potamon_bus_lowlvl_handle.c **** // Counters for packets that failed crc check
+  21:Core/Src/potamon_bus_lowlvl_handle.c **** uint32_t failed_sync_packets_count, failed_data_packets_count;
+  22:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  23:Core/Src/potamon_bus_lowlvl_handle.c **** void update_crc_history(uint8_t crc_ok){
+  28              		.loc 1 23 40 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  24:Core/Src/potamon_bus_lowlvl_handle.c ****     bus_crc_history = (bus_crc_history << 1) | crc_ok;
+  33              		.loc 1 24 5 view .LVU1
+  34              		.loc 1 24 40 is_stmt 0 view .LVU2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 2
+
+
+  35 0000 024B     		ldr	r3, .L2
+  36 0002 1A68     		ldr	r2, [r3]
+  37              		.loc 1 24 46 view .LVU3
+  38 0004 40EA4200 		orr	r0, r0, r2, lsl #1
+  39              	.LVL1:
+  40              		.loc 1 24 21 view .LVU4
+  41 0008 1860     		str	r0, [r3]
+  25:Core/Src/potamon_bus_lowlvl_handle.c **** }
+  42              		.loc 1 25 1 view .LVU5
+  43 000a 7047     		bx	lr
+  44              	.L3:
+  45              		.align	2
+  46              	.L2:
+  47 000c 00000000 		.word	bus_crc_history
+  48              		.cfi_endproc
+  49              	.LFE65:
+  51              		.global	__popcountsi2
+  52              		.section	.text.get_crc_success_rate,"ax",%progbits
+  53              		.align	1
+  54              		.global	get_crc_success_rate
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  59              	get_crc_success_rate:
+  60              	.LFB66:
+  26:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  27:Core/Src/potamon_bus_lowlvl_handle.c **** uint8_t  get_crc_success_rate(){
+  61              		.loc 1 27 32 is_stmt 1 view -0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 08B5     		push	{r3, lr}
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 3, -8
+  68              		.cfi_offset 14, -4
+  28:Core/Src/potamon_bus_lowlvl_handle.c ****     uint8_t success_count = __builtin_popcount(bus_crc_history);
+  69              		.loc 1 28 5 view .LVU7
+  70              		.loc 1 28 29 is_stmt 0 view .LVU8
+  71 0002 054B     		ldr	r3, .L7
+  72 0004 1868     		ldr	r0, [r3]
+  73 0006 FFF7FEFF 		bl	__popcountsi2
+  74              	.LVL2:
+  29:Core/Src/potamon_bus_lowlvl_handle.c ****     return (success_count * 100) / 32;
+  75              		.loc 1 29 5 is_stmt 1 view .LVU9
+  76              		.loc 1 29 27 is_stmt 0 view .LVU10
+  77 000a C0B2     		uxtb	r0, r0
+  78              		.loc 1 29 27 view .LVU11
+  79 000c 6423     		movs	r3, #100
+  80 000e 03FB00F0 		mul	r0, r3, r0
+  81              	.LVL3:
+  30:Core/Src/potamon_bus_lowlvl_handle.c **** }
+  82              		.loc 1 30 1 view .LVU12
+  83 0012 C0F34710 		ubfx	r0, r0, #5, #8
+  84 0016 08BD     		pop	{r3, pc}
+  85              	.L8:
+  86              		.align	2
+  87              	.L7:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 3
+
+
+  88 0018 00000000 		.word	bus_crc_history
+  89              		.cfi_endproc
+  90              	.LFE66:
+  92              		.section	.text.pack_encoder_feedback,"ax",%progbits
+  93              		.align	1
+  94              		.global	pack_encoder_feedback
+  95              		.syntax unified
+  96              		.thumb
+  97              		.thumb_func
+  99              	pack_encoder_feedback:
+ 100              	.LVL4:
+ 101              	.LFB67:
+  31:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  32:Core/Src/potamon_bus_lowlvl_handle.c **** void pack_encoder_feedback(pack_data_encoder_t *packet) // Pack and crc encoder data
+  33:Core/Src/potamon_bus_lowlvl_handle.c **** {
+ 102              		.loc 1 33 1 is_stmt 1 view -0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              		.loc 1 33 1 is_stmt 0 view .LVU14
+ 107 0000 70B5     		push	{r4, r5, r6, lr}
+ 108              		.cfi_def_cfa_offset 16
+ 109              		.cfi_offset 4, -16
+ 110              		.cfi_offset 5, -12
+ 111              		.cfi_offset 6, -8
+ 112              		.cfi_offset 14, -4
+ 113 0002 0446     		mov	r4, r0
+  34:Core/Src/potamon_bus_lowlvl_handle.c ****     int8_t s1_inv = (SERVO1_REVERSE) ? -1 : 1;
+ 114              		.loc 1 34 5 is_stmt 1 view .LVU15
+ 115              	.LVL5:
+  35:Core/Src/potamon_bus_lowlvl_handle.c ****     int8_t s2_inv = (SERVO2_REVERSE) ? -1 : 1;
+ 116              		.loc 1 35 5 view .LVU16
+  36:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  37:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->angle_1 = (encoder_getAngle_iq18(&servo1_g.encoder) >> 9) * s1_inv;
+ 117              		.loc 1 37 5 view .LVU17
+ 118              		.loc 1 37 24 is_stmt 0 view .LVU18
+ 119 0004 134E     		ldr	r6, .L11
+ 120 0006 3046     		mov	r0, r6
+ 121              	.LVL6:
+ 122              		.loc 1 37 24 view .LVU19
+ 123 0008 FFF7FEFF 		bl	encoder_getAngle_iq18
+ 124              	.LVL7:
+ 125              		.loc 1 37 65 discriminator 1 view .LVU20
+ 126 000c 4012     		asrs	r0, r0, #9
+ 127              		.loc 1 37 71 discriminator 1 view .LVU21
+ 128 000e 4042     		rsbs	r0, r0, #0
+ 129              		.loc 1 37 21 discriminator 1 view .LVU22
+ 130 0010 C4F80100 		str	r0, [r4, #1]	@ unaligned
+  38:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->angle_1 = (encoder_getAngle_iq18(&servo2_g.encoder) >> 9) * s2_inv;
+ 131              		.loc 1 38 5 is_stmt 1 view .LVU23
+ 132              		.loc 1 38 24 is_stmt 0 view .LVU24
+ 133 0014 104D     		ldr	r5, .L11+4
+ 134 0016 2846     		mov	r0, r5
+ 135 0018 FFF7FEFF 		bl	encoder_getAngle_iq18
+ 136              	.LVL8:
+ 137              		.loc 1 38 65 discriminator 1 view .LVU25
+ 138 001c 4012     		asrs	r0, r0, #9
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 4
+
+
+ 139              		.loc 1 38 71 discriminator 1 view .LVU26
+ 140 001e 4042     		rsbs	r0, r0, #0
+ 141              		.loc 1 38 21 discriminator 1 view .LVU27
+ 142 0020 C4F80100 		str	r0, [r4, #1]	@ unaligned
+  39:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  40:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->velocity_1 = (int16_t)(encoder_getVelocity_iq18(&servo1_g.encoder) >> 9) * s1_inv;
+ 143              		.loc 1 40 5 is_stmt 1 view .LVU28
+ 144              		.loc 1 40 36 is_stmt 0 view .LVU29
+ 145 0024 3046     		mov	r0, r6
+ 146 0026 FFF7FEFF 		bl	encoder_getVelocity_iq18
+ 147              	.LVL9:
+ 148              		.loc 1 40 26 discriminator 1 view .LVU30
+ 149 002a C0F34F20 		ubfx	r0, r0, #9, #16
+ 150              		.loc 1 40 86 discriminator 1 view .LVU31
+ 151 002e 4042     		rsbs	r0, r0, #0
+ 152              		.loc 1 40 24 discriminator 1 view .LVU32
+ 153 0030 A4F80500 		strh	r0, [r4, #5]	@ unaligned
+  41:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->velocity_2 = (int16_t)(encoder_getVelocity_iq18(&servo2_g.encoder) >> 9) * s2_inv;
+ 154              		.loc 1 41 5 is_stmt 1 view .LVU33
+ 155              		.loc 1 41 36 is_stmt 0 view .LVU34
+ 156 0034 2846     		mov	r0, r5
+ 157 0036 FFF7FEFF 		bl	encoder_getVelocity_iq18
+ 158              	.LVL10:
+ 159              		.loc 1 41 26 discriminator 1 view .LVU35
+ 160 003a C0F34F20 		ubfx	r0, r0, #9, #16
+ 161              		.loc 1 41 86 discriminator 1 view .LVU36
+ 162 003e 4042     		rsbs	r0, r0, #0
+ 163              		.loc 1 41 24 discriminator 1 view .LVU37
+ 164 0040 A4F80B00 		strh	r0, [r4, #11]	@ unaligned
+  42:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  43:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_ENC_S1-2); // Using S1 size since they are
+ 165              		.loc 1 43 5 is_stmt 1 view .LVU38
+ 166              		.loc 1 43 21 is_stmt 0 view .LVU39
+ 167 0044 0D21     		movs	r1, #13
+ 168 0046 2046     		mov	r0, r4
+ 169 0048 FFF7FEFF 		bl	crc16_ccitt
+ 170              	.LVL11:
+ 171              		.loc 1 43 19 discriminator 1 view .LVU40
+ 172 004c A4F80D00 		strh	r0, [r4, #13]	@ unaligned
+  44:Core/Src/potamon_bus_lowlvl_handle.c **** }
+ 173              		.loc 1 44 1 view .LVU41
+ 174 0050 70BD     		pop	{r4, r5, r6, pc}
+ 175              	.LVL12:
+ 176              	.L12:
+ 177              		.loc 1 44 1 view .LVU42
+ 178 0052 00BF     		.align	2
+ 179              	.L11:
+ 180 0054 00000000 		.word	servo1_g
+ 181 0058 00000000 		.word	servo2_g
+ 182              		.cfi_endproc
+ 183              	.LFE67:
+ 185              		.section	.text.pack_current_feedback,"ax",%progbits
+ 186              		.align	1
+ 187              		.global	pack_current_feedback
+ 188              		.syntax unified
+ 189              		.thumb
+ 190              		.thumb_func
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 5
+
+
+ 192              	pack_current_feedback:
+ 193              	.LVL13:
+ 194              	.LFB68:
+  45:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  46:Core/Src/potamon_bus_lowlvl_handle.c **** void pack_current_feedback(pack_data_current_t *packet) // Pack and crc encoder data
+  47:Core/Src/potamon_bus_lowlvl_handle.c **** {
+ 195              		.loc 1 47 1 is_stmt 1 view -0
+ 196              		.cfi_startproc
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199              		.loc 1 47 1 is_stmt 0 view .LVU44
+ 200 0000 10B5     		push	{r4, lr}
+ 201              		.cfi_def_cfa_offset 8
+ 202              		.cfi_offset 4, -8
+ 203              		.cfi_offset 14, -4
+ 204 0002 0446     		mov	r4, r0
+  48:Core/Src/potamon_bus_lowlvl_handle.c ****     int8_t s1_inv = (SERVO1_REVERSE) ? -1 : 1;
+ 205              		.loc 1 48 5 is_stmt 1 view .LVU45
+ 206              	.LVL14:
+  49:Core/Src/potamon_bus_lowlvl_handle.c ****     int8_t s2_inv = (SERVO2_REVERSE) ? -1 : 1;
+ 207              		.loc 1 49 5 view .LVU46
+  50:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->current1 = (int16_t)(current[0] >> 9) * s1_inv;
+ 208              		.loc 1 50 5 view .LVU47
+ 209              		.loc 1 50 41 is_stmt 0 view .LVU48
+ 210 0004 084A     		ldr	r2, .L15
+ 211 0006 1368     		ldr	r3, [r2]
+ 212              		.loc 1 50 24 view .LVU49
+ 213 0008 C3F34F23 		ubfx	r3, r3, #9, #16
+ 214              		.loc 1 50 51 view .LVU50
+ 215 000c 5B42     		rsbs	r3, r3, #0
+ 216              		.loc 1 50 22 view .LVU51
+ 217 000e A0F80130 		strh	r3, [r0, #1]	@ unaligned
+  51:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->current2 = (int16_t)(current[1] >> 9) * s2_inv;
+ 218              		.loc 1 51 5 is_stmt 1 view .LVU52
+ 219              		.loc 1 51 41 is_stmt 0 view .LVU53
+ 220 0012 5368     		ldr	r3, [r2, #4]
+ 221              		.loc 1 51 24 view .LVU54
+ 222 0014 C3F34F23 		ubfx	r3, r3, #9, #16
+ 223              		.loc 1 51 51 view .LVU55
+ 224 0018 5B42     		rsbs	r3, r3, #0
+ 225              		.loc 1 51 22 view .LVU56
+ 226 001a A0F80330 		strh	r3, [r0, #3]	@ unaligned
+  52:Core/Src/potamon_bus_lowlvl_handle.c ****     packet->crc16 = crc16_ccitt((uint8_t*)packet, S_DATA_CUR_S1-2); // Using S1 size since they are
+ 227              		.loc 1 52 5 is_stmt 1 view .LVU57
+ 228              		.loc 1 52 21 is_stmt 0 view .LVU58
+ 229 001e 0621     		movs	r1, #6
+ 230 0020 FFF7FEFF 		bl	crc16_ccitt
+ 231              	.LVL15:
+ 232              		.loc 1 52 19 discriminator 1 view .LVU59
+ 233 0024 E080     		strh	r0, [r4, #6]	@ unaligned
+  53:Core/Src/potamon_bus_lowlvl_handle.c **** }
+ 234              		.loc 1 53 1 view .LVU60
+ 235 0026 10BD     		pop	{r4, pc}
+ 236              	.LVL16:
+ 237              	.L16:
+ 238              		.loc 1 53 1 view .LVU61
+ 239              		.align	2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 6
+
+
+ 240              	.L15:
+ 241 0028 00000000 		.word	current
+ 242              		.cfi_endproc
+ 243              	.LFE68:
+ 245              		.section	.text.sync_packet_handler,"ax",%progbits
+ 246              		.align	1
+ 247              		.global	sync_packet_handler
+ 248              		.syntax unified
+ 249              		.thumb
+ 250              		.thumb_func
+ 252              	sync_packet_handler:
+ 253              	.LVL17:
+ 254              	.LFB69:
+  54:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  55:Core/Src/potamon_bus_lowlvl_handle.c **** void sync_packet_handler(pack_sync_t *packet)
+  56:Core/Src/potamon_bus_lowlvl_handle.c **** {
+ 255              		.loc 1 56 1 is_stmt 1 view -0
+ 256              		.cfi_startproc
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259              		.loc 1 56 1 is_stmt 0 view .LVU63
+ 260 0000 10B5     		push	{r4, lr}
+ 261              		.cfi_def_cfa_offset 8
+ 262              		.cfi_offset 4, -8
+ 263              		.cfi_offset 14, -4
+  57:Core/Src/potamon_bus_lowlvl_handle.c ****     switch (packet->ID)
+ 264              		.loc 1 57 5 is_stmt 1 view .LVU64
+ 265              		.loc 1 57 19 is_stmt 0 view .LVU65
+ 266 0002 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 267              		.loc 1 57 5 view .LVU66
+ 268 0004 0C2B     		cmp	r3, #12
+ 269 0006 17D8     		bhi	.L17
+ 270 0008 DFE803F0 		tbb	[pc, r3]
+ 271              	.L20:
+ 272 000c 07       		.byte	(.L28-.L20)/2
+ 273 000d 17       		.byte	(.L27-.L20)/2
+ 274 000e 25       		.byte	(.L26-.L20)/2
+ 275 000f 16       		.byte	(.L17-.L20)/2
+ 276 0010 16       		.byte	(.L17-.L20)/2
+ 277 0011 16       		.byte	(.L17-.L20)/2
+ 278 0012 33       		.byte	(.L25-.L20)/2
+ 279 0013 47       		.byte	(.L24-.L20)/2
+ 280 0014 16       		.byte	(.L17-.L20)/2
+ 281 0015 5B       		.byte	(.L23-.L20)/2
+ 282 0016 78       		.byte	(.L22-.L20)/2
+ 283 0017 95       		.byte	(.L21-.L20)/2
+ 284 0018 B2       		.byte	(.L19-.L20)/2
+ 285 0019 00       		.p2align 1
+ 286              	.L28:
+  58:Core/Src/potamon_bus_lowlvl_handle.c ****     {
+  59:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_S_STBY:
+  60:Core/Src/potamon_bus_lowlvl_handle.c ****         system_enabled = 0;
+ 287              		.loc 1 60 9 is_stmt 1 view .LVU67
+ 288              		.loc 1 60 24 is_stmt 0 view .LVU68
+ 289 001a 0024     		movs	r4, #0
+ 290 001c 634B     		ldr	r3, .L43
+ 291 001e 1C70     		strb	r4, [r3]
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 7
+
+
+  61:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 292              		.loc 1 61 9 is_stmt 1 view .LVU69
+ 293              		.loc 1 61 25 is_stmt 0 view .LVU70
+ 294 0020 634B     		ldr	r3, .L43+4
+ 295 0022 1C70     		strb	r4, [r3]
+  62:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 296              		.loc 1 62 9 is_stmt 1 view .LVU71
+ 297 0024 0222     		movs	r2, #2
+ 298 0026 6349     		ldr	r1, .L43+8
+ 299 0028 6348     		ldr	r0, .L43+12
+ 300              	.LVL18:
+ 301              		.loc 1 62 9 is_stmt 0 view .LVU72
+ 302 002a FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 303              	.LVL19:
+  63:Core/Src/potamon_bus_lowlvl_handle.c ****         data_ctrl.velocity_1 = 0;
+ 304              		.loc 1 63 9 is_stmt 1 view .LVU73
+ 305              		.loc 1 63 30 is_stmt 0 view .LVU74
+ 306 002e 634B     		ldr	r3, .L43+16
+ 307 0030 5C71     		strb	r4, [r3, #5]
+ 308 0032 9C71     		strb	r4, [r3, #6]
+  64:Core/Src/potamon_bus_lowlvl_handle.c ****         data_ctrl.velocity_2 = 0;
+ 309              		.loc 1 64 9 is_stmt 1 view .LVU75
+ 310              		.loc 1 64 30 is_stmt 0 view .LVU76
+ 311 0034 DC72     		strb	r4, [r3, #11]
+ 312 0036 1C73     		strb	r4, [r3, #12]
+  65:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 313              		.loc 1 65 9 is_stmt 1 view .LVU77
+ 314              	.L17:
+  66:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_S_VEL_CTRL:
+  67:Core/Src/potamon_bus_lowlvl_handle.c ****         system_enabled = 1;
+  68:Core/Src/potamon_bus_lowlvl_handle.c ****         control_mode = 0; // control velocity
+  69:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+  70:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+  71:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+  72:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_S_ANG_CTRL:
+  73:Core/Src/potamon_bus_lowlvl_handle.c ****         system_enabled = 1;
+  74:Core/Src/potamon_bus_lowlvl_handle.c ****         control_mode = 1; // control angle
+  75:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+  76:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+  77:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+  78:Core/Src/potamon_bus_lowlvl_handle.c **** 
+  79:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_SYNC_CTRL_S1: // SYNC_CTRL_S1
+  80:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = DATA_CTRL_S1;
+  81:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+  82:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+  83:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, (uint8_t *)&data_ctrl_unchecked, S_DATA_CTRL_S1);
+  84:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+  85:Core/Src/potamon_bus_lowlvl_handle.c ****         else
+  86:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+  87:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_CTRL_S1);
+  88:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+  89:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+  90:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_SYNC_CTRL_S2: // SYNC_CTRL_S2
+  91:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = DATA_CTRL_S2;
+  92:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+  93:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+  94:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, (uint8_t *)&data_ctrl_unchecked, S_DATA_CTRL_S2);
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 8
+
+
+  95:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+  96:Core/Src/potamon_bus_lowlvl_handle.c ****         else
+  97:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+  98:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_CTRL_S2);
+  99:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 100:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 101:Core/Src/potamon_bus_lowlvl_handle.c **** 
+ 102:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_SYNC_ENC_S1: // SYNC_ENC_S1
+ 103:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = DATA_ENC_S1;
+ 104:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ 105:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 106:Core/Src/potamon_bus_lowlvl_handle.c ****             pack_encoder_feedback(&data_encoder);
+ 107:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 108:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&data_encoder, S_DATA_ENC_S1);
+ 109:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 110:Core/Src/potamon_bus_lowlvl_handle.c ****         else
+ 111:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 112:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_ENC_S1);
+ 113:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 114:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 115:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_SYNC_ENC_S2: // SYNC_ENC_S2
+ 116:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = DATA_ENC_S2;
+ 117:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ 118:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 119:Core/Src/potamon_bus_lowlvl_handle.c ****             pack_encoder_feedback(&data_encoder);
+ 120:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 121:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&data_encoder, S_DATA_ENC_S2);
+ 122:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 123:Core/Src/potamon_bus_lowlvl_handle.c ****         else
+ 124:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 125:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_ENC_S2);
+ 126:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 127:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 128:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_SYNC_CUR_S1: // SYNC_CUR_S1
+ 129:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = DATA_CUR_S1;
+ 130:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ 131:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 132:Core/Src/potamon_bus_lowlvl_handle.c ****             pack_current_feedback(&data_current);
+ 133:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 134:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t *)&data_current, S_DATA_CUR_S1);
+ 135:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 136:Core/Src/potamon_bus_lowlvl_handle.c ****         else
+ 137:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 138:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_CUR_S1);
+ 139:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 140:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 141:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_SYNC_CUR_S2: // SYNC_CUR_S2
+ 142:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = DATA_CUR_S2;
+ 143:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ 144:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 145:Core/Src/potamon_bus_lowlvl_handle.c ****             pack_current_feedback(&data_current);
+ 146:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 147:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t *)&data_current, S_DATA_CUR_S2);
+ 148:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 149:Core/Src/potamon_bus_lowlvl_handle.c ****         else
+ 150:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 151:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, uart_rx_dump_buffer, S_DATA_CUR_S2);
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 9
+
+
+ 152:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 153:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 154:Core/Src/potamon_bus_lowlvl_handle.c ****     default:
+ 155:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 156:Core/Src/potamon_bus_lowlvl_handle.c ****     }
+ 157:Core/Src/potamon_bus_lowlvl_handle.c **** }
+ 315              		.loc 1 157 1 is_stmt 0 view .LVU78
+ 316 0038 10BD     		pop	{r4, pc}
+ 317              	.LVL20:
+ 318              	.L27:
+  67:Core/Src/potamon_bus_lowlvl_handle.c ****         control_mode = 0; // control velocity
+ 319              		.loc 1 67 9 is_stmt 1 view .LVU79
+  67:Core/Src/potamon_bus_lowlvl_handle.c ****         control_mode = 0; // control velocity
+ 320              		.loc 1 67 24 is_stmt 0 view .LVU80
+ 321 003a 5C4B     		ldr	r3, .L43
+ 322 003c 0122     		movs	r2, #1
+ 323 003e 1A70     		strb	r2, [r3]
+  68:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 324              		.loc 1 68 9 is_stmt 1 view .LVU81
+  68:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 325              		.loc 1 68 22 is_stmt 0 view .LVU82
+ 326 0040 0023     		movs	r3, #0
+ 327 0042 5F4A     		ldr	r2, .L43+20
+ 328 0044 1370     		strb	r3, [r2]
+  69:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 329              		.loc 1 69 9 is_stmt 1 view .LVU83
+  69:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 330              		.loc 1 69 25 is_stmt 0 view .LVU84
+ 331 0046 5A4A     		ldr	r2, .L43+4
+ 332 0048 1370     		strb	r3, [r2]
+  70:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 333              		.loc 1 70 9 is_stmt 1 view .LVU85
+ 334 004a 0222     		movs	r2, #2
+ 335 004c 5949     		ldr	r1, .L43+8
+ 336 004e 5A48     		ldr	r0, .L43+12
+ 337              	.LVL21:
+  70:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 338              		.loc 1 70 9 is_stmt 0 view .LVU86
+ 339 0050 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 340              	.LVL22:
+  71:Core/Src/potamon_bus_lowlvl_handle.c ****     case ID_S_ANG_CTRL:
+ 341              		.loc 1 71 9 is_stmt 1 view .LVU87
+ 342 0054 F0E7     		b	.L17
+ 343              	.LVL23:
+ 344              	.L26:
+  73:Core/Src/potamon_bus_lowlvl_handle.c ****         control_mode = 1; // control angle
+ 345              		.loc 1 73 9 view .LVU88
+  73:Core/Src/potamon_bus_lowlvl_handle.c ****         control_mode = 1; // control angle
+ 346              		.loc 1 73 24 is_stmt 0 view .LVU89
+ 347 0056 0123     		movs	r3, #1
+ 348 0058 544A     		ldr	r2, .L43
+ 349 005a 1370     		strb	r3, [r2]
+  74:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 350              		.loc 1 74 9 is_stmt 1 view .LVU90
+  74:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 351              		.loc 1 74 22 is_stmt 0 view .LVU91
+ 352 005c 584A     		ldr	r2, .L43+20
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 10
+
+
+ 353 005e 1370     		strb	r3, [r2]
+  75:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 354              		.loc 1 75 9 is_stmt 1 view .LVU92
+  75:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 355              		.loc 1 75 25 is_stmt 0 view .LVU93
+ 356 0060 534B     		ldr	r3, .L43+4
+ 357 0062 0022     		movs	r2, #0
+ 358 0064 1A70     		strb	r2, [r3]
+  76:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 359              		.loc 1 76 9 is_stmt 1 view .LVU94
+ 360 0066 0222     		movs	r2, #2
+ 361 0068 5249     		ldr	r1, .L43+8
+ 362 006a 5348     		ldr	r0, .L43+12
+ 363              	.LVL24:
+  76:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 364              		.loc 1 76 9 is_stmt 0 view .LVU95
+ 365 006c FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 366              	.LVL25:
+  77:Core/Src/potamon_bus_lowlvl_handle.c **** 
+ 367              		.loc 1 77 9 is_stmt 1 view .LVU96
+ 368 0070 E2E7     		b	.L17
+ 369              	.LVL26:
+ 370              	.L25:
+  80:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ 371              		.loc 1 80 9 view .LVU97
+  80:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ 372              		.loc 1 80 25 is_stmt 0 view .LVU98
+ 373 0072 4F4B     		ldr	r3, .L43+4
+ 374 0074 0122     		movs	r2, #1
+ 375 0076 1A70     		strb	r2, [r3]
+  81:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 376              		.loc 1 81 9 is_stmt 1 view .LVU99
+  81:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 377              		.loc 1 81 25 is_stmt 0 view .LVU100
+ 378 0078 524B     		ldr	r3, .L43+24
+ 379 007a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 380 007c DBB2     		uxtb	r3, r3
+  81:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 381              		.loc 1 81 12 view .LVU101
+ 382 007e 9342     		cmp	r3, r2
+ 383 0080 05D0     		beq	.L37
+  87:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 384              		.loc 1 87 13 is_stmt 1 view .LVU102
+ 385 0082 1022     		movs	r2, #16
+ 386 0084 5049     		ldr	r1, .L43+28
+ 387 0086 4C48     		ldr	r0, .L43+12
+ 388              	.LVL27:
+  87:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 389              		.loc 1 87 13 is_stmt 0 view .LVU103
+ 390 0088 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 391              	.LVL28:
+ 392 008c D4E7     		b	.L17
+ 393              	.LVL29:
+ 394              	.L37:
+  83:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 395              		.loc 1 83 13 is_stmt 1 view .LVU104
+ 396 008e 1022     		movs	r2, #16
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 11
+
+
+ 397 0090 4E49     		ldr	r1, .L43+32
+ 398 0092 4948     		ldr	r0, .L43+12
+ 399              	.LVL30:
+  83:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 400              		.loc 1 83 13 is_stmt 0 view .LVU105
+ 401 0094 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 402              	.LVL31:
+ 403 0098 CEE7     		b	.L17
+ 404              	.LVL32:
+ 405              	.L24:
+  91:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ 406              		.loc 1 91 9 is_stmt 1 view .LVU106
+  91:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ 407              		.loc 1 91 25 is_stmt 0 view .LVU107
+ 408 009a 454B     		ldr	r3, .L43+4
+ 409 009c 0222     		movs	r2, #2
+ 410 009e 1A70     		strb	r2, [r3]
+  92:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 411              		.loc 1 92 9 is_stmt 1 view .LVU108
+  92:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 412              		.loc 1 92 25 is_stmt 0 view .LVU109
+ 413 00a0 484B     		ldr	r3, .L43+24
+ 414 00a2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 415 00a4 DBB2     		uxtb	r3, r3
+  92:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 416              		.loc 1 92 12 view .LVU110
+ 417 00a6 9342     		cmp	r3, r2
+ 418 00a8 05D0     		beq	.L38
+  98:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 419              		.loc 1 98 13 is_stmt 1 view .LVU111
+ 420 00aa 1022     		movs	r2, #16
+ 421 00ac 4649     		ldr	r1, .L43+28
+ 422 00ae 4248     		ldr	r0, .L43+12
+ 423              	.LVL33:
+  98:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 424              		.loc 1 98 13 is_stmt 0 view .LVU112
+ 425 00b0 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 426              	.LVL34:
+ 427 00b4 C0E7     		b	.L17
+ 428              	.LVL35:
+ 429              	.L38:
+  94:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 430              		.loc 1 94 13 is_stmt 1 view .LVU113
+ 431 00b6 1022     		movs	r2, #16
+ 432 00b8 4449     		ldr	r1, .L43+32
+ 433 00ba 3F48     		ldr	r0, .L43+12
+ 434              	.LVL36:
+  94:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 435              		.loc 1 94 13 is_stmt 0 view .LVU114
+ 436 00bc FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 437              	.LVL37:
+ 438 00c0 BAE7     		b	.L17
+ 439              	.LVL38:
+ 440              	.L23:
+ 103:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ 441              		.loc 1 103 9 is_stmt 1 view .LVU115
+ 103:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 12
+
+
+ 442              		.loc 1 103 25 is_stmt 0 view .LVU116
+ 443 00c2 3B4B     		ldr	r3, .L43+4
+ 444 00c4 0322     		movs	r2, #3
+ 445 00c6 1A70     		strb	r2, [r3]
+ 104:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 446              		.loc 1 104 9 is_stmt 1 view .LVU117
+ 104:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 447              		.loc 1 104 25 is_stmt 0 view .LVU118
+ 448 00c8 3E4B     		ldr	r3, .L43+24
+ 449 00ca 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 450 00cc DBB2     		uxtb	r3, r3
+ 104:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 451              		.loc 1 104 12 view .LVU119
+ 452 00ce 012B     		cmp	r3, #1
+ 453 00d0 05D0     		beq	.L39
+ 112:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 454              		.loc 1 112 13 is_stmt 1 view .LVU120
+ 455 00d2 0F22     		movs	r2, #15
+ 456 00d4 3C49     		ldr	r1, .L43+28
+ 457 00d6 3848     		ldr	r0, .L43+12
+ 458              	.LVL39:
+ 112:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 459              		.loc 1 112 13 is_stmt 0 view .LVU121
+ 460 00d8 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 461              	.LVL40:
+ 462 00dc ACE7     		b	.L17
+ 463              	.LVL41:
+ 464              	.L39:
+ 106:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 465              		.loc 1 106 13 is_stmt 1 view .LVU122
+ 466 00de 3C4C     		ldr	r4, .L43+36
+ 467 00e0 2046     		mov	r0, r4
+ 468              	.LVL42:
+ 106:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 469              		.loc 1 106 13 is_stmt 0 view .LVU123
+ 470 00e2 FFF7FEFF 		bl	pack_encoder_feedback
+ 471              	.LVL43:
+ 107:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&data_encoder, S_DATA_ENC_S1);
+ 472              		.loc 1 107 13 is_stmt 1 view .LVU124
+ 473 00e6 0122     		movs	r2, #1
+ 474 00e8 2021     		movs	r1, #32
+ 475 00ea 3A48     		ldr	r0, .L43+40
+ 476 00ec FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 477              	.LVL44:
+ 108:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 478              		.loc 1 108 13 view .LVU125
+ 479 00f0 0F22     		movs	r2, #15
+ 480 00f2 2146     		mov	r1, r4
+ 481 00f4 3048     		ldr	r0, .L43+12
+ 482 00f6 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 483              	.LVL45:
+ 484 00fa 9DE7     		b	.L17
+ 485              	.LVL46:
+ 486              	.L22:
+ 116:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ 487              		.loc 1 116 9 view .LVU126
+ 116:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 13
+
+
+ 488              		.loc 1 116 25 is_stmt 0 view .LVU127
+ 489 00fc 2C4B     		ldr	r3, .L43+4
+ 490 00fe 0422     		movs	r2, #4
+ 491 0100 1A70     		strb	r2, [r3]
+ 117:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 492              		.loc 1 117 9 is_stmt 1 view .LVU128
+ 117:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 493              		.loc 1 117 25 is_stmt 0 view .LVU129
+ 494 0102 304B     		ldr	r3, .L43+24
+ 495 0104 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 496 0106 DBB2     		uxtb	r3, r3
+ 117:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 497              		.loc 1 117 12 view .LVU130
+ 498 0108 022B     		cmp	r3, #2
+ 499 010a 05D0     		beq	.L40
+ 125:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 500              		.loc 1 125 13 is_stmt 1 view .LVU131
+ 501 010c 0F22     		movs	r2, #15
+ 502 010e 2E49     		ldr	r1, .L43+28
+ 503 0110 2948     		ldr	r0, .L43+12
+ 504              	.LVL47:
+ 125:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 505              		.loc 1 125 13 is_stmt 0 view .LVU132
+ 506 0112 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 507              	.LVL48:
+ 508 0116 8FE7     		b	.L17
+ 509              	.LVL49:
+ 510              	.L40:
+ 119:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 511              		.loc 1 119 13 is_stmt 1 view .LVU133
+ 512 0118 2D4C     		ldr	r4, .L43+36
+ 513 011a 2046     		mov	r0, r4
+ 514              	.LVL50:
+ 119:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 515              		.loc 1 119 13 is_stmt 0 view .LVU134
+ 516 011c FFF7FEFF 		bl	pack_encoder_feedback
+ 517              	.LVL51:
+ 120:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t*)&data_encoder, S_DATA_ENC_S2);
+ 518              		.loc 1 120 13 is_stmt 1 view .LVU135
+ 519 0120 0122     		movs	r2, #1
+ 520 0122 2021     		movs	r1, #32
+ 521 0124 2B48     		ldr	r0, .L43+40
+ 522 0126 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 523              	.LVL52:
+ 121:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 524              		.loc 1 121 13 view .LVU136
+ 525 012a 0F22     		movs	r2, #15
+ 526 012c 2146     		mov	r1, r4
+ 527 012e 2248     		ldr	r0, .L43+12
+ 528 0130 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 529              	.LVL53:
+ 530 0134 80E7     		b	.L17
+ 531              	.LVL54:
+ 532              	.L21:
+ 129:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ 533              		.loc 1 129 9 view .LVU137
+ 129:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 14
+
+
+ 534              		.loc 1 129 25 is_stmt 0 view .LVU138
+ 535 0136 1E4B     		ldr	r3, .L43+4
+ 536 0138 0522     		movs	r2, #5
+ 537 013a 1A70     		strb	r2, [r3]
+ 130:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 538              		.loc 1 130 9 is_stmt 1 view .LVU139
+ 130:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 539              		.loc 1 130 25 is_stmt 0 view .LVU140
+ 540 013c 214B     		ldr	r3, .L43+24
+ 541 013e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 542 0140 DBB2     		uxtb	r3, r3
+ 130:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 543              		.loc 1 130 12 view .LVU141
+ 544 0142 012B     		cmp	r3, #1
+ 545 0144 05D0     		beq	.L41
+ 138:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 546              		.loc 1 138 13 is_stmt 1 view .LVU142
+ 547 0146 0822     		movs	r2, #8
+ 548 0148 1F49     		ldr	r1, .L43+28
+ 549 014a 1B48     		ldr	r0, .L43+12
+ 550              	.LVL55:
+ 138:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 551              		.loc 1 138 13 is_stmt 0 view .LVU143
+ 552 014c FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 553              	.LVL56:
+ 554 0150 72E7     		b	.L17
+ 555              	.LVL57:
+ 556              	.L41:
+ 132:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 557              		.loc 1 132 13 is_stmt 1 view .LVU144
+ 558 0152 214C     		ldr	r4, .L43+44
+ 559 0154 2046     		mov	r0, r4
+ 560              	.LVL58:
+ 132:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 561              		.loc 1 132 13 is_stmt 0 view .LVU145
+ 562 0156 FFF7FEFF 		bl	pack_current_feedback
+ 563              	.LVL59:
+ 133:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t *)&data_current, S_DATA_CUR_S1);
+ 564              		.loc 1 133 13 is_stmt 1 view .LVU146
+ 565 015a 0122     		movs	r2, #1
+ 566 015c 2021     		movs	r1, #32
+ 567 015e 1D48     		ldr	r0, .L43+40
+ 568 0160 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 569              	.LVL60:
+ 134:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 570              		.loc 1 134 13 view .LVU147
+ 571 0164 0822     		movs	r2, #8
+ 572 0166 2146     		mov	r1, r4
+ 573 0168 1348     		ldr	r0, .L43+12
+ 574 016a FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 575              	.LVL61:
+ 576 016e 63E7     		b	.L17
+ 577              	.LVL62:
+ 578              	.L19:
+ 142:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ 579              		.loc 1 142 9 view .LVU148
+ 142:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 15
+
+
+ 580              		.loc 1 142 25 is_stmt 0 view .LVU149
+ 581 0170 0F4B     		ldr	r3, .L43+4
+ 582 0172 0622     		movs	r2, #6
+ 583 0174 1A70     		strb	r2, [r3]
+ 143:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 584              		.loc 1 143 9 is_stmt 1 view .LVU150
+ 143:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 585              		.loc 1 143 25 is_stmt 0 view .LVU151
+ 586 0176 134B     		ldr	r3, .L43+24
+ 587 0178 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 588 017a DBB2     		uxtb	r3, r3
+ 143:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 589              		.loc 1 143 12 view .LVU152
+ 590 017c 022B     		cmp	r3, #2
+ 591 017e 05D0     		beq	.L42
+ 151:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 592              		.loc 1 151 13 is_stmt 1 view .LVU153
+ 593 0180 0822     		movs	r2, #8
+ 594 0182 1149     		ldr	r1, .L43+28
+ 595 0184 0C48     		ldr	r0, .L43+12
+ 596              	.LVL63:
+ 151:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 597              		.loc 1 151 13 is_stmt 0 view .LVU154
+ 598 0186 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 599              	.LVL64:
+ 600              		.loc 1 157 1 view .LVU155
+ 601 018a 55E7     		b	.L17
+ 602              	.LVL65:
+ 603              	.L42:
+ 145:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 604              		.loc 1 145 13 is_stmt 1 view .LVU156
+ 605 018c 124C     		ldr	r4, .L43+44
+ 606 018e 2046     		mov	r0, r4
+ 607              	.LVL66:
+ 145:Core/Src/potamon_bus_lowlvl_handle.c ****             TXON; // Turn on transmission on Transceiver
+ 608              		.loc 1 145 13 is_stmt 0 view .LVU157
+ 609 0190 FFF7FEFF 		bl	pack_current_feedback
+ 610              	.LVL67:
+ 146:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Transmit_DMA(&huart1, (uint8_t *)&data_current, S_DATA_CUR_S2);
+ 611              		.loc 1 146 13 is_stmt 1 view .LVU158
+ 612 0194 0122     		movs	r2, #1
+ 613 0196 2021     		movs	r1, #32
+ 614 0198 0E48     		ldr	r0, .L43+40
+ 615 019a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 616              	.LVL68:
+ 147:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 617              		.loc 1 147 13 view .LVU159
+ 618 019e 0822     		movs	r2, #8
+ 619 01a0 2146     		mov	r1, r4
+ 620 01a2 0548     		ldr	r0, .L43+12
+ 621 01a4 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 622              	.LVL69:
+ 623 01a8 46E7     		b	.L17
+ 624              	.L44:
+ 625 01aa 00BF     		.align	2
+ 626              	.L43:
+ 627 01ac 00000000 		.word	system_enabled
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 16
+
+
+ 628 01b0 00000000 		.word	expected_packet
+ 629 01b4 00000000 		.word	packet_sync
+ 630 01b8 00000000 		.word	huart1
+ 631 01bc 00000000 		.word	data_ctrl
+ 632 01c0 00000000 		.word	control_mode
+ 633 01c4 00000000 		.word	axis_define
+ 634 01c8 00000000 		.word	uart_rx_dump_buffer
+ 635 01cc 00000000 		.word	data_ctrl_unchecked
+ 636 01d0 00000000 		.word	data_encoder
+ 637 01d4 000C0140 		.word	1073810432
+ 638 01d8 00000000 		.word	data_current
+ 639              		.cfi_endproc
+ 640              	.LFE69:
+ 642              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ 643              		.align	1
+ 644              		.global	HAL_UART_RxCpltCallback
+ 645              		.syntax unified
+ 646              		.thumb
+ 647              		.thumb_func
+ 649              	HAL_UART_RxCpltCallback:
+ 650              	.LVL70:
+ 651              	.LFB70:
+ 158:Core/Src/potamon_bus_lowlvl_handle.c **** 
+ 159:Core/Src/potamon_bus_lowlvl_handle.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+ 160:Core/Src/potamon_bus_lowlvl_handle.c **** {
+ 652              		.loc 1 160 1 view -0
+ 653              		.cfi_startproc
+ 654              		@ args = 0, pretend = 0, frame = 0
+ 655              		@ frame_needed = 0, uses_anonymous_args = 0
+ 656              		.loc 1 160 1 is_stmt 0 view .LVU161
+ 657 0000 10B5     		push	{r4, lr}
+ 658              		.cfi_def_cfa_offset 8
+ 659              		.cfi_offset 4, -8
+ 660              		.cfi_offset 14, -4
+ 161:Core/Src/potamon_bus_lowlvl_handle.c ****     switch (expected_packet)
+ 661              		.loc 1 161 5 is_stmt 1 view .LVU162
+ 662 0002 3F4B     		ldr	r3, .L61
+ 663 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 664 0006 012B     		cmp	r3, #1
+ 665 0008 1DD0     		beq	.L46
+ 666 000a 022B     		cmp	r3, #2
+ 667 000c 45D0     		beq	.L47
+ 668 000e 002B     		cmp	r3, #0
+ 669 0010 6DD1     		bne	.L48
+ 162:Core/Src/potamon_bus_lowlvl_handle.c ****     {
+ 163:Core/Src/potamon_bus_lowlvl_handle.c ****     case SYNC:
+ 164:Core/Src/potamon_bus_lowlvl_handle.c ****         if (packet_sync.crc8 == crc8_ccitt((uint8_t *)&packet_sync, 1))
+ 670              		.loc 1 164 9 view .LVU163
+ 671              		.loc 1 164 24 is_stmt 0 view .LVU164
+ 672 0012 3C48     		ldr	r0, .L61+4
+ 673              	.LVL71:
+ 674              		.loc 1 164 24 view .LVU165
+ 675 0014 4478     		ldrb	r4, [r0, #1]	@ zero_extendqisi2
+ 676              		.loc 1 164 33 view .LVU166
+ 677 0016 0121     		movs	r1, #1
+ 678 0018 FFF7FEFF 		bl	crc8_ccitt
+ 679              	.LVL72:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 17
+
+
+ 680              		.loc 1 164 12 discriminator 1 view .LVU167
+ 681 001c 8442     		cmp	r4, r0
+ 682 001e 0BD0     		beq	.L56
+ 165:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 166:Core/Src/potamon_bus_lowlvl_handle.c ****             update_crc_history(1);
+ 167:Core/Src/potamon_bus_lowlvl_handle.c ****             sync_packet_handler(&packet_sync);
+ 168:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 169:Core/Src/potamon_bus_lowlvl_handle.c ****         else
+ 170:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 171:Core/Src/potamon_bus_lowlvl_handle.c ****             update_crc_history(0);
+ 683              		.loc 1 171 13 is_stmt 1 view .LVU168
+ 684 0020 0020     		movs	r0, #0
+ 685 0022 FFF7FEFF 		bl	update_crc_history
+ 686              	.LVL73:
+ 172:Core/Src/potamon_bus_lowlvl_handle.c ****             expected_packet = SYNC;
+ 687              		.loc 1 172 13 view .LVU169
+ 688              		.loc 1 172 29 is_stmt 0 view .LVU170
+ 689 0026 364B     		ldr	r3, .L61
+ 690 0028 0022     		movs	r2, #0
+ 691 002a 1A70     		strb	r2, [r3]
+ 173:Core/Src/potamon_bus_lowlvl_handle.c ****             HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 692              		.loc 1 173 13 is_stmt 1 view .LVU171
+ 693 002c 0222     		movs	r2, #2
+ 694 002e 3549     		ldr	r1, .L61+4
+ 695 0030 3548     		ldr	r0, .L61+8
+ 696 0032 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 697              	.LVL74:
+ 698 0036 13E0     		b	.L45
+ 699              	.L56:
+ 166:Core/Src/potamon_bus_lowlvl_handle.c ****             sync_packet_handler(&packet_sync);
+ 700              		.loc 1 166 13 view .LVU172
+ 701 0038 0120     		movs	r0, #1
+ 702 003a FFF7FEFF 		bl	update_crc_history
+ 703              	.LVL75:
+ 167:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 704              		.loc 1 167 13 view .LVU173
+ 705 003e 3148     		ldr	r0, .L61+4
+ 706 0040 FFF7FEFF 		bl	sync_packet_handler
+ 707              	.LVL76:
+ 708 0044 0CE0     		b	.L45
+ 709              	.LVL77:
+ 710              	.L46:
+ 174:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 175:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 176:Core/Src/potamon_bus_lowlvl_handle.c ****     case DATA_CTRL_S1:
+ 177:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 1)
+ 711              		.loc 1 177 9 view .LVU174
+ 712              		.loc 1 177 25 is_stmt 0 view .LVU175
+ 713 0046 314B     		ldr	r3, .L61+12
+ 714 0048 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 715 004a DBB2     		uxtb	r3, r3
+ 716              		.loc 1 177 12 view .LVU176
+ 717 004c 012B     		cmp	r3, #1
+ 718 004e 08D0     		beq	.L57
+ 719              	.LVL78:
+ 720              	.L51:
+ 178:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 18
+
+
+ 179:Core/Src/potamon_bus_lowlvl_handle.c ****             if (data_ctrl_unchecked.crc16 == crc16_ccitt((uint8_t *)&data_ctrl_unchecked, S_DATA_CT
+ 180:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 181:Core/Src/potamon_bus_lowlvl_handle.c ****                 update_crc_history(1);
+ 182:Core/Src/potamon_bus_lowlvl_handle.c ****                 memcpy(&data_ctrl, &data_ctrl_unchecked, S_DATA_CTRL_S1);
+ 183:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 184:Core/Src/potamon_bus_lowlvl_handle.c ****             else
+ 185:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 186:Core/Src/potamon_bus_lowlvl_handle.c ****                 update_crc_history(0);
+ 187:Core/Src/potamon_bus_lowlvl_handle.c ****                 expected_packet = SYNC;
+ 188:Core/Src/potamon_bus_lowlvl_handle.c ****                 HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 189:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 190:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 191:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 721              		.loc 1 191 9 is_stmt 1 view .LVU177
+ 722              		.loc 1 191 25 is_stmt 0 view .LVU178
+ 723 0050 2B4B     		ldr	r3, .L61
+ 724 0052 0022     		movs	r2, #0
+ 725 0054 1A70     		strb	r2, [r3]
+ 192:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 726              		.loc 1 192 9 is_stmt 1 view .LVU179
+ 727 0056 0222     		movs	r2, #2
+ 728 0058 2A49     		ldr	r1, .L61+4
+ 729 005a 2B48     		ldr	r0, .L61+8
+ 730 005c FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 731              	.LVL79:
+ 193:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 732              		.loc 1 193 9 view .LVU180
+ 733              	.L45:
+ 194:Core/Src/potamon_bus_lowlvl_handle.c ****     case DATA_CTRL_S2:
+ 195:Core/Src/potamon_bus_lowlvl_handle.c ****         if (axis_define == 2)
+ 196:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 197:Core/Src/potamon_bus_lowlvl_handle.c ****             if (data_ctrl_unchecked.crc16 == crc16_ccitt((uint8_t *)&data_ctrl_unchecked, S_DATA_CT
+ 198:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 199:Core/Src/potamon_bus_lowlvl_handle.c ****                 update_crc_history(1);
+ 200:Core/Src/potamon_bus_lowlvl_handle.c ****                 memcpy(&data_ctrl, &data_ctrl_unchecked, S_DATA_CTRL_S2);
+ 201:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 202:Core/Src/potamon_bus_lowlvl_handle.c ****             else
+ 203:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 204:Core/Src/potamon_bus_lowlvl_handle.c ****                 update_crc_history(0);
+ 205:Core/Src/potamon_bus_lowlvl_handle.c ****                 expected_packet = SYNC;
+ 206:Core/Src/potamon_bus_lowlvl_handle.c ****                 HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 207:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 208:Core/Src/potamon_bus_lowlvl_handle.c ****         }
+ 209:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 210:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 211:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 212:Core/Src/potamon_bus_lowlvl_handle.c ****     default:
+ 213:Core/Src/potamon_bus_lowlvl_handle.c ****         expected_packet = SYNC;
+ 214:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 215:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 216:Core/Src/potamon_bus_lowlvl_handle.c ****     }
+ 217:Core/Src/potamon_bus_lowlvl_handle.c **** }
+ 734              		.loc 1 217 1 is_stmt 0 view .LVU181
+ 735 0060 10BD     		pop	{r4, pc}
+ 736              	.LVL80:
+ 737              	.L57:
+ 179:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 19
+
+
+ 738              		.loc 1 179 13 is_stmt 1 view .LVU182
+ 179:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 739              		.loc 1 179 36 is_stmt 0 view .LVU183
+ 740 0062 2B48     		ldr	r0, .L61+16
+ 741              	.LVL81:
+ 179:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 742              		.loc 1 179 36 view .LVU184
+ 743 0064 C489     		ldrh	r4, [r0, #14]
+ 179:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 744              		.loc 1 179 46 view .LVU185
+ 745 0066 0E21     		movs	r1, #14
+ 746 0068 FFF7FEFF 		bl	crc16_ccitt
+ 747              	.LVL82:
+ 179:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 748              		.loc 1 179 16 discriminator 1 view .LVU186
+ 749 006c 8442     		cmp	r4, r0
+ 750 006e 0BD0     		beq	.L58
+ 186:Core/Src/potamon_bus_lowlvl_handle.c ****                 expected_packet = SYNC;
+ 751              		.loc 1 186 17 is_stmt 1 view .LVU187
+ 752 0070 0020     		movs	r0, #0
+ 753 0072 FFF7FEFF 		bl	update_crc_history
+ 754              	.LVL83:
+ 187:Core/Src/potamon_bus_lowlvl_handle.c ****                 HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 755              		.loc 1 187 17 view .LVU188
+ 187:Core/Src/potamon_bus_lowlvl_handle.c ****                 HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 756              		.loc 1 187 33 is_stmt 0 view .LVU189
+ 757 0076 224B     		ldr	r3, .L61
+ 758 0078 0022     		movs	r2, #0
+ 759 007a 1A70     		strb	r2, [r3]
+ 188:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 760              		.loc 1 188 17 is_stmt 1 view .LVU190
+ 761 007c 0222     		movs	r2, #2
+ 762 007e 2149     		ldr	r1, .L61+4
+ 763 0080 2148     		ldr	r0, .L61+8
+ 764 0082 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 765              	.LVL84:
+ 766 0086 E3E7     		b	.L51
+ 767              	.L58:
+ 181:Core/Src/potamon_bus_lowlvl_handle.c ****                 memcpy(&data_ctrl, &data_ctrl_unchecked, S_DATA_CTRL_S1);
+ 768              		.loc 1 181 17 view .LVU191
+ 769 0088 0120     		movs	r0, #1
+ 770 008a FFF7FEFF 		bl	update_crc_history
+ 771              	.LVL85:
+ 182:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 772              		.loc 1 182 17 view .LVU192
+ 773 008e 214C     		ldr	r4, .L61+20
+ 774 0090 1F4B     		ldr	r3, .L61+16
+ 775 0092 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 776 0094 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 777 0098 DAE7     		b	.L51
+ 778              	.LVL86:
+ 779              	.L47:
+ 195:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 780              		.loc 1 195 9 view .LVU193
+ 195:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 781              		.loc 1 195 25 is_stmt 0 view .LVU194
+ 782 009a 1C4B     		ldr	r3, .L61+12
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 20
+
+
+ 783 009c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 784 009e DBB2     		uxtb	r3, r3
+ 195:Core/Src/potamon_bus_lowlvl_handle.c ****         {
+ 785              		.loc 1 195 12 view .LVU195
+ 786 00a0 022B     		cmp	r3, #2
+ 787 00a2 08D0     		beq	.L59
+ 788              	.LVL87:
+ 789              	.L53:
+ 209:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 790              		.loc 1 209 9 is_stmt 1 view .LVU196
+ 209:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 791              		.loc 1 209 25 is_stmt 0 view .LVU197
+ 792 00a4 164B     		ldr	r3, .L61
+ 793 00a6 0022     		movs	r2, #0
+ 794 00a8 1A70     		strb	r2, [r3]
+ 210:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 795              		.loc 1 210 9 is_stmt 1 view .LVU198
+ 796 00aa 0222     		movs	r2, #2
+ 797 00ac 1549     		ldr	r1, .L61+4
+ 798 00ae 1648     		ldr	r0, .L61+8
+ 799 00b0 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 800              	.LVL88:
+ 211:Core/Src/potamon_bus_lowlvl_handle.c ****     default:
+ 801              		.loc 1 211 9 view .LVU199
+ 802 00b4 D4E7     		b	.L45
+ 803              	.LVL89:
+ 804              	.L59:
+ 197:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 805              		.loc 1 197 13 view .LVU200
+ 197:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 806              		.loc 1 197 36 is_stmt 0 view .LVU201
+ 807 00b6 1648     		ldr	r0, .L61+16
+ 808              	.LVL90:
+ 197:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 809              		.loc 1 197 36 view .LVU202
+ 810 00b8 C489     		ldrh	r4, [r0, #14]
+ 197:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 811              		.loc 1 197 46 view .LVU203
+ 812 00ba 0E21     		movs	r1, #14
+ 813 00bc FFF7FEFF 		bl	crc16_ccitt
+ 814              	.LVL91:
+ 197:Core/Src/potamon_bus_lowlvl_handle.c ****             {
+ 815              		.loc 1 197 16 discriminator 1 view .LVU204
+ 816 00c0 8442     		cmp	r4, r0
+ 817 00c2 0BD0     		beq	.L60
+ 204:Core/Src/potamon_bus_lowlvl_handle.c ****                 expected_packet = SYNC;
+ 818              		.loc 1 204 17 is_stmt 1 view .LVU205
+ 819 00c4 0020     		movs	r0, #0
+ 820 00c6 FFF7FEFF 		bl	update_crc_history
+ 821              	.LVL92:
+ 205:Core/Src/potamon_bus_lowlvl_handle.c ****                 HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 822              		.loc 1 205 17 view .LVU206
+ 205:Core/Src/potamon_bus_lowlvl_handle.c ****                 HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 823              		.loc 1 205 33 is_stmt 0 view .LVU207
+ 824 00ca 0D4B     		ldr	r3, .L61
+ 825 00cc 0022     		movs	r2, #0
+ 826 00ce 1A70     		strb	r2, [r3]
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 21
+
+
+ 206:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 827              		.loc 1 206 17 is_stmt 1 view .LVU208
+ 828 00d0 0222     		movs	r2, #2
+ 829 00d2 0C49     		ldr	r1, .L61+4
+ 830 00d4 0C48     		ldr	r0, .L61+8
+ 831 00d6 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 832              	.LVL93:
+ 833 00da E3E7     		b	.L53
+ 834              	.L60:
+ 199:Core/Src/potamon_bus_lowlvl_handle.c ****                 memcpy(&data_ctrl, &data_ctrl_unchecked, S_DATA_CTRL_S2);
+ 835              		.loc 1 199 17 view .LVU209
+ 836 00dc 0120     		movs	r0, #1
+ 837 00de FFF7FEFF 		bl	update_crc_history
+ 838              	.LVL94:
+ 200:Core/Src/potamon_bus_lowlvl_handle.c ****             }
+ 839              		.loc 1 200 17 view .LVU210
+ 840 00e2 0C4C     		ldr	r4, .L61+20
+ 841 00e4 0A4B     		ldr	r3, .L61+16
+ 842 00e6 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 843 00e8 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 844 00ec DAE7     		b	.L53
+ 845              	.LVL95:
+ 846              	.L48:
+ 213:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 847              		.loc 1 213 9 view .LVU211
+ 213:Core/Src/potamon_bus_lowlvl_handle.c ****         HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 848              		.loc 1 213 25 is_stmt 0 view .LVU212
+ 849 00ee 044B     		ldr	r3, .L61
+ 850 00f0 0022     		movs	r2, #0
+ 851 00f2 1A70     		strb	r2, [r3]
+ 214:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 852              		.loc 1 214 9 is_stmt 1 view .LVU213
+ 853 00f4 0222     		movs	r2, #2
+ 854 00f6 0349     		ldr	r1, .L61+4
+ 855 00f8 0348     		ldr	r0, .L61+8
+ 856              	.LVL96:
+ 214:Core/Src/potamon_bus_lowlvl_handle.c ****         break;
+ 857              		.loc 1 214 9 is_stmt 0 view .LVU214
+ 858 00fa FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 859              	.LVL97:
+ 215:Core/Src/potamon_bus_lowlvl_handle.c ****     }
+ 860              		.loc 1 215 9 is_stmt 1 view .LVU215
+ 861              		.loc 1 217 1 is_stmt 0 view .LVU216
+ 862 00fe AFE7     		b	.L45
+ 863              	.L62:
+ 864              		.align	2
+ 865              	.L61:
+ 866 0100 00000000 		.word	expected_packet
+ 867 0104 00000000 		.word	packet_sync
+ 868 0108 00000000 		.word	huart1
+ 869 010c 00000000 		.word	axis_define
+ 870 0110 00000000 		.word	data_ctrl_unchecked
+ 871 0114 00000000 		.word	data_ctrl
+ 872              		.cfi_endproc
+ 873              	.LFE70:
+ 875              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+ 876              		.align	1
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 22
+
+
+ 877              		.global	HAL_UART_TxCpltCallback
+ 878              		.syntax unified
+ 879              		.thumb
+ 880              		.thumb_func
+ 882              	HAL_UART_TxCpltCallback:
+ 883              	.LVL98:
+ 884              	.LFB71:
+ 218:Core/Src/potamon_bus_lowlvl_handle.c **** 
+ 219:Core/Src/potamon_bus_lowlvl_handle.c **** void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+ 220:Core/Src/potamon_bus_lowlvl_handle.c **** {
+ 885              		.loc 1 220 1 is_stmt 1 view -0
+ 886              		.cfi_startproc
+ 887              		@ args = 0, pretend = 0, frame = 0
+ 888              		@ frame_needed = 0, uses_anonymous_args = 0
+ 889              		.loc 1 220 1 is_stmt 0 view .LVU218
+ 890 0000 08B5     		push	{r3, lr}
+ 891              		.cfi_def_cfa_offset 8
+ 892              		.cfi_offset 3, -8
+ 893              		.cfi_offset 14, -4
+ 221:Core/Src/potamon_bus_lowlvl_handle.c ****     TXOFF; // Turn of transmission on transceiver in order to not hang the bus
+ 894              		.loc 1 221 5 is_stmt 1 view .LVU219
+ 895 0002 0022     		movs	r2, #0
+ 896 0004 2021     		movs	r1, #32
+ 897 0006 0648     		ldr	r0, .L65
+ 898              	.LVL99:
+ 899              		.loc 1 221 5 is_stmt 0 view .LVU220
+ 900 0008 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 901              	.LVL100:
+ 222:Core/Src/potamon_bus_lowlvl_handle.c ****     expected_packet = SYNC;
+ 902              		.loc 1 222 5 is_stmt 1 view .LVU221
+ 903              		.loc 1 222 21 is_stmt 0 view .LVU222
+ 904 000c 054B     		ldr	r3, .L65+4
+ 905 000e 0022     		movs	r2, #0
+ 906 0010 1A70     		strb	r2, [r3]
+ 223:Core/Src/potamon_bus_lowlvl_handle.c ****     HAL_UART_Receive_DMA(&huart1, (uint8_t *)&packet_sync, S_SYNC);
+ 907              		.loc 1 223 5 is_stmt 1 view .LVU223
+ 908 0012 0222     		movs	r2, #2
+ 909 0014 0449     		ldr	r1, .L65+8
+ 910 0016 0548     		ldr	r0, .L65+12
+ 911 0018 FFF7FEFF 		bl	HAL_UART_Receive_DMA
+ 912              	.LVL101:
+ 224:Core/Src/potamon_bus_lowlvl_handle.c **** }...
+ 913              		.loc 1 224 1 is_stmt 0 view .LVU224
+ 914 001c 08BD     		pop	{r3, pc}
+ 915              	.L66:
+ 916 001e 00BF     		.align	2
+ 917              	.L65:
+ 918 0020 000C0140 		.word	1073810432
+ 919 0024 00000000 		.word	expected_packet
+ 920 0028 00000000 		.word	packet_sync
+ 921 002c 00000000 		.word	huart1
+ 922              		.cfi_endproc
+ 923              	.LFE71:
+ 925              		.global	failed_data_packets_count
+ 926              		.section	.bss.failed_data_packets_count,"aw",%nobits
+ 927              		.align	2
+ 930              	failed_data_packets_count:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 23
+
+
+ 931 0000 00000000 		.space	4
+ 932              		.global	failed_sync_packets_count
+ 933              		.section	.bss.failed_sync_packets_count,"aw",%nobits
+ 934              		.align	2
+ 937              	failed_sync_packets_count:
+ 938 0000 00000000 		.space	4
+ 939              		.global	bus_crc_history
+ 940              		.section	.data.bus_crc_history,"aw"
+ 941              		.align	2
+ 944              	bus_crc_history:
+ 945 0000 FFFFFFFF 		.word	-1
+ 946              		.global	expected_packet
+ 947              		.section	.bss.expected_packet,"aw",%nobits
+ 950              	expected_packet:
+ 951 0000 00       		.space	1
+ 952              		.global	data_current
+ 953              		.section	.bss.data_current,"aw",%nobits
+ 954              		.align	2
+ 957              	data_current:
+ 958 0000 00000000 		.space	8
+ 958      00000000 
+ 959              		.global	data_encoder
+ 960              		.section	.bss.data_encoder,"aw",%nobits
+ 961              		.align	2
+ 964              	data_encoder:
+ 965 0000 00000000 		.space	15
+ 965      00000000 
+ 965      00000000 
+ 965      000000
+ 966              		.global	data_ctrl
+ 967              		.section	.bss.data_ctrl,"aw",%nobits
+ 968              		.align	2
+ 971              	data_ctrl:
+ 972 0000 00000000 		.space	16
+ 972      00000000 
+ 972      00000000 
+ 972      00000000 
+ 973              		.global	data_ctrl_unchecked
+ 974              		.section	.bss.data_ctrl_unchecked,"aw",%nobits
+ 975              		.align	2
+ 978              	data_ctrl_unchecked:
+ 979 0000 00000000 		.space	16
+ 979      00000000 
+ 979      00000000 
+ 979      00000000 
+ 980              		.global	packet_sync
+ 981              		.section	.bss.packet_sync,"aw",%nobits
+ 982              		.align	2
+ 985              	packet_sync:
+ 986 0000 0000     		.space	2
+ 987              		.global	uart_rx_dump_buffer
+ 988              		.section	.bss.uart_rx_dump_buffer,"aw",%nobits
+ 989              		.align	2
+ 992              	uart_rx_dump_buffer:
+ 993 0000 00000000 		.space	20
+ 993      00000000 
+ 993      00000000 
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 24
+
+
+ 993      00000000 
+ 993      00000000 
+ 994              		.text
+ 995              	.Letext0:
+ 996              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 997              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 998              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 999              		.file 5 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 1000              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1001              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 1002              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1003              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 1004              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 1005              		.file 11 "Core/Inc/potamon_bus_protocol.h"
+ 1006              		.file 12 "Core/Inc/usart.h"
+ 1007              		.file 13 "Core/Inc/global_flags.h"
+ 1008              		.file 14 "Core/Inc/IQmathLib.h"
+ 1009              		.file 15 "Core/Inc/ema_iq18.h"
+ 1010              		.file 16 "Core/Inc/encoder_iq18.h"
+ 1011              		.file 17 "Core/Inc/pid_iq18.h"
+ 1012              		.file 18 "Core/Inc/pwm.h"
+ 1013              		.file 19 "Core/Inc/servo_iq18.h"
+ 1014              		.file 20 "Core/Inc/servo_init.h"
+ 1015              		.file 21 "Core/Inc/adc_current.h"
+ 1016              		.file 22 "Core/Inc/potamon_bus_lowlvl_handle.h"
+ 1017              		.file 23 "Core/Inc/crc_8_16.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 potamon_bus_lowlvl_handle.c
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:19     .text.update_crc_history:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:25     .text.update_crc_history:00000000 update_crc_history
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:47     .text.update_crc_history:0000000c $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:944    .data.bus_crc_history:00000000 bus_crc_history
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:53     .text.get_crc_success_rate:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:59     .text.get_crc_success_rate:00000000 get_crc_success_rate
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:88     .text.get_crc_success_rate:00000018 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:93     .text.pack_encoder_feedback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:99     .text.pack_encoder_feedback:00000000 pack_encoder_feedback
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:180    .text.pack_encoder_feedback:00000054 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:186    .text.pack_current_feedback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:192    .text.pack_current_feedback:00000000 pack_current_feedback
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:241    .text.pack_current_feedback:00000028 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:246    .text.sync_packet_handler:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:252    .text.sync_packet_handler:00000000 sync_packet_handler
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:272    .text.sync_packet_handler:0000000c $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:627    .text.sync_packet_handler:000001ac $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:950    .bss.expected_packet:00000000 expected_packet
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:985    .bss.packet_sync:00000000 packet_sync
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:971    .bss.data_ctrl:00000000 data_ctrl
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:992    .bss.uart_rx_dump_buffer:00000000 uart_rx_dump_buffer
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:978    .bss.data_ctrl_unchecked:00000000 data_ctrl_unchecked
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:964    .bss.data_encoder:00000000 data_encoder
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:957    .bss.data_current:00000000 data_current
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:643    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:649    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:866    .text.HAL_UART_RxCpltCallback:00000100 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:876    .text.HAL_UART_TxCpltCallback:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:882    .text.HAL_UART_TxCpltCallback:00000000 HAL_UART_TxCpltCallback
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:918    .text.HAL_UART_TxCpltCallback:00000020 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:930    .bss.failed_data_packets_count:00000000 failed_data_packets_count
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:927    .bss.failed_data_packets_count:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:937    .bss.failed_sync_packets_count:00000000 failed_sync_packets_count
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:934    .bss.failed_sync_packets_count:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:941    .data.bus_crc_history:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:951    .bss.expected_packet:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:954    .bss.data_current:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:961    .bss.data_encoder:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:968    .bss.data_ctrl:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:975    .bss.data_ctrl_unchecked:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:982    .bss.packet_sync:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:989    .bss.uart_rx_dump_buffer:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:285    .text.sync_packet_handler:00000019 $d
+C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s:285    .text.sync_packet_handler:0000001a $t
+
+UNDEFINED SYMBOLS
+__popcountsi2
+encoder_getAngle_iq18
+encoder_getVelocity_iq18
+crc16_ccitt
+servo1_g
+servo2_g
+current
+HAL_UART_Receive_DMA
+HAL_GPIO_WritePin
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccfEXvlc.s 			page 26
+
+
+HAL_UART_Transmit_DMA
+system_enabled
+huart1
+control_mode
+axis_define
+crc8_ccitt

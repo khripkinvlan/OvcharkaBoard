@@ -1,0 +1,420 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"ind_led.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/ind_led.c"
+  18              		.section	.text.ind_led_init,"ax",%progbits
+  19              		.align	1
+  20              		.global	ind_led_init
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	ind_led_init:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/ind_led.c **** #include "ind_led.h"
+   2:Core/Src/ind_led.c **** 
+   3:Core/Src/ind_led.c **** ind_led_t ind_led_red;
+   4:Core/Src/ind_led.c **** 
+   5:Core/Src/ind_led.c **** void ind_led_init(ind_led_t* led, GPIO_TypeDef* port, uint16_t pin, uint16_t call_freq_hz, uint8_t 
+   6:Core/Src/ind_led.c **** {
+  28              		.loc 1 6 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 4, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 6 1 is_stmt 0 view .LVU1
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  37 0002 8446     		mov	ip, r0
+  38 0004 0846     		mov	r0, r1
+  39              	.LVL1:
+  40              		.loc 1 6 1 view .LVU2
+  41 0006 1146     		mov	r1, r2
+  42              	.LVL2:
+  43              		.loc 1 6 1 view .LVU3
+  44 0008 9DF80820 		ldrb	r2, [sp, #8]	@ zero_extendqisi2
+  45              	.LVL3:
+   7:Core/Src/ind_led.c ****     led->port = port;
+  46              		.loc 1 7 5 is_stmt 1 view .LVU4
+  47              		.loc 1 7 15 is_stmt 0 view .LVU5
+  48 000c CCF80000 		str	r0, [ip]
+   8:Core/Src/ind_led.c ****     led->pin = pin;
+  49              		.loc 1 8 5 is_stmt 1 view .LVU6
+  50              		.loc 1 8 14 is_stmt 0 view .LVU7
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 2
+
+
+  51 0010 ACF80410 		strh	r1, [ip, #4]	@ movhi
+   9:Core/Src/ind_led.c ****     led->call_freq = call_freq_hz;
+  52              		.loc 1 9 5 is_stmt 1 view .LVU8
+  53              		.loc 1 9 20 is_stmt 0 view .LVU9
+  54 0014 ACF80630 		strh	r3, [ip, #6]	@ movhi
+  10:Core/Src/ind_led.c ****     led->div8_hz = call_freq_hz >> 3;
+  55              		.loc 1 10 5 is_stmt 1 view .LVU10
+  56              		.loc 1 10 18 is_stmt 0 view .LVU11
+  57 0018 4FEAD30E 		lsr	lr, r3, #3
+  58 001c ACF80AE0 		strh	lr, [ip, #10]	@ movhi
+  11:Core/Src/ind_led.c ****     led->div4_hz = call_freq_hz >> 2;
+  59              		.loc 1 11 5 is_stmt 1 view .LVU12
+  60              		.loc 1 11 18 is_stmt 0 view .LVU13
+  61 0020 4FEA930E 		lsr	lr, r3, #2
+  62 0024 ACF80CE0 		strh	lr, [ip, #12]	@ movhi
+  12:Core/Src/ind_led.c ****     led->div2_hz = call_freq_hz >> 1;
+  63              		.loc 1 12 5 is_stmt 1 view .LVU14
+  64              		.loc 1 12 18 is_stmt 0 view .LVU15
+  65 0028 4FEA530E 		lsr	lr, r3, #1
+  66 002c ACF80EE0 		strh	lr, [ip, #14]	@ movhi
+  13:Core/Src/ind_led.c ****     led->div05_hz = call_freq_hz << 1;
+  67              		.loc 1 13 5 is_stmt 1 view .LVU16
+  68              		.loc 1 13 34 is_stmt 0 view .LVU17
+  69 0030 5B00     		lsls	r3, r3, #1
+  70              	.LVL4:
+  71              		.loc 1 13 19 view .LVU18
+  72 0032 ACF81030 		strh	r3, [ip, #16]	@ movhi
+  14:Core/Src/ind_led.c ****     led->lowtrigflag = lowtrig_flag;
+  73              		.loc 1 14 5 is_stmt 1 view .LVU19
+  74              		.loc 1 14 22 is_stmt 0 view .LVU20
+  75 0036 8CF81620 		strb	r2, [ip, #22]
+  15:Core/Src/ind_led.c ****     led->opmode = OFF;
+  76              		.loc 1 15 5 is_stmt 1 view .LVU21
+  77              		.loc 1 15 17 is_stmt 0 view .LVU22
+  78 003a 0023     		movs	r3, #0
+  79 003c 8CF81430 		strb	r3, [ip, #20]
+  16:Core/Src/ind_led.c ****     led->prev_opmode = OFF;
+  80              		.loc 1 16 5 is_stmt 1 view .LVU23
+  81              		.loc 1 16 22 is_stmt 0 view .LVU24
+  82 0040 8CF81530 		strb	r3, [ip, #21]
+  17:Core/Src/ind_led.c ****     led->CNT_LED = 0;
+  83              		.loc 1 17 5 is_stmt 1 view .LVU25
+  84              		.loc 1 17 18 is_stmt 0 view .LVU26
+  85 0044 ACF80830 		strh	r3, [ip, #8]	@ movhi
+  18:Core/Src/ind_led.c ****     HAL_GPIO_WritePin(led->port, led->pin, led->lowtrigflag);
+  86              		.loc 1 18 5 is_stmt 1 view .LVU27
+  87 0048 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  88              	.LVL5:
+  19:Core/Src/ind_led.c **** }
+  89              		.loc 1 19 1 is_stmt 0 view .LVU28
+  90 004c 08BD     		pop	{r3, pc}
+  91              		.loc 1 19 1 view .LVU29
+  92              		.cfi_endproc
+  93              	.LFE65:
+  95              		.section	.text.ind_led_handler,"ax",%progbits
+  96              		.align	1
+  97              		.global	ind_led_handler
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 3
+
+
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 102              	ind_led_handler:
+ 103              	.LVL6:
+ 104              	.LFB66:
+  20:Core/Src/ind_led.c **** 
+  21:Core/Src/ind_led.c **** void ind_led_handler(ind_led_t* led){
+ 105              		.loc 1 21 37 is_stmt 1 view -0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109              		.loc 1 21 37 is_stmt 0 view .LVU31
+ 110 0000 10B5     		push	{r4, lr}
+ 111              		.cfi_def_cfa_offset 8
+ 112              		.cfi_offset 4, -8
+ 113              		.cfi_offset 14, -4
+ 114 0002 0446     		mov	r4, r0
+  22:Core/Src/ind_led.c ****     if(led->opmode != led->prev_opmode){
+ 115              		.loc 1 22 5 is_stmt 1 view .LVU32
+ 116              		.loc 1 22 11 is_stmt 0 view .LVU33
+ 117 0004 037D     		ldrb	r3, [r0, #20]	@ zero_extendqisi2
+ 118              		.loc 1 22 26 view .LVU34
+ 119 0006 427D     		ldrb	r2, [r0, #21]	@ zero_extendqisi2
+ 120              		.loc 1 22 7 view .LVU35
+ 121 0008 9342     		cmp	r3, r2
+ 122 000a 02D0     		beq	.L4
+  23:Core/Src/ind_led.c ****         led->CNT_LED = 0;
+ 123              		.loc 1 23 9 is_stmt 1 view .LVU36
+ 124              		.loc 1 23 22 is_stmt 0 view .LVU37
+ 125 000c 0022     		movs	r2, #0
+ 126 000e 0281     		strh	r2, [r0, #8]	@ movhi
+  24:Core/Src/ind_led.c ****         led->prev_opmode = led->opmode;
+ 127              		.loc 1 24 9 is_stmt 1 view .LVU38
+ 128              		.loc 1 24 26 is_stmt 0 view .LVU39
+ 129 0010 4375     		strb	r3, [r0, #21]
+ 130              	.L4:
+  25:Core/Src/ind_led.c ****     }
+  26:Core/Src/ind_led.c ****     if(led->opmode == OFF){
+ 131              		.loc 1 26 5 is_stmt 1 view .LVU40
+ 132              		.loc 1 26 7 is_stmt 0 view .LVU41
+ 133 0012 CBB1     		cbz	r3, .L12
+  27:Core/Src/ind_led.c ****         HAL_GPIO_WritePin(led->port, led->pin, led->lowtrigflag);
+  28:Core/Src/ind_led.c ****     } else if (led->opmode == STATIC){
+ 134              		.loc 1 28 12 is_stmt 1 view .LVU42
+ 135              		.loc 1 28 15 is_stmt 0 view .LVU43
+ 136 0014 012B     		cmp	r3, #1
+ 137 0016 1DD0     		beq	.L13
+  29:Core/Src/ind_led.c ****         HAL_GPIO_WritePin(led->port, led->pin, !led->lowtrigflag);
+  30:Core/Src/ind_led.c ****     } else {
+  31:Core/Src/ind_led.c ****         if (led->CNT_LED < (led->cur_div >> 1)){
+ 138              		.loc 1 31 9 is_stmt 1 view .LVU44
+ 139              		.loc 1 31 16 is_stmt 0 view .LVU45
+ 140 0018 2389     		ldrh	r3, [r4, #8]
+ 141              		.loc 1 31 32 view .LVU46
+ 142 001a 628A     		ldrh	r2, [r4, #18]
+ 143              		.loc 1 31 12 view .LVU47
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 4
+
+
+ 144 001c B3EB520F 		cmp	r3, r2, lsr #1
+ 145 0020 21D2     		bcs	.L8
+  32:Core/Src/ind_led.c ****             HAL_GPIO_WritePin(led->port, led->pin, !led->lowtrigflag);
+ 146              		.loc 1 32 13 is_stmt 1 view .LVU48
+ 147              		.loc 1 32 56 is_stmt 0 view .LVU49
+ 148 0022 A27D     		ldrb	r2, [r4, #22]	@ zero_extendqisi2
+ 149              		.loc 1 32 13 view .LVU50
+ 150 0024 B2FA82F2 		clz	r2, r2
+ 151 0028 5209     		lsrs	r2, r2, #5
+ 152 002a A188     		ldrh	r1, [r4, #4]
+ 153 002c 2068     		ldr	r0, [r4]
+ 154              	.LVL7:
+ 155              		.loc 1 32 13 view .LVU51
+ 156 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 157              	.LVL8:
+ 158              	.L9:
+  33:Core/Src/ind_led.c ****         } else {
+  34:Core/Src/ind_led.c ****             HAL_GPIO_WritePin(led->port, led->pin, led->lowtrigflag);
+  35:Core/Src/ind_led.c ****         }
+  36:Core/Src/ind_led.c ****         if (led->CNT_LED >= (led->cur_div-1)){
+ 159              		.loc 1 36 9 is_stmt 1 view .LVU52
+ 160              		.loc 1 36 16 is_stmt 0 view .LVU53
+ 161 0032 2289     		ldrh	r2, [r4, #8]
+ 162              		.loc 1 36 33 view .LVU54
+ 163 0034 638A     		ldrh	r3, [r4, #18]
+ 164              		.loc 1 36 42 view .LVU55
+ 165 0036 013B     		subs	r3, r3, #1
+ 166              		.loc 1 36 12 view .LVU56
+ 167 0038 9A42     		cmp	r2, r3
+ 168 003a 01DB     		blt	.L10
+  37:Core/Src/ind_led.c ****             led->CNT_LED = 0;
+ 169              		.loc 1 37 13 is_stmt 1 view .LVU57
+ 170              		.loc 1 37 26 is_stmt 0 view .LVU58
+ 171 003c 0023     		movs	r3, #0
+ 172 003e 2381     		strh	r3, [r4, #8]	@ movhi
+ 173              	.L10:
+  38:Core/Src/ind_led.c ****         }
+  39:Core/Src/ind_led.c ****         led->CNT_LED++;
+ 174              		.loc 1 39 9 is_stmt 1 view .LVU59
+ 175              		.loc 1 39 12 is_stmt 0 view .LVU60
+ 176 0040 2389     		ldrh	r3, [r4, #8]
+ 177              		.loc 1 39 21 view .LVU61
+ 178 0042 0133     		adds	r3, r3, #1
+ 179 0044 2381     		strh	r3, [r4, #8]	@ movhi
+ 180              	.L3:
+  40:Core/Src/ind_led.c ****     }
+  41:Core/Src/ind_led.c **** }
+ 181              		.loc 1 41 1 view .LVU62
+ 182 0046 10BD     		pop	{r4, pc}
+ 183              	.LVL9:
+ 184              	.L12:
+  27:Core/Src/ind_led.c ****     } else if (led->opmode == STATIC){
+ 185              		.loc 1 27 9 is_stmt 1 view .LVU63
+ 186 0048 A27D     		ldrb	r2, [r4, #22]	@ zero_extendqisi2
+ 187 004a A188     		ldrh	r1, [r4, #4]
+ 188 004c 2068     		ldr	r0, [r4]
+ 189              	.LVL10:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 5
+
+
+  27:Core/Src/ind_led.c ****     } else if (led->opmode == STATIC){
+ 190              		.loc 1 27 9 is_stmt 0 view .LVU64
+ 191 004e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 192              	.LVL11:
+ 193 0052 F8E7     		b	.L3
+ 194              	.LVL12:
+ 195              	.L13:
+  29:Core/Src/ind_led.c ****     } else {
+ 196              		.loc 1 29 9 is_stmt 1 view .LVU65
+  29:Core/Src/ind_led.c ****     } else {
+ 197              		.loc 1 29 52 is_stmt 0 view .LVU66
+ 198 0054 A27D     		ldrb	r2, [r4, #22]	@ zero_extendqisi2
+  29:Core/Src/ind_led.c ****     } else {
+ 199              		.loc 1 29 9 view .LVU67
+ 200 0056 B2FA82F2 		clz	r2, r2
+ 201 005a 5209     		lsrs	r2, r2, #5
+ 202 005c A188     		ldrh	r1, [r4, #4]
+ 203 005e 2068     		ldr	r0, [r4]
+ 204              	.LVL13:
+  29:Core/Src/ind_led.c ****     } else {
+ 205              		.loc 1 29 9 view .LVU68
+ 206 0060 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 207              	.LVL14:
+ 208 0064 EFE7     		b	.L3
+ 209              	.LVL15:
+ 210              	.L8:
+  34:Core/Src/ind_led.c ****         }
+ 211              		.loc 1 34 13 is_stmt 1 view .LVU69
+ 212 0066 A27D     		ldrb	r2, [r4, #22]	@ zero_extendqisi2
+ 213 0068 A188     		ldrh	r1, [r4, #4]
+ 214 006a 2068     		ldr	r0, [r4]
+ 215              	.LVL16:
+  34:Core/Src/ind_led.c ****         }
+ 216              		.loc 1 34 13 is_stmt 0 view .LVU70
+ 217 006c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 218              	.LVL17:
+ 219 0070 DFE7     		b	.L9
+ 220              		.cfi_endproc
+ 221              	.LFE66:
+ 223              		.section	.text.ind_led_set_opmode,"ax",%progbits
+ 224              		.align	1
+ 225              		.global	ind_led_set_opmode
+ 226              		.syntax unified
+ 227              		.thumb
+ 228              		.thumb_func
+ 230              	ind_led_set_opmode:
+ 231              	.LVL18:
+ 232              	.LFB67:
+  42:Core/Src/ind_led.c **** 
+  43:Core/Src/ind_led.c **** void ind_led_set_opmode(ind_led_t* led, ind_led_opmode opmode){
+ 233              		.loc 1 43 63 is_stmt 1 view -0
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 0
+ 236              		@ frame_needed = 0, uses_anonymous_args = 0
+ 237              		@ link register save eliminated.
+  44:Core/Src/ind_led.c ****     led->opmode = opmode;
+ 238              		.loc 1 44 5 view .LVU72
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 6
+
+
+ 239              		.loc 1 44 17 is_stmt 0 view .LVU73
+ 240 0000 0175     		strb	r1, [r0, #20]
+  45:Core/Src/ind_led.c ****     switch (opmode)
+ 241              		.loc 1 45 5 is_stmt 1 view .LVU74
+ 242 0002 0239     		subs	r1, r1, #2
+ 243              	.LVL19:
+ 244              		.loc 1 45 5 is_stmt 0 view .LVU75
+ 245 0004 0429     		cmp	r1, #4
+ 246 0006 12D8     		bhi	.L14
+ 247 0008 DFE801F0 		tbb	[pc, r1]
+ 248              	.L17:
+ 249 000c 03       		.byte	(.L21-.L17)/2
+ 250 000d 06       		.byte	(.L20-.L17)/2
+ 251 000e 09       		.byte	(.L19-.L17)/2
+ 252 000f 0C       		.byte	(.L18-.L17)/2
+ 253 0010 0F       		.byte	(.L16-.L17)/2
+ 254 0011 00       		.p2align 1
+ 255              	.L21:
+  46:Core/Src/ind_led.c ****     {
+  47:Core/Src/ind_led.c ****     case BLINK_05HZ:
+  48:Core/Src/ind_led.c ****         led->cur_div = led->div05_hz;
+ 256              		.loc 1 48 9 is_stmt 1 view .LVU76
+ 257              		.loc 1 48 27 is_stmt 0 view .LVU77
+ 258 0012 038A     		ldrh	r3, [r0, #16]
+ 259              		.loc 1 48 22 view .LVU78
+ 260 0014 4382     		strh	r3, [r0, #18]	@ movhi
+  49:Core/Src/ind_led.c ****         break;
+ 261              		.loc 1 49 9 is_stmt 1 view .LVU79
+ 262 0016 7047     		bx	lr
+ 263              	.L20:
+  50:Core/Src/ind_led.c ****     case BLINK_1HZ:
+  51:Core/Src/ind_led.c ****         led->cur_div = led->call_freq;
+ 264              		.loc 1 51 9 view .LVU80
+ 265              		.loc 1 51 27 is_stmt 0 view .LVU81
+ 266 0018 C388     		ldrh	r3, [r0, #6]
+ 267              		.loc 1 51 22 view .LVU82
+ 268 001a 4382     		strh	r3, [r0, #18]	@ movhi
+  52:Core/Src/ind_led.c ****         break;
+ 269              		.loc 1 52 9 is_stmt 1 view .LVU83
+ 270 001c 7047     		bx	lr
+ 271              	.L19:
+  53:Core/Src/ind_led.c ****     case BLINK_2HZ:
+  54:Core/Src/ind_led.c ****         led->cur_div = led->div2_hz;
+ 272              		.loc 1 54 9 view .LVU84
+ 273              		.loc 1 54 27 is_stmt 0 view .LVU85
+ 274 001e C389     		ldrh	r3, [r0, #14]
+ 275              		.loc 1 54 22 view .LVU86
+ 276 0020 4382     		strh	r3, [r0, #18]	@ movhi
+  55:Core/Src/ind_led.c ****         break;
+ 277              		.loc 1 55 9 is_stmt 1 view .LVU87
+ 278 0022 7047     		bx	lr
+ 279              	.L18:
+  56:Core/Src/ind_led.c ****     case BLINK_4HZ:
+  57:Core/Src/ind_led.c ****         led->cur_div = led->div4_hz;
+ 280              		.loc 1 57 9 view .LVU88
+ 281              		.loc 1 57 27 is_stmt 0 view .LVU89
+ 282 0024 8389     		ldrh	r3, [r0, #12]
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 7
+
+
+ 283              		.loc 1 57 22 view .LVU90
+ 284 0026 4382     		strh	r3, [r0, #18]	@ movhi
+  58:Core/Src/ind_led.c ****         break;
+ 285              		.loc 1 58 9 is_stmt 1 view .LVU91
+ 286 0028 7047     		bx	lr
+ 287              	.L16:
+  59:Core/Src/ind_led.c ****     case BLINK_8HZ:
+  60:Core/Src/ind_led.c ****         led->cur_div = led->div8_hz;
+ 288              		.loc 1 60 9 view .LVU92
+ 289              		.loc 1 60 27 is_stmt 0 view .LVU93
+ 290 002a 4389     		ldrh	r3, [r0, #10]
+ 291              		.loc 1 60 22 view .LVU94
+ 292 002c 4382     		strh	r3, [r0, #18]	@ movhi
+ 293              	.L14:
+  61:Core/Src/ind_led.c ****     default:
+  62:Core/Src/ind_led.c ****         break;
+  63:Core/Src/ind_led.c ****     }
+  64:Core/Src/ind_led.c **** }...
+ 294              		.loc 1 64 1 view .LVU95
+ 295 002e 7047     		bx	lr
+ 296              		.cfi_endproc
+ 297              	.LFE67:
+ 299              		.global	ind_led_red
+ 300              		.section	.bss.ind_led_red,"aw",%nobits
+ 301              		.align	2
+ 304              	ind_led_red:
+ 305 0000 00000000 		.space	24
+ 305      00000000 
+ 305      00000000 
+ 305      00000000 
+ 305      00000000 
+ 306              		.text
+ 307              	.Letext0:
+ 308              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 309              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 310              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 311              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 312              		.file 6 "Core/Inc/ind_led.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ind_led.c
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:19     .text.ind_led_init:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:25     .text.ind_led_init:00000000 ind_led_init
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:96     .text.ind_led_handler:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:102    .text.ind_led_handler:00000000 ind_led_handler
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:224    .text.ind_led_set_opmode:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:230    .text.ind_led_set_opmode:00000000 ind_led_set_opmode
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:249    .text.ind_led_set_opmode:0000000c $d
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:304    .bss.ind_led_red:00000000 ind_led_red
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:301    .bss.ind_led_red:00000000 $d
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:254    .text.ind_led_set_opmode:00000011 $d
+C:\Users\zhmis\AppData\Local\Temp\ccDEzs9Y.s:254    .text.ind_led_set_opmode:00000012 $t
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin

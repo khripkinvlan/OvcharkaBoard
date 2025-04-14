@@ -1,0 +1,506 @@
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"encoder_iq18.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/encoder_iq18.c"
+  18              		.global	__aeabi_fmul
+  19              		.global	__aeabi_f2iz
+  20              		.global	__aeabi_fcmpeq
+  21              		.section	.text.encoder_init_iq18,"ax",%progbits
+  22              		.align	1
+  23              		.global	encoder_init_iq18
+  24              		.syntax unified
+  25              		.thumb
+  26              		.thumb_func
+  28              	encoder_init_iq18:
+  29              	.LVL0:
+  30              	.LFB65:
+   1:Core/Src/encoder_iq18.c **** /*
+   2:Core/Src/encoder_iq18.c ****  * encoder_iq18.c
+   3:Core/Src/encoder_iq18.c ****  *
+   4:Core/Src/encoder_iq18.c ****  *  Created on: Dec 18, 2023
+   5:Core/Src/encoder_iq18.c ****  *      Author: JV4K
+   6:Core/Src/encoder_iq18.c ****  */
+   7:Core/Src/encoder_iq18.c **** 
+   8:Core/Src/encoder_iq18.c **** #include "encoder_iq18.h"
+   9:Core/Src/encoder_iq18.c **** 
+  10:Core/Src/encoder_iq18.c **** void encoder_init_iq18(encoder_iq18_t *encoder, TIM_HandleTypeDef *timerHandle,
+  11:Core/Src/encoder_iq18.c **** 		uint16_t CPR, float dt, float gearRatio, float vel_filter_k,
+  12:Core/Src/encoder_iq18.c **** 		uint8_t is_reversed) {
+  31              		.loc 1 12 24 view -0
+  32              		.cfi_startproc
+  33              		@ args = 12, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		.loc 1 12 24 is_stmt 0 view .LVU1
+  36 0000 70B5     		push	{r4, r5, r6, lr}
+  37              		.cfi_def_cfa_offset 16
+  38              		.cfi_offset 4, -16
+  39              		.cfi_offset 5, -12
+  40              		.cfi_offset 6, -8
+  41              		.cfi_offset 14, -4
+  42 0002 0446     		mov	r4, r0
+  43 0004 049D     		ldr	r5, [sp, #16]	@ float
+  44 0006 9DF81860 		ldrb	r6, [sp, #24]	@ zero_extendqisi2
+  13:Core/Src/encoder_iq18.c **** 	encoder->htim = timerHandle;
+  45              		.loc 1 13 2 is_stmt 1 view .LVU2
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 2
+
+
+  46              		.loc 1 13 16 is_stmt 0 view .LVU3
+  47 000a 0160     		str	r1, [r0]
+  14:Core/Src/encoder_iq18.c **** 	encoder->countsPerRevolution = CPR;
+  48              		.loc 1 14 2 is_stmt 1 view .LVU4
+  49              		.loc 1 14 31 is_stmt 0 view .LVU5
+  50 000c 4285     		strh	r2, [r0, #42]	@ movhi
+  15:Core/Src/encoder_iq18.c **** 	encoder->dt = _IQ18(dt);
+  51              		.loc 1 15 2 is_stmt 1 view .LVU6
+  52              		.loc 1 15 16 is_stmt 0 view .LVU7
+  53 000e 4FF09141 		mov	r1, #1216348160
+  54              	.LVL1:
+  55              		.loc 1 15 16 view .LVU8
+  56 0012 1846     		mov	r0, r3
+  57              	.LVL2:
+  58              		.loc 1 15 16 view .LVU9
+  59 0014 FFF7FEFF 		bl	__aeabi_fmul
+  60              	.LVL3:
+  61              		.loc 1 15 16 view .LVU10
+  62 0018 FFF7FEFF 		bl	__aeabi_f2iz
+  63              	.LVL4:
+  64              		.loc 1 15 14 view .LVU11
+  65 001c E061     		str	r0, [r4, #28]
+  16:Core/Src/encoder_iq18.c **** 	initEMA_iq18(&encoder->filter, vel_filter_k, 0);
+  66              		.loc 1 16 2 is_stmt 1 view .LVU12
+  67 001e 0022     		movs	r2, #0
+  68 0020 0599     		ldr	r1, [sp, #20]	@ float
+  69 0022 201D     		adds	r0, r4, #4
+  70 0024 FFF7FEFF 		bl	initEMA_iq18
+  71              	.LVL5:
+  17:Core/Src/encoder_iq18.c **** 	if (gearRatio) {
+  72              		.loc 1 17 2 view .LVU13
+  73              		.loc 1 17 5 is_stmt 0 view .LVU14
+  74 0028 0021     		movs	r1, #0
+  75 002a 2846     		mov	r0, r5
+  76 002c FFF7FEFF 		bl	__aeabi_fcmpeq
+  77              	.LVL6:
+  78 0030 60B9     		cbnz	r0, .L8
+  18:Core/Src/encoder_iq18.c **** 		encoder->gearRatio = _IQ18(gearRatio);
+  79              		.loc 1 18 3 is_stmt 1 view .LVU15
+  80              		.loc 1 18 24 is_stmt 0 view .LVU16
+  81 0032 4FF09141 		mov	r1, #1216348160
+  82 0036 2846     		mov	r0, r5
+  83 0038 FFF7FEFF 		bl	__aeabi_fmul
+  84              	.LVL7:
+  85 003c FFF7FEFF 		bl	__aeabi_f2iz
+  86              	.LVL8:
+  87              		.loc 1 18 22 view .LVU17
+  88 0040 2062     		str	r0, [r4, #32]
+  89              	.L4:
+  19:Core/Src/encoder_iq18.c **** 	} else {
+  20:Core/Src/encoder_iq18.c **** 		encoder->gearRatio = _IQ18(1);
+  21:Core/Src/encoder_iq18.c **** 	}
+  22:Core/Src/encoder_iq18.c **** 
+  23:Core/Src/encoder_iq18.c **** 	if (!is_reversed) {
+  90              		.loc 1 23 2 is_stmt 1 view .LVU18
+  91              		.loc 1 23 5 is_stmt 0 view .LVU19
+  92 0042 3EB9     		cbnz	r6, .L5
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 3
+
+
+  24:Core/Src/encoder_iq18.c **** 		encoder->reverse_flag = 1;
+  93              		.loc 1 24 3 is_stmt 1 view .LVU20
+  94              		.loc 1 24 25 is_stmt 0 view .LVU21
+  95 0044 0123     		movs	r3, #1
+  96 0046 84F82C30 		strb	r3, [r4, #44]
+  97              	.L1:
+  25:Core/Src/encoder_iq18.c **** 	} else {
+  26:Core/Src/encoder_iq18.c **** 		encoder->reverse_flag = -1;
+  27:Core/Src/encoder_iq18.c **** 	}
+  28:Core/Src/encoder_iq18.c **** }
+  98              		.loc 1 28 1 view .LVU22
+  99 004a 70BD     		pop	{r4, r5, r6, pc}
+ 100              	.LVL9:
+ 101              	.L8:
+  20:Core/Src/encoder_iq18.c **** 	}
+ 102              		.loc 1 20 3 is_stmt 1 view .LVU23
+  20:Core/Src/encoder_iq18.c **** 	}
+ 103              		.loc 1 20 22 is_stmt 0 view .LVU24
+ 104 004c 4FF48023 		mov	r3, #262144
+ 105 0050 2362     		str	r3, [r4, #32]
+ 106 0052 F6E7     		b	.L4
+ 107              	.L5:
+  26:Core/Src/encoder_iq18.c **** 	}
+ 108              		.loc 1 26 3 is_stmt 1 view .LVU25
+  26:Core/Src/encoder_iq18.c **** 	}
+ 109              		.loc 1 26 25 is_stmt 0 view .LVU26
+ 110 0054 FF23     		movs	r3, #255
+ 111 0056 84F82C30 		strb	r3, [r4, #44]
+ 112              		.loc 1 28 1 view .LVU27
+ 113 005a F6E7     		b	.L1
+ 114              		.cfi_endproc
+ 115              	.LFE65:
+ 117              		.section	.text.encoder_updatePosition_iq18,"ax",%progbits
+ 118              		.align	1
+ 119              		.global	encoder_updatePosition_iq18
+ 120              		.syntax unified
+ 121              		.thumb
+ 122              		.thumb_func
+ 124              	encoder_updatePosition_iq18:
+ 125              	.LVL10:
+ 126              	.LFB66:
+  29:Core/Src/encoder_iq18.c **** void encoder_updatePosition_iq18(encoder_iq18_t *encoder) {
+ 127              		.loc 1 29 59 is_stmt 1 view -0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131              		.loc 1 29 59 is_stmt 0 view .LVU29
+ 132 0000 38B5     		push	{r3, r4, r5, lr}
+ 133              		.cfi_def_cfa_offset 16
+ 134              		.cfi_offset 3, -16
+ 135              		.cfi_offset 4, -12
+ 136              		.cfi_offset 5, -8
+ 137              		.cfi_offset 14, -4
+ 138 0002 0446     		mov	r4, r0
+  30:Core/Src/encoder_iq18.c **** 	encoder->currentTicks = (int16_t) encoder->htim->Instance->CNT;
+ 139              		.loc 1 30 2 is_stmt 1 view .LVU30
+ 140              		.loc 1 30 43 is_stmt 0 view .LVU31
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 4
+
+
+ 141 0004 0368     		ldr	r3, [r0]
+ 142              		.loc 1 30 49 view .LVU32
+ 143 0006 1B68     		ldr	r3, [r3]
+ 144              		.loc 1 30 59 view .LVU33
+ 145 0008 586A     		ldr	r0, [r3, #36]
+ 146              	.LVL11:
+ 147              		.loc 1 30 26 view .LVU34
+ 148 000a 00B2     		sxth	r0, r0
+ 149              		.loc 1 30 24 view .LVU35
+ 150 000c 2085     		strh	r0, [r4, #40]	@ movhi
+  31:Core/Src/encoder_iq18.c **** 
+  32:Core/Src/encoder_iq18.c **** 	encoder->fullRevolutions += _IQ18div(
+ 151              		.loc 1 32 2 is_stmt 1 view .LVU36
+  33:Core/Src/encoder_iq18.c **** 			_IQ18(encoder->currentTicks / encoder->countsPerRevolution),
+ 152              		.loc 1 33 4 is_stmt 0 view .LVU37
+ 153 000e 638D     		ldrh	r3, [r4, #42]
+ 154 0010 90FBF3F0 		sdiv	r0, r0, r3
+  32:Core/Src/encoder_iq18.c **** 			_IQ18(encoder->currentTicks / encoder->countsPerRevolution),
+ 155              		.loc 1 32 30 view .LVU38
+ 156 0014 216A     		ldr	r1, [r4, #32]
+ 157 0016 8004     		lsls	r0, r0, #18
+ 158 0018 FFF7FEFF 		bl	_IQ18div
+ 159              	.LVL12:
+  32:Core/Src/encoder_iq18.c **** 			_IQ18(encoder->currentTicks / encoder->countsPerRevolution),
+ 160              		.loc 1 32 9 discriminator 1 view .LVU39
+ 161 001c 6369     		ldr	r3, [r4, #20]
+  32:Core/Src/encoder_iq18.c **** 			_IQ18(encoder->currentTicks / encoder->countsPerRevolution),
+ 162              		.loc 1 32 27 discriminator 1 view .LVU40
+ 163 001e 0344     		add	r3, r3, r0
+ 164 0020 6361     		str	r3, [r4, #20]
+  34:Core/Src/encoder_iq18.c **** 			encoder->gearRatio);
+  35:Core/Src/encoder_iq18.c **** 
+  36:Core/Src/encoder_iq18.c **** 	encoder->currentTicks = encoder->currentTicks
+ 165              		.loc 1 36 2 is_stmt 1 view .LVU41
+ 166              		.loc 1 36 33 is_stmt 0 view .LVU42
+ 167 0022 B4F92830 		ldrsh	r3, [r4, #40]
+  37:Core/Src/encoder_iq18.c **** 			% encoder->countsPerRevolution;
+ 168              		.loc 1 37 13 view .LVU43
+ 169 0026 628D     		ldrh	r2, [r4, #42]
+ 170              		.loc 1 37 4 view .LVU44
+ 171 0028 93FBF2F1 		sdiv	r1, r3, r2
+ 172 002c 02FB1133 		mls	r3, r2, r1, r3
+  36:Core/Src/encoder_iq18.c **** 			% encoder->countsPerRevolution;
+ 173              		.loc 1 36 24 view .LVU45
+ 174 0030 2385     		strh	r3, [r4, #40]	@ movhi
+  38:Core/Src/encoder_iq18.c **** 	encoder->htim->Instance->CNT = (uint16_t) encoder->currentTicks;
+ 175              		.loc 1 38 2 is_stmt 1 view .LVU46
+ 176              		.loc 1 38 9 is_stmt 0 view .LVU47
+ 177 0032 2268     		ldr	r2, [r4]
+ 178              		.loc 1 38 15 view .LVU48
+ 179 0034 1268     		ldr	r2, [r2]
+ 180              		.loc 1 38 33 view .LVU49
+ 181 0036 9BB2     		uxth	r3, r3
+ 182              		.loc 1 38 31 view .LVU50
+ 183 0038 5362     		str	r3, [r2, #36]
+  39:Core/Src/encoder_iq18.c **** 
+  40:Core/Src/encoder_iq18.c **** 	encoder->angle = _IQ18mpy(
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 5
+
+
+ 184              		.loc 1 40 2 is_stmt 1 view .LVU51
+  41:Core/Src/encoder_iq18.c **** 			(encoder->fullRevolutions
+ 185              		.loc 1 41 12 is_stmt 0 view .LVU52
+ 186 003a 6569     		ldr	r5, [r4, #20]
+  42:Core/Src/encoder_iq18.c **** 					+ _IQ18div(
+  43:Core/Src/encoder_iq18.c **** 							_IQ18div(_IQ18(encoder->currentTicks),
+ 187              		.loc 1 43 17 view .LVU53
+ 188 003c B4F92800 		ldrsh	r0, [r4, #40]
+  44:Core/Src/encoder_iq18.c **** 									_IQ18(encoder->countsPerRevolution)),
+ 189              		.loc 1 44 10 view .LVU54
+ 190 0040 618D     		ldrh	r1, [r4, #42]
+  42:Core/Src/encoder_iq18.c **** 					+ _IQ18div(
+ 191              		.loc 1 42 8 view .LVU55
+ 192 0042 8904     		lsls	r1, r1, #18
+ 193 0044 8004     		lsls	r0, r0, #18
+ 194 0046 FFF7FEFF 		bl	_IQ18div
+ 195              	.LVL13:
+  42:Core/Src/encoder_iq18.c **** 					+ _IQ18div(
+ 196              		.loc 1 42 8 discriminator 1 view .LVU56
+ 197 004a 216A     		ldr	r1, [r4, #32]
+ 198 004c FFF7FEFF 		bl	_IQ18div
+ 199              	.LVL14:
+  42:Core/Src/encoder_iq18.c **** 					+ _IQ18div(
+ 200              		.loc 1 42 6 discriminator 2 view .LVU57
+ 201 0050 2844     		add	r0, r0, r5
+  40:Core/Src/encoder_iq18.c **** 			(encoder->fullRevolutions
+ 202              		.loc 1 40 19 view .LVU58
+ 203 0052 0549     		ldr	r1, .L12
+ 204 0054 4000     		lsls	r0, r0, #1
+ 205 0056 FFF7FEFF 		bl	_IQ18mpy
+ 206              	.LVL15:
+  45:Core/Src/encoder_iq18.c **** 							encoder->gearRatio)) << 1,
+  46:Core/Src/encoder_iq18.c **** 			PI_IQ18) * encoder->reverse_flag;
+ 207              		.loc 1 46 22 view .LVU59
+ 208 005a 94F92C30 		ldrsb	r3, [r4, #44]
+ 209              		.loc 1 46 13 view .LVU60
+ 210 005e 03FB00F0 		mul	r0, r3, r0
+  40:Core/Src/encoder_iq18.c **** 			(encoder->fullRevolutions
+ 211              		.loc 1 40 17 view .LVU61
+ 212 0062 E060     		str	r0, [r4, #12]
+  47:Core/Src/encoder_iq18.c **** }
+ 213              		.loc 1 47 1 view .LVU62
+ 214 0064 38BD     		pop	{r3, r4, r5, pc}
+ 215              	.LVL16:
+ 216              	.L13:
+ 217              		.loc 1 47 1 view .LVU63
+ 218 0066 00BF     		.align	2
+ 219              	.L12:
+ 220 0068 FD900C00 		.word	823549
+ 221              		.cfi_endproc
+ 222              	.LFE66:
+ 224              		.section	.text.encoder_updateVelocity_qep_iq18,"ax",%progbits
+ 225              		.align	1
+ 226              		.global	encoder_updateVelocity_qep_iq18
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 6
+
+
+ 231              	encoder_updateVelocity_qep_iq18:
+ 232              	.LVL17:
+ 233              	.LFB67:
+  48:Core/Src/encoder_iq18.c **** 
+  49:Core/Src/encoder_iq18.c **** void encoder_updateVelocity_qep_iq18(encoder_iq18_t *encoder) {
+ 234              		.loc 1 49 63 is_stmt 1 view -0
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238              		.loc 1 49 63 is_stmt 0 view .LVU65
+ 239 0000 10B5     		push	{r4, lr}
+ 240              		.cfi_def_cfa_offset 8
+ 241              		.cfi_offset 4, -8
+ 242              		.cfi_offset 14, -4
+ 243 0002 0446     		mov	r4, r0
+  50:Core/Src/encoder_iq18.c **** 	_iq18 velocity = _IQ18div((encoder->angle - encoder->previousAngle),
+ 244              		.loc 1 50 2 is_stmt 1 view .LVU66
+ 245              		.loc 1 50 36 is_stmt 0 view .LVU67
+ 246 0004 C068     		ldr	r0, [r0, #12]
+ 247              	.LVL18:
+ 248              		.loc 1 50 53 view .LVU68
+ 249 0006 636A     		ldr	r3, [r4, #36]
+ 250              		.loc 1 50 19 view .LVU69
+ 251 0008 E169     		ldr	r1, [r4, #28]
+ 252 000a C01A     		subs	r0, r0, r3
+ 253 000c FFF7FEFF 		bl	_IQ18div
+ 254              	.LVL19:
+ 255 0010 0146     		mov	r1, r0
+ 256              	.LVL20:
+  51:Core/Src/encoder_iq18.c **** 			encoder->dt);
+  52:Core/Src/encoder_iq18.c **** //	encoder->angularVelocity = velocity;
+  53:Core/Src/encoder_iq18.c **** 	encoder->angularVelocity = updateEMA_iq18(&encoder->filter, velocity);
+ 257              		.loc 1 53 2 is_stmt 1 view .LVU70
+ 258              		.loc 1 53 29 is_stmt 0 view .LVU71
+ 259 0012 201D     		adds	r0, r4, #4
+ 260              	.LVL21:
+ 261              		.loc 1 53 29 view .LVU72
+ 262 0014 FFF7FEFF 		bl	updateEMA_iq18
+ 263              	.LVL22:
+ 264              		.loc 1 53 27 discriminator 1 view .LVU73
+ 265 0018 2061     		str	r0, [r4, #16]
+  54:Core/Src/encoder_iq18.c **** 	encoder->previousAngle = encoder->angle;
+ 266              		.loc 1 54 2 is_stmt 1 view .LVU74
+ 267              		.loc 1 54 34 is_stmt 0 view .LVU75
+ 268 001a E368     		ldr	r3, [r4, #12]
+ 269              		.loc 1 54 25 view .LVU76
+ 270 001c 6362     		str	r3, [r4, #36]
+  55:Core/Src/encoder_iq18.c **** }
+ 271              		.loc 1 55 1 view .LVU77
+ 272 001e 10BD     		pop	{r4, pc}
+ 273              		.loc 1 55 1 view .LVU78
+ 274              		.cfi_endproc
+ 275              	.LFE67:
+ 277              		.section	.text.encoder_reset_iq18,"ax",%progbits
+ 278              		.align	1
+ 279              		.global	encoder_reset_iq18
+ 280              		.syntax unified
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 7
+
+
+ 281              		.thumb
+ 282              		.thumb_func
+ 284              	encoder_reset_iq18:
+ 285              	.LVL23:
+ 286              	.LFB68:
+  56:Core/Src/encoder_iq18.c **** void encoder_reset_iq18(encoder_iq18_t *encoder) {
+ 287              		.loc 1 56 50 is_stmt 1 view -0
+ 288              		.cfi_startproc
+ 289              		@ args = 0, pretend = 0, frame = 0
+ 290              		@ frame_needed = 0, uses_anonymous_args = 0
+ 291              		@ link register save eliminated.
+  57:Core/Src/encoder_iq18.c **** 	encoder->htim->Instance->CNT = 0;
+ 292              		.loc 1 57 2 view .LVU80
+ 293              		.loc 1 57 9 is_stmt 0 view .LVU81
+ 294 0000 0368     		ldr	r3, [r0]
+ 295              		.loc 1 57 15 view .LVU82
+ 296 0002 1A68     		ldr	r2, [r3]
+ 297              		.loc 1 57 31 view .LVU83
+ 298 0004 0023     		movs	r3, #0
+ 299 0006 5362     		str	r3, [r2, #36]
+  58:Core/Src/encoder_iq18.c **** 	encoder->angularVelocity = 0;
+ 300              		.loc 1 58 2 is_stmt 1 view .LVU84
+ 301              		.loc 1 58 27 is_stmt 0 view .LVU85
+ 302 0008 0361     		str	r3, [r0, #16]
+  59:Core/Src/encoder_iq18.c **** 	encoder->previousAngle = 0;
+ 303              		.loc 1 59 2 is_stmt 1 view .LVU86
+ 304              		.loc 1 59 25 is_stmt 0 view .LVU87
+ 305 000a 4362     		str	r3, [r0, #36]
+  60:Core/Src/encoder_iq18.c **** 	encoder->angle = 0;
+ 306              		.loc 1 60 2 is_stmt 1 view .LVU88
+ 307              		.loc 1 60 17 is_stmt 0 view .LVU89
+ 308 000c C360     		str	r3, [r0, #12]
+  61:Core/Src/encoder_iq18.c **** 	encoder->fullRevolutions = 0;
+ 309              		.loc 1 61 2 is_stmt 1 view .LVU90
+ 310              		.loc 1 61 27 is_stmt 0 view .LVU91
+ 311 000e 4361     		str	r3, [r0, #20]
+  62:Core/Src/encoder_iq18.c **** 	encoder->currentTicks = 0;
+ 312              		.loc 1 62 2 is_stmt 1 view .LVU92
+ 313              		.loc 1 62 24 is_stmt 0 view .LVU93
+ 314 0010 0385     		strh	r3, [r0, #40]	@ movhi
+  63:Core/Src/encoder_iq18.c **** 	encoder->filter.previous = 0;
+ 315              		.loc 1 63 2 is_stmt 1 view .LVU94
+ 316              		.loc 1 63 27 is_stmt 0 view .LVU95
+ 317 0012 8360     		str	r3, [r0, #8]
+  64:Core/Src/encoder_iq18.c **** }
+ 318              		.loc 1 64 1 view .LVU96
+ 319 0014 7047     		bx	lr
+ 320              		.cfi_endproc
+ 321              	.LFE68:
+ 323              		.section	.text.encoder_getAngle_iq18,"ax",%progbits
+ 324              		.align	1
+ 325              		.global	encoder_getAngle_iq18
+ 326              		.syntax unified
+ 327              		.thumb
+ 328              		.thumb_func
+ 330              	encoder_getAngle_iq18:
+ 331              	.LVL24:
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 8
+
+
+ 332              	.LFB69:
+  65:Core/Src/encoder_iq18.c **** 
+  66:Core/Src/encoder_iq18.c **** _iq18 encoder_getAngle_iq18(encoder_iq18_t *encoder) {
+ 333              		.loc 1 66 54 is_stmt 1 view -0
+ 334              		.cfi_startproc
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337              		@ link register save eliminated.
+  67:Core/Src/encoder_iq18.c **** 	return encoder->angle; // * encoder->reverse_flag;
+ 338              		.loc 1 67 2 view .LVU98
+  68:Core/Src/encoder_iq18.c **** 	// return encoder->angle * encoder->reverse_flag;
+  69:Core/Src/encoder_iq18.c **** }
+ 339              		.loc 1 69 1 is_stmt 0 view .LVU99
+ 340 0000 C068     		ldr	r0, [r0, #12]
+ 341              	.LVL25:
+ 342              		.loc 1 69 1 view .LVU100
+ 343 0002 7047     		bx	lr
+ 344              		.cfi_endproc
+ 345              	.LFE69:
+ 347              		.section	.text.encoder_getVelocity_iq18,"ax",%progbits
+ 348              		.align	1
+ 349              		.global	encoder_getVelocity_iq18
+ 350              		.syntax unified
+ 351              		.thumb
+ 352              		.thumb_func
+ 354              	encoder_getVelocity_iq18:
+ 355              	.LVL26:
+ 356              	.LFB70:
+  70:Core/Src/encoder_iq18.c **** _iq18 encoder_getVelocity_iq18(encoder_iq18_t *encoder) {
+ 357              		.loc 1 70 57 is_stmt 1 view -0
+ 358              		.cfi_startproc
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361              		@ link register save eliminated.
+  71:Core/Src/encoder_iq18.c **** 	return encoder->angularVelocity;// * encoder->reverse_flag;
+ 362              		.loc 1 71 2 view .LVU102
+  72:Core/Src/encoder_iq18.c **** 	// return encoder->angularVelocity * encoder->reverse_flag;
+  73:Core/Src/encoder_iq18.c **** }
+ 363              		.loc 1 73 1 is_stmt 0 view .LVU103
+ 364 0000 0069     		ldr	r0, [r0, #16]
+ 365              	.LVL27:
+ 366              		.loc 1 73 1 view .LVU104
+ 367 0002 7047     		bx	lr
+ 368              		.cfi_endproc
+ 369              	.LFE70:
+ 371              		.text
+ 372              	.Letext0:
+ 373              		.file 2 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 374              		.file 3 "C:/Users/zhmis/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 375              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 376              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 377              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 378              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 379              		.file 8 "Core/Inc/IQmathLib.h"
+ 380              		.file 9 "Core/Inc/ema_iq18.h"
+ 381              		.file 10 "Core/Inc/encoder_iq18.h"
+ARM GAS  C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 encoder_iq18.c
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:22     .text.encoder_init_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:28     .text.encoder_init_iq18:00000000 encoder_init_iq18
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:118    .text.encoder_updatePosition_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:124    .text.encoder_updatePosition_iq18:00000000 encoder_updatePosition_iq18
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:220    .text.encoder_updatePosition_iq18:00000068 $d
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:225    .text.encoder_updateVelocity_qep_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:231    .text.encoder_updateVelocity_qep_iq18:00000000 encoder_updateVelocity_qep_iq18
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:278    .text.encoder_reset_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:284    .text.encoder_reset_iq18:00000000 encoder_reset_iq18
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:324    .text.encoder_getAngle_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:330    .text.encoder_getAngle_iq18:00000000 encoder_getAngle_iq18
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:348    .text.encoder_getVelocity_iq18:00000000 $t
+C:\Users\zhmis\AppData\Local\Temp\cc9QgXIU.s:354    .text.encoder_getVelocity_iq18:00000000 encoder_getVelocity_iq18
+
+UNDEFINED SYMBOLS
+__aeabi_fmul
+__aeabi_f2iz
+__aeabi_fcmpeq
+initEMA_iq18
+_IQ18div
+_IQ18mpy
+updateEMA_iq18

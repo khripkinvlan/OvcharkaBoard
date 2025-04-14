@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "drv8106.h": "c",
+        "spi.h": "c",
+        "dma.h": "c",
+        "adc.h": "c",
+        "main.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "main_init.h": "c",
+        "servo_init.h": "c",
+        "servo_iq18.h": "c",
+        "global_flags.h": "c",
+        "adc_current.h": "c",
+        "pins_init.h": "c",
+        "loops_handler.h": "c",
+        "encoder_iq18.h": "c",
+        "current_filter.h": "c",
+        "ema_iq18.h": "c",
+        "iqmathlib.h": "c",
+        "potamon_bus_lowlvl_handle.h": "c",
+        "potamon_bus_protocol.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": true
+}
